@@ -1,0 +1,3 @@
+[submodule "bbscript"]
+	path = bbscript
+	url = git@github.com:SparkFountain/BlitzBasicScript.git

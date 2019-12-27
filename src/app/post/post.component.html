@@ -1,0 +1,14 @@
+<div class="post-container">
+  <div class="post-image">
+    <img [src]="image ? image : '#'" />
+  </div>
+  <div class="post-content">
+    <div class="post-title" [innerHTML]="title"></div>
+    <hr />
+    <div class="post-author" *ngIf="author">
+      <span>{{'BY' | translate}} {{author}} {{'PUBLISHED_AT' | translate}} {{createdAt | date: dateFormat}}</span>
+      <span *ngIf="lastModifiedAt"> ({{'LAST_MODIFIED_AT' | translate}} {{lastModifiedAt | date: dateFormat}})</span>
+    </div>
+    <div class="post-message" [innerHTML]="message"></div>
+  </div>
+</div>

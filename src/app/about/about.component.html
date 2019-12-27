@@ -7,4 +7,10 @@
       <span [innerHTML]="'MISSION_SUBTITLE' | translate"></span>
     </div>
   </div>
+
+  <h1>{{ "HOME.FEATURES" | translate }}</h1>
+
+  <app-post *ngFor="let feature of features" [title]="feature.title" [message]="feature.message" [image]="feature.image">
+  </app-post>
+
 </div>

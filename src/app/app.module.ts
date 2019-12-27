@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
     ImprintComponent,
     NotFoundComponent,
     TermsOfUseComponent,
-    DisclaimerComponent
+    DisclaimerComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

@@ -6,91 +6,18 @@
   </a>
 
   <div class="nav-left">
-    <div class="dropdown">
-      <a class="menu" [ngClass]="{'active': router.url === '/home' || router.url === '/'}" routerLink="home">
-        {{'NAV.HOME' | translate}}&nbsp;&nbsp;
-        <span class="icon"><i class="fa fa-fw fa-angle-down"></i></span>
-      </a>
-      <div class="dropdown-content">
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-home"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.HOME' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-newspaper-o"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.NEWS_BLOG' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-cubes"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.FEATURES' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-balance-scale"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.COMPARISON' | translate}}
-        </a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <a class="menu" [ngClass]="{'active': router.url === '/lets-code'}" routerLink="lets-code">
-        {{'NAV_EDITOR' | translate}}&nbsp;&nbsp;
-        <span class="icon"><i class="fa fa-fw fa-angle-down"></i></span>
-      </a>
-      <div class="dropdown-content">
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-file-text"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.CODING_EMPTY' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-gamepad"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.CODING_TEMPLATE' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-user-circle-o"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.CODING_MY_PROJECTS' | translate}}
-        </a>
-      </div>
-    </div>
-
-
-    <a [ngClass]="{'active': router.url === '/projects'}" routerLink="projects">
-      {{'NAV_PROJECTS' | translate}}
+    <a [ngClass]="{'active': router.url === '/'}" routerLink="">
+      <i class="fa fa-fw fa-info-circle"></i>
+      {{'NAV.ABOUT' | translate}}
     </a>
-
-    <div class="dropdown">
-      <a class="menu" [ngClass]="{'active': router.url === '/docs'}" routerLink="docs">
-        {{'NAV_DOC' | translate}}&nbsp;&nbsp;
-        <span class="icon"><i class="fa fa-fw fa-angle-down"></i></span>
-      </a>
-      <div class="dropdown-content">
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-info-circle"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.DOC.TUTORIALS' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-key"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.DOC.KEYWORDS' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-book"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.DOC.COMMANDS' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-list-ol"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.DOC.CONSTANTS_SCANCODES' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-exchange"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.DOC.DIFFERENCES_BB' | translate}}
-        </a>
-        <a>
-          <span class="icon"><i class="fa fa-fw fa-code-fork"></i>&nbsp;&nbsp;&nbsp;</span>
-          {{'NAV.DOC.MIGRATION_GUIDE' | translate}}
-        </a>
-      </div>
-    </div>
-
-    <a [ngClass]="{'active': router.url === '/development'}" routerLink="development">Development</a>
+    <a [ngClass]="{'active': router.url === '/lexer'}" routerLink="lexer">
+      <i class="fa fa-fw fa-i-cursor"></i>
+      {{'NAV.LEXER' | translate}}
+    </a>
+    <a [ngClass]="{'active': router.url === '/commands'}" routerLink="commands">
+      <i class="fa fa-fw fa-tachometer"></i>
+      {{'NAV.COMMANDS' | translate}}
+    </a>
   </div>
 
   <div class="nav-right">
@@ -309,26 +236,9 @@
 <!-- FOOTER -->
 <footer>
   <div>
-    <h2>{{'FOOTER.LINKS' | translate}}</h2>
-    <a class="is-link" href="https://www.blitzforum.de" target="_blank">{{'FOOTER.BLITZFORUM' | translate}}</a>
+    <a routerLink="contact" class="is-link">{{'FOOTER.CONTACT' | translate}}</a>
     <br />
-    <a class="is-link" href="https://de.wikibooks.org/wiki/BlitzBasic-Community-Tutorial" target="_blank">
-      BlitzBasic Community Tutorial
-    </a>
-    <br />
-    <a class="is-link" href="#" target="_blank">{{'FOOTER.VIDEO_TUTORIALS' | translate}}</a>
-  </div>
-  <div>
-    <h2>{{'FOOTER.DELEVOPER_NEWS' | translate}}</h2>
-    <a class="is-link" href="#" target="_blank">{{'FOOTER.NEW_FEATURES' | translate}}</a>
-    <br />
-    <a class="is-link" href="#" target="_blank">{{'FOOTER.MIGRATION_GUIDE' | translate}}</a>
-    <br />
-    <a class="is-link" href="#" target="_blank">{{'FOOTER.CHANGE_LOG' | translate}}</a>
-  </div>
-  <div>
-    <h2>{{'FOOTER.LEGAL_MATTERS' | translate}}</h2>
-    <a class="is-link">{{'FOOTER.TERMS' | translate}}</a>
+    <a routerLink="terms-of-use" class="is-link">{{'FOOTER.TERMS' | translate}}</a>
     <br />
     <a routerLink="disclaimer" class="is-link">{{'FOOTER.DISCLAIMER' | translate}}</a>
     <br />

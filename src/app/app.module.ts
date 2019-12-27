@@ -12,6 +12,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     CommandsComponent,
     ContactComponent,
     ImprintComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TermsOfUseComponent,
+    DisclaimerComponent
   ],
   imports: [
     BrowserModule,

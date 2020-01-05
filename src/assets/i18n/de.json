@@ -10,6 +10,9 @@
   "LEXER": {
     "TITLE": "Lexer",
     "LINE": "Zeile",
+    "EDITOR": "Editor",
+    "TOKENS": "Tokens",
+    "TABLE": "Tabelle",
     "TOKEN": {
       "CATEGORY": "Kategorie",
       "VALUE": "Wert",

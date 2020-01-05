@@ -109,6 +109,10 @@ button {
     color     : $light;
     background: linear-gradient(darken($neutral, 7%), darken($neutral, 27%));
   }
+
+  &.active {
+    background: linear-gradient(darken($neutral, 10%), darken($neutral, 35%));
+  }
 }
 
 .centered {

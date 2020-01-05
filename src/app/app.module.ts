@@ -79,6 +79,7 @@ import { CommandsSound3DService } from 'bbscript/src/services/commands/sound/3d.
 import { CommandsSoundChannelsService } from 'bbscript/src/services/commands/sound/channels.service';
 import { CommandsSoundMusicSamplesService } from 'bbscript/src/services/commands/sound/music-samples.service';
 import { CommandsGraphics3dMeshesService } from 'bbscript/src/services/commands/graphics3d/meshes.service';
+import { NgxPopperModule } from 'ngx-popper';
 
 @NgModule({
   declarations: [
@@ -104,7 +105,8 @@ import { CommandsGraphics3dMeshesService } from 'bbscript/src/services/commands/
         deps: [HttpClient]
       }
     }),
-    AceModule
+    AceModule,
+    NgxPopperModule.forRoot({})
   ],
   providers: [
     BlitzBasicScriptService,

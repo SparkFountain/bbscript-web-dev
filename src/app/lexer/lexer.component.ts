@@ -22,6 +22,8 @@ export class LexerComponent implements OnInit, AfterViewInit {
   public ace: AceConfig;
   public tokenArrays: LexerToken[][];
 
+  public section: 'editor' | 'tokens' | 'table';
+
   constructor(private bbscript: BlitzBasicScriptService) {
     this.ace = {
       instance: null,
@@ -33,6 +35,8 @@ export class LexerComponent implements OnInit, AfterViewInit {
       },
       code: ''
     };
+
+    this.section = 'editor';
   }
 
   ngOnInit(): void {
@@ -40,6 +44,14 @@ export class LexerComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.ace.instance = this.directiveRef.ace();
+  }
+
+  goTo(section: 'editor' | 'tokens' | 'table'): void {
+    if (section !== 'editor') {
+      // perform lexing
+      this.lex();
+    }
+    this.section = section;
   }
 
   lex(): void {

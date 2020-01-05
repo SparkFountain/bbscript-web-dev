@@ -1,15 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+
+import 'brace';
+import 'brace/mode/text';
+import 'brace/theme/github';
+import 'brace/theme/cobalt';
+import 'brace/theme/terminal';
+import '../../assets/ace/mode-bbscript';
+import { LexerToken } from 'bbscript/src/interfaces/lexer-token';
+import { BlitzBasicScriptService } from 'bbscript/src/public_api';
+import { AceDirective } from 'ngx-ace-wrapper';
+import { AceConfig } from '../interfaces/ace-config.interface';
 
 @Component({
   selector: 'app-lexer',
   templateUrl: './lexer.component.html',
   styleUrls: ['./lexer.component.scss']
 })
-export class LexerComponent implements OnInit {
+export class LexerComponent implements OnInit, AfterViewInit {
+  @ViewChild(AceDirective, { static: false }) directiveRef?: AceDirective;
 
-  constructor() { }
+  public ace: AceConfig;
+  public tokenArrays: LexerToken[][];
 
-  ngOnInit() {
+  constructor(private bbscript: BlitzBasicScriptService) {
+    this.ace = {
+      instance: null,
+      config: {
+        mode: 'bbscript',
+        theme: 'terminal',
+        wrap: true,
+        readOnly: false
+      },
+      code: ''
+    };
   }
 
+  ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    this.ace.instance = this.directiveRef.ace();
+  }
+
+  lex(): void {
+    const code: string[] = this.ace.instance.getValue().split('\n');
+    this.tokenArrays = this.bbscript.lexCode(code);
+    console.info('TOKENS', this.tokenArrays);
+  }
+
+  saveTokens(): void {
+    // this.developService.setTokens(this.tokenArrays);
+  }
 }

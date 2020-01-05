@@ -1,1 +1,35 @@
-<p>lexer works!</p>
+<h1>{{'LEXER.TITLE' | translate}}</h1>
+
+<div class="flex-container">
+  <div class="ace" [ace]="ace.config"></div>
+
+  <div class="lex">
+    <button (click)=lex()>
+      <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+    </button>
+    <button (click)=saveTokens()>
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>{{'LEXER.LINE' | translate}}</th>
+        <th>{{'LEXER.TOKEN.CATEGORY' | translate}}</th>
+        <th>{{'LEXER.TOKEN.VALUE' | translate}}</th>
+        <th>{{'LEXER.TOKEN.OFFSET' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let tokenArray of tokenArrays; let i = index">
+        <tr *ngFor="let token of tokenArray">
+          <td>{{i+1}}</td>
+          <td>{{'LEXER.TOKEN.WHICH.'+token.which | translate}}</td>
+          <td>{{token.value}}</td>
+          <td>{{token.offset.x}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

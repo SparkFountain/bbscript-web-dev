@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+.flex-container {
+  width          : 100vw;
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-evenly;
+}
+
+div.ace {
+  margin-left : 100px;
+  margin-right: 50px;
+  width       : calc(60vw - 150px);
+  height      : 50vh;
+}
+
+div.lex {
+  margin-top: 20px;
+  width     : 10vw;
+  height    : 10vw;
+
+  button {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+table {
+  width          : 30vw;
+  height         : 50vh;
+  margin-right   : 100px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding      : 8px;
+  text-align   : left;
+  border-bottom: 1px solid $light;
+}
+
+tr:hover {
+  background-color: $primary;
+}

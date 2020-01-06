@@ -1,0 +1,30 @@
+@import '../../variables';
+
+.search-bar {
+  z-index        : -1 !important;
+  display        : flex;
+  justify-content: center;
+
+  width           : calc(100vw - 200px);
+  height          : 30px;
+  border-radius: 25px;
+  margin-left     : 100px;
+  margin-right    : 100px;
+  margin-bottom   : 50px;
+
+  background: $light;
+
+  .search-icon {
+    width  : 20px;
+    height : 100%;
+    padding: 4px 10px 0 10px;
+    color  : $primary;
+  }
+
+  .search-input {
+    width     : calc(100% - 50px);
+    background: transparent;
+    color     : $dark;
+    outline   : none !important;
+  }
+}

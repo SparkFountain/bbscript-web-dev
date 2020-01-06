@@ -1,3 +1,7 @@
-<p>commands works!</p>
+<h1 class="title">{{'DOCUMENTATION' | translate}}</h1>
 
-<p>Sqr: {{ testfield$ | async }}</p>
+<div class="search-bar">
+  <div class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <input [(ngModel)]="searchTerm" class="search-input" placeholder="{{'SEARCH.PLACEHOLDER' | translate}}"
+    (input)="updateSearch()" />
+</div>

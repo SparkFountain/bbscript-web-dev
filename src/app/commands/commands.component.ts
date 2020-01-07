@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommandsBasicsService } from 'bbscript/src/services/commands/basics.service';
 import { Observable } from 'rxjs';
-import { KeyWord } from '../interfaces/key-word';
-import { Command } from '../interfaces/command';
+import { KeyWord } from '../interfaces/key-word.interface';
+import { Command } from '../interfaces/command.interface';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

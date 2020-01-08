@@ -20,8 +20,8 @@ export class AboutComponent implements OnInit, AfterViewInit {
       config: {
         mode: 'bbscript',
         theme: 'terminal',
-        wrap: true,
-        readOnly: false
+        wrap: false,
+        readOnly: true
       },
       code: ''
     };
@@ -95,7 +95,6 @@ PositionEntity island, 0, -0.1, 0
 TerrainDetail island, 3000, 1
 TerrainShading island, 1`);
   }
-
 }
 
 export interface Feature {

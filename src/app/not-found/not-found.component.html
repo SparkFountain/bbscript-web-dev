@@ -1,1 +1,10 @@
-<p>not-found works!</p>
+<h1>{{ "PAGE_NOT_FOUND" | translate }}</h1>
+
+<div *ngIf="true">
+  <p>Die von dir angeforderte Seite existiert nicht. Hast du dich eventuell vertippt?</p>
+  <p><a>Klicke hier</a>, um zur Startseite zu gelangen.</p>
+</div>
+
+<div *ngIf="false">
+
+</div>

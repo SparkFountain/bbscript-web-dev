@@ -60,117 +60,230 @@
   },
   "CATEGORY": "Kategorie",
   "OVERVIEW": "Home",
-  "DOC_KEY_WORDS": "Schlüsselwörter",
-  "DOC_KEY_WORDS_HEADLINE": "Schlüsselwörter dienen dazu, den Programmfluss zu kontrollieren sowie Variablen, Arrays, Funktionen und Typen zu deklarieren.",
-  "DEPRECATED_KEY_WORD": "Obsoletes Schlüsselwort",
-  "DOC_DEPRECATED_KEY_WORDS": "Obsolete Schlüsselwörter",
-  "DOC_DEPRECATED_KEY_WORDS_HEADLINE": "Einige veraltete Schlüsselwörter aus <i>BlitzBasic</i> werden in BBScript nicht unterstützt.",
-  "DOC_VARIABLES": "Variablen",
-  "DOC_VARIABLES_HEADLINE": "Lerne die verschiedenen Arten von Variablen in BBScript kennen und erfahre, wie sie funktionieren.",
-  "DOC_VARIABLES_GLOBAL_HEADLINE": "Global",
-  "DOC_VARIABLES_GLOBAL": "Globale Variablen",
-  "DOC_VARIABLES_LOCAL": "Lokale Variablen",
-  "DOC_VARIABLES_LOCAL_HEADLINE": "Lokal",
-  "DOC_VARIABLES_DATA_TYPES": "Datentypen",
-  "DOC_CONDITIONS_SELECTIONS": "Bedingungen und Auswahl",
-  "DOC_CONDITIONS_SELECTIONS_HEADLINE": "Mithilfe von Bedingungen und Auswahl-Blöcken steuerst du den Programmablauf je nach aktuellem Zustand.",
-  "DOC_ARRAYS_DATA_BLOCKS": "Arrays und Datenblöcke",
-  "DOC_ARRAYS_DATA_BLOCKS_HEADLINE": "Arrays sind Speicherfelder, in denen eine große Anzahl von Daten einfach verwaltet werden kann. Datenblöcke können genutzt werden, um komplexe Informationen wie Levelinhalte schnell verfügbar zu machen.",
-  "DOC_ARRAYS_FIXED_LENGTH_HEADLINE": "Feste Länge",
-  "DOC_ARRAYS_FIXED_LENGTH": "Arrays mit fester Länge",
-  "DOC_ARRAYS_DYNAMIC_LENGTH_HEADLINE": "Dynamische Länge",
-  "DOC_ARRAYS_DYNAMIC_LENGTH": "Arrays mit dynamischer Länge",
-  "DOC_LOOPS": "Schleifen",
-  "DOC_LOOPS_HEADLINE": "Schleifen sind dafür gedacht, bestimmte Code-Abschnitte mehrmals hintereinander auszuführen.",
-  "DOC_LOOPS_SUBTITLE": "Um Befehle mehrmals hintereinander auszuführen, kannst du dich zwischen drei verschiedenen Schleifentypen in BBScript entscheiden.",
-  "DOC_LOOPS_FOR_TO_NEXT_HEADLINE": "For-To-Next",
-  "DOC_LOOPS_FOR_TO_NEXT": "For-To-Next-Schleife",
-  "DOC_LOOPS_FOR_EACH_HEADLINE": "For-Each",
-  "DOC_LOOPS_FOR_EACH": "For-Each-Schleife",
-  "DOC_LOOPS_WHILE_HEADLINE": "While",
-  "DOC_LOOPS_WHILE": "While-Schleife",
-  "DOC_LOOPS_REPEAT_HEADLINE": "Repeat",
-  "DOC_LOOPS_REPEAT": "Repeat-Schleife",
-  "DOC_FUNCTIONS": "Funktionen",
-  "DOC_FUNCTIONS_HEADLINE": "Funktionen helfen dir, deinen Code in logische Abschnitte zu unterteilen.",
-  "DOC_FUNCTIONS_DECLARATION_HEADLINE": "Deklaration",
-  "DOC_FUNCTIONS_DECLARATION": "Deklaration von Funktionen",
-  "DOC_FUNCTIONS_NESTED_CALLS": "Verschachtelte Funktionsaufrufe",
-  "DOC_TYPES": "Typen",
-  "DOC_TYPES_HEADLINE": "Benutze Typen, um beliebig viele Spielobjekte während der Laufzeit zu erzeugen.",
-  "DOC_TYPES_DECLARATION": "Deklaration von Typen",
-  "DOC_TYPES_OBJECT_ACCESS": "Objektzugriffe",
-  "DOC_LOGIC_MATHS": "Logik und Mathematik",
-  "DOC_LOGIC_MATHS_HEADLINE": "Logische Operatoren werden eingesetzt, um mehrere Bedingungen miteinander zu verknüpfen.",
-  "DOC_DIVERSE": "Diverses",
-  "DOC_DIVERSE_HEADLINE": "Hier findest du spezielle Schlüsselwörter, die in keine andere Kategorie passen.",
-  "DOC_COMMANDS": "Befehle",
-  "DOC_COMMANDS_HEADLINE": "Befehle sind vordefinierte Prozeduren, die deinen Spielen Leben einhauchen.",
-  "DOC_DEPRECATED_COMMANDS": "Obsolete Befehle",
-  "DOC_DEPRECATED_COMMANDS_HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript.",
-  "DOC_COMMANDS_SUBTITLE": "BBScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Hauptkategorien, welche wiederum aus diversen Unterkategorien bestehen.",
-  "DOC_COMMANDS_2D": "2D-Grafik",
-  "DOC_COMMANDS_2D_DISPLAY": "Anzeige",
-  "DOC_COMMANDS_2D_IMAGES": "Bilder",
-  "DOC_COMMANDS_2D_GRAPHICS": "Grafik",
-  "DOC_COMMANDS_2D_PIXEL": "Pixel",
-  "DOC_COMMANDS_2D_TEXT": "Text",
-  "DOC_COMMANDS_2D_MOVIES": "Videos",
-  "DOC_COMMANDS_3D": "3D-Grafik",
-  "DOC_COMMANDS_3D_ANIMATIONS": "Animationen",
-  "DOC_COMMANDS_3D_MOTIONS": "Fortbewegungen",
-  "DOC_COMMANDS_3D_BRUSHES": "Pinsel",
-  "DOC_COMMANDS_3D_DIVERSE": "Diverses",
-  "DOC_COMMANDS_3D_SCENERY": "Szenerie",
-  "DOC_COMMANDS_3D_CAMERA": "Kamera",
-  "DOC_COMMANDS_3D_COLLISIONS": "Kollisionen",
-  "DOC_COMMANDS_3D_CONTROLS": "Kontrolle",
-  "DOC_COMMANDS_3D_LIGHT": "Licht und Schatten",
-  "DOC_COMMANDS_3D_PHYSICS": "Physik",
-  "DOC_COMMANDS_3D_MESHES": "Gitterobjekte",
-  "DOC_COMMANDS_3D_PICKING": "Picking (Objekte finden)",
-  "DOC_COMMANDS_3D_SPRITES": "Sprites",
-  "DOC_COMMANDS_3D_STATUS": "Status",
-  "DOC_COMMANDS_3D_SURFACES": "Oberflächen",
-  "DOC_COMMANDS_3D_TERRAIN": "Terrain",
-  "DOC_COMMANDS_3D_TEXTURES": "Texturen",
-  "DOC_COMMANDS_3D_COORDINATES": "Koordinaten",
-  "DOC_COMMANDS_NETWORK": "Netzwerk",
-  "DOC_COMMANDS_IO": "IO (Eingabe / Ausgabe)",
-  "DOC_COMMANDS_IO_MOUSE": "Maus",
-  "DOC_COMMANDS_IO_KEYBOARD": "Tastatur",
-  "DOC_COMMANDS_IO_GAME_PAD": "Gamepad",
-  "DOC_COMMANDS_BASICS": "Grundlagen",
-  "DOC_COMMANDS_BASICS_MATHS": "Mathematik",
-  "DOC_COMMANDS_BASICS_DIVERSE": "Sonstiges",
-  "DOC_COMMANDS_BASICS_STRINGS": "Zeichenketten",
-  "DOC_COMMANDS_BASICS_TIME_RANDOM": "Zeit & Zufall",
-  "DOC_COMMANDS_SOUND": "Sound",
-  "DOC_COMMANDS_SOUND_3D": "3D Sound",
-  "DOC_COMMANDS_SOUND_CHANNELS": "Kanäle",
-  "DOC_COMMANDS_SOUND_MUSIC_SAMPLES": "Musik & Geräusche",
-  "DOC_COMMANDS_GUI": "GUI (Grafische Benutzeroberfläche)",
-  "DOC_COMMANDS_GUI_BUTTONS": "Buttons",
-  "DOC_COMMANDS_GUI_CANVAS": "Canvas (Zeichenfenster)",
-  "DOC_COMMANDS_GUI_DIVERSE": "Diverses",
-  "DOC_COMMANDS_GUI_EVENTS": "Ereignisse",
-  "DOC_COMMANDS_GUI_GADGETS": "Gadgets (UI-Elemente)",
-  "DOC_COMMANDS_GUI_HTML": "HTML",
-  "DOC_COMMANDS_GUI_ICON_STRIPS": "Icon-Streifen",
-  "DOC_COMMANDS_GUI_LISTS_TABBER": "Listen & Registerkarten",
-  "DOC_COMMANDS_GUI_MENUS": "Menüs",
-  "DOC_COMMANDS_GUI_PANELS": "Panels (Fenstergruppen)",
-  "DOC_COMMANDS_GUI_PROGRESS_BARS": "Fortschrittsbalken",
-  "DOC_COMMANDS_GUI_USER_INTERACTION_WINDOWS": "Benutzer-Interaktions-Fenster",
-  "DOC_COMMANDS_GUI_SLIDER": "Slider (Schieberegler)",
-  "DOC_COMMANDS_GUI_TEXT_INPUT": "Textfelder und Texteingaben",
-  "DOC_COMMANDS_GUI_TOOLBAR": "Toolbar (Werkzeugleiste)",
-  "DOC_COMMANDS_GUI_TREE_VIEW": "Baumansicht",
-  "DOC_COMMANDS_GUI_WINDOWS": "Fenster",
-  "DOC_COMMANDS_DATA": "Datenverwaltung",
-  "DOC_COMMANDS_DATA_READ_WRITE": "Lesen / Schreiben",
-  "DOC_COMMANDS_DATA_BLOCKS": "Blöcke",
-  "DOC_COMMANDS_DATA_MEMORY_BANKS": "Speicherbanken",
+  "DOC": {
+    "KEYWORDS": {
+      "TITLE": "Schlüsselwörter",
+      "HEADLINE": "Schlüsselwörter dienen dazu, den Programmfluss zu kontrollieren sowie Variablen, Arrays, Funktionen und Typen zu deklarieren."
+    },
+    "DEPRECATED_KEYWORDS": {
+      "TITLE": "Obsolete Schlüsselwörter",
+      "HEADLINE": "Einige veraltete Schlüsselwörter aus <i>BlitzBasic</i> werden in BBScript nicht unterstützt."
+    },
+    "VARIABLES": {
+      "TITLE": "Variablen",
+      "HEADLINE": "Lerne die verschiedenen Arten von Variablen in BBScript kennen und erfahre, wie sie funktionieren.",
+      "GLOBAL": "Globale Variablen",
+      "LOCAL": "Lokale Variablen",
+      "DATA_TYPES": "Datentypen"
+    },
+    "CONDITIONS": {
+      "SELECTIONS": {
+        "TITLE": "Bedingungen und Auswahl",
+        "HEADLINE": "Mithilfe von Bedingungen und Auswahl-Blöcken steuerst du den Programmablauf je nach aktuellem Zustand."
+      }
+    },
+    "ARRAYS": {
+      "DATA_BLOCKS": {
+        "TITLE": "Arrays und Datenblöcke",
+        "HEADLINE": "Arrays sind Speicherfelder, in denen eine große Anzahl von Daten einfach verwaltet werden kann. Datenblöcke können genutzt werden, um komplexe Informationen wie Levelinhalte schnell verfügbar zu machen."
+      },
+      "FIXED_LENGTH": {
+        "TITLE": "Arrays mit fester Länge",
+        "HEADLINE": "Feste Länge"
+      },
+      "DYNAMIC_LENGTH": {
+        "TITLE": "Arrays mit dynamischer Länge",
+        "HEADLINE": "Dynamische Länge"
+      }
+    },
+    "LOOPS": {
+      "TITLE": "Schleifen",
+      "HEADLINE": "Schleifen sind dafür gedacht, bestimmte Code-Abschnitte mehrmals hintereinander auszuführen.",
+      "SUBTITLE": "Um Befehle mehrmals hintereinander auszuführen, kannst du dich zwischen drei verschiedenen Schleifentypen in BBScript entscheiden.",
+      "FOR_TO_NEXT": {
+        "TITLE": "For-To-Next-Schleife",
+        "HEADLINE": "For-To-Next"
+      },
+      "FOR_EACH": {
+        "TITLE": "For-Each-Schleife",
+        "HEADLINE": "For-Each"
+      },
+      "WHILE": {
+        "TITLE": "While-Schleife",
+        "HEADLINE": "While"
+      },
+      "REPEAT": {
+        "TITLE": "Repeat-Schleife",
+        "HEADLINE": "Repeat"
+      }
+    },
+    "FUNCTIONS": {
+      "TITLE": "Funktionen",
+      "HEADLINE": "Funktionen helfen dir, deinen Code in logische Abschnitte zu unterteilen.",
+      "DECLARATION": {
+        "TITLE": "Deklaration von Funktionen",
+        "HEADLINE": "Deklaration"
+      },
+      "NESTED_CALLS": "Verschachtelte Funktionsaufrufe"
+    },
+    "TYPES": {
+      "TITLE": "Typen",
+      "HEADLINE": "Benutze Typen, um beliebig viele Spielobjekte während der Laufzeit zu erzeugen.",
+      "DECLARATION": "Deklaration von Typen",
+      "BJECT_ACCESS": "Objektzugriffe"
+    },
+    "LOGIC": {
+      "MATHS": {
+        "TITLE": "Logik und Mathematik",
+        "HEADLINE": "Logische Operatoren werden eingesetzt, um mehrere Bedingungen miteinander zu verknüpfen."
+      }
+    },
+    "DIVERSE": {
+      "TITLE": "Diverses",
+      "HEADLINE": "Hier findest du spezielle Schlüsselwörter, die in keine andere Kategorie passen."
+    },
+    "COMMANDS": {
+      "TITLE": "Befehle",
+      "HEADLINE": "Befehle sind vordefinierte Prozeduren, die deinen Spielen Leben einhauchen.",
+      "SUBTITLE": "BBScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Hauptkategorien, welche wiederum aus diversen Unterkategorien bestehen.",
+      "2D": {
+        "TITLE": "2D-Grafik",
+        "DISPLAY": {
+          "TITLE": "Anzeige",
+          "COUNT_GFX_DRIVERS": ""
+        },
+        "IMAGES": {
+          "TITLE": "Bilder",
+          "GRAPHICS": "Initialisiert den Grafikmodus",
+          "AUTO_MID_HANDLE": "Setzt den Bezugspunkt von Bildern in die Mitte des Bildes. Standardmäßig und wenn der Effekt abgeschaltet wird, befindet sich der Bezugspunkt von Bildern oben links.",
+          "COPY_IMAGE": "Kopiert ein bereits vorhandenes Bild und erzeugt eine neue Referenz.",
+          "CREATE_IMAGE": "Erstellt ein leeres Bild mit einer bestimmten Auflösung und gibt die Referenz zurück.",
+          "DRAW_BLOCK": "Zeichnet ein Bild ohne Transparenzfarbe.",
+          "DRAW_BLOCK_RECT": "Zeichnet einen bestimmten Ausschnitt eines Bildes ohne Transparenzfarbe.",
+          "DRAW_IMAGE": "Zeichnet ein Bild. Wenn das Bild eine Transparenzfarbe besitzt, werden Bereiche mit dieser Farbe nicht eingezeichnet.",
+          "DRAW_IMAGE_RECT": "Zeichnet einen bestimmten Ausschnitt eines Bildes. Wenn das Bild eine Transparenzfarbe besitzt, werden Bereiche mit dieser Farbe nicht eingezeichnet.",
+          "FREE_IMAGE": "Löscht ein Bild aus dem Speicher.",
+          "GRAB_IMAGE": "Kopiert einen Ausschnitt des aktuellen Grafik-Kontextes und speichert ihn in der abgegeben Referenz.",
+          "HANDLE_IMAGE": "Legt den Bezugspunkt eines Bildes fest.",
+          "IMAGE_BUFFER": "Wechselt in den Grafik-Kontext eines bestimmten Bildes.",
+          "IMAGE_HEIGHT": "Ermittelt die Höhe eines Bildes.",
+          "IMAGE_RECT_COLLIDE": "Überprüft, ob ein Bild mit einem Rechteck kollidiert (pixelgenaue Abfrage).",
+          "IMAGE_RECT_OVERLAP": "Überprüft, ob ein Bild mit einem Rechteck überlappt (nicht pixelgenau).",
+          "IMAGES_COLLIDE": "Überprüft, ob zwei Bilder miteinander kollidieren (pixelgenaue Abfrage).",
+          "IMAGES_OVERLAP": "Überprüft, ob zwei Bilder sich überlappen (nicht pixelgenau).",
+          "IMAGE_WIDTH": "Ermittelt die Breite eines Bildes.",
+          "IMAGE_X_HANDLE": "Ermittelt die horizontale Verschiebung des Bezugspunktes eines Bildes.",
+          "IMAGE_Y_HANDLE": "Ermittelt die vertikale Verschiebung des Bezugspunktes eines Bildes.",
+          "LOAD_ANIM_IMAGE": "Lädt ein animiertes Bild, das aus mehreren Einzelbildern besteht.",
+          "LOAD_IMAGE": "Lädt ein Bild.",
+          "MASK_IMAGE": "Setzt die Transparenzfarbe eines Bildes. Alle Bildpunkte mit dieser Farbe werden dann transparent (unsichtbar).",
+          "MID_HANDLE": "Verschiebt den Bezugspunkt eines Bildes in die Bildmitte.",
+          "RECTS_OVERLAP": "Prüft, ob zwei Rechtecke sich überlappen.",
+          "RESIZE_IMAGE": "Ändert die Höhe und Breite eines Bildes.",
+          "ROTATE_IMAGE": "Dreht das Bild an seinem Bezugspunkt um einen bestimmten Winkel.",
+          "SAVE_IMAGE": "Speichert ein Bild ab.",
+          "SCALE_IMAGE": "Skaliert ein Bild um einen bestimmten Faktor.",
+          "T_FORM_FILTER": "Schaltet den bilinearen Filter ein bzw. aus. Je nach Einstellung werden Farbverläufe beim Skalieren oder Rotieren von Bildern weich oder hart berechnet.",
+          "T_FORM_IMAGE": "Dreht, skaliert, zerrt und spiegelt ein Bild gleichzeitig.",
+          "TILE_BLOCK": "Zeichnet ein Bild über den gesamten Bildschirm (ohne Transparenzfarbe).",
+          "TILE_IMAGE": "Zeichnet ein Bild über den gesamten Bildschirm (mit Transparenzfarbe)."
+        },
+        "GRAPHICS": {
+          "TITLE": "Grafik",
+          "AVAIL_VID_MEM": "Ermittelt den freien Grafikspeicher.",
+          "BACK_BUFFER": "Liefert die Identität des Hintergrundbuffers, auf welchem Bilder vorgezeichnet werden.",
+          "CLS": "Löscht den Inhalt des aktuellen Grafikbuffers.",
+          "CLS_COLOR": "Legt die Hintergrundfarbe fest, die beim Löschen des Grafikbuffers eingezeichnet wird.",
+          "COLOR": "Setzt die aktuelle Farbe für Zeichenbefehle.",
+          "COPY_RECT": "Kopiert einen Ausschnitt das aktuellen Grafikbuffers.",
+          "FLIP": "Tauscht den Inhalt des Front- und Backbuffers.",
+          "FRONT_BUFFER": "Liefert die Identität des Vordergrundbuffers, auf welchem Bilder direkt eingezeichnet werden.",
+          "LINE": "Zeichnet eine gerade Linie.",
+          "LOAD_BUFFER": "Lädt ein Bild in einen bestimmten Grafikbuffer.",
+          "ORIGIN": "Verschiebt den Ursprung des Koordinatensystems. Standardmäßig befindet sich der Punkt 0,0 ganz oben links.",
+          "OVAL": "Zeichnet eine Ellipse.",
+          "RECT": "Zeichnet ein Rechteck.",
+          "SAVE_BUFFER": "Speichert den Inhalt eines Grafikbuffers in eine Datei."
+        },
+        "PIXEL": "Pixel",
+        "TEXT": "Text",
+        "MOVIES": "Videos"
+      },
+      "3D": {
+        "TITLE": "3D-Grafik",
+        "ANIMATIONS": "Animationen",
+        "MOTIONS": "Fortbewegungen",
+        "BRUSHES": "Pinsel",
+        "DIVERSE": "Diverses",
+        "SCENERY": "Szenerie",
+        "CAMERA": "Kamera",
+        "COLLISIONS": "Kollisionen",
+        "CONTROLS": "Kontrolle",
+        "LIGHT": "Licht und Schatten",
+        "PHYSICS": "Physik",
+        "MESHES": "Gitterobjekte",
+        "PICKING": "Picking (Objekte finden)",
+        "SPRITES": "Sprites",
+        "STATUS": "Status",
+        "SURFACES": "Oberflächen",
+        "TERRAIN": "Terrain",
+        "TEXTURES": "Texturen",
+        "COORDINATES": "Koordinaten"
+      },
+      "NETWORK": {
+        "TITLE": "Netzwerk"
+      },
+      "IO": {
+        "TITLE": "IO (Eingabe / Ausgabe)",
+        "DOC_COMMANDS_IO_MOUSE": "Maus",
+        "DOC_COMMANDS_IO_KEYBOARD": "Tastatur",
+        "DOC_COMMANDS_IO_GAME_PAD": "Gamepad"
+      },
+      "BASICS": {
+        "TITLE": "Grundlagen",
+        "MATHS": "Mathematik",
+        "DIVERSE": "Sonstiges",
+        "STRINGS": "Zeichenketten",
+        "TIME_RANDOM": "Zeit & Zufall"
+      },
+      "SOUND": {
+        "TITLE": "Sound",
+        "3D": "3D Sound",
+        "CHANNELS": "Kanäle",
+        "MUSIC_SAMPLES": "Musik & Geräusche"
+      },
+      "GUI": {
+        "TITLE": "GUI (Grafische Benutzeroberfläche)",
+        "BUTTONS": "Buttons",
+        "CANVAS": "Canvas (Zeichenfenster)",
+        "DIVERSE": "Diverses",
+        "EVENTS": "Ereignisse",
+        "GADGETS": "Gadgets (UI-Elemente)",
+        "HTML": "HTML",
+        "ICON_STRIPS": "Icon-Streifen",
+        "LISTS_TABBER": "Listen & Registerkarten",
+        "MENUS": "Menüs",
+        "PANELS": "Panels (Fenstergruppen)",
+        "PROGRESS_BARS": "Fortschrittsbalken",
+        "USER_INTERACTION_WINDOWS": "Benutzer-Interaktions-Fenster",
+        "SLIDER": "Slider (Schieberegler)",
+        "TEXT_INPUT": "Textfelder und Texteingaben",
+        "TOOLBAR": "Toolbar (Werkzeugleiste)",
+        "TREE_VIEW": "Baumansicht",
+        "WINDOWS": "Fenster"
+      },
+      "DATA": {
+        "TITLE": "Datenverwaltung",
+        "READ_WRITE": "Lesen / Schreiben",
+        "BLOCKS": "Blöcke",
+        "MEMORY_BANKS": "Speicherbanken"
+      }
+    },
+    "DEPRECATED_COMMANDS": {
+      "TITLE": "Obsolete Befehle",
+      "HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript."
+    }
+  },
   "COMMAND_NAME": "Befehlsname",
   "KEY_WORD": "Schlüsselwort",
   "KEY_WORDS": "Schlüsselwörter",

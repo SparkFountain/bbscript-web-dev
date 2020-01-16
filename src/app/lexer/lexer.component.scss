@@ -19,21 +19,3 @@ div.ace {
     }
   }
 }
-
-table {
-  width          : 30vw;
-  height         : 50vh;
-  margin-right   : 100px;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding      : 8px;
-  text-align   : left;
-  border-bottom: 1px solid $light;
-}
-
-tr:hover {
-  background-color: $primary;
-}

@@ -81,6 +81,7 @@ import { CommandsSoundChannelsService } from 'bbscript/src/services/commands/sou
 import { CommandsSoundMusicSamplesService } from 'bbscript/src/services/commands/sound/music-samples.service';
 import { CommandsGraphics3dMeshesService } from 'bbscript/src/services/commands/graphics3d/meshes.service';
 import { NgxPopperModule } from 'ngx-popper';
+import { BlitzBasicScriptCanvasModule } from 'bbscript/src/components/canvas/canvas.module';
 
 @NgModule({
   declarations: [
@@ -108,6 +109,7 @@ import { NgxPopperModule } from 'ngx-popper';
       }
     }),
     AceModule,
+    BlitzBasicScriptCanvasModule,
     NgxPopperModule.forRoot({})
   ],
   providers: [

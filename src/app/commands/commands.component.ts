@@ -18,6 +18,8 @@ export class CommandsComponent {
 
   public searchTerm: string;
 
+  public testCode: string;
+
   private searchResult: {
     keywords: KeyWord[],
     commands: Command[]
@@ -40,6 +42,8 @@ export class CommandsComponent {
       keywords: [],
       commands: []
     };
+
+    this.testCode = 'Rect 0, 0, 100, 100';
   }
 
   updateSearch() {

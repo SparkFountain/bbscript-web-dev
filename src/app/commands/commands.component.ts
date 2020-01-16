@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Command } from '../interfaces/command.interface';
 import { TranslateService } from '@ngx-translate/core';
 import * as TrieSearch from 'trie-search';
+import { LanguageService } from 'bbscript/src/services/language/language.service';
 
 @Component({
   selector: 'app-commands',
@@ -23,7 +24,9 @@ export class CommandsComponent {
 
   @ViewChild('searchInput', { static: false }) searchInput: any;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService,
+              private languageService: LanguageService
+    ) {
     this.cmdCategoryIndex = 0; // TODO: remove later
     this.cmdScopeIndex = 1; // TODO: remove later
 

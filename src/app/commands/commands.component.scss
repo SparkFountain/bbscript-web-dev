@@ -1,37 +1,54 @@
 @import '../../variables';
 
-.search-bar {
-  z-index        : -1 !important;
-  display        : flex;
-  justify-content: center;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
 
-  width           : calc(100vw - 200px);
-  height          : 30px;
-  border-radius: 25px;
-  margin-left     : 100px;
-  margin-right    : 100px;
-  margin-bottom   : 50px;
+  .command-nav {
+    .search-bar {
+    // z-index        : -1 !important;
+    display        : flex;
+    justify-content: center;
 
-  background: $light;
+    // width           : calc(100vw - 200px);
+    height          : 30px;
+    border-radius: 25px;
+    margin-left     : 100px;
+    margin-right    : 100px;
+    margin-bottom   : 50px;
 
-  .search-icon {
-    width  : 20px;
-    height : 100%;
-    padding: 4px 10px 0 10px;
-    color  : $primary;
+    background: $light;
+
+    .search-icon {
+      width  : 20px;
+      height : 100%;
+      padding: 4px 10px 0 10px;
+      color  : $primary;
+    }
+
+    .search-input {
+      width     : 200px; // calc(100% - 50px);
+      background: transparent;
+      color     : $dark;
+      outline   : none !important;
+    }
   }
 
-  .search-input {
-    width     : calc(100% - 50px);
-    background: transparent;
-    color     : $dark;
-    outline   : none !important;
+  table {
+    tbody {
+      tr {
+        cursor: pointer;
+      }
+    }
   }
 }
 
-blitz-basic-script-canvas {
-  width: 300px;
-  height: 200px !important;
+  blitz-basic-script-canvas {
+    display: flex;
 
-  background: red;
+    width: 300px;
+    height: 200px !important;
+  }
 }

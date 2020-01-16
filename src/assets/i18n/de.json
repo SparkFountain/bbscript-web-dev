@@ -61,6 +61,7 @@
   "CATEGORY": "Kategorie",
   "OVERVIEW": "Home",
   "DOC": {
+    "TITLE": "Dokumentation",
     "KEYWORDS": {
       "TITLE": "Schlüsselwörter",
       "HEADLINE": "Schlüsselwörter dienen dazu, den Programmfluss zu kontrollieren sowie Variablen, Arrays, Funktionen und Typen zu deklarieren."

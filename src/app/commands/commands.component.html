@@ -1,9 +1,38 @@
-<h1 class="title">{{'DOCUMENTATION' | translate}}</h1>
+<h1 class="title">{{ 'DOCUMENTATION' | translate }}</h1>
 
 <div class="search-bar">
   <div class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
-  <input [(ngModel)]="searchTerm" class="search-input" placeholder="{{'SEARCH.PLACEHOLDER' | translate}}"
-    (input)="updateSearch()" />
+  <input
+    [(ngModel)]="searchTerm"
+    class="search-input"
+    placeholder="{{ 'SEARCH.PLACEHOLDER' | translate }}"
+    (input)="updateSearch()"
+  />
 </div>
+
+<table class="categories">
+  <ng-container *ngIf="false">
+    <tr *ngFor="let cmd of commands">
+      <td>{{ 'DOC.COMMANDS.' + cmd.title.toUpperCase() + '.TITLE' | translate }}</td>
+    </tr>
+  </ng-container>
+  <ng-container *ngIf="false">
+    <tr *ngFor="let scope of commands[cmdCategoryIndex].scopes">
+      <td>
+        {{
+          'DOC.COMMANDS.' + commands[cmdCategoryIndex].title.toUpperCase() + '.' + scope.title.toUpperCase() + '.TITLE'
+            | translate
+        }}
+      </td>
+    </tr>
+  </ng-container>
+  <ng-container *ngIf="true">
+    <tr *ngFor="let cmd of commands[cmdCategoryIndex].scopes[cmdScopeIndex].commands">
+      <td>
+        {{ firstUpperCase(cmd) | translate }}
+      </td>
+    </tr>
+  </ng-container>
+</table>
 
 <blitz-basic-script-canvas [code]="testCode"></blitz-basic-script-canvas>

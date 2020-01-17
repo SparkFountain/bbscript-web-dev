@@ -1,287 +1,59 @@
-[
-  {
-    "id": 1,
-    "name": "Case",
-    "deprecated": 0
-  },
-  {
-    "id": 2,
-    "name": "Default",
-    "deprecated": 0
-  },
-  {
-    "id": 3,
-    "name": "Else",
-    "deprecated": 0
-  },
-  {
-    "id": 4,
-    "name": "ElseIf",
-    "deprecated": 0
-  },
-  {
-    "id": 5,
-    "name": "EndIf",
-    "deprecated": 0
-  },
-  {
-    "id": 6,
-    "name": "If",
-    "deprecated": 0
-  },
-  {
-    "id": 7,
-    "name": "Select",
-    "deprecated": 0
-  },
-  {
-    "id": 8,
-    "name": "Then",
-    "deprecated": 0
-  },
-  {
-    "id": 9,
-    "name": "After",
-    "deprecated": 0
-  },
-  {
-    "id": 10,
-    "name": "Before",
-    "deprecated": 0
-  },
-  {
-    "id": 11,
-    "name": "Delete",
-    "deprecated": 0
-  },
-  {
-    "id": 12,
-    "name": "First",
-    "deprecated": 0
-  },
-  {
-    "id": 13,
-    "name": "Insert",
-    "deprecated": 0
-  },
-  {
-    "id": 14,
-    "name": "Last",
-    "deprecated": 0
-  },
-  {
-    "id": 15,
-    "name": "New",
-    "deprecated": 0
-  },
-  {
-    "id": 16,
-    "name": "Null",
-    "deprecated": 0
-  },
-  {
-    "id": 17,
-    "name": "Object",
-    "deprecated": 0
-  },
-  {
-    "id": 18,
-    "name": "Type",
-    "deprecated": 0
-  },
-  {
-    "id": 19,
-    "name": "Field",
-    "deprecated": 0
-  },
-  {
-    "id": 20,
-    "name": "End",
-    "deprecated": 0
-  },
-  {
-    "id": 21,
-    "name": "Include",
-    "deprecated": 0
-  },
-  {
-    "id": 22,
-    "name": "Stop",
-    "deprecated": 0
-  },
-  {
-    "id": 23,
-    "name": "Data",
-    "deprecated": 0
-  },
-  {
-    "id": 24,
-    "name": "Dim",
-    "deprecated": 0
-  },
-  {
-    "id": 25,
-    "name": "Global",
-    "deprecated": 0
-  },
-  {
-    "id": 26,
-    "name": "Local",
-    "deprecated": 0
-  },
-  {
-    "id": 27,
-    "name": "Each",
-    "deprecated": 0
-  },
-  {
-    "id": 28,
-    "name": "Const",
-    "deprecated": 0
-  },
-  {
-    "id": 29,
-    "name": "MainLoop",
-    "deprecated": 0
-  },
-  {
-    "id": 30,
-    "name": "Return",
-    "deprecated": 0
-  },
-  {
-    "id": 31,
-    "name": "Exit",
-    "deprecated": 0
-  },
-  {
-    "id": 32,
-    "name": "For",
-    "deprecated": 0
-  },
-  {
-    "id": 33,
-    "name": "Forever",
-    "deprecated": 0
-  },
-  {
-    "id": 34,
-    "name": "Next",
-    "deprecated": 0
-  },
-  {
-    "id": 35,
-    "name": "Repeat",
-    "deprecated": 0
-  },
-  {
-    "id": 36,
-    "name": "Step",
-    "deprecated": 0
-  },
-  {
-    "id": 37,
-    "name": "To",
-    "deprecated": 0
-  },
-  {
-    "id": 38,
-    "name": "Until",
-    "deprecated": 0
-  },
-  {
-    "id": 39,
-    "name": "Wend",
-    "deprecated": 0
-  },
-  {
-    "id": 40,
-    "name": "While",
-    "deprecated": 0
-  },
-  {
-    "id": 41,
-    "name": "Mod",
-    "deprecated": 0
-  },
-  {
-    "id": 42,
-    "name": "Not",
-    "deprecated": 0
-  },
-  {
-    "id": 43,
-    "name": "And",
-    "deprecated": 0
-  },
-  {
-    "id": 44,
-    "name": "Or",
-    "deprecated": 0
-  },
-  {
-    "id": 45,
-    "name": "Xor",
-    "deprecated": 0
-  },
-  {
-    "id": 46,
-    "name": "Function",
-    "deprecated": 0
-  },
-  {
-    "id": 47,
-    "name": "False",
-    "deprecated": 0
-  },
-  {
-    "id": 48,
-    "name": "True",
-    "deprecated": 0
-  },
-  {
-    "id": 49,
-    "name": "Gosub",
-    "deprecated": 1
-  },
-  {
-    "id": 50,
-    "name": "Goto",
-    "deprecated": 1
-  },
-  {
-    "id": 51,
-    "name": "Restore",
-    "deprecated": 0
-  },
-  {
-    "id": 52,
-    "name": "Read",
-    "deprecated": 0
-  },
-  {
-    "id": 53,
-    "name": "Handle",
-    "deprecated": 0
-  },
-  {
-    "id": 54,
-    "name": "Pi",
-    "deprecated": 0
-  },
-  {
-    "id": 55,
-    "name": "Sar",
-    "deprecated": 0
-  },
-  {
-    "id": 56,
-    "name": "Shl",
-    "deprecated": 0
-  },
-  {
-    "id": 57,
-    "name": "Shr",
-    "deprecated": 0
-  }
-]
+{
+  "case": { "name": "Case", "deprecated": 0 },
+  "default": { "name": "Default", "deprecated": 0 },
+  "else": { "name": "Else", "deprecated": 0 },
+  "elseif": { "name": "ElseIf", "deprecated": 0 },
+  "endif": { "name": "EndIf", "deprecated": 0 },
+  "if": { "name": "If", "deprecated": 0 },
+  "select": { "name": "Select", "deprecated": 0 },
+  "then": { "name": "Then", "deprecated": 0 },
+  "after": { "name": "After", "deprecated": 0 },
+  "before": { "name": "Before", "deprecated": 0 },
+  "delete": { "name": "Delete", "deprecated": 0 },
+  "first": { "name": "First", "deprecated": 0 },
+  "insert": { "name": "Insert", "deprecated": 0 },
+  "last": { "name": "Last", "deprecated": 0 },
+  "new": { "name": "New", "deprecated": 0 },
+  "null": { "name": "Null", "deprecated": 0 },
+  "object": { "name": "Object", "deprecated": 0 },
+  "type": { "name": "Type", "deprecated": 0 },
+  "field": { "name": "Field", "deprecated": 0 },
+  "end": { "name": "End", "deprecated": 0 },
+  "include": { "name": "Include", "deprecated": 0 },
+  "stop": { "name": "Stop", "deprecated": 0 },
+  "data": { "name": "Data", "deprecated": 0 },
+  "dim": { "name": "Dim", "deprecated": 0 },
+  "global": { "name": "Global", "deprecated": 0 },
+  "local": { "name": "Local", "deprecated": 0 },
+  "each": { "name": "Each", "deprecated": 0 },
+  "const": { "name": "Const", "deprecated": 0 },
+  "mainloop": { "name": "MainLoop", "deprecated": 0 },
+  "return": { "name": "Return", "deprecated": 0 },
+  "exit": { "name": "Exit", "deprecated": 0 },
+  "for": { "name": "For", "deprecated": 0 },
+  "forever": { "name": "Forever", "deprecated": 0 },
+  "next": { "name": "Next", "deprecated": 0 },
+  "repeat": { "name": "Repeat", "deprecated": 0 },
+  "step": { "name": "Step", "deprecated": 0 },
+  "to": { "name": "To", "deprecated": 0 },
+  "until": { "name": "Until", "deprecated": 0 },
+  "wend": { "name": "Wend", "deprecated": 0 },
+  "while": { "name": "While", "deprecated": 0 },
+  "mod": { "name": "Mod", "deprecated": 0 },
+  "not": { "name": "Not", "deprecated": 0 },
+  "and": { "name": "And", "deprecated": 0 },
+  "or": { "name": "Or", "deprecated": 0 },
+  "xor": { "name": "Xor", "deprecated": 0 },
+  "function": { "name": "Function", "deprecated": 0 },
+  "false": { "name": "False", "deprecated": 0 },
+  "true": { "name": "True", "deprecated": 0 },
+  "gosub": { "name": "Gosub", "deprecated": 1 },
+  "goto": { "name": "Goto", "deprecated": 1 },
+  "restore": { "name": "Restore", "deprecated": 0 },
+  "read": { "name": "Read", "deprecated": 0 },
+  "handle": { "name": "Handle", "deprecated": 0 },
+  "pi": { "name": "Pi", "deprecated": 0 },
+  "sar": { "name": "Sar", "deprecated": 0 },
+  "shl": { "name": "Shl", "deprecated": 0 },
+  "shr": { "name": "Shr", "deprecated": 0 }
+}

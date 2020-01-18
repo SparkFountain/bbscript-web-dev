@@ -10,29 +10,20 @@
 
     <table class="categories">
       <tbody>
-        <ng-container *ngIf="false">
-          <tr *ngFor="let cmd of commands">
-            <td>{{ 'DOC.COMMANDS.' + cmd.title.toUpperCase() + '.TITLE' | translate }}</td>
+        <ng-container *ngIf="loadedCategories && activeCat === '' && activeSubCat === ''">
+          <tr *ngFor="let cat of objectKeys(categories)">
+            <td>{{ cat }}</td>
           </tr>
         </ng-container>
-        <ng-container *ngIf="false">
-          <tr *ngFor="let scope of commands[cmdCategoryIndex].scopes">
-            <td>
-              {{
-                            'DOC.COMMANDS.' +
-                                commands[cmdCategoryIndex].title.toUpperCase() +
-                                '.' +
-                                scope.title.toUpperCase() +
-                                '.TITLE' | translate
-                        }}
-            </td>
+        <ng-container *ngIf="loadedCategories && activeCat !== '' && activeSubCat === ''">
+          <tr *ngFor="let subCat of objectKeys(categories[activeCat])">
+            <td>{{ subCat }}</td>
           </tr>
         </ng-container>
-        <ng-container *ngIf="true">
-          <tr *ngFor="let cmd of commands[cmdCategoryIndex].scopes[cmdScopeIndex].commands">
-            <td>
-              {{ firstUpperCase(cmd) | translate }}
-            </td>
+        <ng-container *ngIf="loadedCategories && activeCat !== '' && activeSubCat !== ''">
+          <tr *ngFor="let cmd of objectKeys(categories[activeCat][activeSubCat])">
+            <td class="name">{{ categories[activeCat][activeSubCat][cmd].name }}</td>
+            <td class="description">{{ firstSentence(categories[activeCat][activeSubCat][cmd].description.de) }}</td> <!-- TODO: fit language -->
           </tr>
         </ng-container>
       </tbody>

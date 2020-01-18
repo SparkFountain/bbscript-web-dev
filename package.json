@@ -28,7 +28,6 @@
     "ngx-popper": "7.0.0",
     "popper.js": "1.16.0",
     "rxjs": "~6.4.0",
-    "trie-search": "1.2.11",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

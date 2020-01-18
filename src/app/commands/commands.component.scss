@@ -40,6 +40,16 @@
     tbody {
       tr {
         cursor: pointer;
+
+        td {
+          &.name {
+            font-family: monospace;
+          }
+
+          &.description {
+            font-size: 10px;
+          }
+        }
       }
     }
   }

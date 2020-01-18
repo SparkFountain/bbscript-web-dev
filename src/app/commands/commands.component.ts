@@ -1,18 +1,22 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Command } from '../interfaces/command.interface';
 import { TranslateService } from '@ngx-translate/core';
-import * as TrieSearch from 'trie-search';
 import { LanguageService } from 'bbscript/src/services/language/language.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-commands',
   templateUrl: './commands.component.html',
   styleUrls: ['./commands.component.scss']
 })
-export class CommandsComponent {
+export class CommandsComponent implements OnInit {
+  public objectKeys = Object.keys;
+
+  public categories: object;
+  public loadedCategories: boolean;
   public commands: any;
-  public cmdCategoryIndex: number;
-  public cmdScopeIndex: number;
+  public activeCat: string;
+  public activeSubCat: string;
 
   public searchTerm: string;
 
@@ -25,96 +29,13 @@ export class CommandsComponent {
   @ViewChild('searchInput', { static: false }) searchInput: any;
 
   constructor(private translate: TranslateService,
-              private languageService: LanguageService
-    ) {
-    this.cmdCategoryIndex = 0; // TODO: remove later
-    this.cmdScopeIndex = 1; // TODO: remove later
+    private languageService: LanguageService,
+    private http: HttpClient
+  ) {
+    this.activeCat = 'graphics2d';
+    this.activeSubCat = 'pixel';
 
-    this.commands = [
-      {
-        title: '2d',
-        scopes: [
-          {
-            title: 'display',
-            commands: ['graphics']
-          },
-          {
-            title: 'images',
-            commands: [
-              'autoMidHandle',
-              'copyImage',
-              'createImage',
-              'drawBlock',
-              'drawBlockRect',
-              'drawImage',
-              'drawImageRect',
-              'freeImage',
-              'grabImage',
-              'handleImage',
-              'imageBuffer',
-              'imageHeight',
-              'imageRectCollide',
-              'imageRectOverlap',
-              'imagesCollide',
-              'imagesOverlap',
-              'imageWidth',
-              'imageXHandle',
-              'imageYHandle',
-              'loadAnimImage',
-              'loadImage',
-              'maskImage',
-              'midHandle',
-              'rectsOverlap',
-              'resizeImage',
-              'rotateImage',
-              'saveImage',
-              'scaleImage',
-              'tFormFilter',
-              'tFormImage',
-              'tileBlock',
-              'tileImage'
-            ]
-          },
-          {
-            title: 'graphics',
-            commands: [
-              'availVidMem',
-              'backBuffer',
-              'cls',
-              'clsColor',
-              'color',
-              'copyRect',
-              'flip',
-              'flip',
-              'line',
-              'loadBuffer',
-              'origin',
-              'oval',
-              'rect',
-              'saveBuffer'
-            ]
-          }
-        ]
-      },
-      {
-        title: '3d'
-      },
-      {
-        title: 'io'
-      },
-      {
-        title: 'basics'
-      },
-      {
-        title: 'sound'
-      },
-      {
-        title: 'gui'
-      },
-      {
-        title: 'data'
-      }
-    ];
+    this.loadedCategories = false;
 
     this.searchTerm = '';
 
@@ -123,24 +44,13 @@ export class CommandsComponent {
     };
 
     this.testCode = 'Rect 10, 10, 100, 50';
+  }
 
-    // TODO: remove later (debug only)
-    let object = {
-      andrew: { age: 21 },
-      andy: { age: 37 },
-      andrea: { age: 25 },
-      annette: { age: 67 }
-    };
-
-    let trie = new TrieSearch();
-    trie.addFromObject(object);
-
-    console.info('GET a:', trie.get('a')); // Returns all 4 items above.
-    trie.get('an'); // Returns all 4 items above.
-    trie.get('and'); // Returns all 3 items above that begin with 'and'
-    trie.get('andr'); // Returns all 2 items above that begin with 'andr'
-    trie.get('andre'); // Returns all 2 items above that begin with 'andr'
-    trie.get('andrew'); // Returns only andrew.
+  ngOnInit() {
+    this.http.get('/assets/command-categories.json').subscribe((categories) => {
+      this.categories = categories;
+      this.loadedCategories = true;
+    });
   }
 
   firstUpperCase(command: string) {
@@ -148,6 +58,10 @@ export class CommandsComponent {
       return command;
     }
     return `${command[0].toUpperCase()}${command.substr(1)}`;
+  }
+
+  firstSentence(text: string) {
+    return text.split('.')[0];
   }
 
   i18nCommand(command: string) {
@@ -173,11 +87,11 @@ export class CommandsComponent {
       this.searchResult.commands = [];
 
       // search in commands
-      this.commands.forEach((command: Command) => {
-        if (command.name.indexOf(this.searchTerm) > -1) {
-          this.searchResult.commands.push(command);
-        }
-      });
+      // this.commands.forEach((command: Command) => {
+      //   if (command.name.indexOf(this.searchTerm) > -1) {
+      //     this.searchResult.commands.push(command);
+      //   }
+      // });
     }
   }
 }

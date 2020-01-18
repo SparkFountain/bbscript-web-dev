@@ -8,28 +8,41 @@
         (input)="updateSearch()" />
     </div>
 
+    <div class="breadcrumbs">
+      <span (click)="activeCat = ''; activeSubCat = ''">Kategorien</span>
+      <span *ngIf="activeCat !== ''" (click)="activeSubCat = ''"> / {{ activeCat }}</span>
+      <span *ngIf="activeSubCat !== ''"> / {{ activeSubCat }}</span>
+    </div>
+
     <table class="categories">
       <tbody>
         <ng-container *ngIf="loadedCategories && activeCat === '' && activeSubCat === ''">
-          <tr *ngFor="let cat of objectKeys(categories)">
+          <tr *ngFor="let cat of objectKeys(categories)" (click)="selectCategory(cat)">
             <td>{{ cat }}</td>
           </tr>
         </ng-container>
         <ng-container *ngIf="loadedCategories && activeCat !== '' && activeSubCat === ''">
-          <tr *ngFor="let subCat of objectKeys(categories[activeCat])">
+          <tr *ngFor="let subCat of objectKeys(categories[activeCat])" (click)="selectSubCategory(subCat)">
             <td>{{ subCat }}</td>
           </tr>
         </ng-container>
         <ng-container *ngIf="loadedCategories && activeCat !== '' && activeSubCat !== ''">
-          <tr *ngFor="let cmd of objectKeys(categories[activeCat][activeSubCat])">
+          <tr *ngFor="let cmd of objectKeys(categories[activeCat][activeSubCat])" (click)="selectCommand(cmd)">
             <td class="name">{{ categories[activeCat][activeSubCat][cmd].name }}</td>
-            <td class="description">{{ firstSentence(categories[activeCat][activeSubCat][cmd].description.de) }}</td> <!-- TODO: fit language -->
+            <td class="description">{{ firstSentence(categories[activeCat][activeSubCat][cmd].description.de) }}</td>
+            <!-- TODO: fit language -->
           </tr>
         </ng-container>
       </tbody>
     </table>
   </div>
 
-  <blitz-basic-script-canvas [code]="testCode"></blitz-basic-script-canvas>
+  <div class="code-section" [ngStyle]="{'visibility': activeCommand === '' ? 'hidden' : 'visible'}">
+    <button *ngIf="section === 'editor'" (click)="section = 'game'">Play</button>
+    <button *ngIf="section === 'game'" (click)="section = 'editor'">Stop</button>
 
+    <div [hidden]="section !== 'editor'" class="ace" [ace]="ace.config"></div>
+
+    <blitz-basic-script-canvas *ngIf="section === 'game'" [code]="testCode"></blitz-basic-script-canvas>
+  </div>
 </div>

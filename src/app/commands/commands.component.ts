@@ -35,7 +35,7 @@ export class CommandsComponent implements OnInit, AfterViewInit {
     commands: Command[];
   };
 
-  public testCode: string;
+  public commandCode: string;
 
   public section: 'editor' | 'game';
 
@@ -59,8 +59,6 @@ export class CommandsComponent implements OnInit, AfterViewInit {
     this.searchResult = {
       commands: []
     };
-
-    this.testCode = 'Rect 10, 10, 100, 50';
 
     this.ace = {
       instance: null,
@@ -110,6 +108,16 @@ export class CommandsComponent implements OnInit, AfterViewInit {
     this.activeCommand = command;
 
     this.ace.instance.setValue(this.categories[this.activeCat][this.activeSubCat][this.activeCommand].code);
+  }
+
+  play() {
+    this.section = 'game';
+    this.commandCode = this.ace.instance.getValue().split('\n');
+  }
+
+  stop() {
+    this.section = 'editor';
+    this.commandCode = '';
   }
 
   i18nCommand(command: string) {

@@ -38,11 +38,11 @@
   </div>
 
   <div class="code-section" [ngStyle]="{'visibility': activeCommand === '' ? 'hidden' : 'visible'}">
-    <button *ngIf="section === 'editor'" (click)="section = 'game'">Play</button>
-    <button *ngIf="section === 'game'" (click)="section = 'editor'">Stop</button>
+    <button *ngIf="section === 'editor'" (click)="play()">Play</button>
+    <button *ngIf="section === 'game'" (click)="stop()">Stop</button>
 
     <div [hidden]="section !== 'editor'" class="ace" [ace]="ace.config"></div>
 
-    <blitz-basic-script-canvas *ngIf="section === 'game'" [code]="testCode"></blitz-basic-script-canvas>
+    <blitz-basic-script-canvas *ngIf="section === 'game'" [code]="commandCode"></blitz-basic-script-canvas>
   </div>
 </div>

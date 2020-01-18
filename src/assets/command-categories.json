@@ -1121,7 +1121,7 @@
           "en": "",
           "de": "Dieser Grafikbefehl zeichnet einen Rechteck auf dem Bildschirm. Dazu muss man nur die X\/Y-Koordinaten f\u00fcr oben\/links sowie Breite und H\u00f6he des Rechtecks angeben. Zus\u00e4tzlich ist die Option F\u00fcllen m\u00f6glich. Wird Null angegeben, so erscheint ein nicht ausgef\u00fcllter Rechteck. Bei Eins (Standard) wird ein gef\u00fcllter Rechteck gezeichnet."
         },
-        "code": "Graphics 640, 480\r\nSetBuffer BackBuffer()\r\nbox_x = -20\r\nbox_y = 100\r\nWhile Not KeyHit(1)\r\nCls\r\nRect box_x, box_y, 20, 20, 1\r\nFlip\r\nbox_x = box_x + 1\r\nIf box_x = 640 Then box_x = -20\r\nWend"
+        "code": "Graphics 640, 480\r\nRect 20, 20, 100, 50"
       },
       "savebuffer": {
         "name": "SaveBuffer",

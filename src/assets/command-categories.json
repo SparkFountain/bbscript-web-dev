@@ -1121,7 +1121,7 @@
           "en": "",
           "de": "Dieser Grafikbefehl zeichnet einen Rechteck auf dem Bildschirm. Dazu muss man nur die X\/Y-Koordinaten f\u00fcr oben\/links sowie Breite und H\u00f6he des Rechtecks angeben. Zus\u00e4tzlich ist die Option F\u00fcllen m\u00f6glich. Wird Null angegeben, so erscheint ein nicht ausgef\u00fcllter Rechteck. Bei Eins (Standard) wird ein gef\u00fcllter Rechteck gezeichnet."
         },
-        "code": "Graphics 640, 480\r\nRect 20, 20, 100, 50"
+        "code": "Rect 20, 20, 100, 50"
       },
       "savebuffer": {
         "name": "SaveBuffer",

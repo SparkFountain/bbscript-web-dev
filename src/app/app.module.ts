@@ -82,6 +82,12 @@ import { CommandsSoundMusicSamplesService } from 'bbscript/src/services/commands
 import { CommandsGraphics3dMeshesService } from 'bbscript/src/services/commands/graphics3d/meshes.service';
 import { NgxPopperModule } from 'ngx-popper';
 import { BlitzBasicScriptCanvasModule } from 'bbscript/src/components/canvas/canvas.module';
+import { CommandsDataService } from 'bbscript/src/services/commands/data.service';
+import { CommandsGraphics2DService } from 'bbscript/src/services/commands/graphics2d.service';
+import { CommandsGraphics3DService } from 'bbscript/src/services/commands/graphics3d.service';
+import { CommandsGUIService } from 'bbscript/src/services/commands/gui.service';
+import { CommandsIOService } from 'bbscript/src/services/commands/io.service';
+import { CommandsSoundService } from 'bbscript/src/services/commands/sound.service';
 
 @NgModule({
   declarations: [
@@ -118,21 +124,24 @@ import { BlitzBasicScriptCanvasModule } from 'bbscript/src/components/canvas/can
     LanguageService,
     GeneralService,
     GameStateService,
+    DebugEnvironment,
     CommandsBasicsService,
     CommandsBasicsDiverseService,
     CommandsBasicsMathsService,
     CommandsBasicsStringsService,
     CommandsBasicsTimeRandomService,
+    CommandsDataService,
     CommandsDataBankService,
     CommandsDataFileSystemService,
+    CommandsGraphics2DService,
     CommandsGraphics2dDisplayService,
     Graphics2dService,
     CommandsGraphics2dGraphicsService,
     CommandsGraphics2dImagesService,
-    DebugEnvironment,
     CommandsGraphics2dMoviesService,
     CommandsGraphics2dPixelService,
     CommandsGraphics2dTextService,
+    CommandsGraphics3DService,
     CommandsGraphics3dAnimationsService,
     CommandsGraphics3dBrushesService,
     CommandsGraphics3dCameraService,
@@ -151,6 +160,7 @@ import { BlitzBasicScriptCanvasModule } from 'bbscript/src/components/canvas/can
     CommandsGraphics3dSurfacesService,
     CommandsGraphics3dTerrainService,
     CommandsGraphics3dTexturesService,
+    CommandsGUIService,
     CommandsGuiButtonService,
     CommandsGuiCanvasService,
     CommandsGuiDesktopService,
@@ -170,9 +180,11 @@ import { BlitzBasicScriptCanvasModule } from 'bbscript/src/components/canvas/can
     CommandsGuiToolbarService,
     CommandsGuiTreeViewService,
     CommandsGuiWindowService,
+    CommandsIOService,
     CommandsIOGamepadService,
     CommandsIOKeyboardService,
     CommandsIOMouseService,
+    CommandsSoundService,
     CommandsSound3DService,
     CommandsSoundChannelsService,
     CommandsSoundMusicSamplesService

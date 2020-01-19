@@ -145,82 +145,43 @@
     },
     "COMMANDS": {
       "TITLE": "Befehle",
+      "CATEGORIES": "Kategorien",
       "HEADLINE": "Befehle sind vordefinierte Prozeduren, die deinen Spielen Leben einhauchen.",
       "SUBTITLE": "BBScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Hauptkategorien, welche wiederum aus diversen Unterkategorien bestehen.",
-      "2D": {
+      "BASICS": {
+        "TITLE": "Grundlagen",
+        "MATHS": "Mathematik",
+        "DIVERSE": "Sonstiges",
+        "STRINGS": "Zeichenketten",
+        "TIME_RANDOM": "Zeit & Zufall"
+      },
+      "DATA": {
+        "TITLE": "Datenverwaltung",
+        "READ_WRITE": "Lesen / Schreiben",
+        "BLOCKS": "Blöcke",
+        "MEMORY_BANKS": "Speicherbanken"
+      },
+      "GRAPHICS_2D": {
         "TITLE": "2D-Grafik",
-        "DISPLAY": {
-          "TITLE": "Anzeige",
-          "COUNT_GFX_DRIVERS": ""
-        },
-        "IMAGES": {
-          "TITLE": "Bilder",
-          "GRAPHICS": "Initialisiert den Grafikmodus",
-          "AUTO_MID_HANDLE": "Setzt den Bezugspunkt von Bildern in die Mitte des Bildes. Standardmäßig und wenn der Effekt abgeschaltet wird, befindet sich der Bezugspunkt von Bildern oben links.",
-          "COPY_IMAGE": "Kopiert ein bereits vorhandenes Bild und erzeugt eine neue Referenz.",
-          "CREATE_IMAGE": "Erstellt ein leeres Bild mit einer bestimmten Auflösung und gibt die Referenz zurück.",
-          "DRAW_BLOCK": "Zeichnet ein Bild ohne Transparenzfarbe.",
-          "DRAW_BLOCK_RECT": "Zeichnet einen bestimmten Ausschnitt eines Bildes ohne Transparenzfarbe.",
-          "DRAW_IMAGE": "Zeichnet ein Bild. Wenn das Bild eine Transparenzfarbe besitzt, werden Bereiche mit dieser Farbe nicht eingezeichnet.",
-          "DRAW_IMAGE_RECT": "Zeichnet einen bestimmten Ausschnitt eines Bildes. Wenn das Bild eine Transparenzfarbe besitzt, werden Bereiche mit dieser Farbe nicht eingezeichnet.",
-          "FREE_IMAGE": "Löscht ein Bild aus dem Speicher.",
-          "GRAB_IMAGE": "Kopiert einen Ausschnitt des aktuellen Grafik-Kontextes und speichert ihn in der abgegeben Referenz.",
-          "HANDLE_IMAGE": "Legt den Bezugspunkt eines Bildes fest.",
-          "IMAGE_BUFFER": "Wechselt in den Grafik-Kontext eines bestimmten Bildes.",
-          "IMAGE_HEIGHT": "Ermittelt die Höhe eines Bildes.",
-          "IMAGE_RECT_COLLIDE": "Überprüft, ob ein Bild mit einem Rechteck kollidiert (pixelgenaue Abfrage).",
-          "IMAGE_RECT_OVERLAP": "Überprüft, ob ein Bild mit einem Rechteck überlappt (nicht pixelgenau).",
-          "IMAGES_COLLIDE": "Überprüft, ob zwei Bilder miteinander kollidieren (pixelgenaue Abfrage).",
-          "IMAGES_OVERLAP": "Überprüft, ob zwei Bilder sich überlappen (nicht pixelgenau).",
-          "IMAGE_WIDTH": "Ermittelt die Breite eines Bildes.",
-          "IMAGE_X_HANDLE": "Ermittelt die horizontale Verschiebung des Bezugspunktes eines Bildes.",
-          "IMAGE_Y_HANDLE": "Ermittelt die vertikale Verschiebung des Bezugspunktes eines Bildes.",
-          "LOAD_ANIM_IMAGE": "Lädt ein animiertes Bild, das aus mehreren Einzelbildern besteht.",
-          "LOAD_IMAGE": "Lädt ein Bild.",
-          "MASK_IMAGE": "Setzt die Transparenzfarbe eines Bildes. Alle Bildpunkte mit dieser Farbe werden dann transparent (unsichtbar).",
-          "MID_HANDLE": "Verschiebt den Bezugspunkt eines Bildes in die Bildmitte.",
-          "RECTS_OVERLAP": "Prüft, ob zwei Rechtecke sich überlappen.",
-          "RESIZE_IMAGE": "Ändert die Höhe und Breite eines Bildes.",
-          "ROTATE_IMAGE": "Dreht das Bild an seinem Bezugspunkt um einen bestimmten Winkel.",
-          "SAVE_IMAGE": "Speichert ein Bild ab.",
-          "SCALE_IMAGE": "Skaliert ein Bild um einen bestimmten Faktor.",
-          "T_FORM_FILTER": "Schaltet den bilinearen Filter ein bzw. aus. Je nach Einstellung werden Farbverläufe beim Skalieren oder Rotieren von Bildern weich oder hart berechnet.",
-          "T_FORM_IMAGE": "Dreht, skaliert, zerrt und spiegelt ein Bild gleichzeitig.",
-          "TILE_BLOCK": "Zeichnet ein Bild über den gesamten Bildschirm (ohne Transparenzfarbe).",
-          "TILE_IMAGE": "Zeichnet ein Bild über den gesamten Bildschirm (mit Transparenzfarbe)."
-        },
-        "GRAPHICS": {
-          "TITLE": "Grafik",
-          "AVAIL_VID_MEM": "Ermittelt den freien Grafikspeicher.",
-          "BACK_BUFFER": "Liefert die Identität des Hintergrundbuffers, auf welchem Bilder vorgezeichnet werden.",
-          "CLS": "Löscht den Inhalt des aktuellen Grafikbuffers.",
-          "CLS_COLOR": "Legt die Hintergrundfarbe fest, die beim Löschen des Grafikbuffers eingezeichnet wird.",
-          "COLOR": "Setzt die aktuelle Farbe für Zeichenbefehle.",
-          "COPY_RECT": "Kopiert einen Ausschnitt das aktuellen Grafikbuffers.",
-          "FLIP": "Tauscht den Inhalt des Front- und Backbuffers.",
-          "FRONT_BUFFER": "Liefert die Identität des Vordergrundbuffers, auf welchem Bilder direkt eingezeichnet werden.",
-          "LINE": "Zeichnet eine gerade Linie.",
-          "LOAD_BUFFER": "Lädt ein Bild in einen bestimmten Grafikbuffer.",
-          "ORIGIN": "Verschiebt den Ursprung des Koordinatensystems. Standardmäßig befindet sich der Punkt 0,0 ganz oben links.",
-          "OVAL": "Zeichnet eine Ellipse.",
-          "RECT": "Zeichnet ein Rechteck.",
-          "SAVE_BUFFER": "Speichert den Inhalt eines Grafikbuffers in eine Datei."
-        },
+        "DISPLAY": "Anzeige",
+        "IMAGES": "Bilder",
+        "GRAPHICS": "Grafik",
         "PIXEL": "Pixel",
         "TEXT": "Text",
         "MOVIES": "Videos"
       },
-      "3D": {
+      "GRAPHICS_3D": {
         "TITLE": "3D-Grafik",
         "ANIMATIONS": "Animationen",
         "MOTIONS": "Fortbewegungen",
         "BRUSHES": "Pinsel",
         "DIVERSE": "Diverses",
         "SCENERY": "Szenerie",
+        "SCREEN": "Bildschirmeinstellungen",
         "CAMERA": "Kamera",
         "COLLISIONS": "Kollisionen",
         "CONTROLS": "Kontrolle",
-        "LIGHT": "Licht und Schatten",
+        "LIGHT_SHADOW": "Licht und Schatten",
         "PHYSICS": "Physik",
         "MESHES": "Gitterobjekte",
         "PICKING": "Picking (Objekte finden)",
@@ -239,13 +200,6 @@
         "DOC_COMMANDS_IO_MOUSE": "Maus",
         "DOC_COMMANDS_IO_KEYBOARD": "Tastatur",
         "DOC_COMMANDS_IO_GAME_PAD": "Gamepad"
-      },
-      "BASICS": {
-        "TITLE": "Grundlagen",
-        "MATHS": "Mathematik",
-        "DIVERSE": "Sonstiges",
-        "STRINGS": "Zeichenketten",
-        "TIME_RANDOM": "Zeit & Zufall"
       },
       "SOUND": {
         "TITLE": "Sound",
@@ -272,12 +226,6 @@
         "TOOLBAR": "Toolbar (Werkzeugleiste)",
         "TREE_VIEW": "Baumansicht",
         "WINDOWS": "Fenster"
-      },
-      "DATA": {
-        "TITLE": "Datenverwaltung",
-        "READ_WRITE": "Lesen / Schreiben",
-        "BLOCKS": "Blöcke",
-        "MEMORY_BANKS": "Speicherbanken"
       }
     },
     "DEPRECATED_COMMANDS": {

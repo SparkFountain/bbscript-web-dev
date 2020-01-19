@@ -9,21 +9,21 @@
     </div>
 
     <div class="breadcrumbs">
-      <span (click)="activeCat = ''; activeSubCat = ''">Kategorien</span>
-      <span *ngIf="activeCat !== ''" (click)="activeSubCat = ''"> / {{ activeCat }}</span>
-      <span *ngIf="activeSubCat !== ''"> / {{ activeSubCat }}</span>
+    <span (click)="activeCat = ''; activeSubCat = ''">{{ 'DOC.COMMANDS.CATEGORIES' | translate }}</span>
+      <span *ngIf="activeCat !== ''" (click)="activeSubCat = ''"> / {{ 'DOC.COMMANDS.' + i18n(activeCat) + '.TITLE' | translate }}</span>
+      <span *ngIf="activeSubCat !== ''"> / {{ 'DOC.COMMANDS.' + i18n(activeCat) + '.' + i18n(activeSubCat) | translate }}</span>
     </div>
 
     <table class="categories">
       <tbody>
         <ng-container *ngIf="loadedCategories && activeCat === '' && activeSubCat === ''">
           <tr *ngFor="let cat of objectKeys(categories)" (click)="selectCategory(cat)">
-            <td>{{ cat }}</td>
+            <td>{{ 'DOC.COMMANDS.' + i18n(cat) + '.TITLE' | translate }}</td>
           </tr>
         </ng-container>
         <ng-container *ngIf="loadedCategories && activeCat !== '' && activeSubCat === ''">
           <tr *ngFor="let subCat of objectKeys(categories[activeCat])" (click)="selectSubCategory(subCat)">
-            <td>{{ subCat }}</td>
+            <td>{{ 'DOC.COMMANDS.' + i18n(activeCat) + '.' + i18n(subCat) | translate }}</td>
           </tr>
         </ng-container>
         <ng-container *ngIf="loadedCategories && activeCat !== '' && activeSubCat !== ''">

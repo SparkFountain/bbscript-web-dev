@@ -120,12 +120,14 @@ export class CommandsComponent implements OnInit, AfterViewInit {
     this.commandCode = '';
   }
 
-  i18nCommand(command: string) {
-    let result: string = command[0].toUpperCase();
+  i18n(word: string) {
+    let result: string = word[0].toUpperCase();
 
-    for (let i = 1; i < command.length; i++) {
-      const char: string = command[i];
-      if (char === char.toUpperCase()) {
+    for (let i = 1; i < word.length; i++) {
+      const char: string = word[i];
+      if (char === '-') {
+        result += `_`;
+      } else if (char === char.toUpperCase()) {
         result += `_${char}`;
       } else {
         result += char.toUpperCase();

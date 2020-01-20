@@ -1,12 +1,13 @@
-import { Component } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
-import { Router } from "@angular/router";
-import { of } from "rxjs";
-import { delay } from "rxjs/operators";
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html"
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   public mobileMenu: {
@@ -19,11 +20,11 @@ export class AppComponent {
 
   constructor(public translate: TranslateService, public router: Router) {
     // this language will be used as a fallback when a translation isn't found in the current language
-    this.translate.setDefaultLang("en");
+    this.translate.setDefaultLang('en');
 
     const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang.match(/en|de/) ? browserLang : "en");
-    this.translate.addLangs(["en", "de"]);
+    this.translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
+    this.translate.addLangs(['en', 'de']);
 
     this.mobileMenu = {
       open: false,
@@ -53,6 +54,6 @@ export class AppComponent {
 }
 
 export const Language = {
-  GERMAN: "de",
-  ENGLISH: "en"
+  GERMAN: 'de',
+  ENGLISH: 'en'
 };

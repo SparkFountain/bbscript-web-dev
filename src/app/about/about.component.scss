@@ -1,13 +1,26 @@
-div.editor {
+div.narrow {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+
+  > * {
+    display: flex;
+    max-width: 600px;
+    line-height: 150%;
+  }
 
   div.ace {
     display: flex;
-    width: 100%;
-    max-width: 600px;
+    width: 100vw;
     height: 50vh;
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+
+  div.landing-text {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }

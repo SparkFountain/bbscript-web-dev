@@ -37,6 +37,14 @@
     }
 
     .breadcrumbs {
+      width: 30vw;
+      background: $primary;
+      font-size: 18px;
+      border-radius: 25px;
+      padding: 10px 25px;
+      color: $light;
+      font-variant: small-caps;
+
       span {
         cursor: pointer;
       }

@@ -10,6 +10,7 @@
   "LANGUAGE": "Sprache",
   "LEXER": {
     "TITLE": "Lexer",
+    "SUBTITLE": "<p>Der Lexer analysiert deinen BBScript-Code und erzeugt daraus sogenannte <i>Tokens</i>, welche für die Weiterverarbeitung und anschließende Programmausführung benötigt werden.</p><p>Klick auf den Tab <b>Editor</b> und gib deinen Code ein. Wechsele anschließend in den Tab <b>Tokens</b>, um die einzelnen Bestandteile deines Codes zu sehen. Gehe mit der Maus über ein Token, um seine Funktion angezeigt zu bekommen. Unter <b>Tabelle</b> siehst du alle Tokens untereinander aufgeführt.</p>",
     "LINE": "Zeile",
     "EDITOR": "Editor",
     "TOKENS": "Tokens",
@@ -147,7 +148,7 @@
       "TITLE": "Befehle",
       "CATEGORIES": "Kategorien",
       "HEADLINE": "Befehle sind vordefinierte Prozeduren, die deinen Spielen Leben einhauchen.",
-      "SUBTITLE": "BBScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Hauptkategorien, welche wiederum aus diversen Unterkategorien bestehen.",
+      "SUBTITLE": "<p>BBScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Kategorien, welche wiederum aus verschiedenen Anwendungsbereichen bestehen.</p>",
       "BASICS": {
         "TITLE": "Grundlagen",
         "MATHS": "Mathematik",
@@ -266,6 +267,10 @@
   "TRANSLATED_TO_JS": "JavaScript",
   "JETZT_LERNE_ICH": "Jetzt lerne ich Spiele programmieren mit BlitzBasic",
   "MISSION_SUBTITLE": "<b>BlitzBasicScript</b> ist eine einfache und gleichzeitig mächtige Skriptsprache, die auf der <b><a class=\"is-link\" href=\"https://en.wikipedia.org/wiki/Blitz_BASIC\" target=\"_blank\">BlitzBasic</a>-Syntax</b> aufbaut. Dank BlitzBasicScript kannst du <b>mit minimalem Aufwand Spiele entwickeln</b>, welche auf jedem beliebigen Gerät ganz einfach im Webbrowser gespielt werden können. Von simplen Knobelspielen bis hin zu aufwändigen 3D-Shootern ist alles möglich!",
+  "WORK_IN_PROGRESS": {
+    "TITLE": "Projektzustand: Alpha 0.0.1",
+    "TEXT": "Momentan befindet sich BlitzBasicScript noch in der Alpha-Phase. Das bedeutet, auf dieser Website gibt es erstmal nur wenige Features und auch unter der Haube werden noch zahlreiche Befehle implementiert."
+  },
   "FEATURES": {
     "TITLE": "Features",
     "1": {

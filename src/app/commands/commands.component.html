@@ -1,12 +1,13 @@
 <h1 class="title">{{ 'NAV.COMMANDS' | translate }}</h1>
+<span [innerHTML]="'DOC.COMMANDS.SUBTITLE' | translate"></span>
 
 <div class="flex-container">
   <div class="command-nav">
-    <div class="search-bar">
+    <!-- <div class="search-bar">
       <div class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
       <input [(ngModel)]="searchTerm" class="search-input" placeholder="{{ 'SEARCH.PLACEHOLDER' | translate }}"
         (input)="updateSearch()" />
-    </div>
+    </div> -->
 
     <div class="breadcrumbs">
     <span (click)="activeCat = ''; activeSubCat = ''">{{ 'DOC.COMMANDS.CATEGORIES' | translate }}</span>

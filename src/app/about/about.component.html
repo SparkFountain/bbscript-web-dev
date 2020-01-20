@@ -1,22 +1,18 @@
 <h1 class="no-mobile">BlitzBasicScript</h1>
-<h2>{{ "SUBTITLE" | translate }}</h2>
+<h2>{{ 'SUBTITLE' | translate }}</h2>
 
-<div class="editor">
+<div class="narrow">
   <div class="ace" [ace]="ace.config"></div>
-</div>
 
-<div class="inner-content">
   <div class="landing-text">
     <span [innerHTML]="'MISSION_SUBTITLE' | translate"></span>
   </div>
+
+  <h2>{{ 'WORK_IN_PROGRESS.TITLE' | translate }}</h2>
+  <div>{{ 'WORK_IN_PROGRESS.TEXT' | translate }}</div>
 </div>
 
-<h1>{{ "FEATURES.TITLE" | translate }}</h1>
+<h2>{{ 'FEATURES.TITLE' | translate }}</h2>
 
-<app-post
-  *ngFor="let feature of features"
-  [title]="feature.title"
-  [message]="feature.message"
-  [image]="feature.image"
->
+<app-post *ngFor="let feature of features" [title]="feature.title" [message]="feature.message" [image]="feature.image">
 </app-post>

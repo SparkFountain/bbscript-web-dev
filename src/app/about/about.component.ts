@@ -56,7 +56,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.ace.instance = this.directiveRef.ace();
-    this.directiveRef.setValue(`Graphics3D width,height,32,mode
+    this.directiveRef.setValue(`Graphics3D width, height, 32, mode
 SetBuffer BackBuffer()
 
 ; environment

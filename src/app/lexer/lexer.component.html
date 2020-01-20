@@ -1,4 +1,5 @@
 <h1>{{'LEXER.TITLE' | translate}}</h1>
+<span [innerHTML]="'LEXER.SUBTITLE' | translate"></span>
 
 <button [ngClass]="{'active': section === 'editor'}" (click)="goTo('editor')">{{'LEXER.EDITOR' | translate}}</button>
 <button [ngClass]="{'active': section === 'tokens'}" (click)="goTo('tokens')">{{'LEXER.TOKENS' | translate}}</button>

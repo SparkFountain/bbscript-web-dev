@@ -44,8 +44,9 @@ export class CommandsComponent implements OnInit, AfterViewInit {
 
   public ace: AceConfig;
 
-  constructor(private translate: TranslateService,
-    private languageService: LanguageService,
+  constructor(
+    private translate: TranslateService,
+    protected languageService: LanguageService,
     private http: HttpClient
   ) {
     this.activeCat = '';
@@ -75,7 +76,7 @@ export class CommandsComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.http.get('/assets/command-categories.json').subscribe((categories) => {
+    this.http.get('/assets/command-categories.json').subscribe(categories => {
       this.categories = categories;
       this.loadedCategories = true;
     });
@@ -98,16 +99,41 @@ export class CommandsComponent implements OnInit, AfterViewInit {
 
   selectCategory(category: string) {
     this.activeCat = category;
+    this.activeSubCat = '';
+    this.activeCommand = '';
   }
 
   selectSubCategory(subCategory: string) {
     this.activeSubCat = subCategory;
+    this.activeCommand = '';
   }
 
   selectCommand(command: string) {
     this.activeCommand = command;
-
     this.ace.instance.setValue(this.categories[this.activeCat][this.activeSubCat][this.activeCommand].code);
+  }
+
+  commandCall(): string {
+    if (this.activeCommand) {
+      const cmd = this.languageService.commands[this.activeCommand];
+      let result = cmd.name + ' ';
+      cmd.params.forEach((p, index) => {
+        if (p.optional) {
+          result += ' [';
+        }
+        if (index > 0) {
+          result += ', ';
+        }
+        result += p.name;
+        if (p.optional) {
+          result += ']';
+        }
+      });
+
+      return result;
+    } else {
+      return '';
+    }
   }
 
   play() {

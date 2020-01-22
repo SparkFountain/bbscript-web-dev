@@ -94,6 +94,7 @@ ScaleEntity island, 1, 5, 1
 PositionEntity island, 0, -0.1, 0
 TerrainDetail island, 3000, 1
 TerrainShading island, 1`);
+    this.directiveRef.ace().focus();
   }
 }
 

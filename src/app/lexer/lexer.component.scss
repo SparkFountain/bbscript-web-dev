@@ -8,14 +8,19 @@ div.ace {
 .token-container {
   background: $black;
   line-height: 150%;
+  cursor: pointer;
 
   div {
     span {
       font-family: 'Anonymous Pro', monospace;
 
       &:hover {
-        background: $midnight-blue;
+        color: $light-steel-blue2;
       }
     }
   }
+}
+
+.popperContainer {
+  height: 0px !important;
 }

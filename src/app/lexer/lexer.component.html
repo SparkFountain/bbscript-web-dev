@@ -1,9 +1,9 @@
-<h1>{{'LEXER.TITLE' | translate}}</h1>
+<h1>{{ 'LEXER.TITLE' | translate }}</h1>
 <span [innerHTML]="'LEXER.SUBTITLE' | translate"></span>
 
-<button [ngClass]="{'active': section === 'editor'}" (click)="goTo('editor')">{{'LEXER.EDITOR' | translate}}</button>
-<button [ngClass]="{'active': section === 'tokens'}" (click)="goTo('tokens')">{{'LEXER.TOKENS' | translate}}</button>
-<button [ngClass]="{'active': section === 'table'}" (click)="goTo('table')">{{'LEXER.TABLE' | translate}}</button>
+<button [ngClass]="{ active: section === 'editor' }" (click)="goTo('editor')">{{ 'LEXER.EDITOR' | translate }}</button>
+<button [ngClass]="{ active: section === 'tokens' }" (click)="goTo('tokens')">{{ 'LEXER.TOKENS' | translate }}</button>
+<button [ngClass]="{ active: section === 'table' }" (click)="goTo('table')">{{ 'LEXER.TABLE' | translate }}</button>
 
 <div [hidden]="section !== 'editor'" class="ace" [ace]="ace.config"></div>
 
@@ -11,12 +11,18 @@
   <div class="token-container">
     <div *ngFor="let tokenArray of tokenArrays; let i = index">
       <ng-container *ngFor="let token of tokenArray">
-        <span [popper]="popper1Content" [popperTrigger]="'hover'" [popperHideOnClickOutside]="true"
-          [popperHideOnScroll]="true" [popperStyles]="{'background-color': 'blue'}" [popperPlacement]="'bottom'">
-          {{token.value}}
+        <span
+          [popper]="popper1Content"
+          [popperTrigger]="'hover'"
+          [popperHideOnClickOutside]="true"
+          [popperHideOnScroll]="true"
+          [popperStyles]="{ 'background-color': '#204159', 'padding': '0 15px', 'border-radius': '5px' }"
+          [popperPlacement]="'bottom'"
+        >
+          {{ token.value }}
         </span>
         <popper-content #popper1Content>
-          <p class="bold">{{'LEXER.TOKEN.WHICH.'+token.which | translate}}</p>
+          <p class="bold">{{ 'LEXER.TOKEN.WHICH.' + token.which | translate }}</p>
         </popper-content>
       </ng-container>
     </div>
@@ -26,19 +32,19 @@
 <table [hidden]="section !== 'table'">
   <thead>
     <tr>
-      <th>{{'LEXER.LINE' | translate}}</th>
-      <th>{{'LEXER.TOKEN.CATEGORY' | translate}}</th>
-      <th>{{'LEXER.TOKEN.VALUE' | translate}}</th>
-      <th>{{'LEXER.TOKEN.OFFSET' | translate}}</th>
+      <th>{{ 'LEXER.LINE' | translate }}</th>
+      <th>{{ 'LEXER.TOKEN.CATEGORY' | translate }}</th>
+      <th>{{ 'LEXER.TOKEN.VALUE' | translate }}</th>
+      <th>{{ 'LEXER.TOKEN.OFFSET' | translate }}</th>
     </tr>
   </thead>
   <tbody>
     <ng-container *ngFor="let tokenArray of tokenArrays; let i = index">
       <tr *ngFor="let token of tokenArray">
-        <td>{{i+1}}</td>
-        <td>{{'LEXER.TOKEN.WHICH.'+token.which | translate}}</td>
-        <td>{{token.value}}</td>
-        <td>{{token.offset.x}}</td>
+        <td>{{ i + 1 }}</td>
+        <td>{{ 'LEXER.TOKEN.WHICH.' + token.which | translate }}</td>
+        <td>{{ token.value }}</td>
+        <td>{{ token.offset.x }}</td>
       </tr>
     </ng-container>
   </tbody>

@@ -73,9 +73,16 @@ img {
   max-width: 100%;
 }
 
+.code {
+  color: $midnight-blue;
+  background: $khaki;
+  border: 1px ridge $black;
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 16px;
+  padding: 12px;
+}
+
 table {
-  width: 30vw;
-  height: 50vh;
   margin-right: 100px;
   border-collapse: collapse;
 
@@ -83,19 +90,20 @@ table {
     //border-bottom: 1px solid $white;
 
     tr:hover {
+      color: $midnight-blue;
       background: $neutral;
     }
   }
 
   th,
   td {
-    padding: 8px;
+    padding: 12px 18px;
     text-align: left;
     border-bottom: 1px solid $light;
   }
 
   tr:hover {
-    background-color: $primary;
+    background-color: $midnight-blue;
   }
 }
 

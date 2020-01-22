@@ -1,4 +1,5 @@
 {
+  "GERMANY": "Deutschland",
   "PAGE_NOT_FOUND": "Diese Seite gibt es nicht",
   "SUBTITLE": "Deine Game Scripting Engine",
   "FOOTER": {
@@ -148,7 +149,9 @@
       "TITLE": "Befehle",
       "CATEGORIES": "Kategorien",
       "HEADLINE": "Befehle sind vordefinierte Prozeduren, die deinen Spielen Leben einhauchen.",
-      "SUBTITLE": "<p>BBScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Kategorien, welche wiederum aus verschiedenen Anwendungsbereichen bestehen.</p>",
+      "SUBTITLE": "<p>BlitzBasicScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Kategorien, welche wiederum aus verschiedenen Anwendungsbereichen bestehen.</p>",
+      "PLAY": "Starten",
+      "STOP": "Beenden",
       "BASICS": {
         "TITLE": "Grundlagen",
         "MATHS": "Mathematik",
@@ -158,9 +161,8 @@
       },
       "DATA": {
         "TITLE": "Datenverwaltung",
-        "READ_WRITE": "Lesen / Schreiben",
-        "BLOCKS": "Blöcke",
-        "MEMORY_BANKS": "Speicherbanken"
+        "BANK": "Speicherbanken",
+        "FILE_SYSTEM": "Dateisystem"
       },
       "GRAPHICS_2D": {
         "TITLE": "2D-Grafik",
@@ -198,9 +200,9 @@
       },
       "IO": {
         "TITLE": "IO (Eingabe / Ausgabe)",
-        "DOC_COMMANDS_IO_MOUSE": "Maus",
-        "DOC_COMMANDS_IO_KEYBOARD": "Tastatur",
-        "DOC_COMMANDS_IO_GAME_PAD": "Gamepad"
+        "MOUSE": "Maus",
+        "KEYBOARD": "Tastatur",
+        "GAMEPAD": "Gamepad"
       },
       "SOUND": {
         "TITLE": "Sound",
@@ -210,23 +212,26 @@
       },
       "GUI": {
         "TITLE": "GUI (Grafische Benutzeroberfläche)",
-        "BUTTONS": "Buttons",
+        "BUTTON": "Buttons",
         "CANVAS": "Canvas (Zeichenfenster)",
+        "DESKTOP": "Bildschirm",
         "DIVERSE": "Diverses",
-        "EVENTS": "Ereignisse",
-        "GADGETS": "Gadgets (UI-Elemente)",
+        "EVENT": "Ereignisse",
+        "GADGET": "Gadgets (UI-Elemente)",
         "HTML": "HTML",
-        "ICON_STRIPS": "Icon-Streifen",
-        "LISTS_TABBER": "Listen & Registerkarten",
-        "MENUS": "Menüs",
-        "PANELS": "Panels (Fenstergruppen)",
-        "PROGRESS_BARS": "Fortschrittsbalken",
-        "USER_INTERACTION_WINDOWS": "Benutzer-Interaktions-Fenster",
+        "ICON_STRIP": "Icon-Streifen",
+        "LIST_TABBER": "Listen & Registerkarten",
+        "MENU": "Menüs",
+        "PANEL": "Panels (Fenstergruppen)",
+        "PROGRESS_BAR": "Fortschrittsbalken",
+        "REQUEST": "Benachrichtigungen",
+        "USER_INTERACTION_WINDOW": "Benutzer-Interaktions-Fenster",
         "SLIDER": "Slider (Schieberegler)",
-        "TEXT_INPUT": "Textfelder und Texteingaben",
+        "TEXT_AREA": "Textfelder",
+        "TEXT_FIELD": "Texteingaben",
         "TOOLBAR": "Toolbar (Werkzeugleiste)",
         "TREE_VIEW": "Baumansicht",
-        "WINDOWS": "Fenster"
+        "WINDOW": "Fenster"
       }
     },
     "DEPRECATED_COMMANDS": {

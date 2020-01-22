@@ -13,16 +13,13 @@
         "name": "CallDLL",
         "description": {
           "en": "",
-          "de": "Die Funktion CallDLL f\u00fchrt eine bestimmte Prozedur in einer bestimmter DLL Datei aus. Die DLL Prozeduren sind wie BB Funktionen und k\u00f6nnen nicht nur Daten verarbeiten, sondern auch Aktionen ausf\u00fchren (z.B. Windows Neustart).   Gebe einfach den Dateinamen einer DLL Datei an. Der Prozedur Name muss in der DLL Datei enthalten sein (Gro\u00df-\/Kleinschreibung beachten!).   Die optionalen Parameter \"Eingabe\" und \"Ausgabe\" sind die Identit\u00e4ten von 2 Speicherfeldern (banks). Diese k\u00f6nnen Daten f\u00fcr die Ein-\/Ausgabe enthalten. "
+          "de": "Die Funktion CallDLL f\u00fchrt eine bestimmte Prozedur in einer bestimmter DLL Datei aus. Die DLL Prozeduren sind wie BB Funktionen und k\u00f6nnen nicht nur Daten verarbeiten, sondern auch Aktionen ausf\u00fchren (z.B. Windows Neustart).   Gebe einfach den Dateinamen einer DLL Datei an. Der Prozedur Name muss in der DLL Datei enthalten sein (Gro\u00df-/Kleinschreibung beachten!).   Die optionalen Parameter \"Eingabe\" und \"Ausgabe\" sind die Identit\u00e4ten von 2 Speicherfeldern (banks). Diese k\u00f6nnen Daten f\u00fcr die Ein-/Ausgabe enthalten. "
         },
         "code": ""
       },
       "commandline": {
         "name": "CommandLine",
-        "description": {
-          "en": "",
-          "de": "String mit den \u00fcbergebenen Parametern "
-        },
+        "description": { "en": "", "de": "String mit den \u00fcbergebenen Parametern " },
         "code": ""
       },
       "debuglog": {
@@ -77,7 +74,7 @@
         "name": "SetEnv",
         "description": {
           "en": "",
-          "de": "Diese Funktion setzt\/\u00e4ndert den Wert einer Systemvariable. Diese Systemvariablen gab es bereits zu DOS-Zeiten. Wegen der Kompatibilit\u00e4t sind diese Variablen bis heute geblieben. "
+          "de": "Diese Funktion setzt/\u00e4ndert den Wert einer Systemvariable. Diese Systemvariablen gab es bereits zu DOS-Zeiten. Wegen der Kompatibilit\u00e4t sind diese Variablen bis heute geblieben. "
         },
         "code": ""
       },
@@ -239,7 +236,7 @@
         "name": "Tan",
         "description": {
           "en": "",
-          "de": "Diese Funktion berechnet den Tangenswert aus einem Winkel. Es ist somit die Umkehrfunktion f\u00fcr Arcustangens. Der Winkel wird in Grad angegeben.   Mit Hilfe dieser Funktion kann man die L\u00e4nge der Katheten eines rechtwinkligen Dreiecks berechnen. Dazu muss man den Winkel und eine Kathetenl\u00e4nge wissen. Diese Werte muss man nur in die Formel einsetzten:   TanAlpha = Gegenkathete : Ankathete   So l\u00e4sst sich die Gegenkathete berechnen:  Gegenkathete = Tan(Winkel)*Ankathete   So l\u00e4sst sich die Ankathete berechnen:  Ankathete = Tan(Winkel)\/Gegenkathete "
+          "de": "Diese Funktion berechnet den Tangenswert aus einem Winkel. Es ist somit die Umkehrfunktion f\u00fcr Arcustangens. Der Winkel wird in Grad angegeben.   Mit Hilfe dieser Funktion kann man die L\u00e4nge der Katheten eines rechtwinkligen Dreiecks berechnen. Dazu muss man den Winkel und eine Kathetenl\u00e4nge wissen. Diese Werte muss man nur in die Formel einsetzten:   TanAlpha = Gegenkathete : Ankathete   So l\u00e4sst sich die Gegenkathete berechnen:  Gegenkathete = Tan(Winkel)*Ankathete   So l\u00e4sst sich die Ankathete berechnen:  Ankathete = Tan(Winkel)/Gegenkathete "
         },
         "code": ""
       }
@@ -511,7 +508,7 @@
         "name": "CreateBank",
         "description": {
           "en": "",
-          "de": "Definiert ein neues Speicherfeld. Es funktioniert so \u00e4hnlich wie DIM, muss aber \u00fcber spezielle Peek\/Poke-Befehle angesprochen werden. Diese Funktion liefert einen Integerwert, der f\u00fcr weitere Befehle notwendig ist. Mit FreeBank kann dieses Speicherfeld wieder gel\u00f6scht werden. "
+          "de": "Definiert ein neues Speicherfeld. Es funktioniert so \u00e4hnlich wie DIM, muss aber \u00fcber spezielle Peek/Poke-Befehle angesprochen werden. Diese Funktion liefert einen Integerwert, der f\u00fcr weitere Befehle notwendig ist. Mit FreeBank kann dieses Speicherfeld wieder gel\u00f6scht werden. "
         },
         "code": ""
       },
@@ -591,7 +588,7 @@
         "name": "ReadBytes",
         "description": {
           "en": "",
-          "de": "Dieser Befehl liest Daten aus einer Datei in ein Speicherfeld ein. Die Datei muss vorher mit OpenFile\/ReadFile ge\u00f6ffnet, bzw. der Stream mit OpenTCPStream erstellt worden sein. Zudem muss auch ein Speicherfeld mit CreateBank definiert werden. \"Start\" gibt die Startposition in Byte an. Es k\u00f6nnen beliebig viele Bytes eingelesen werden.   Diese Methode wird z.B. f\u00fcr das Einlesen von Levels benutzt. Mit WriteBytes k\u00f6nnen die Daten abgespeichert werden. Benutze Peek\/Poke-Befehle, um Daten zu lesen\/speichern. "
+          "de": "Dieser Befehl liest Daten aus einer Datei in ein Speicherfeld ein. Die Datei muss vorher mit OpenFile/ReadFile ge\u00f6ffnet, bzw. der Stream mit OpenTCPStream erstellt worden sein. Zudem muss auch ein Speicherfeld mit CreateBank definiert werden. \"Start\" gibt die Startposition in Byte an. Es k\u00f6nnen beliebig viele Bytes eingelesen werden.   Diese Methode wird z.B. f\u00fcr das Einlesen von Levels benutzt. Mit WriteBytes k\u00f6nnen die Daten abgespeichert werden. Benutze Peek/Poke-Befehle, um Daten zu lesen/speichern. "
         },
         "code": ""
       },
@@ -607,7 +604,7 @@
         "name": "WriteBytes",
         "description": {
           "en": "",
-          "de": "Dieser Befehl speichert Daten aus einem Speicherfeld in eine Datei oder sendet sie an einen TCP-Stream. Die Datei muss vorher mit OpenFile\/ReadFile ge\u00f6ffnet werden bzw. der TCP-Stream mit OpenTCPStream erstellt worden sein. Zudem muss auch ein Speicherfeld mit CreateBank definiert werden. \"Start\" gibt die Startposition in Byte an. Es k\u00f6nnen beliebig viele Bytes gespeichert werden.   Diese Methode wird z.B. f\u00fcr das Speichern von Levels benutzt. Mit ReadBytes k\u00f6nnen die Daten ausgelesen werden. Benutze Peek\/Poke-Befehle, um Daten zu lesen\/speichern."
+          "de": "Dieser Befehl speichert Daten aus einem Speicherfeld in eine Datei oder sendet sie an einen TCP-Stream. Die Datei muss vorher mit OpenFile/ReadFile ge\u00f6ffnet werden bzw. der TCP-Stream mit OpenTCPStream erstellt worden sein. Zudem muss auch ein Speicherfeld mit CreateBank definiert werden. \"Start\" gibt die Startposition in Byte an. Es k\u00f6nnen beliebig viele Bytes gespeichert werden.   Diese Methode wird z.B. f\u00fcr das Speichern von Levels benutzt. Mit ReadBytes k\u00f6nnen die Daten ausgelesen werden. Benutze Peek/Poke-Befehle, um Daten zu lesen/speichern."
         },
         "code": ""
       }
@@ -697,7 +694,7 @@
         "name": "FilePos",
         "description": {
           "en": "",
-          "de": "Diese Funktion ermittelt die aktuelle Dateiposition von Anfang einer Datei, die mit OpenFile, ReadFile oder WriteFile ge\u00f6ffnet wurde. Dies kann man f\u00fcrs Speichern und Laden verwenden, denn ab dieser Position erfolgt der n\u00e4chste Schreib-\/Lesevorgang. Mit SeekFile kann die Dateiposition dagegen verschoben werden.   Dieser Befehl ist besonders f\u00fcr gro\u00dfe Dateien gut geeignet, da sich die Position eines Datensatzes speichern l\u00e4sst. Dadurch k\u00f6nnen die Datens\u00e4tze bequem aktualisiert werden, ohne, dass man die ganze Datei einlesen oder kopieren muss."
+          "de": "Diese Funktion ermittelt die aktuelle Dateiposition von Anfang einer Datei, die mit OpenFile, ReadFile oder WriteFile ge\u00f6ffnet wurde. Dies kann man f\u00fcrs Speichern und Laden verwenden, denn ab dieser Position erfolgt der n\u00e4chste Schreib-/Lesevorgang. Mit SeekFile kann die Dateiposition dagegen verschoben werden.   Dieser Befehl ist besonders f\u00fcr gro\u00dfe Dateien gut geeignet, da sich die Position eines Datensatzes speichern l\u00e4sst. Dadurch k\u00f6nnen die Datens\u00e4tze bequem aktualisiert werden, ohne, dass man die ganze Datei einlesen oder kopieren muss."
         },
         "code": ""
       },
@@ -901,7 +898,7 @@
         "name": "EndGraphics",
         "description": {
           "en": "",
-          "de": "Dieser Befehl \"schlie\u00dft\" ein Grafikfenster, das mit Graphics oder Graphics3D ge\u00f6ffnet wurde. In Blitz2D\/Blitz3D wird ein Grafikfenster in Standardgr\u00f6\u00dfe wieder ge\u00f6ffnet, in BlitzPlus wird es dagegen richtig geschlossen. Beim Beenden kann BlitzBasic automatisch dieses Fenster schlie\u00dfen."
+          "de": "Dieser Befehl \"schlie\u00dft\" ein Grafikfenster, das mit Graphics oder Graphics3D ge\u00f6ffnet wurde. In Blitz2D/Blitz3D wird ein Grafikfenster in Standardgr\u00f6\u00dfe wieder ge\u00f6ffnet, in BlitzPlus wird es dagegen richtig geschlossen. Beim Beenden kann BlitzBasic automatisch dieses Fenster schlie\u00dfen."
         },
         "code": ""
       },
@@ -955,10 +952,7 @@
       },
       "graphics": {
         "name": "Graphics",
-        "description": {
-          "en": "",
-          "de": "Graphics ist der wichtigste Grafikbefehl \u00fcberhaupt. Dieser Befehl \u00f6ffnet ein Grafikfenster oder \u00e4ndert die Gr\u00f6\u00dfe des Fensters (Breite, H\u00f6he und Farbtiefe). Die Farbtiefe ist optional und kann weggelassen werden - dann w\u00e4hlt BlitzBasic automatisch die passende Farbtiefe aus. Das Benutzen des Graphics-Befehls setzt Color, ClsColor und aktive Grafikbuffer auf die Standardwerte zur\u00fcck. "
-        },
+        "description": { "en": "", "de": "Initialisiert den Grafikmodus." },
         "code": ""
       },
       "graphicsbuffer": {
@@ -1021,114 +1015,76 @@
     "graphics": {
       "availvidmem": {
         "name": "AvailVidMem",
-        "description": {
-          "en": "",
-          "de": "Ermittelt den noch zur Verf\u00fcgung stehenden, freien Grafikspeicher in Byte. Die Funktion TotalVidMem() liefert dagegen die Gr\u00f6\u00dfe des Grafikspeichers zur\u00fcck.   Sollte diese Funktion sehr wenig Speicher anzeigen (weniger als zul\u00e4ssig oder \u00fcblich), so handelt es sich wahrscheinlich um einen alten Rechner mit wenig Grafikspeicher. "
-        },
+        "description": { "en": "", "de": "Ermittelt den freien Grafikspeicher." },
         "code": ""
       },
       "backbuffer": {
         "name": "BackBuffer",
         "description": {
           "en": "",
-          "de": "Diese Funktion liefert einen Zahlenwert, der die Identit\u00e4t des Grafikbuffers angibt. In BlitzBasic gibt es nur zwei Bildschirmbuffer - das sichtbare Frontbuffer und das unsichtbare Backbuffer   Der ermittelte Wert kann mit vielen weiteren Befehlen verwendet werden. Wird es z.B. mit SetBuffer verwendet, so erfolgt die Grafikausgabe zuerst auf einer unsichtbaren Bildschirmseite. Erst nach dem Flip-Befehl wird die Grafik dann sichtbar. Dies ist besonders bei Spielen praktisch, ja sogar notwendig, um eine ruhige und ruckelfreie Grafik zu erstellen. Diese Methode nennt man Pageflipping."
+          "de": "Liefert die Identit\u00e4t des Hintergrundbuffers, auf welchem Bilder vorgezeichnet werden."
         },
         "code": ""
       },
       "cls": {
         "name": "Cls",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung l\u00f6scht die Grafik vom Bildschirm. Um den Bildschirm in einer bestimmten Farbe zu f\u00fcllen kann man ClsColor verwenden."
-        },
+        "description": { "en": "", "de": "L\u00f6scht den Inhalt des aktuellen Grafikbuffers." },
         "code": ""
       },
       "clscolor": {
         "name": "ClsColor",
         "description": {
           "en": "",
-          "de": "Diese Anweisung setzt die F\u00fcllfarbe f\u00fcr Cls-Anweisung. Mit dem Befehl k\u00f6nnen beliebige Farben zusammengemischt werden. Tipp: verwende Mischwerkzeug aus Paintbrush-Programm, um eine Farbe zu bestimmen."
+          "de": "Legt die Hintergrundfarbe fest, die beim L\u00f6schen des Grafikbuffers eingezeichnet wird."
         },
         "code": ""
       },
       "color": {
         "name": "Color",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung setzt die Zeichenfarbe f\u00fcr Grafikbefehle wie Line, Oval, Rect und Plot. Mit dem Befehl k\u00f6nnen beliebige Farben zusammengemischt werden. Tipp: verwende Mischwerkzeug aus Paint, um eine Farbe zu bestimmen."
-        },
+        "description": { "en": "", "de": "Setzt die aktuelle Farbe f\u00fcr Zeichenbefehle." },
         "code": ""
       },
       "copyrect": {
         "name": "CopyRect",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl kopiert einen Bildausschnitt von einem Buffer zum anderen. Es kann aber auch ein und der selbe Buffer verwendet werden. Benutze f\u00fcr Buffer z.B. Backbuffer, Frontbuffer oder Imagebuffer. Werden Buffer-Parameter weggelassen, so wird der aktuelle Buffer verwendet. Die Koordinate X1\/Y1 ist oben\/links im Quellbuffer. Die Koordinate X2\/Y2 ist dagegen oben\/links im Zielbuffer.   Benutze auch Grabimage, um einfach einen Bildschirmausschnitt in ein neu erstelltes Bild zu kopieren. "
-        },
+        "description": { "en": "", "de": "Kopiert einen Ausschnitt das aktuellen Grafikbuffers." },
         "code": ""
       },
       "flip": {
         "name": "Flip",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl wird bei Doublebuffering angewendet. Dabei muss man zuerst den Hintergrundbuffer mit Setbuffer Backbuffer() ausw\u00e4hlen. Nun kann man alle Grafikbefehle wie z.B. Line ausf\u00fchren. Zuletzt wird der Befehl Flip benutzt, um die Grafik sichtbar zu machen. Dabei werden Backbuffer und Frontbuffer miteinander vertauscht. Nur so k\u00f6nnen flimmerfreie Spiele entwickelt werden."
-        },
+        "description": { "en": "", "de": "Tauscht den Inhalt des Front- und Backbuffers." },
         "code": ""
       },
       "frontbuffer": {
         "name": "FrontBuffer",
         "description": {
           "en": "",
-          "de": "Diese Funktion liefert einen Zahlenwert, der die Identit\u00e4t des Grafikbuffers angibt. In BlitzBasic gibt es zwei Bildschirmbuffer - das sichtbare FrontBuffer und das unsichtbare BackBuffer.   Der ermittelte Wert kann mit vielen weiteren Befehlen verwendet werden. Wird es z.B. mit SetBuffer verwendet, so erfolgt die Grafikausgabe sofort auf der sichtbaren Bildschirmseite. Der Befehl Flipwird dadurch nicht mehr notwendig. "
+          "de": "Liefert die Identit\u00e4t des Vordergrundbuffers, auf welchem Bilder direkt eingezeichnet werden."
         },
         "code": ""
       },
-      "line": {
-        "name": "Line",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung zeichnet eine einfache Linie von einem Koordinatenpunkt zum anderen. Es wird die aktuelle Zeichenfarbe verwendet, die mit COLOR eingestellt werden kann."
-        },
-        "code": ""
-      },
+      "line": { "name": "Line", "description": { "en": "", "de": "Zeichnet eine gerade Linie." }, "code": "" },
       "loadbuffer": {
         "name": "LoadBuffer",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl l\u00e4dt eine Grafikdatei in ein Buffer. Diese Buffer k\u00f6nnen verwendet werden:   FrontBuffer- Grafik wird sofort sichtbar  BackBuffer- Grafik bleibt bis zum FLIP-Befehl unsichtbar  ImageBuffer- wird wie ein Bild geladen (wie LoadImage)"
-        },
+        "description": { "en": "", "de": "L\u00e4dt ein Bild in einen bestimmten Grafikbuffer." },
         "code": ""
       },
       "origin": {
         "name": "Origin",
         "description": {
           "en": "",
-          "de": "Dieser Befehl verschiebt den Bildschirm-Nullpunkt. Normalerweise ist der Nullpunkt immer oben\/links. Man kann den aber auch woanders hinsetzen. Dadurch werden alle nachfolgende Grafiken ersetzt eingezeichnet und die manuelle Verschiebung ist nicht mehr notwendig."
+          "de": "Verschiebt den Ursprung des Koordinatensystems. Standardm\u00e4\u00dfig befindet sich der Punkt 0,0 ganz oben links."
         },
         "code": ""
       },
-      "oval": {
-        "name": "Oval",
-        "description": {
-          "en": "",
-          "de": "Mit diesem Befehl kann ein Kreis oder eine Ellipse eingezeichnet werden. Die Koordinate X\/Y gibt dabei nicht den Mittelpunkt, sondern den linken\/oberen Kreisrand. Breite und H\u00f6he sind die Abst\u00e4nde von X\/Y nach rechts\/unten. Sind Breite und H\u00f6he gleich, so erscheint ein Kreis, andernfalls eine Ellipse. Der Kreis wird normalerweise ausgef\u00fcllt gezeichnet. Die F\u00fcllung kann man aber auch mit der F\u00fcllen-Option deaktivieren."
-        },
-        "code": ""
-      },
+      "oval": { "name": "Oval", "description": { "en": "", "de": "Zeichnet eine Ellipse." }, "code": "" },
       "rect": {
         "name": "Rect",
-        "description": {
-          "en": "",
-          "de": "Dieser Grafikbefehl zeichnet einen Rechteck auf dem Bildschirm. Dazu muss man nur die X\/Y-Koordinaten f\u00fcr oben\/links sowie Breite und H\u00f6he des Rechtecks angeben. Zus\u00e4tzlich ist die Option F\u00fcllen m\u00f6glich. Wird Null angegeben, so erscheint ein nicht ausgef\u00fcllter Rechteck. Bei Eins (Standard) wird ein gef\u00fcllter Rechteck gezeichnet."
-        },
-        "code": "Rect 20, 20, 100, 50"
+        "description": { "en": "", "de": "Zeichnet ein Rechteck." },
+        "code": "Graphics 640, 480\r\nSetBuffer BackBuffer()\r\nbox_x = -20\r\nbox_y = 100\r\nWhile Not KeyHit(1)\r\nCls\r\nRect box_x, box_y, 20, 20, 1\r\nFlip\r\nbox_x = box_x + 1\r\nIf box_x = 640 Then box_x = -20\r\nWend"
       },
       "savebuffer": {
         "name": "SaveBuffer",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl speichert einen ganzen Grafikbuffer. Das Bild kann nur als 24-Bit BMP-Datei abgespeichert werden.   F\u00fcr \"Buffer\" kann FrontBuffer verwendet werden, wobei dann das sichtbare Bild abgespeichert wird. Man kann auch BackBuffer angeben, dann wird das unsichtbare Bild gespeichert. Es kann aber auch ImageBufferangewendet werden, wobei dann ein geladenes\/erstelltes Bild abgespeichert wird."
-        },
+        "description": { "en": "", "de": "Speichert den Inhalt eines Grafikbuffers in eine Datei." },
         "code": ""
       },
       "scanline": {
@@ -1177,7 +1133,7 @@
         "name": "AutoMidHandle",
         "description": {
           "en": "",
-          "de": "Diese Anweisung definiert den Grafik-Bezugspunkt. Wird es auf TRUE geschaltet, so ist der Bezugspunkt bei jeder geladenen Grafik immer mittig. Wird es dagegen auf FALSE geschaltet, so ist der Bezugspunkt immer oben\/links (Standard). "
+          "de": "Setzt den Bezugspunkt von Bildern in die Mitte des Bildes. Standardm\u00e4\u00dfig und wenn der Effekt abgeschaltet wird, befindet sich der Bezugspunkt von Bildern oben links."
         },
         "code": ""
       },
@@ -1185,47 +1141,38 @@
         "name": "BufferDirty",
         "description": {
           "en": "",
-          "de": "Bilder, auf denen mit Zeichenbefehlen wie z.B. Rect, Text oder WritePixel\/WritePixelFast gezeichnet wurde, k\u00f6nnen mit BufferDirty als \"unsauber\" markiert werden. Dies teilt DirectX mit, dass der Buffer ver\u00e4ndert wurde und neu in den Grafikspeicher \u00fcbertragen werden muss. Unterl\u00e4sst man dies, passiert es sehr h\u00e4ufig, dass das Bild verloren geht, wenn dem Programm aus irgendeinem Grund der Grafikkartenzugriff entzogen wird (z.B. 'Alt-Tab' im Vollbildmodus, Minimieren des Spiels oder beim Sperren des Computers mit 'Win+L'). "
+          "de": "Bilder, auf denen mit Zeichenbefehlen wie z.B. Rect, Text oder WritePixel/WritePixelFast gezeichnet wurde, k\u00f6nnen mit BufferDirty als \"unsauber\" markiert werden. Dies teilt DirectX mit, dass der Buffer ver\u00e4ndert wurde und neu in den Grafikspeicher \u00fcbertragen werden muss. Unterl\u00e4sst man dies, passiert es sehr h\u00e4ufig, dass das Bild verloren geht, wenn dem Programm aus irgendeinem Grund der Grafikkartenzugriff entzogen wird (z.B. 'Alt-Tab' im Vollbildmodus, Minimieren des Spiels oder beim Sperren des Computers mit 'Win+L'). "
         },
         "code": ""
       },
       "copyimage": {
         "name": "CopyImage",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung dupliziert ein Bild, welches bereits im Speicher abgelegt ist. So kann man dann z.B. ein Originalbild f\u00fcr sp\u00e4tere Verwendung erhalten, w\u00e4hrend das kopierte Bild st\u00e4ndig ver\u00e4ndert wird. Um ein Bild direkt vom Bildschirm zu kopieren, muss man CopyRect oder GrabImage verwenden."
-        },
+        "description": { "en": "", "de": "Kopiert ein bereits vorhandenes Bild und erzeugt eine neue Referenz." },
         "code": ""
       },
       "createimage": {
         "name": "CreateImage",
         "description": {
           "en": "",
-          "de": "Erstellt ein neues und leeres (Animations-) Bild im Speicher. Man kann dann mit Hilfe der Befehle SetBuffer ImageBuffer() direkt darauf zeichnen. Bei diesem Befehl muss man nur die Breite und H\u00f6he angeben. Soll auch eine Animation erstellt werden, so muss man den Frame-Wert eingeben. Eine Animation enth\u00e4lt nur mehrere Einzelbilder nebeneinander.   Die \"modus\" Parameter sind folgende:   1 = Managed: Grafiken werden in RAM (und VRAM) gehalten und wenn notwendig nach VRAM konvertiert, so k\u00f6nnen Grafiken nach \u00c4nderung der Aufl\u00f6sung erhalten werden. Solche Grafiken werden schnell gezeichnet - aber daf\u00fcr sind die bei \u00c4nderungen langsam.   2 = Dynamic: Grafiken werden nur im VRAM gehalten - das ist die schnellste Variante. Grafiken gehen jedoch nach \u00c4nderung der Aufl\u00f6sung verloren.   4 = Scratch: Grafiken werden nur im RAM gehalten - das ist sehr langsam. Das hat jedoch einen Vorteil: Ein PC hat viel mehr RAM als VRAM - deshalb k\u00f6nnen TMP-Grafiken im RAM gehalten werden. "
+          "de": "Erstellt ein leeres Bild mit einer bestimmten Aufl\u00f6sung und gibt die Referenz zur\u00fcck."
         },
         "code": ""
       },
       "drawblock": {
         "name": "DrawBlock",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung zeichnet ein geladenes\/erstelltes Bild auf dem Bildschirm. Dieses Bild kann auch au\u00dferhalb des sichtbaren Bereichs eingezeichnet werden. Bei Animationsbildern kann zus\u00e4tzlich das Framebild angegeben werden. Der Unterschied zu DrawImage besteht darin, dass das Bild ohne Transparenzfarbe gezeichnet wird. DrawBlock kann z.B. f\u00fcr Hintergrundbilder verwendet werden."
-        },
+        "description": { "en": "", "de": "Zeichnet ein Bild ohne Transparenzfarbe." },
         "code": ""
       },
       "drawblockrect": {
         "name": "DrawBlockRect",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung zeichnet ein geladenes\/erstelltes Bild auf dem Bildschirm. Dabei wird nur ein Ausschnitt des Bildes dargestellt. Dieses Bild kann auch au\u00dferhalb des sichtbaren Bereichs eingezeichnet werden. Bei Animationsbildern kann zus\u00e4tzlich das Framebild angegeben werden. Der Unterschied zu DrawImageRect besteht darin, dass das Bild ohne Transparenzfarbe gezeichnet wird. DrawBlockRect kann z.B. f\u00fcr Hintergrundbilder verwendet werden.   Besonders praktisch, wenn nur ein Teil des Bildschirms durch ein Bild ersetzt werden soll. "
-        },
+        "description": { "en": "", "de": "Zeichnet einen bestimmten Ausschnitt eines Bildes ohne Transparenzfarbe." },
         "code": ""
       },
       "drawimage": {
         "name": "DrawImage",
         "description": {
           "en": "",
-          "de": "Diese Anweisung zeichnet ein geladenes\/erstelltes Bild auf dem Bildschirm. Dieses Bild kann auch au\u00dferhalb des sichtbaren Bereichs eingezeichnet werden. Bei Animationsbildern kann zus\u00e4tzlich das Framebild angegeben werden. Anders als DrawBlock, zeichnet diese Anweisung eine ausgew\u00e4hlte Farbe transparent ein. DrawImage wird meistens f\u00fcr bewegliche Objekte verwendet, die an bestimmten Stellen das Hintergrundbild nicht \u00fcbermalen sollen.   Um eine transparente Farbe zu definieren muss man zuerst ein Bild zeichnen. Dann muss man die Transparenzfl\u00e4che mit einer Farbe markieren, die sonst im Bild nicht vorkommt. Nach dem Laden kann dann mit MaskImage die Transparenzfarbe eingestellt werden."
+          "de": "Zeichnet ein Bild. Wenn das Bild eine Transparenzfarbe besitzt, werden Bereiche mit dieser Farbe nicht eingezeichnet."
         },
         "code": ""
       },
@@ -1233,55 +1180,43 @@
         "name": "DrawImageRect",
         "description": {
           "en": "",
-          "de": "Diese Anweisung zeichnet ein geladenes\/erstelltes Bild auf dem Bildschirm. Dabei wird nur ein Ausschnitt des Bildes dargestellt. Dieses Bild kann auch au\u00dferhalb des sichtbaren Bereichs eingezeichnet werden. Bei Animationsbildern kann zus\u00e4tzlich das Framebild angegeben werden. Anders als DrawBlockRect, zeichnet diese Anweisung eine ausgew\u00e4hlte Farbe transparent ein.   Um eine transparente Farbe zu definieren muss man zuerst ein Bild zeichnen. Dann muss man die Transparenzfl\u00e4che mit einer Farbe markieren, die sonst im Bild nicht vorkommt. Nach dem Laden kann dann mit MaskImage die Transparenzfarbe eingestellt werden."
+          "de": "Zeichnet einen bestimmten Ausschnitt eines Bildes. Wenn das Bild eine Transparenzfarbe besitzt, werden Bereiche mit dieser Farbe nicht eingezeichnet."
         },
         "code": ""
       },
       "freeimage": {
         "name": "FreeImage",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung entfernt ein vorher mit LoadImage geladenes Bild aus dem Speicher. Dadurch wird mehr Speicher frei. Dies sollte m\u00f6glichst angewendet werden, um den Speicher zu schonen - besonders bei \u00e4lteren Rechnern wird es da kritisch."
-        },
+        "description": { "en": "", "de": "L\u00f6scht ein Bild aus dem Speicher." },
         "code": ""
       },
       "grabimage": {
         "name": "GrabImage",
         "description": {
           "en": "",
-          "de": "Dieser Befehl kopiert einen Ausschnitt des Bildes aus einem Grafikbuffer. Dabei kann man nicht nur vom Bildschirm, sondern auch von einem anderen Bild den Ausschnitt kopieren (siehe auch SetBuffer). Vorher muss man z.B. mit CreateImage ein (leeres) Bild im Speicher erstellen. "
+          "de": "Kopiert einen Ausschnitt des aktuellen Grafik-Kontextes und speichert ihn in der abgegeben Referenz."
         },
         "code": ""
       },
       "handleimage": {
         "name": "HandleImage",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl wird dazu verwendet, den Bezugspunkt eines Bildes zu \u00e4ndern. Normalerweise ist der Bezugspunkt immer oben\/links. Benutze auch AutoMidHandle sowie MidHandle, um ein Bild (automatisch) zu zentrieren."
-        },
+        "description": { "en": "", "de": "Legt den Bezugspunkt eines Bildes fest." },
         "code": ""
       },
       "imagebuffer": {
         "name": "ImageBuffer",
-        "description": {
-          "en": "",
-          "de": "Normalerweise wird die Grafik auf dem Bildschirm ausgegeben. Dieser Befehl, der zusammen mit SetBuffer verwendet wird, leitet die Grafik in ein Bild um, welches im Speicher abgelegt ist. Es ist sehr praktisch, wenn die Grafik programmiert wird und dann auf dem Bildschirm ausgegeben wird. "
-        },
+        "description": { "en": "", "de": "Wechselt in den Grafik-Kontext eines bestimmten Bildes." },
         "code": ""
       },
       "imageheight": {
         "name": "ImageHeight",
-        "description": {
-          "en": "",
-          "de": "Diese Funktion ermittelt die H\u00f6he eines Bildes, das bereits im Speicher abgelegt wurde. Es ist f\u00fcr Bilder, die mit (\"unbekannten\") LoadImage geladen wurden, besonders n\u00fctzlich."
-        },
+        "description": { "en": "", "de": "Ermittelt die H\u00f6he eines Bildes." },
         "code": ""
       },
       "imagerectcollide": {
         "name": "ImageRectCollide",
         "description": {
           "en": "",
-          "de": "Diese Funktion \u00fcberpr\u00fcft, ob ein Bild einen rechteckigen Bereich ber\u00fchrt oder \u00fcberlappt. Dies ist besonders f\u00fcr Objekte mit transparenter Farbe gut geeignet. Die Pr\u00fcfung geschieht pixelgenau - daher etwas langsamer als ImageRectOverlap. Um die Kollision zwischen zwei Bilder zu pr\u00fcfen, ist der Befehl ImagesCollide besser. Benutze MaskImage, um eine transparente Farbe auszuw\u00e4hlen! "
+          "de": "\u00dcberpr\u00fcft, ob ein Bild mit einem Rechteck kollidiert (pixelgenaue Abfrage)."
         },
         "code": ""
       },
@@ -1289,7 +1224,7 @@
         "name": "ImageRectOverlap",
         "description": {
           "en": "",
-          "de": "Diese Funktion \u00fcberpr\u00fcft, ob ein Bild einen rechteckigen Bereich \u00fcberlappt. Die transparente Farbe wird nicht ber\u00fccksichtigt. Dadurch ist dieser Befehl relativ ungenau, daf\u00fcr aber sehr schnell. Eigentlich ist dies eine Vereinfachung einer If-Then-Pr\u00fcfung. Um genauere Kollision zu ermitteln, ist der Befehl ImageRectCollide besser. F\u00fcr die Kollision zwischen zwei Bildern, ist der Befehl ImagesCollide notwendig. "
+          "de": "\u00dcberpr\u00fcft, ob ein Bild mit einem Rechteck \u00fcberlappt (nicht pixelgenau)."
         },
         "code": ""
       },
@@ -1297,7 +1232,7 @@
         "name": "ImagesCollide",
         "description": {
           "en": "",
-          "de": "Diese Funktion pr\u00fcft zwei Bilder auf pixelgenaue Kollision. Dies ist besonders f\u00fcr Objekte mit transparenter Farbe gut geeignet. Das Pr\u00fcfen geschieht pixelgenau, aber mit einer relativ langsamen Geschwindigkeit. Ist eine so hohe Genauigkeit nicht notwendig, so sollte besser ImageRectOverlap oder ImagesOverlap verwendet werden. Benutze MaskImage, um eine transparente Farbe auszuw\u00e4hlen! "
+          "de": "\u00dcberpr\u00fcft, ob zwei Bilder miteinander kollidieren (pixelgenaue Abfrage)."
         },
         "code": ""
       },
@@ -1305,127 +1240,83 @@
         "name": "ImagesOverlap",
         "description": {
           "en": "",
-          "de": "Diese Funktion pr\u00fcft zwei Bilder auf Kollision. Die transparente Farbe wird nicht ber\u00fccksichtigt. Dadurch ist dieser Befehl relativ ungenau, daf\u00fcr aber sehr schnell. Eigentlich ist dies eine Vereinfachung einer If-Then-Pr\u00fcfung. Um genauere Kollision zu ermitteln, ist der Befehl ImagesCollide besser. "
+          "de": "\u00dcberpr\u00fcft, ob zwei Bilder sich \u00fcberlappen (nicht pixelgenau)."
         },
         "code": ""
       },
       "imagewidth": {
         "name": "ImageWidth",
-        "description": {
-          "en": "",
-          "de": "Diese Funktion ermittelt die Breite eines Bildes, das bereits im Speicher abgelegt wurde. Es ist f\u00fcr (\"unbekannte\") Bilder, die mit LoadImage geladen wurden, besonders n\u00fctzlich."
-        },
+        "description": { "en": "", "de": "Ermittelt die Breite eines Bildes." },
         "code": ""
       },
       "imagexhandle": {
         "name": "ImageXHandle",
-        "description": {
-          "en": "",
-          "de": "Diese Funktion ermittelt die Verschiebung eines Bildes in X-Richtung.   Wenn ein Bild gezeichnet wird, dann werden die X- und Y-Koordinaten angegeben. Das Bild kann aber um ein paar Pixel verschoben (kalibriert) werden. Dadurch kann ein Objekt z.B. genau mittig auf der Koordinate dargestellt werden, ohne, dass man irgendwelche Werte zur Position dazurechnen muss."
-        },
+        "description": { "en": "", "de": "Ermittelt die horizontale Verschiebung des Bezugspunktes eines Bildes." },
         "code": ""
       },
       "imageyhandle": {
         "name": "ImageYHandle",
-        "description": {
-          "en": "",
-          "de": "Diese Funktion ermittelt die Verschiebung eines Bildes in Y-Richtung.   Wenn ein Bild gezeichnet wird, dann werden die X- und Y-Koordinaten angegeben. Das Bild kann aber um ein paar Pixel verschoben (kalibriert) werden. Dadurch kann ein Objekt z.B. genau mittig auf der Koordinate dargestellt werden, ohne, dass man irgendwelche Werte zur Position dazurechnen muss."
-        },
+        "description": { "en": "", "de": "Ermittelt die vertikale Verschiebung des Bezugspunktes eines Bildes." },
         "code": ""
       },
       "loadanimimage": {
         "name": "LoadAnimImage",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung l\u00e4dt ein Animationsbild. Es funktioniert eigentlich wie LoadImage, nur enth\u00e4lt dieses Bild gleich mehrere kleine Animationsbilder nebeneinander. Jedes Animationsbild hat die gleiche Breite und H\u00f6he. Es d\u00fcrfen auch keine L\u00fccken zwischen den Bildern vorkommen. Wenn man die Animation mit DrawImage abspielt, dann muss man das Animation-Frame angeben. "
-        },
+        "description": { "en": "", "de": "L\u00e4dt ein animiertes Bild, das aus mehreren Einzelbildern besteht." },
         "code": ""
       },
-      "loadimage": {
-        "name": "LoadImage",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl l\u00e4dt eine Grafikdatei von der Festplatte in den Speicher. Es k\u00f6nnen Bmp-Dateien geladen werden. Die Vollversion kann zus\u00e4tzlich noch Jpg, Png, Pcx, Tga, Iff-Dateien laden. Die zur\u00fcckgelieferte Nummer ist ein Image-Handle, der f\u00fcr alle anderen Image-Befehle unbedingt angegeben werden muss. Ist dieser Wert gleich Null, so konnte die Grafik nicht geladen werden (wurde z.B. nicht gefunden).   Um die Grafik dann auf dem Bildschirm sichtbar zu machen, k\u00f6nnen diese Befehle verwendet werden: DrawBlock, DrawBlockRect, DrawImage, DrawImageRect. "
-        },
-        "code": ""
-      },
+      "loadimage": { "name": "LoadImage", "description": { "en": "", "de": "L\u00e4dt ein Bild." }, "code": "" },
       "maskimage": {
         "name": "MaskImage",
         "description": {
           "en": "",
-          "de": "Diese Anweisung setzt die Transparenzfarbe eines Bildes. Normalerweise wird ein Objekt als rechteckiges Bild auf dem Bildschirm erscheinen. Mit diesem Befehl wird eine bestimmte Farbe ausgew\u00e4hlt, die dann nicht mehr eingezeichnet wird. Jedem Bild wird zuerst die schwarze Farbe als MaskColor zugewiesen. Da die schwarze Farbe sehr h\u00e4ufig in Bildern vorkommt, kann man auch eine andere Farbe ausw\u00e4hlen - z.B. rot oder lila."
+          "de": "Setzt die Transparenzfarbe eines Bildes. Alle Bildpunkte mit dieser Farbe werden dann transparent (unsichtbar)."
         },
         "code": ""
       },
       "midhandle": {
         "name": "MidHandle",
-        "description": {
-          "en": "",
-          "de": "Diese Anweisung zentriert ein Bild, welches z.B. mit LoadImage geladen wurde. Normalerweise ist der Bezugspunkt einer Grafik immer oben\/links. Mit MidHandle wird der Bezugspunkt genau auf die Mitte gesetzt. Wenn man dann ein Bild mit DrawImage einzeichnet, so wird das Bild dann automatisch einige Pixel nach oben und nach links verschoben - das Bild erscheint mittig zur angegeben Koordinate. Diese Funktion ist f\u00fcr runde Objekte wie Kugel oder Ball sehr praktisch."
-        },
+        "description": { "en": "", "de": "Verschiebt den Bezugspunkt eines Bildes in die Bildmitte." },
         "code": ""
       },
       "rectsoverlap": {
         "name": "RectsOverlap",
-        "description": {
-          "en": "",
-          "de": "Diese Funktion \u00fcberpr\u00fcft, ob ein Rechteck ein anderes ber\u00fchrt. Diese Rechtecke m\u00fcssen sich nicht auf dem Bildschirm befinden. Eigentlich ist dies eine Vereinfachung einer IF...THEN-Pr\u00fcfung.   Um genauere Kollision zu ermitteln, ist der Befehl ImageRectCollide besser. F\u00fcr die Kollision zwischen zwei Bildern ist der Befehl ImagesCollide notwendig."
-        },
+        "description": { "en": "", "de": "Pr\u00fcft, ob zwei Rechtecke sich \u00fcberlappen." },
         "code": ""
       },
       "resizeimage": {
         "name": "ResizeImage",
-        "description": {
-          "en": "",
-          "de": "Dieser Grafikbefehl \u00e4ndert die Breite und H\u00f6he eines Bildes. Das Bild muss bereits im Speicher vorhanden sein (z.B. mit LoadImage laden).   Der Befehl ScaleImage funktioniert \u00e4hnlich, dort muss man aber den Faktor angeben, um den das Bild vergr\u00f6\u00dfert\/verkleinert werden soll. "
-        },
+        "description": { "en": "", "de": "\u00c4ndert die H\u00f6he und Breite eines Bildes." },
         "code": ""
       },
       "rotateimage": {
         "name": "RotateImage",
-        "description": {
-          "en": "",
-          "de": "Dieser Grafikbefehl dreht ein Bild um einen bestimmten Winkel im Uhrzeigersinn. Dieses Bild muss bereits im Speicher vorhanden sein (z.B. mit LoadImage laden). Die Identit\u00e4t, die LoadImage zur\u00fcckgibt, wird f\u00fcr diese Funktion gebraucht. "
-        },
+        "description": { "en": "", "de": "Dreht das Bild an seinem Bezugspunkt um einen bestimmten Winkel." },
         "code": ""
       },
-      "saveimage": {
-        "name": "SaveImage",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl speichert ein Bild, welches vorher geladen bzw. erstellt wurde. Das Bild kann nur als 24-Bit BMP-Datei abgespeichert werden.   F\u00fcr \"Name\" wird die Identit\u00e4t angegeben, die z.B. mit LoadImage ermittelt wurde. \"Frame\"-Parameter ist Optional und wird f\u00fcr Animationsbilder benutzt. Ein Animationsbild f\u00e4ngt mit 0 an. "
-        },
-        "code": ""
-      },
+      "saveimage": { "name": "SaveImage", "description": { "en": "", "de": "Speichert ein Bild ab." }, "code": "" },
       "scaleimage": {
         "name": "ScaleImage",
-        "description": {
-          "en": "",
-          "de": "Dieser Grafikbefehl \u00e4ndert die Breite und H\u00f6he eines Bildes. Das Bild muss bereits im Speicher vorhanden sein (z.B. mit LoadImage laden).   Der Befehl ResizeImage funktioniert \u00e4hnlich. Bei dem Befehl ScaleImage muss man aber einen Zoom-Faktor angeben. Der Wert 2 (=200%) macht das Bild doppelt so gro\u00df. 0.5 (=50%) halbiert es."
-        },
+        "description": { "en": "", "de": "Skaliert ein Bild um einen bestimmten Faktor." },
         "code": ""
       },
       "tformfilter": {
         "name": "TFormFilter",
         "description": {
           "en": "",
-          "de": "Dieser Befehl schaltet einen bilinearen Filter ein oder aus. Dieser Filter hat nur Auswirkungen auf ResizeImage, RotateImage und ScaleImage. Ist der Filter aktiviert, so wird eine Treppenbildung und scharfe Kantenbildung verhindert, indem \"Zwischenpunkte\" berechnet werden. Allerdings wirkt das Bild dann etwas unscharf. Ein weiterer Nebeneffekt: Das berechnete Bild kann nicht als Transparenzbild verwendet werden."
+          "de": "Schaltet den bilinearen Filter ein bzw. aus. Je nach Einstellung werden Farbverl\u00e4ufe beim Skalieren oder Rotieren von Bildern weich oder hart berechnet."
         },
         "code": ""
       },
       "tformimage": {
         "name": "TFormImage",
-        "description": {
-          "en": "",
-          "de": "So ist die Matrix aufgebaut, die TFormImage zu Grunde liegt:  ( a# , c# )  ( b# , d# )  Jede Position in der Matrix bedient einen Faktor der Bildtransformation:  a# - Horizontale Skalierung des Images. Negative Werte spiegeln es horizontal. 0 ist kein g\u00fcltiger Wert, 1 ist der Wert f\u00fcr keine Ver\u00e4nderung.  b# - Zerrt ein Image vertikal. 0 f\u00fchrt keine Scherung durch.  c# - Zerrt ein Image horizontal. 0 f\u00fchrt keine Scherung durch.  d# - Vertikale Skalierung des Images. Negative Werte spiegeln es vertikal. 0 ist kein g\u00fcltiger Wert, 1 ist der Wert f\u00fcr keine Ver\u00e4nderung.    Dieser Grafikbefehl kann ein Bild gleichzeitig skalieren, drehen, zerren und spiegeln. Dazu muss man die Identit\u00e4t des Bildes angeben, die z.B. mit LoadImage ermittelt wurde. TFormImage ist nicht f\u00fcr einen besonderen Einsatz programmiert worden. Bitte benutze ResizeImage, RotateImage oder ScaleImage."
-        },
+        "description": { "en": "", "de": "Dreht, skaliert, zerrt und spiegelt ein Bild gleichzeitig." },
         "code": ""
       },
       "tileblock": {
         "name": "TileBlock",
         "description": {
           "en": "",
-          "de": "Dieser Grafikbefehl wird auf den kompletten Grafikbereich angewendet. Dabei wird der Grafikbereich mit einem Bild texturiert. Das hei\u00dft: das Bild wird solange wiederholt nebeneinander gezeichnet, bis der komplette Grafikbereich gef\u00fcllt ist (so \u00e4hnlich wie das Desktop-Hintergrundbild von Windows).   Die Transparenzfarbe wird bei diesem Befehl ignoriert. Benutze TileImage, wenn mehrere Texturen \u00fcbereinander gezeichnet werden sollen (Layer-Grafik)."
+          "de": "Zeichnet ein Bild \u00fcber den gesamten Bildschirm (ohne Transparenzfarbe)."
         },
         "code": ""
       },
@@ -1433,7 +1324,7 @@
         "name": "TileImage",
         "description": {
           "en": "",
-          "de": "Dieser Grafikbefehl wird auf den kompletten Grafikbereich angewendet. Dabei wird der Grafikbereich mit einem Bild texturiert. Das hei\u00dft: das Bild wird solange wiederholt nebeneinander gezeichnet, bis der komplette Grafikbereich gef\u00fcllt ist (so \u00e4hnlich wie das Desktop-Hintergrundbild von Windows).   Die Transparenzfarbe wird bei diesem Befehl mit ber\u00fccksichtigt (wird ausgeblendet). Benutze dagegen TileBlock, wenn nur eine Textur eingezeichnet werden soll."
+          "de": "Zeichnet ein Bild \u00fcber den gesamten Bildschirm (mit Transparenzfarbe)."
         },
         "code": ""
       }
@@ -1549,7 +1440,7 @@
         "name": "LockedFormat",
         "description": {
           "en": "",
-          "de": "Die Funktion LockedFormat ermittelt Farbtiefe eines Grafikbuffers. Die Farbtiefe wird als Code zur\u00fcckgeliefert. Dies ist dann n\u00fctzlich, wenn Pixel direkt ins Video-RAM mit Poke\/Peek-Befehlen gezeichnet\/gelesen werden sollen und nicht mir WritePixel\/ReadPixel. Dazu ist eine vorherige Sperrung des Grafikbuffers mit LockBuffer notwendig.   Direktes Zeichnen mit Poke ist deutlich schneller (bis zu 6x schneller als WritePixelFast). Jedoch muss man Speicherposition und Ausgabewert manuell berechnen. Dies ist nicht so einfach und nur mit Hilfe von LockedFormat, LockedPitch und LockedPixels m\u00f6glich. F\u00fcr schnelle Grafikausgabe muss man zudem f\u00fcr jedes Grafikformat eine gesonderte Routine programmieren!"
+          "de": "Die Funktion LockedFormat ermittelt Farbtiefe eines Grafikbuffers. Die Farbtiefe wird als Code zur\u00fcckgeliefert. Dies ist dann n\u00fctzlich, wenn Pixel direkt ins Video-RAM mit Poke/Peek-Befehlen gezeichnet/gelesen werden sollen und nicht mir WritePixel/ReadPixel. Dazu ist eine vorherige Sperrung des Grafikbuffers mit LockBuffer notwendig.   Direktes Zeichnen mit Poke ist deutlich schneller (bis zu 6x schneller als WritePixelFast). Jedoch muss man Speicherposition und Ausgabewert manuell berechnen. Dies ist nicht so einfach und nur mit Hilfe von LockedFormat, LockedPitch und LockedPixels m\u00f6glich. F\u00fcr schnelle Grafikausgabe muss man zudem f\u00fcr jedes Grafikformat eine gesonderte Routine programmieren!"
         },
         "code": ""
       },
@@ -1557,7 +1448,7 @@
         "name": "LockedPitch",
         "description": {
           "en": "",
-          "de": "Die Funktion LockedPitch ermittelt die Gr\u00f6\u00dfe in Byte, die f\u00fcr eine horizontale Zeile eines Grafikbuffers ben\u00f6tigt wird. Diese Gr\u00f6\u00dfe h\u00e4ngt von Breite des Grafikbuffers und Farbtiefe ab. Dies ist dann n\u00fctzlich, wenn Pixel direkt ins Video-RAM mit Poke\/Peek-Befehlen gezeichnet\/gelesen werden sollen und nicht mir WritePixel\/ReadPixel. Dazu ist eine vorherige Sperrung des Grafikbuffers mit LockBuffer notwendig.   Direktes Zeichnen mit Poke ist deutlich schneller (bis zu 6x schneller als WritePixelFast). Jedoch muss man Speicherposition und Ausgabewert manuell berechnen. Dies ist nicht so einfach und nur mit Hilfe von LockedFormat, LockedPitch und LockedPixels m\u00f6glich. F\u00fcr schnelle Grafikausgabe muss man zudem f\u00fcr jedes Grafikformat eine gesonderte Routine programmieren!"
+          "de": "Die Funktion LockedPitch ermittelt die Gr\u00f6\u00dfe in Byte, die f\u00fcr eine horizontale Zeile eines Grafikbuffers ben\u00f6tigt wird. Diese Gr\u00f6\u00dfe h\u00e4ngt von Breite des Grafikbuffers und Farbtiefe ab. Dies ist dann n\u00fctzlich, wenn Pixel direkt ins Video-RAM mit Poke/Peek-Befehlen gezeichnet/gelesen werden sollen und nicht mir WritePixel/ReadPixel. Dazu ist eine vorherige Sperrung des Grafikbuffers mit LockBuffer notwendig.   Direktes Zeichnen mit Poke ist deutlich schneller (bis zu 6x schneller als WritePixelFast). Jedoch muss man Speicherposition und Ausgabewert manuell berechnen. Dies ist nicht so einfach und nur mit Hilfe von LockedFormat, LockedPitch und LockedPixels m\u00f6glich. F\u00fcr schnelle Grafikausgabe muss man zudem f\u00fcr jedes Grafikformat eine gesonderte Routine programmieren!"
         },
         "code": ""
       },
@@ -1565,7 +1456,7 @@
         "name": "LockedPixels",
         "description": {
           "en": "",
-          "de": "Die Funktion LockedPixels liefert die Identit\u00e4t einer Bank zur\u00fcck. Diese Bank repr\u00e4sentiert den Videospeicher und enth\u00e4lt Pixelinformationen, die mit Peek-\/Poke-Befehlen manipuliert werden k\u00f6nnen. Dazu ist eine vorherige Sperrung des Grafikbuffers mit LockBuffer notwendig.   Direktes Zeichnen mit Poke ist deutlich schneller (bis zu 6x schneller als WritePixelFast). Jedoch muss man Speicherposition und Ausgabewert manuell berechnen. Dies ist nicht so einfach und nur mit Hilfe von LockedFormat, LockedPitch und LockedPixels m\u00f6glich. F\u00fcr schnelle Grafikausgabe muss man zudem f\u00fcr jedes Grafikformat eine gesonderte Routine programmieren!"
+          "de": "Die Funktion LockedPixels liefert die Identit\u00e4t einer Bank zur\u00fcck. Diese Bank repr\u00e4sentiert den Videospeicher und enth\u00e4lt Pixelinformationen, die mit Peek-/Poke-Befehlen manipuliert werden k\u00f6nnen. Dazu ist eine vorherige Sperrung des Grafikbuffers mit LockBuffer notwendig.   Direktes Zeichnen mit Poke ist deutlich schneller (bis zu 6x schneller als WritePixelFast). Jedoch muss man Speicherposition und Ausgabewert manuell berechnen. Dies ist nicht so einfach und nur mit Hilfe von LockedFormat, LockedPitch und LockedPixels m\u00f6glich. F\u00fcr schnelle Grafikausgabe muss man zudem f\u00fcr jedes Grafikformat eine gesonderte Routine programmieren!"
         },
         "code": ""
       },
@@ -1581,7 +1472,7 @@
         "name": "ReadPixel",
         "description": {
           "en": "",
-          "de": "Diese Funktion liest die Farbe eines Pixels an der X\/Y-Koordinate aus. Dabei wird die Farbe immer aus dem aktuellen Buffer ermitteln. Wenn man m\u00f6chte, dann kann man einen speziellen Grafikbuffer mit dem optionalen Parameter \"Buffer\" angeben - dann wird daraus die Farbe ausgelesen. (siehe BackBuffer, FrontBuffer und ImageBuffer).   Benutze WritePixel oder WritePixelFast, um die ausgelesene Farbe wieder einzuzeichnen."
+          "de": "Diese Funktion liest die Farbe eines Pixels an der X/Y-Koordinate aus. Dabei wird die Farbe immer aus dem aktuellen Buffer ermitteln. Wenn man m\u00f6chte, dann kann man einen speziellen Grafikbuffer mit dem optionalen Parameter \"Buffer\" angeben - dann wird daraus die Farbe ausgelesen. (siehe BackBuffer, FrontBuffer und ImageBuffer).   Benutze WritePixel oder WritePixelFast, um die ausgelesene Farbe wieder einzuzeichnen."
         },
         "code": ""
       },
@@ -1589,7 +1480,7 @@
         "name": "ReadPixelFast",
         "description": {
           "en": "",
-          "de": "Diese Funktion liest die Farbe eines Pixels an der X\/Y-Koordinate aus. Dabei wird die Farbe immer aus dem aktuellen Buffer ermitteln. Wenn man m\u00f6chte, dann kann man einen speziellen Grafikbuffer mit dem optionalen Parameter \"Buffer\" angeben - dann wird daraus die Farbe ausgelesen. (siehe BackBuffer, FrontBuffer und ImageBuffer).   Bevor man ReadPixelFast oder WritePixelFast verwenden kann, muss man noch den Befehl LockBuffer verwenden. Dadurch wird ein Buffer f\u00fcr andere Befehle gesperrt und die Fehlerpr\u00fcfung deaktiviert. Danach muss ein Buffer mit UnlockBuffer wieder ge\u00f6ffnet werden. "
+          "de": "Diese Funktion liest die Farbe eines Pixels an der X/Y-Koordinate aus. Dabei wird die Farbe immer aus dem aktuellen Buffer ermitteln. Wenn man m\u00f6chte, dann kann man einen speziellen Grafikbuffer mit dem optionalen Parameter \"Buffer\" angeben - dann wird daraus die Farbe ausgelesen. (siehe BackBuffer, FrontBuffer und ImageBuffer).   Bevor man ReadPixelFast oder WritePixelFast verwenden kann, muss man noch den Befehl LockBuffer verwenden. Dadurch wird ein Buffer f\u00fcr andere Befehle gesperrt und die Fehlerpr\u00fcfung deaktiviert. Danach muss ein Buffer mit UnlockBuffer wieder ge\u00f6ffnet werden. "
         },
         "code": ""
       },
@@ -1605,7 +1496,7 @@
         "name": "WritePixel",
         "description": {
           "en": "",
-          "de": "Diese Anweisung zeichnet einen Punkt an der X\/Y-Koordinate ein. F\u00fcr die Ausgabe wird immer der aktuelle Buffer verwendet. Mit der Buffer-Option kann die Grafikausgabe auf einem anderen Buffer erfolgen (siehe BackBuffer, FrontBuffer und ImageBuffer)."
+          "de": "Diese Anweisung zeichnet einen Punkt an der X/Y-Koordinate ein. F\u00fcr die Ausgabe wird immer der aktuelle Buffer verwendet. Mit der Buffer-Option kann die Grafikausgabe auf einem anderen Buffer erfolgen (siehe BackBuffer, FrontBuffer und ImageBuffer)."
         },
         "code": ""
       },
@@ -1613,7 +1504,7 @@
         "name": "WritePixelFast",
         "description": {
           "en": "",
-          "de": "Diese Anweisung zeichnet einen Punkt an der X\/Y-Koordinate ein. F\u00fcr die Ausgabe wird immer der aktuelle Buffer verwendet. Mit der Buffer-Option kann die Grafikausgabe auf einem anderen Buffer erfolgen (siehe BackBuffer, FrontBuffer und ImageBuffer).   Bevor man ReadPixelFast \/ WritePixelFast verwenden kann, muss man noch den Befehl LockBuffer verwenden. Dadurch wird ein Buffer f\u00fcr andere Befehle gesperrt und die Fehlerpr\u00fcfung deaktiviert. Danach muss ein Buffer mit UnlockBuffer wieder ge\u00f6ffnet werden. "
+          "de": "Diese Anweisung zeichnet einen Punkt an der X/Y-Koordinate ein. F\u00fcr die Ausgabe wird immer der aktuelle Buffer verwendet. Mit der Buffer-Option kann die Grafikausgabe auf einem anderen Buffer erfolgen (siehe BackBuffer, FrontBuffer und ImageBuffer).   Bevor man ReadPixelFast / WritePixelFast verwenden kann, muss man noch den Befehl LockBuffer verwenden. Dadurch wird ein Buffer f\u00fcr andere Befehle gesperrt und die Fehlerpr\u00fcfung deaktiviert. Danach muss ein Buffer mit UnlockBuffer wieder ge\u00f6ffnet werden. "
         },
         "code": ""
       }
@@ -1671,7 +1562,7 @@
         "name": "FontWidth",
         "description": {
           "en": "",
-          "de": "Diese Funktion ermittelt die maximale Breite des breitesten Zeichens in Pixel. Dabei wird immer die aktuell gesetzte Schrift ber\u00fccksichtigt, die mit LoadFont\/RequestFont geladen und mit SetFont gesetzt wurde.   Diese Funktion ist f\u00fcr Berechnungen gedacht, um einen Text genau zu platzieren bzw. um einen Text \u00fcber dem Bildschirm zu bewegen.   Die Funktion StringWidth ermittelt dagegen die tats\u00e4chliche L\u00e4nge eines Textes."
+          "de": "Diese Funktion ermittelt die maximale Breite des breitesten Zeichens in Pixel. Dabei wird immer die aktuell gesetzte Schrift ber\u00fccksichtigt, die mit LoadFont/RequestFont geladen und mit SetFont gesetzt wurde.   Diese Funktion ist f\u00fcr Berechnungen gedacht, um einen Text genau zu platzieren bzw. um einen Text \u00fcber dem Bildschirm zu bewegen.   Die Funktion StringWidth ermittelt dagegen die tats\u00e4chliche L\u00e4nge eines Textes."
         },
         "code": ""
       },
@@ -1679,7 +1570,7 @@
         "name": "FreeFont",
         "description": {
           "en": "",
-          "de": "Diese Anweisung entfernt eine vorher mit LoadFont\/RequestFont geladene Schrift aus dem Speicher. Dadurch wird mehr Speicher frei. Die FONT-Befehle von BlitzBasic arbeiten nicht mit Symbolschriften wie Webdings and Wingdings zusammen. "
+          "de": "Diese Anweisung entfernt eine vorher mit LoadFont/RequestFont geladene Schrift aus dem Speicher. Dadurch wird mehr Speicher frei. Die FONT-Befehle von BlitzBasic arbeiten nicht mit Symbolschriften wie Webdings and Wingdings zusammen. "
         },
         "code": ""
       },
@@ -1711,7 +1602,7 @@
         "name": "SetFont",
         "description": {
           "en": "",
-          "de": "Mit diesem Befehl kann eine Schrift ausgew\u00e4hlt werden, die f\u00fcr weitere Textausgabe benutzt werden soll. Die Schrift muss man aber vorher mit LoadFont\/RequestFont laden. Die somit Identit\u00e4t wird danach f\u00fcr diesen Befehl verwendet. Mit dem Text-Befehl kann die Schrift gezeichnet werden. Wird die Schrift sp\u00e4ter nicht mehr gebraucht, so sollte sie dann mit FreeFont entfernt werden. "
+          "de": "Mit diesem Befehl kann eine Schrift ausgew\u00e4hlt werden, die f\u00fcr weitere Textausgabe benutzt werden soll. Die Schrift muss man aber vorher mit LoadFont/RequestFont laden. Die somit Identit\u00e4t wird danach f\u00fcr diesen Befehl verwendet. Mit dem Text-Befehl kann die Schrift gezeichnet werden. Wird die Schrift sp\u00e4ter nicht mehr gebraucht, so sollte sie dann mit FreeFont entfernt werden. "
         },
         "code": ""
       },
@@ -1719,7 +1610,7 @@
         "name": "StringHeight",
         "description": {
           "en": "",
-          "de": "Diese Funktion ermittelt die H\u00f6he eines Textes in Pixel. Dabei wird immer die aktuell gesetzte Schrift ber\u00fccksichtigt, die mit LoadFont\/RequestFont geladen und mit SetFont gesetzt wurde.   Diese Funktion ist f\u00fcr Berechnungen gedacht, um einen Text genau zu platzieren bzw. um einen Text \u00fcber dem Bildschirm zu bewegen. "
+          "de": "Diese Funktion ermittelt die H\u00f6he eines Textes in Pixel. Dabei wird immer die aktuell gesetzte Schrift ber\u00fccksichtigt, die mit LoadFont/RequestFont geladen und mit SetFont gesetzt wurde.   Diese Funktion ist f\u00fcr Berechnungen gedacht, um einen Text genau zu platzieren bzw. um einen Text \u00fcber dem Bildschirm zu bewegen. "
         },
         "code": ""
       },
@@ -1727,7 +1618,7 @@
         "name": "StringWidth",
         "description": {
           "en": "",
-          "de": "Diese Funktion ermittelt die Breite eines Textes in Pixel. Dabei wird immer die aktuell gesetzte Schrift ber\u00fccksichtigt, die mit LoadFont\/RequestFont geladen und mit SetFont gesetzt wurde.   Diese Funktion ist f\u00fcr Berechnungen gedacht, um einen Text genau zu platzieren bzw. um einen Text \u00fcber dem Bildschirm zu bewegen."
+          "de": "Diese Funktion ermittelt die Breite eines Textes in Pixel. Dabei wird immer die aktuell gesetzte Schrift ber\u00fccksichtigt, die mit LoadFont/RequestFont geladen und mit SetFont gesetzt wurde.   Diese Funktion ist f\u00fcr Berechnungen gedacht, um einen Text genau zu platzieren bzw. um einen Text \u00fcber dem Bildschirm zu bewegen."
         },
         "code": ""
       },
@@ -2015,7 +1906,7 @@
         "name": "CameraRange",
         "description": {
           "en": "",
-          "de": "Mit CameraRange kann man die minimale und maximale Objektentfernung einstellen. Nur in diesem Bereich werden alle Objekte eingezeichnet. Sollte ein Objekt n\u00e4her\/weiter sein, so wird es geclippt (einzelne Dreiecke nicht eingezeichnet).   Mit dieser Einstellung kann man die 3D-Grafik wesentlich beschleunigen. Da dadurch nicht mehr alle Dreiecke gezeichnet werden. Mit dem Nebeleffekt kann ein pl\u00f6tzliches aufpoppen eines Objekts stark vermieden werden. "
+          "de": "Mit CameraRange kann man die minimale und maximale Objektentfernung einstellen. Nur in diesem Bereich werden alle Objekte eingezeichnet. Sollte ein Objekt n\u00e4her/weiter sein, so wird es geclippt (einzelne Dreiecke nicht eingezeichnet).   Mit dieser Einstellung kann man die 3D-Grafik wesentlich beschleunigen. Da dadurch nicht mehr alle Dreiecke gezeichnet werden. Mit dem Nebeleffekt kann ein pl\u00f6tzliches aufpoppen eines Objekts stark vermieden werden. "
         },
         "code": ""
       },
@@ -2283,7 +2174,7 @@
         "name": "EntityOrder",
         "description": {
           "en": "",
-          "de": "Die Anweisung EntityOrder stellt die Sortierreihenfolge f\u00fcr ein Objekts ein.   Dazu muss man zuerst die Identit\u00e4t eines Objekts angeben. Danach folgt der Wert f\u00fcr die Reihenfolge. Bei einem gr\u00f6\u00dferen Wert als 0 erscheint dieses Objekt hinter anderen. Bei einem kleineren Wert als 0 erscheint ein Objekt vor den anderen.   Werte kleiner\/gr\u00f6\u00dfer als 0 schalten z buffering aus. Deshalb sollte es nur an einfache, konvexe Objekte angewendet werden (z.B. skybox...).   EntityOrder beeinflusst das angegebene Objekt - aber keine angeh\u00e4ngte Objekte (child entity)."
+          "de": "Die Anweisung EntityOrder stellt die Sortierreihenfolge f\u00fcr ein Objekts ein.   Dazu muss man zuerst die Identit\u00e4t eines Objekts angeben. Danach folgt der Wert f\u00fcr die Reihenfolge. Bei einem gr\u00f6\u00dferen Wert als 0 erscheint dieses Objekt hinter anderen. Bei einem kleineren Wert als 0 erscheint ein Objekt vor den anderen.   Werte kleiner/gr\u00f6\u00dfer als 0 schalten z buffering aus. Deshalb sollte es nur an einfache, konvexe Objekte angewendet werden (z.B. skybox...).   EntityOrder beeinflusst das angegebene Objekt - aber keine angeh\u00e4ngte Objekte (child entity)."
         },
         "code": ""
       },
@@ -2381,7 +2272,7 @@
         "name": "ScaleEntity",
         "description": {
           "en": "",
-          "de": "Die Anweisung ScaleEntity skaliert ein Objekt auf eine bestimmte absolute Gr\u00f6\u00dfe.   Normalerweise wird jedes Objekt mit Skalierungsfaktor 1 erstellt\/geladen. Gibt man nun eine kleine Zahl ein, dann wird dieses Objekt entsprechend verkleinert (0.5=50%). Gibt man dagegen gr\u00f6\u00dferen Wert ein, dann wird es vergr\u00f6\u00dfert (2.0=200%).   Negative Skalierungsfaktoren sind aber auch m\u00f6glich. Dieses Objekt wird dann in der entsprechenden Achse gespiegelt.   Der optionale Parameter \"global%\" gibt an, ob die Skalierungsfaktoren (un)abh\u00e4ngig von Parent \u00fcbergeben werden. Gebe 0 ein, wenn Skalierungsgr\u00f6\u00dfe vom Parent in Berechnung einflie\u00dfen soll. Sonst gebe 1 ein, wenn dieses Objekt unabh\u00e4ngig vom Parent skaliert werden soll."
+          "de": "Die Anweisung ScaleEntity skaliert ein Objekt auf eine bestimmte absolute Gr\u00f6\u00dfe.   Normalerweise wird jedes Objekt mit Skalierungsfaktor 1 erstellt/geladen. Gibt man nun eine kleine Zahl ein, dann wird dieses Objekt entsprechend verkleinert (0.5=50%). Gibt man dagegen gr\u00f6\u00dferen Wert ein, dann wird es vergr\u00f6\u00dfert (2.0=200%).   Negative Skalierungsfaktoren sind aber auch m\u00f6glich. Dieses Objekt wird dann in der entsprechenden Achse gespiegelt.   Der optionale Parameter \"global%\" gibt an, ob die Skalierungsfaktoren (un)abh\u00e4ngig von Parent \u00fcbergeben werden. Gebe 0 ein, wenn Skalierungsgr\u00f6\u00dfe vom Parent in Berechnung einflie\u00dfen soll. Sonst gebe 1 ein, wenn dieses Objekt unabh\u00e4ngig vom Parent skaliert werden soll."
         },
         "code": ""
       },
@@ -2455,7 +2346,7 @@
         "name": "CreateMirror",
         "description": {
           "en": "",
-          "de": "Der Befehl CreateMirror erstellt ein Spiegelobjekt und liefert danach die Identit\u00e4t des Objekts zur\u00fcck.   Ein Spiegel ist ein flacher, unendlicher Boden. Dieser Boden ist unsichtbar, stellt aber alle Objekte \u00fcber\/unter dem Spiegel kopiert dar. Es ist \u00fcberall dort n\u00fctzlich, wo ein polierter Boden mit einer Reflektion dargestellt werden soll. Benutze f\u00fcr einen noch realistischeren Effekt die Kombination aus Spiegel und texturierter Plane (mit 50% Transparenz).   Wurde der Parameter \"parent%\" angegeben, dann wird dieser Spiegel zu einem anderen Objekt hinzugef\u00fcgt. Falls nun ein Parent-Objekt bewegt wird, dann werden alle hinzugef\u00fcgten Objekte automatisch verschoben. Ein Child-Objekt verschiebt dagegen kein Parent-Objekt mit.   Ein Spiegel wird normalerweise an der Position 0,0,0 erstellt. Wurde Parent angegeben, dann wird es an der Position des Parent-Objekts erstellt."
+          "de": "Der Befehl CreateMirror erstellt ein Spiegelobjekt und liefert danach die Identit\u00e4t des Objekts zur\u00fcck.   Ein Spiegel ist ein flacher, unendlicher Boden. Dieser Boden ist unsichtbar, stellt aber alle Objekte \u00fcber/unter dem Spiegel kopiert dar. Es ist \u00fcberall dort n\u00fctzlich, wo ein polierter Boden mit einer Reflektion dargestellt werden soll. Benutze f\u00fcr einen noch realistischeren Effekt die Kombination aus Spiegel und texturierter Plane (mit 50% Transparenz).   Wurde der Parameter \"parent%\" angegeben, dann wird dieser Spiegel zu einem anderen Objekt hinzugef\u00fcgt. Falls nun ein Parent-Objekt bewegt wird, dann werden alle hinzugef\u00fcgten Objekte automatisch verschoben. Ein Child-Objekt verschiebt dagegen kein Parent-Objekt mit.   Ein Spiegel wird normalerweise an der Position 0,0,0 erstellt. Wurde Parent angegeben, dann wird es an der Position des Parent-Objekts erstellt."
         },
         "code": ""
       },
@@ -2529,7 +2420,7 @@
         "name": "AmbientLight",
         "description": {
           "en": "",
-          "de": "Die Anweisung AmbientLight \u00e4ndert die Farbe des Umgebungslichtes. Die einzelnen Farbanteile k\u00f6nnen nur im Bereich von 0-255 liegen. Die Standardfarbe ist 127,127,127 (=grau). Mit der Farbe 0,0,0 wird kein Umgebungslicht angezeigt.   Alle Objekte werden mit dieser Farbe \"beleuchtet\". Wird nur das Umgebungslicht benutzt, so erscheinen die Objekte flach\/unecht, da keine Schattierungen hinzugef\u00fcgt werden. "
+          "de": "Die Anweisung AmbientLight \u00e4ndert die Farbe des Umgebungslichtes. Die einzelnen Farbanteile k\u00f6nnen nur im Bereich von 0-255 liegen. Die Standardfarbe ist 127,127,127 (=grau). Mit der Farbe 0,0,0 wird kein Umgebungslicht angezeigt.   Alle Objekte werden mit dieser Farbe \"beleuchtet\". Wird nur das Umgebungslicht benutzt, so erscheinen die Objekte flach/unecht, da keine Schattierungen hinzugef\u00fcgt werden. "
         },
         "code": ""
       },
@@ -2579,7 +2470,7 @@
         "name": "AddMesh",
         "description": {
           "en": "",
-          "de": "Die Anweisung AddMesh f\u00fcgt ein Quell-Mesh zu einem Ziel-Mesh hinzu (Mesh=Gitterobjekt).   Ein Mesh besteht nur aus Dreiecken (triangles). Wenn ein Mesh zu einem anderen hinzugef\u00fcgt wird, dann werden einfach alle Dreiecke kopiert.   Quellmesh kann nach dem Zusammenf\u00fcgen einfach gel\u00f6scht werden, da es nicht mehr gebraucht wird. Das Zusammenf\u00fcgen ist dann sinnvoll, wenn die Meshs mit einem Befehl schnell verschoben\/gedreht\/skaliert werden sollen. "
+          "de": "Die Anweisung AddMesh f\u00fcgt ein Quell-Mesh zu einem Ziel-Mesh hinzu (Mesh=Gitterobjekt).   Ein Mesh besteht nur aus Dreiecken (triangles). Wenn ein Mesh zu einem anderen hinzugef\u00fcgt wird, dann werden einfach alle Dreiecke kopiert.   Quellmesh kann nach dem Zusammenf\u00fcgen einfach gel\u00f6scht werden, da es nicht mehr gebraucht wird. Das Zusammenf\u00fcgen ist dann sinnvoll, wenn die Meshs mit einem Befehl schnell verschoben/gedreht/skaliert werden sollen. "
         },
         "code": ""
       },
@@ -2715,7 +2606,7 @@
         "name": "ScaleMesh",
         "description": {
           "en": "",
-          "de": "Die Anweisung ScaleMesh skaliert ein Gitterobjekt (mesh) um einen bestimmten Faktor.   Normalerweise wird jedes Objekt mit Skalierungsfaktor 1 erstellt\/geladen. Gibt man nun eine kleine Zahl ein, dann wird dieses Objekt entsprechend verkleinert (0.5=50%). Gibt man dagegen gr\u00f6\u00dferen Wert ein, dann wird es vergr\u00f6\u00dfert (2.0=200%).   Beachte: ScaleMesh funktioniert anders als ScaleEntity und berechnet komplett alle Gitterpunkte um."
+          "de": "Die Anweisung ScaleMesh skaliert ein Gitterobjekt (mesh) um einen bestimmten Faktor.   Normalerweise wird jedes Objekt mit Skalierungsfaktor 1 erstellt/geladen. Gibt man nun eine kleine Zahl ein, dann wird dieses Objekt entsprechend verkleinert (0.5=50%). Gibt man dagegen gr\u00f6\u00dferen Wert ein, dann wird es vergr\u00f6\u00dfert (2.0=200%).   Beachte: ScaleMesh funktioniert anders als ScaleEntity und berechnet komplett alle Gitterpunkte um."
         },
         "code": ""
       }
@@ -2855,7 +2746,7 @@
         "name": "ClearWorld",
         "description": {
           "en": "",
-          "de": "L\u00f6scht alle Objekte, Pinsel und\/oder Texturen.   Dies ist dann sinnvoll, wenn ein Level beendet wurde und dann alle Objekte gel\u00f6scht werden sollen. Die Objekte, Pinsel oder Texturen k\u00f6nnen dann neu erstellt\/geladen werden, ohne die alten Objekte einzeln l\u00f6schen zu m\u00fcssen."
+          "de": "L\u00f6scht alle Objekte, Pinsel und/oder Texturen.   Dies ist dann sinnvoll, wenn ein Level beendet wurde und dann alle Objekte gel\u00f6scht werden sollen. Die Objekte, Pinsel oder Texturen k\u00f6nnen dann neu erstellt/geladen werden, ohne die alten Objekte einzeln l\u00f6schen zu m\u00fcssen."
         },
         "code": ""
       },
@@ -2877,10 +2768,7 @@
       },
       "hwtexunits": {
         "name": "HWTexUnits",
-        "description": {
-          "en": "",
-          "de": "Liefert die Anzahl der \"hardware texturing units\" zur\u00fcck."
-        },
+        "description": { "en": "", "de": "Liefert die Anzahl der \"hardware texturing units\" zur\u00fcck." },
         "code": ""
       },
       "renderworld": {
@@ -2903,7 +2791,7 @@
         "name": "WBuffer",
         "description": {
           "en": "",
-          "de": "Die Anweisung WBuffer schaltet W-Buffering ein oder aus.   W-Buffering ist eine spezielle Technik f\u00fcr Darstellung der 3D-Szenen. Hierbei werden weiter Objekte zuerst gezeichnet und nahe zuletzt.   Normales Z-Buffering versucht dies nachzumachen. Leider kann es in 16 Bit Grafikmodus nicht korrekt arbeiten. Es arbeitet mit geringeren Pr\u00e4zision als in 24\/32 Bit. Dadurch k\u00f6nnen sich einige Objekte in machen Situationen \u00fcberlappen, obwohl die es nicht tun sollten.   Mit WBuffer kann man dies unterdr\u00fccken. Es ist wesentlich genauer, ist aber weniger kompatibel als Z-Buffering."
+          "de": "Die Anweisung WBuffer schaltet W-Buffering ein oder aus.   W-Buffering ist eine spezielle Technik f\u00fcr Darstellung der 3D-Szenen. Hierbei werden weiter Objekte zuerst gezeichnet und nahe zuletzt.   Normales Z-Buffering versucht dies nachzumachen. Leider kann es in 16 Bit Grafikmodus nicht korrekt arbeiten. Es arbeitet mit geringeren Pr\u00e4zision als in 24/32 Bit. Dadurch k\u00f6nnen sich einige Objekte in machen Situationen \u00fcberlappen, obwohl die es nicht tun sollten.   Mit WBuffer kann man dies unterdr\u00fccken. Es ist wesentlich genauer, ist aber weniger kompatibel als Z-Buffering."
         },
         "code": ""
       },
@@ -2911,7 +2799,7 @@
         "name": "WireFrame",
         "description": {
           "en": "",
-          "de": "Die Anweisung WireFrame schaltet die 3D-Darstellung zwischen normaler Fl\u00e4chenansicht (=0) und Gitteransicht (=1) um.   Dies ist meistens nur f\u00fcrs Debugging notwendig\/empfehlenswert. So kann man dann alle Gitterobjekte besser erkennen.   Diesen Befehl kann man aber nicht auf einen einzigen Objekt anwenden, sondern nur auf komplette Szene."
+          "de": "Die Anweisung WireFrame schaltet die 3D-Darstellung zwischen normaler Fl\u00e4chenansicht (=0) und Gitteransicht (=1) um.   Dies ist meistens nur f\u00fcrs Debugging notwendig/empfehlenswert. So kann man dann alle Gitterobjekte besser erkennen.   Diesen Befehl kann man aber nicht auf einen einzigen Objekt anwenden, sondern nur auf komplette Szene."
         },
         "code": ""
       }
@@ -3191,7 +3079,7 @@
         "name": "ClearSurface",
         "description": {
           "en": "",
-          "de": "Mit dem Befehl ClearSurace kann man alle Vertexpunkte und\/oder Dreiecke in einer Gitteroberfl\u00e4che (surface) l\u00f6schen.   Dies ist dann sinnvoll, wenn Teile eines Meshs (Gitterobjekt) gel\u00f6scht werden sollen.   Nach dem L\u00f6schen kann man Vertexpunkte und Dreiecke wieder erstellen - mit etwas anderer Polygonanzahl (z.B. f\u00fcr dynamic level of detail LOD)."
+          "de": "Mit dem Befehl ClearSurace kann man alle Vertexpunkte und/oder Dreiecke in einer Gitteroberfl\u00e4che (surface) l\u00f6schen.   Dies ist dann sinnvoll, wenn Teile eines Meshs (Gitterobjekt) gel\u00f6scht werden sollen.   Nach dem L\u00f6schen kann man Vertexpunkte und Dreiecke wieder erstellen - mit etwas anderer Polygonanzahl (z.B. f\u00fcr dynamic level of detail LOD)."
         },
         "code": ""
       },
@@ -3409,7 +3297,7 @@
         "name": "LoadTerrain",
         "description": {
           "en": "",
-          "de": "Dieser Befehl l\u00e4dt ein Terrain und liefert die Identit\u00e4t des Terrains zur\u00fcck. Die rote Farbe des Bildes bestimmt dabei die H\u00f6he des Terrains. Das erstellte Terrain hat danach die selbe Gr\u00f6\u00dfe wie das Bild. Die H\u00f6he des Terrains ist 1.  Tipps zur Erstellung eines guten Terrains:  -Gl\u00e4tte das Terrain (Weichzeichnen)  -Reduziere Y-Gr\u00f6\u00dfe des Terrains  -Erh\u00f6he X\/Z-Gr\u00f6\u00dfe des Terrains  -Reduziere CameraRange   Wurde der Parameter \"Parent\" angegeben, dann wird dieses Terrain zu einem Objekt hinzugef\u00fcgt. Falls nun ein Parent-Objekt bewegt wird, dann werden alle hinzugef\u00fcgten Objekte automatisch verschoben. Ein Child-Objekt verschiebt dagegen kein Parent-Objekt mit.  Das geladene Terrain wird normalerweise an der Position 0,0,0 erstellt. Wurde Parent angegeben, dann wird es an der Position des Parent-Objekts erstellt. "
+          "de": "Dieser Befehl l\u00e4dt ein Terrain und liefert die Identit\u00e4t des Terrains zur\u00fcck. Die rote Farbe des Bildes bestimmt dabei die H\u00f6he des Terrains. Das erstellte Terrain hat danach die selbe Gr\u00f6\u00dfe wie das Bild. Die H\u00f6he des Terrains ist 1.  Tipps zur Erstellung eines guten Terrains:  -Gl\u00e4tte das Terrain (Weichzeichnen)  -Reduziere Y-Gr\u00f6\u00dfe des Terrains  -Erh\u00f6he X/Z-Gr\u00f6\u00dfe des Terrains  -Reduziere CameraRange   Wurde der Parameter \"Parent\" angegeben, dann wird dieses Terrain zu einem Objekt hinzugef\u00fcgt. Falls nun ein Parent-Objekt bewegt wird, dann werden alle hinzugef\u00fcgten Objekte automatisch verschoben. Ein Child-Objekt verschiebt dagegen kein Parent-Objekt mit.  Das geladene Terrain wird normalerweise an der Position 0,0,0 erstellt. Wurde Parent angegeben, dann wird es an der Position des Parent-Objekts erstellt. "
         },
         "code": ""
       },
@@ -3507,7 +3395,7 @@
         "name": "FreeTexture",
         "description": {
           "en": "",
-          "de": "Der Befehl FreeTexture l\u00f6scht eine Textur. Man kann danach einen neue laden\/erstellen.   Das L\u00f6schen einer Textur \u00fcbernimmt BlitzBasic auch automatisch am Ende des Programms. Trotzdem ist es besser, wenn man es manuell macht. Zudem kann man w\u00e4hrend der Ausf\u00fchrung Texturen l\u00f6schen."
+          "de": "Der Befehl FreeTexture l\u00f6scht eine Textur. Man kann danach einen neue laden/erstellen.   Das L\u00f6schen einer Textur \u00fcbernimmt BlitzBasic auch automatisch am Ende des Programms. Trotzdem ist es besser, wenn man es manuell macht. Zudem kann man w\u00e4hrend der Ausf\u00fchrung Texturen l\u00f6schen."
         },
         "code": ""
       },
@@ -3539,7 +3427,7 @@
         "name": "RotateTexture",
         "description": {
           "en": "",
-          "de": "Die Anweisung RotateTexture dreht eine Textur auf einen bestimmten absoluten Winkel. Jede geladene\/erstellte Textur wird zuerst auf den Winkel 0 gedreht. G\u00fcltige Winkel sind 0-360 Grad.   Beachte: Alle Objekte, die diese Textur benutzen, werden danach eine gedrehte Textur haben. Dies kann aber auch n\u00fctzlich sein z.B. f\u00fcr Raucheffekte..."
+          "de": "Die Anweisung RotateTexture dreht eine Textur auf einen bestimmten absoluten Winkel. Jede geladene/erstellte Textur wird zuerst auf den Winkel 0 gedreht. G\u00fcltige Winkel sind 0-360 Grad.   Beachte: Alle Objekte, die diese Textur benutzen, werden danach eine gedrehte Textur haben. Dies kann aber auch n\u00fctzlich sein z.B. f\u00fcr Raucheffekte..."
         },
         "code": ""
       },
@@ -3547,7 +3435,7 @@
         "name": "ScaleTexture",
         "description": {
           "en": "",
-          "de": "Die Anweisung ScaleTexture skaliert eine Textur auf eine bestimmte absolute Gr\u00f6\u00dfe.   Normalerweise wird jede Textur mit Skalierungsfaktor 1 erstellt\/geladen. Gibt man nun eine kleine Zahl ein, dann wird diese Textur entsprechend verkleinert (0.5=50%). Gibt man dagegen gr\u00f6\u00dferen Wert ein, dann wird die Textur vergr\u00f6\u00dfert (2.0=200%).   Negative Skalierungsfaktoren sind aber auch m\u00f6glich. Diese Textur wird dann entsprechend gespiegelt."
+          "de": "Die Anweisung ScaleTexture skaliert eine Textur auf eine bestimmte absolute Gr\u00f6\u00dfe.   Normalerweise wird jede Textur mit Skalierungsfaktor 1 erstellt/geladen. Gibt man nun eine kleine Zahl ein, dann wird diese Textur entsprechend verkleinert (0.5=50%). Gibt man dagegen gr\u00f6\u00dferen Wert ein, dann wird die Textur vergr\u00f6\u00dfert (2.0=200%).   Negative Skalierungsfaktoren sind aber auch m\u00f6glich. Diese Textur wird dann entsprechend gespiegelt."
         },
         "code": ""
       },
@@ -3603,7 +3491,7 @@
         "name": "TextureHeight",
         "description": {
           "en": "",
-          "de": "Die Funktion TextureHeight liefert die H\u00f6he einer Textur zur\u00fcck. Beachte dabei, dass nur bestimmte Texturgr\u00f6\u00dfen erlaubt sind. Wenn eine Textur geladen\/erstellt wird, dann wird die Gr\u00f6\u00dfe auf diese Standardgr\u00f6\u00dfe angepasst. Dadurch k\u00f6nnen unerw\u00fcnschte Streckungen auftreten. Der Speicherverbrauch kann auch steigen."
+          "de": "Die Funktion TextureHeight liefert die H\u00f6he einer Textur zur\u00fcck. Beachte dabei, dass nur bestimmte Texturgr\u00f6\u00dfen erlaubt sind. Wenn eine Textur geladen/erstellt wird, dann wird die Gr\u00f6\u00dfe auf diese Standardgr\u00f6\u00dfe angepasst. Dadurch k\u00f6nnen unerw\u00fcnschte Streckungen auftreten. Der Speicherverbrauch kann auch steigen."
         },
         "code": ""
       },
@@ -3611,7 +3499,7 @@
         "name": "TextureName",
         "description": {
           "en": "",
-          "de": "Die Funktion TextureName liefert den Dateipfad einer Textur, die zuvor geladen wurde.   Um nur den Dateinamen zu erhalten, muss einfach der hintere Teil des Strings bis \"\/\" oder bis \"\\\" ausgeschnitten werden."
+          "de": "Die Funktion TextureName liefert den Dateipfad einer Textur, die zuvor geladen wurde.   Um nur den Dateinamen zu erhalten, muss einfach der hintere Teil des Strings bis \"/\" oder bis \"\\\" ausgeschnitten werden."
         },
         "code": ""
       },
@@ -3619,7 +3507,7 @@
         "name": "TextureWidth",
         "description": {
           "en": "",
-          "de": "Die Funktion TextureWidth liefert die Breite einer Textur zur\u00fcck. Beachte dabei, dass nur bestimmte Texturgr\u00f6\u00dfen erlaubt sind. Wenn eine Textur geladen\/erstellt wird, dann wird die Gr\u00f6\u00dfe auf diese Standardgr\u00f6\u00dfe angepasst. Dadurch k\u00f6nnen unerw\u00fcnschte Streckungen auftreten. Der Speicherverbrauch kann auch steigen."
+          "de": "Die Funktion TextureWidth liefert die Breite einer Textur zur\u00fcck. Beachte dabei, dass nur bestimmte Texturgr\u00f6\u00dfen erlaubt sind. Wenn eine Textur geladen/erstellt wird, dann wird die Gr\u00f6\u00dfe auf diese Standardgr\u00f6\u00dfe angepasst. Dadurch k\u00f6nnen unerw\u00fcnschte Streckungen auftreten. Der Speicherverbrauch kann auch steigen."
         },
         "code": ""
       }
@@ -3639,7 +3527,7 @@
         "name": "CreateButton",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateButton erstellt einen Button mit einem Text. Gib dazu die Startkoordinate X\/Y und Breite\/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas. Mit dieser Funktion lassen sich normale Buttons (Style 1) aber auch Checkboxen (Style 2) oder Radiobuttons (Style 3) erstellen. Wird der Style auf 4 oder 5 gesetzt sendet der Button immer ein Event, sobald innerhalb des Parents (empfehlenswert ist ein Panel) die ENTER bzw. ESC-Taste gedr\u00fcckt wird. Dies ist besonders hilfreich, da bei GUI-Anwendungen KeyHit-Abfragen wirkungslos sind.   Der Status kann mit ButtonState abgefragt und mit SetButtonState gesetzt werden (f\u00fcr Style 2 oder 3). Mit SetGadgetText kann man sp\u00e4ter den Text \u00e4ndern. "
+          "de": "Die Funktion CreateButton erstellt einen Button mit einem Text. Gib dazu die Startkoordinate X/Y und Breite/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas. Mit dieser Funktion lassen sich normale Buttons (Style 1) aber auch Checkboxen (Style 2) oder Radiobuttons (Style 3) erstellen. Wird der Style auf 4 oder 5 gesetzt sendet der Button immer ein Event, sobald innerhalb des Parents (empfehlenswert ist ein Panel) die ENTER bzw. ESC-Taste gedr\u00fcckt wird. Dies ist besonders hilfreich, da bei GUI-Anwendungen KeyHit-Abfragen wirkungslos sind.   Der Status kann mit ButtonState abgefragt und mit SetButtonState gesetzt werden (f\u00fcr Style 2 oder 3). Mit SetGadgetText kann man sp\u00e4ter den Text \u00e4ndern. "
         },
         "code": ""
       },
@@ -3665,7 +3553,7 @@
         "name": "CreateCanvas",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateCanvas erstellt ein Canvas-Objekt. Gib dazu die Startkoordinate X\/Y und Breite\/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel oder Tabber.   Ein Canvas (=Leinwand) ist eine rechteckige Fl\u00e4che in einem Fenster. Die Grafik kann somit direkt in ein Fenster eingezeichnet werden. Benutze SetBuffer, um die Grafikausgabe auf diese Leinwand umzulenken. Der Befehl FlipCanvas muss ausgef\u00fchrt werden, damit die Grafik aktualisiert wird. "
+          "de": "Die Funktion CreateCanvas erstellt ein Canvas-Objekt. Gib dazu die Startkoordinate X/Y und Breite/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel oder Tabber.   Ein Canvas (=Leinwand) ist eine rechteckige Fl\u00e4che in einem Fenster. Die Grafik kann somit direkt in ein Fenster eingezeichnet werden. Benutze SetBuffer, um die Grafikausgabe auf diese Leinwand umzulenken. Der Befehl FlipCanvas muss ausgef\u00fchrt werden, damit die Grafik aktualisiert wird. "
         },
         "code": ""
       },
@@ -3683,7 +3571,7 @@
         "name": "Desktop",
         "description": {
           "en": "",
-          "de": "Die Funktion Desktop liefert die Identit\u00e4t des Desktops zur\u00fcck. Desktop ist auch wie ein Gadget-Objekt - so k\u00f6nnen einige Befehle auch auf Desktop angewendet werden.   1. Desktop wird als Objekt zum Gruppieren von Fenstern verwendet.  2. ClientWidth\/ClientHeight liefert die Gr\u00f6\u00dfe des Desktops."
+          "de": "Die Funktion Desktop liefert die Identit\u00e4t des Desktops zur\u00fcck. Desktop ist auch wie ein Gadget-Objekt - so k\u00f6nnen einige Befehle auch auf Desktop angewendet werden.   1. Desktop wird als Objekt zum Gruppieren von Fenstern verwendet.  2. ClientWidth/ClientHeight liefert die Gr\u00f6\u00dfe des Desktops."
         },
         "code": ""
       },
@@ -3735,7 +3623,7 @@
         "name": "EventData",
         "description": {
           "en": "",
-          "de": "Die Funktion EventData liefert mehr Informationen zu einem erfolgten Event. Weitere Anweisungen wie EventSource (liefert Handle des Objekts) und EventX\/EventY (liefern Koordinaten) vervollst\u00e4ndigen diese Funktion. "
+          "de": "Die Funktion EventData liefert mehr Informationen zu einem erfolgten Event. Weitere Anweisungen wie EventSource (liefert Handle des Objekts) und EventX/EventY (liefern Koordinaten) vervollst\u00e4ndigen diese Funktion. "
         },
         "code": ""
       },
@@ -3751,7 +3639,7 @@
         "name": "EventSource",
         "description": {
           "en": "",
-          "de": "Die Funktion EventSource liefert Handle eines Objekts zur\u00fcck, von wo ein Event erfolgt ist. Weitere Anweisungen wie EventData (liefert weitere Event-Informationen) und EventX\/EventY (liefern Koordinaten) vervollst\u00e4ndigen diese Funktion."
+          "de": "Die Funktion EventSource liefert Handle eines Objekts zur\u00fcck, von wo ein Event erfolgt ist. Weitere Anweisungen wie EventData (liefert weitere Event-Informationen) und EventX/EventY (liefern Koordinaten) vervollst\u00e4ndigen diese Funktion."
         },
         "code": ""
       },
@@ -3817,7 +3705,7 @@
         "name": "ActivateGadget",
         "description": {
           "en": "",
-          "de": "ActivateGadget fokussiert ein Objekt. Einige Objekte wie z.B. Button\/TextField\/TextArea usw. lassen sich so markieren. Danach k\u00f6nnen solche Objekte direkt mit der Tastatur gesteuert werden. "
+          "de": "ActivateGadget fokussiert ein Objekt. Einige Objekte wie z.B. Button/TextField/TextArea usw. lassen sich so markieren. Danach k\u00f6nnen solche Objekte direkt mit der Tastatur gesteuert werden. "
         },
         "code": ""
       },
@@ -3979,7 +3867,7 @@
         "name": "CreateHtmlView",
         "description": {
           "en": "",
-          "de": "Diese erstellt ein Htmlview-Objekt. Gib dazu die Startkoordinate x\/y und breite\/h\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels, Tabbers oder Canvas.   Htmlview ist ein Objekt zum Anzeigen von HTML-Seiten. Besonders n\u00fctzlich f\u00fcr Hilfe\/Info oder zur Darstellung von Internetseiten. Mit HtmlViewBack, HtmlViewForward oder HtmlViewGo kann navigiert werden. "
+          "de": "Diese erstellt ein Htmlview-Objekt. Gib dazu die Startkoordinate x/y und breite/h\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels, Tabbers oder Canvas.   Htmlview ist ein Objekt zum Anzeigen von HTML-Seiten. Besonders n\u00fctzlich f\u00fcr Hilfe/Info oder zur Darstellung von Internetseiten. Mit HtmlViewBack, HtmlViewForward oder HtmlViewGo kann navigiert werden. "
         },
         "code": ""
       },
@@ -4061,7 +3949,7 @@
         "name": "SetGadgetIconStrip",
         "description": {
           "en": "",
-          "de": "Die Anweisung SetGadgetIconStrip weist Combobox, Listbox oder Tabber ein Icon-Set zu. Diese Icons m\u00fcssen aber zuerst mit LoadIconStrip geladen werden. Nach der Zuweisung k\u00f6nnen Icons beim Hinzuf\u00fcgen\/\u00c4ndern mit AddGadgetItem, InsertGadgetItem oder ModifyGadgetItem ausgew\u00e4hlt werden. "
+          "de": "Die Anweisung SetGadgetIconStrip weist Combobox, Listbox oder Tabber ein Icon-Set zu. Diese Icons m\u00fcssen aber zuerst mit LoadIconStrip geladen werden. Nach der Zuweisung k\u00f6nnen Icons beim Hinzuf\u00fcgen/\u00c4ndern mit AddGadgetItem, InsertGadgetItem oder ModifyGadgetItem ausgew\u00e4hlt werden. "
         },
         "code": ""
       }
@@ -4087,7 +3975,7 @@
         "name": "CountGadgetItems",
         "description": {
           "en": "",
-          "de": "Diese Funktion liefert die Anzahl der Eintr\u00e4ge einer ListBox, ComboBox oder eines Tabbers zur\u00fcck. Solche Eintr\u00e4ge k\u00f6nnen mit AddGadgetItem \/ InsertGadgetItem hinzugef\u00fcgt und mit RemoveGadgetItemgel\u00f6scht werden."
+          "de": "Diese Funktion liefert die Anzahl der Eintr\u00e4ge einer ListBox, ComboBox oder eines Tabbers zur\u00fcck. Solche Eintr\u00e4ge k\u00f6nnen mit AddGadgetItem / InsertGadgetItem hinzugef\u00fcgt und mit RemoveGadgetItemgel\u00f6scht werden."
         },
         "code": ""
       },
@@ -4095,7 +3983,7 @@
         "name": "CreateComboBox",
         "description": {
           "en": "",
-          "de": "Diese Funktion erstellt ein Combobox-Objekt. Gebe dazu die Startkoordinate x\/y und breite\/h\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels, Tabbers oder Canvas.   Mit AddGadgetItem \/ InsertGadgetItem k\u00f6nnen Eintr\u00e4ge hinzugef\u00fcgt und mit RemoveGadgetItem entfernt werden. SelectGadgetItem w\u00e4hlt einen Eintrag aus und SelectedGadgetItem gibt zur\u00fcck, welcher Eintrag (vom Benutzer) ausgew\u00e4hlt wurde. "
+          "de": "Diese Funktion erstellt ein Combobox-Objekt. Gebe dazu die Startkoordinate x/y und breite/h\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels, Tabbers oder Canvas.   Mit AddGadgetItem / InsertGadgetItem k\u00f6nnen Eintr\u00e4ge hinzugef\u00fcgt und mit RemoveGadgetItem entfernt werden. SelectGadgetItem w\u00e4hlt einen Eintrag aus und SelectedGadgetItem gibt zur\u00fcck, welcher Eintrag (vom Benutzer) ausgew\u00e4hlt wurde. "
         },
         "code": ""
       },
@@ -4103,7 +3991,7 @@
         "name": "CreateListBox",
         "description": {
           "en": "",
-          "de": "Diese Funktion erstellt ein Listbox-Objekt (=einfache Liste). Gib dazu die Startkoordinate x\/y und breite\/h\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels, Tabbers oder Canvas.   Mit AddGadgetItem \/ InsertGadgetItem k\u00f6nnen Eintr\u00e4ge hinzugef\u00fcgt und mit RemoveGadgetItem entfernt werden. SelectGadgetItem w\u00e4hlt einen Eintrag aus und SelectedGadgetItem gibt zur\u00fcck, welcher Eintrag (vom Benutzer) ausgew\u00e4hlt wurde. "
+          "de": "Diese Funktion erstellt ein Listbox-Objekt (=einfache Liste). Gib dazu die Startkoordinate x/y und breite/h\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels, Tabbers oder Canvas.   Mit AddGadgetItem / InsertGadgetItem k\u00f6nnen Eintr\u00e4ge hinzugef\u00fcgt und mit RemoveGadgetItem entfernt werden. SelectGadgetItem w\u00e4hlt einen Eintrag aus und SelectedGadgetItem gibt zur\u00fcck, welcher Eintrag (vom Benutzer) ausgew\u00e4hlt wurde. "
         },
         "code": ""
       },
@@ -4111,7 +3999,7 @@
         "name": "CreateTabber",
         "description": {
           "en": "",
-          "de": "Diese Funktion erstellt ein Tabber-Objekt (f\u00fcr Registerkarten). Gebe dazu die Startkoordinate X\/Y und Breite\/H\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels oder Canvas.   Mit AddGadgetItem \/ InsertGadgetItem k\u00f6nnen Eintr\u00e4ge (Registerkarten oder \"Tabs\" genannt) hinzugef\u00fcgt und mit RemoveGadgetItem entfernt werden. SelectGadgetItem w\u00e4hlt eine Registerkarte aus und SelectedGadgetItem gibt zur\u00fcck, welche Registerkarte (vom Benutzer) ausgew\u00e4hlt wurde."
+          "de": "Diese Funktion erstellt ein Tabber-Objekt (f\u00fcr Registerkarten). Gebe dazu die Startkoordinate X/Y und Breite/H\u00f6he an. Gruppe ist die Identit\u00e4t eines Windows, Panels oder Canvas.   Mit AddGadgetItem / InsertGadgetItem k\u00f6nnen Eintr\u00e4ge (Registerkarten oder \"Tabs\" genannt) hinzugef\u00fcgt und mit RemoveGadgetItem entfernt werden. SelectGadgetItem w\u00e4hlt eine Registerkarte aus und SelectedGadgetItem gibt zur\u00fcck, welche Registerkarte (vom Benutzer) ausgew\u00e4hlt wurde."
         },
         "code": ""
       },
@@ -4177,7 +4065,7 @@
         "name": "CreateMenu",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateMenu erstellt ein Men\u00fc oder Men\u00fcpunkt. Parameter \"nummer\" muss eine einzigartige Nummer f\u00fcr Men\u00fc oder Men\u00fcpunkt sein. Diese Nummer wird nur f\u00fcr Windows und f\u00fcr Event-Handling ben\u00f6tigt. \"parent\" ist die Identit\u00e4t eines Men\u00fcs, zu dem dieses Men\u00fc hinzugef\u00fcgt werden soll. F\u00fcr Men\u00fcs wie Datei, Bearbeiten oder Ansicht muss WindowMenu angegeben werden. Danach k\u00f6nnen weitere Men\u00fcpunkte zu diesen Men\u00fcs hinzugef\u00fcgt werden. Verschachtelte Men\u00fcs sind ebenfalls m\u00f6glich (siehe Beispiel).   Eine Trennlinie wird erzeugt, indem einfach ein leerer Text angegeben wird. Men\u00fcpunkte lassen sich mit EnableMenu \/ DisableMenu ein- oder ausschalten. Mit CheckMenu \/ UncheckMenu kann man einen Haken setzten oder l\u00f6schen. Ein Men\u00fc muss auf jeden Fall nach einer \u00c4nderung mit UpdateWindowMenu aktualisiert werden. "
+          "de": "Die Funktion CreateMenu erstellt ein Men\u00fc oder Men\u00fcpunkt. Parameter \"nummer\" muss eine einzigartige Nummer f\u00fcr Men\u00fc oder Men\u00fcpunkt sein. Diese Nummer wird nur f\u00fcr Windows und f\u00fcr Event-Handling ben\u00f6tigt. \"parent\" ist die Identit\u00e4t eines Men\u00fcs, zu dem dieses Men\u00fc hinzugef\u00fcgt werden soll. F\u00fcr Men\u00fcs wie Datei, Bearbeiten oder Ansicht muss WindowMenu angegeben werden. Danach k\u00f6nnen weitere Men\u00fcpunkte zu diesen Men\u00fcs hinzugef\u00fcgt werden. Verschachtelte Men\u00fcs sind ebenfalls m\u00f6glich (siehe Beispiel).   Eine Trennlinie wird erzeugt, indem einfach ein leerer Text angegeben wird. Men\u00fcpunkte lassen sich mit EnableMenu / DisableMenu ein- oder ausschalten. Mit CheckMenu / UncheckMenu kann man einen Haken setzten oder l\u00f6schen. Ein Men\u00fc muss auf jeden Fall nach einer \u00c4nderung mit UpdateWindowMenu aktualisiert werden. "
         },
         "code": ""
       },
@@ -4243,7 +4131,7 @@
         "name": "CreatePanel",
         "description": {
           "en": "",
-          "de": "Die Funktion CreatePanel erstellt ein Panel-Objekt. Gib dazu die Startkoordinate x\/y und breite\/h\u00f6he an. gruppe ist die Identit\u00e4t von Window, Tabber, Canvas oder Panel. style 1 schaltet einen Rahmen ein. "
+          "de": "Die Funktion CreatePanel erstellt ein Panel-Objekt. Gib dazu die Startkoordinate x/y und breite/h\u00f6he an. gruppe ist die Identit\u00e4t von Window, Tabber, Canvas oder Panel. style 1 schaltet einen Rahmen ein. "
         },
         "code": ""
       },
@@ -4269,7 +4157,7 @@
         "name": "CreateProgBar",
         "description": {
           "en": "",
-          "de": "Die Anweisung UpdateProgBar \u00e4ndert einen Fortschrittsbalken, der mit CreateProgBar erstellt wurde. Dabei werden Werte 0 bis 1 akzeptiert. 0 bedeutet 0%, 0.5 bedeutet 50% und 1 bedeutet 100% (beliebige Zwischenschritte m\u00f6glich).   Progbar wird meistens bei komplexen Berechnungen eingeblendet, um den Fortschritt des Prozesses zu zeigen. Die Funktion CreateProgBar erstellt ein Progbar-Objekt. Gib dazu die Startkoordinate x\/y und breite\/h\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Progbar ist ein einfacher Prozess-Balken. Es wird meistens bei komplexen Berechnungen eingeblendet, um den Fortschritt des Prozesses zu zeigen. "
+          "de": "Die Anweisung UpdateProgBar \u00e4ndert einen Fortschrittsbalken, der mit CreateProgBar erstellt wurde. Dabei werden Werte 0 bis 1 akzeptiert. 0 bedeutet 0%, 0.5 bedeutet 50% und 1 bedeutet 100% (beliebige Zwischenschritte m\u00f6glich).   Progbar wird meistens bei komplexen Berechnungen eingeblendet, um den Fortschritt des Prozesses zu zeigen. Die Funktion CreateProgBar erstellt ein Progbar-Objekt. Gib dazu die Startkoordinate x/y und breite/h\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Progbar ist ein einfacher Prozess-Balken. Es wird meistens bei komplexen Berechnungen eingeblendet, um den Fortschritt des Prozesses zu zeigen. "
         },
         "code": ""
       },
@@ -4369,7 +4257,7 @@
         "name": "CreateSlider",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateSlider erstellt ein Slider Objekt. Gib dazu die Startkoordinate X\/Y und Breite\/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas. Style 1 ist ein horizontaler Balken, Style 2 ist ein vertikaler Balken.   Slider ist ein einfacher Scrollbalken. F\u00fcr Listen werden keine zus\u00e4tzliche Balken ben\u00f6tigt. Mit SetSliderRange oder SetSliderValue kann man den Slider einstellen. "
+          "de": "Die Funktion CreateSlider erstellt ein Slider Objekt. Gib dazu die Startkoordinate X/Y und Breite/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas. Style 1 ist ein horizontaler Balken, Style 2 ist ein vertikaler Balken.   Slider ist ein einfacher Scrollbalken. F\u00fcr Listen werden keine zus\u00e4tzliche Balken ben\u00f6tigt. Mit SetSliderRange oder SetSliderValue kann man den Slider einstellen. "
         },
         "code": ""
       },
@@ -4377,7 +4265,7 @@
         "name": "SetSliderRange",
         "description": {
           "en": "",
-          "de": "Die Anweisung SetSliderRange definiert den Bewegungsbereich eines Slider Objekts. Der Parameter \"Sichtbar\" gibt die sichtbare Breite\/H\u00f6he an (z.B. sichtbare Eintr\u00e4ge oder sichtbare Gr\u00f6\u00dfe eines Bildes). Der Parameter \"Total\" gibt die Gesamtgr\u00f6\u00dfe an (z.B. Anzahl der Eintr\u00e4ge oder Gr\u00f6\u00dfe eines Bildes).   Mit SetSliderValue kann die Position eingestellt werden. Mit SliderValue kann aktuelle Position ausgelesen werden."
+          "de": "Die Anweisung SetSliderRange definiert den Bewegungsbereich eines Slider Objekts. Der Parameter \"Sichtbar\" gibt die sichtbare Breite/H\u00f6he an (z.B. sichtbare Eintr\u00e4ge oder sichtbare Gr\u00f6\u00dfe eines Bildes). Der Parameter \"Total\" gibt die Gesamtgr\u00f6\u00dfe an (z.B. Anzahl der Eintr\u00e4ge oder Gr\u00f6\u00dfe eines Bildes).   Mit SetSliderValue kann die Position eingestellt werden. Mit SliderValue kann aktuelle Position ausgelesen werden."
         },
         "code": ""
       },
@@ -4411,7 +4299,7 @@
         "name": "CreateTextArea",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateTextArea erstellt ein Textarea-Objekt. Gib dazu die Startkoordinate x\/y und breite\/h\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Textarea ist ein RichTextBox-Objekt - somit l\u00e4sst sich Schriftart oder Schriftfarbe einstellen (siehe dazu SetTextAreaFont, SetTextAreaColor).  SetGadgetText l\u00f6scht alten Text und setzt neuen Text.  AddTextAreaText f\u00fcgt Text hinten in ein Textarea-Objekt ein.  Mit TextAreaText kann kompletter Text als String wieder ausgelesen werden. "
+          "de": "Die Funktion CreateTextArea erstellt ein Textarea-Objekt. Gib dazu die Startkoordinate x/y und breite/h\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Textarea ist ein RichTextBox-Objekt - somit l\u00e4sst sich Schriftart oder Schriftfarbe einstellen (siehe dazu SetTextAreaFont, SetTextAreaColor).  SetGadgetText l\u00f6scht alten Text und setzt neuen Text.  AddTextAreaText f\u00fcgt Text hinten in ein Textarea-Objekt ein.  Mit TextAreaText kann kompletter Text als String wieder ausgelesen werden. "
         },
         "code": ""
       },
@@ -4483,7 +4371,7 @@
         "name": "TextAreaLen",
         "description": {
           "en": "",
-          "de": "Die Funktion TextAreaLen ermittelt Anzahl der Zeichen\/Zeilen in einem Textarea-Objekt. Hierzu wird die Identit\u00e4t von Textarea ben\u00f6tigt und Einheit-Code (1=Zeichen, 2=Zeilen). "
+          "de": "Die Funktion TextAreaLen ermittelt Anzahl der Zeichen/Zeilen in einem Textarea-Objekt. Hierzu wird die Identit\u00e4t von Textarea ben\u00f6tigt und Einheit-Code (1=Zeichen, 2=Zeilen). "
         },
         "code": ""
       },
@@ -4541,7 +4429,7 @@
         "name": "CreateTextField",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateTextField erstellt ein Textfield-Objekt (Eingabezeile). Gib dazu die Startkoordinate X\/Y und Breite\/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Text kann mit SetGadgetText gesetzt und mit TextFieldText wieder ausgelesen werden. "
+          "de": "Die Funktion CreateTextField erstellt ein Textfield-Objekt (Eingabezeile). Gib dazu die Startkoordinate X/Y und Breite/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Text kann mit SetGadgetText gesetzt und mit TextFieldText wieder ausgelesen werden. "
         },
         "code": ""
       },
@@ -4559,7 +4447,7 @@
         "name": "CreateToolBar",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateToolBar erstellt ein Toolbar-Objekt (Werkzeugleiste). Gib dazu die Startkoordinate x\/y und breite\/h\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.       Toolbar ist eine horizontale Leiste mit Symbolen. Die Grafikdatei enth\u00e4lt Symbole. Jedes Symbol muss exakt quadratisch sein und horizontal angeordnet sein. Grafikanzahl wird automatisch ermittelt (L\u00e4nge geteilt durch H\u00f6he). Pixel oben\/links gibt die Transparenzfarbe an. Ein Bild, das nur aus der Transparentfarbe besteht erzeugt einen Trenner in der Toolbar.   Nach einem Mausklick auf ein Symbol wird ein Event empfangen. EventData enth\u00e4lt Nummer des Symbols (Start ab 0). "
+          "de": "Die Funktion CreateToolBar erstellt ein Toolbar-Objekt (Werkzeugleiste). Gib dazu die Startkoordinate x/y und breite/h\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.       Toolbar ist eine horizontale Leiste mit Symbolen. Die Grafikdatei enth\u00e4lt Symbole. Jedes Symbol muss exakt quadratisch sein und horizontal angeordnet sein. Grafikanzahl wird automatisch ermittelt (L\u00e4nge geteilt durch H\u00f6he). Pixel oben/links gibt die Transparenzfarbe an. Ein Bild, das nur aus der Transparentfarbe besteht erzeugt einen Trenner in der Toolbar.   Nach einem Mausklick auf ein Symbol wird ein Event empfangen. EventData enth\u00e4lt Nummer des Symbols (Start ab 0). "
         },
         "code": ""
       },
@@ -4609,7 +4497,7 @@
         "name": "CountTreeViewNodes",
         "description": {
           "en": "",
-          "de": "Funktion CountTreeViewNodes ermittelt die Anzahl der Eintr\u00e4ge, die in einem Treeview-Zweig enthalten sind. Mit AddTreeViewNode \/ InsertTreeViewNode k\u00f6nnen weitere Zweige hinzugef\u00fcgt werden. Mit FreeTreeViewNode k\u00f6nnen Zweige entfernt werden. "
+          "de": "Funktion CountTreeViewNodes ermittelt die Anzahl der Eintr\u00e4ge, die in einem Treeview-Zweig enthalten sind. Mit AddTreeViewNode / InsertTreeViewNode k\u00f6nnen weitere Zweige hinzugef\u00fcgt werden. Mit FreeTreeViewNode k\u00f6nnen Zweige entfernt werden. "
         },
         "code": ""
       },
@@ -4617,7 +4505,7 @@
         "name": "CreateTreeView",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateTreeView erstellt ein Treelist-Objekt. Gib dazu die Startkoordinate X\/Y und Breite\/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Mit AddTreeViewNode  \/ InsertTreeViewNode k\u00f6nnen neue Zweige eingef\u00fcgt und mit FreeTreeViewNode gel\u00f6scht werden. "
+          "de": "Die Funktion CreateTreeView erstellt ein Treelist-Objekt. Gib dazu die Startkoordinate X/Y und Breite/H\u00f6he an. Gruppe ist die Identit\u00e4t von Window, Panel, Tabber oder Canvas.   Mit AddTreeViewNode  / InsertTreeViewNode k\u00f6nnen neue Zweige eingef\u00fcgt und mit FreeTreeViewNode gel\u00f6scht werden. "
         },
         "code": ""
       },
@@ -4671,10 +4559,7 @@
       },
       "treeviewnodetext": {
         "name": "TreeViewNodeText",
-        "description": {
-          "en": "",
-          "de": "Liefert den zum TreeViewNode geh\u00f6rende Bezeichnung zur\u00fcck."
-        },
+        "description": { "en": "", "de": "Liefert den zum TreeViewNode geh\u00f6rende Bezeichnung zur\u00fcck." },
         "code": ""
       },
       "treeviewroot": {
@@ -4723,7 +4608,7 @@
         "name": "CreateWindow",
         "description": {
           "en": "",
-          "de": "Die Funktion CreateWindow erstellt ein Fenster-Objekt. Gib dazu die Titelbezeichnung, Startkoordinate X\/Y und Breite\/H\u00f6he an. Optionaler Parameter \"Gruppe\" kann Desktop()-Handle sein - ansonsten benutzt BB automatisch Desktop()-Handle. Style ist dagegen viel Interessanter."
+          "de": "Die Funktion CreateWindow erstellt ein Fenster-Objekt. Gib dazu die Titelbezeichnung, Startkoordinate X/Y und Breite/H\u00f6he an. Optionaler Parameter \"Gruppe\" kann Desktop()-Handle sein - ansonsten benutzt BB automatisch Desktop()-Handle. Style ist dagegen viel Interessanter."
         },
         "code": ""
       },
@@ -4969,7 +4854,7 @@
         "name": "GetKey",
         "description": {
           "en": "",
-          "de": "Diese Funktion liefert den ASCII-Code einer gedr\u00fcckten Taste. Wenn keine Taste gedr\u00fcckt wurde, dann wird nur eine Null zur\u00fcckgeliefert. GetKey funktioniert nicht mit allen Tasten. So werden Alttasten, Shifttasten sowie Strgtasten nicht ber\u00fccksichtigt - f\u00fcr diese Tasten muss man KeyDown\/KeyHit verwenden. "
+          "de": "Diese Funktion liefert den ASCII-Code einer gedr\u00fcckten Taste. Wenn keine Taste gedr\u00fcckt wurde, dann wird nur eine Null zur\u00fcckgeliefert. GetKey funktioniert nicht mit allen Tasten. So werden Alttasten, Shifttasten sowie Strgtasten nicht ber\u00fccksichtigt - f\u00fcr diese Tasten muss man KeyDown/KeyHit verwenden. "
         },
         "code": ""
       },
@@ -5113,10 +4998,7 @@
       },
       "movemouse": {
         "name": "MoveMouse",
-        "description": {
-          "en": "",
-          "de": "Dieser Befehl verschiebt den Mauszeiger an eine neue Position. "
-        },
+        "description": { "en": "", "de": "Dieser Befehl verschiebt den Mauszeiger an eine neue Position. " },
         "code": ""
       },
       "showpointer": {

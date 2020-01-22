@@ -1,5 +1,5 @@
 <h1 class="title">{{ 'NAV.COMMANDS' | translate }}</h1>
-<span [innerHTML]="'DOC.COMMANDS.SUBTITLE' | translate"></span>
+<p class="subtitle" [innerHTML]="'DOC.COMMANDS.SUBTITLE' | translate"></p>
 
 <div class="flex-container">
   <div class="command-nav">
@@ -10,9 +10,13 @@
     </div> -->
 
     <div class="breadcrumbs">
-    <span (click)="activeCat = ''; activeSubCat = ''">{{ 'DOC.COMMANDS.CATEGORIES' | translate }}</span>
-      <span *ngIf="activeCat !== ''" (click)="activeSubCat = ''"> / {{ 'DOC.COMMANDS.' + i18n(activeCat) + '.TITLE' | translate }}</span>
-      <span *ngIf="activeSubCat !== ''"> / {{ 'DOC.COMMANDS.' + i18n(activeCat) + '.' + i18n(activeSubCat) | translate }}</span>
+      <span (click)="activeCat = ''; activeSubCat = ''">{{ 'DOC.COMMANDS.CATEGORIES' | translate }}</span>
+      <span *ngIf="activeCat !== ''" (click)="activeSubCat = ''">
+        / {{ 'DOC.COMMANDS.' + i18n(activeCat) + '.TITLE' | translate }}</span
+      >
+      <span *ngIf="activeSubCat !== ''">
+        / {{ 'DOC.COMMANDS.' + i18n(activeCat) + '.' + i18n(activeSubCat) | translate }}</span
+      >
     </div>
 
     <table class="categories">
@@ -38,9 +42,23 @@
     </table>
   </div>
 
-  <div class="code-section" [ngStyle]="{'visibility': activeCommand === '' ? 'hidden' : 'visible'}">
-    <button *ngIf="section === 'editor'" (click)="play()">Play</button>
-    <button *ngIf="section === 'game'" (click)="stop()">Stop</button>
+  <div class="code-section" [ngStyle]="{ visibility: activeCommand === '' ? 'hidden' : 'visible' }">
+    <h3 *ngIf="activeCommand !== ''">
+      {{ categories[activeCat][activeSubCat][activeCommand].name }}
+    </h3>
+
+    <p class="code" [innerHTML]="commandCall()"></p>
+
+    <p class="description" *ngIf="activeCommand !== ''">{{ categories[activeCat][activeSubCat][activeCommand].description.de }}</p>
+
+    <button *ngIf="section === 'editor'" (click)="play()">
+      <i class="fa fa-fw fa-play-circle" aria-hidden="true"></i>
+      {{ 'DOC.COMMANDS.PLAY' | translate }}
+    </button>
+    <button *ngIf="section === 'game'" (click)="stop()">
+      <i class="fa fa-fw fa-stop-circle-o" aria-hidden="true"></i>
+      {{ 'DOC.COMMANDS.STOP' | translate }}
+    </button>
 
     <div [hidden]="section !== 'editor'" class="ace" [ace]="ace.config"></div>
 

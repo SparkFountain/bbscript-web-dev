@@ -30,7 +30,7 @@ import { CommandsBasicsTimeRandomService } from 'bbscript/src/services/commands/
 import { CommandsDataBankService } from 'bbscript/src/services/commands/data/bank.service';
 import { CommandsDataFileSystemService } from 'bbscript/src/services/commands/data/file-system.service';
 import { CommandsGraphics2dDisplayService } from 'bbscript/src/services/commands/graphics2d/display.service';
-import { Graphics2dService } from 'bbscript/src/services/2d/graphics2d.service';
+import { Render2dService } from 'bbscript/src/services/2d/render2d.service';
 import { CommandsGraphics2dGraphicsService } from 'bbscript/src/services/commands/graphics2d/graphics.service';
 import { CommandsGraphics2dImagesService } from 'bbscript/src/services/commands/graphics2d/images.service';
 import { DebugEnvironment } from 'bbscript/src/services/environment/debug.environment';
@@ -135,7 +135,7 @@ import { CommandsSoundService } from 'bbscript/src/services/commands/sound.servi
     CommandsDataFileSystemService,
     CommandsGraphics2DService,
     CommandsGraphics2dDisplayService,
-    Graphics2dService,
+    Render2dService,
     CommandsGraphics2dGraphicsService,
     CommandsGraphics2dImagesService,
     CommandsGraphics2dMoviesService,

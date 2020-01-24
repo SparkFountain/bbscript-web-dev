@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { Command } from '../interfaces/command.interface';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from 'bbscript/src/services/language/language.service';
+import { LanguageService } from 'bbscript/src/services/language.service';
 import { HttpClient } from '@angular/common/http';
 
 import { AceDirective } from 'ngx-ace-wrapper';

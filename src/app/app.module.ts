@@ -20,20 +20,19 @@ import { CommandsBasicsService } from 'bbscript/src/services/commands/basics.ser
 import { CommandsBasicsMathsService } from 'bbscript/src/services/commands/basics/maths.service';
 import { AceModule } from 'ngx-ace-wrapper';
 import { BlitzBasicScriptService } from 'bbscript/src/public_api';
-import { LexerService } from 'bbscript/src/services/lexer/lexer.service';
-import { LanguageService } from 'bbscript/src/services/language/language.service';
-import { GeneralService } from 'bbscript/src/services/general/general.service';
-import { GameStateService } from 'bbscript/src/services/game-state/game-state.service';
+import { LexerService } from 'bbscript/src/services/lexer.service';
+import { LanguageService } from 'bbscript/src/services/language.service';
+import { GeneralService } from 'bbscript/src/services/general.service';
+import { GameStateService } from 'bbscript/src/services/game-state.service';
 import { CommandsBasicsDiverseService } from 'bbscript/src/services/commands/basics/diverse.service';
 import { CommandsBasicsStringsService } from 'bbscript/src/services/commands/basics/strings.service';
 import { CommandsBasicsTimeRandomService } from 'bbscript/src/services/commands/basics/time-random.service';
 import { CommandsDataBankService } from 'bbscript/src/services/commands/data/bank.service';
 import { CommandsDataFileSystemService } from 'bbscript/src/services/commands/data/file-system.service';
 import { CommandsGraphics2dDisplayService } from 'bbscript/src/services/commands/graphics2d/display.service';
-import { Render2dService } from 'bbscript/src/services/2d/render2d.service';
 import { CommandsGraphics2dGraphicsService } from 'bbscript/src/services/commands/graphics2d/graphics.service';
 import { CommandsGraphics2dImagesService } from 'bbscript/src/services/commands/graphics2d/images.service';
-import { DebugEnvironment } from 'bbscript/src/services/environment/debug.environment';
+import { DebugEnvironment } from 'bbscript/src/environment/debug.environment';
 import { CommandsGraphics2dMoviesService } from 'bbscript/src/services/commands/graphics2d/movies.service';
 import { CommandsGraphics2dPixelService } from 'bbscript/src/services/commands/graphics2d/pixel.service';
 import { CommandsGraphics2dTextService } from 'bbscript/src/services/commands/graphics2d/text.service';
@@ -88,6 +87,7 @@ import { CommandsGraphics3DService } from 'bbscript/src/services/commands/graphi
 import { CommandsGUIService } from 'bbscript/src/services/commands/gui.service';
 import { CommandsIOService } from 'bbscript/src/services/commands/io.service';
 import { CommandsSoundService } from 'bbscript/src/services/commands/sound.service';
+import { Render2dService } from 'bbscript/src/services/render2d.service';
 
 @NgModule({
   declarations: [

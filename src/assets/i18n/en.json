@@ -231,7 +231,7 @@
   "COMPILED_TO_CPP": "C++",
   "TRANSLATED_TO_JS": "JavaScript",
   "JETZT_LERNE_ICH": "Jetzt lerne ich Spiele programmieren mit BlitzBasic (German)",
-  "MISSION_SUBTITLE": "<b>BlitzBasicScript</b> is a simple yet powerful scripting language \"based on the <a class=\"is-link\" href=\"https://en.wikipedia.org/wiki/Blitz_BASIC\" target=\"_blank\">BlitzBasic</a> syntax. The primary intention of BBScript is to create games which can be played in any modern web browser – from unspectacular skill games to advanced 3D shooters. ",
+  "MISSION_SUBTITLE": "<b>BlitzBasicScript</b> is a simple yet powerful scripting language based on the <a class=\"is-link\" href=\"https://en.wikipedia.org/wiki/Blitz_BASIC\" target=\"_blank\">BlitzBasic</a> syntax. The primary intention of BBScript is to create games which can be played in any modern web browser – from unspectacular skill games to advanced 3D shooters.",
   "FEATURES": {
     "TITLE": "Features",
     "1": {

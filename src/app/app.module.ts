@@ -19,7 +19,6 @@ import { PostComponent } from './post/post.component';
 import { CommandsBasicsService } from 'bbscript/src/services/commands/basics.service';
 import { CommandsBasicsMathsService } from 'bbscript/src/services/commands/basics/maths.service';
 import { AceModule } from 'ngx-ace-wrapper';
-import { BlitzBasicScriptService } from 'bbscript/src/public_api';
 import { LexerService } from 'bbscript/src/services/lexer.service';
 import { LanguageService } from 'bbscript/src/services/language.service';
 import { GeneralService } from 'bbscript/src/services/general.service';
@@ -88,6 +87,9 @@ import { CommandsGUIService } from 'bbscript/src/services/commands/gui.service';
 import { CommandsIOService } from 'bbscript/src/services/commands/io.service';
 import { CommandsSoundService } from 'bbscript/src/services/commands/sound.service';
 import { Render2dService } from 'bbscript/src/services/render2d.service';
+import { GamingComponent } from './gaming/gaming.component';
+import { BlitzBasicScriptGameModule } from 'bbscript/src/lib/blitz-basic-script-game.module';
+import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script-game.service';
 
 @NgModule({
   declarations: [
@@ -100,7 +102,8 @@ import { Render2dService } from 'bbscript/src/services/render2d.service';
     NotFoundComponent,
     TermsOfUseComponent,
     DisclaimerComponent,
-    PostComponent
+    PostComponent,
+    GamingComponent
   ],
   imports: [
     BrowserModule,
@@ -115,11 +118,12 @@ import { Render2dService } from 'bbscript/src/services/render2d.service';
       }
     }),
     AceModule,
+    BlitzBasicScriptGameModule,
     BlitzBasicScriptCanvasModule,
     NgxPopperModule.forRoot({})
   ],
   providers: [
-    BlitzBasicScriptService,
+    BlitzBasicScriptGameService,
     LexerService,
     LanguageService,
     GeneralService,

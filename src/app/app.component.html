@@ -18,6 +18,10 @@
       <i class="fa fa-fw fa-tachometer"></i>
       {{'NAV.COMMANDS' | translate}}
     </a>
+    <a [ngClass]="{'active': router.url === '/gaming'}" routerLink="gaming">
+      <i class="fa fa-fw fa-gamepad"></i>
+      {{'NAV.GAMING' | translate}}
+    </a>
   </div>
 
   <div class="nav-right">

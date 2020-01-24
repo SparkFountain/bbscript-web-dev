@@ -7,7 +7,7 @@ import 'brace/theme/cobalt';
 import 'brace/theme/terminal';
 import '../../assets/ace/mode-bbscript';
 import { LexerToken } from 'bbscript/src/interfaces/lexer-token';
-import { BlitzBasicScriptService } from 'bbscript/src/public_api';
+import { BlitzBasicScriptGameService } from 'bbscript/src/public_api';
 import { AceDirective } from 'ngx-ace-wrapper';
 import { AceConfig } from '../interfaces/ace-config.interface';
 
@@ -24,7 +24,7 @@ export class LexerComponent implements OnInit, AfterViewInit {
 
   public section: 'editor' | 'tokens' | 'table';
 
-  constructor(private bbscript: BlitzBasicScriptService) {
+  constructor(private bbscript: BlitzBasicScriptGameService) {
     this.ace = {
       instance: null,
       config: {

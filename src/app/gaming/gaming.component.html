@@ -1,4 +1,18 @@
+<div class="toggle-game-section">
+  <span *ngIf="section === 'editor'" (click)="play()">
+    <i class="fa fa-fw fa-toggle-off" aria-hidden="true"></i>
+    Switch button to play
+  </span>
+  <span *ngIf="section === 'game'" (click)="stop()">
+    <i class="fa fa-fw fa-toggle-on" aria-hidden="true"></i>
+    Switch button to go back to editor
+  </span>
+</div>
+
+<div [hidden]="section !== 'editor'" class="ace" [ace]="ace.config"></div>
+
 <blitz-basic-script-game
+  *ngIf="section === 'game'"
   [code]="code"
   [debugMode]="true"
   [title]="'My First BBScript Game'"

@@ -35,7 +35,7 @@ export class CommandsComponent implements OnInit, AfterViewInit {
     commands: Command[];
   };
 
-  public commandCode: string;
+  public commandCode: string[];
 
   public section: 'editor' | 'game';
 
@@ -143,7 +143,7 @@ export class CommandsComponent implements OnInit, AfterViewInit {
 
   stop() {
     this.section = 'editor';
-    this.commandCode = '';
+    this.commandCode = [];
   }
 
   i18n(word: string) {

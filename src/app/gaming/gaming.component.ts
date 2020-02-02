@@ -40,11 +40,12 @@ export class GamingComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.code = ['Color 255, 128, 15', 'Rect 20, 35, 100, 75'];
+
   }
 
   ngAfterViewInit(): void {
     this.ace.instance = this.directiveRef.ace();
-    this.testingSection();
+    // this.testingSection();
   }
 
   add(x, y) {
@@ -56,7 +57,7 @@ export class GamingComponent implements OnInit, AfterViewInit {
   }
 
   executeNextStatement() {
-    
+
   }
 
   /** BEGIN OF TESTING SECTION */

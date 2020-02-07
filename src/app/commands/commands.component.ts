@@ -39,8 +39,8 @@ export class CommandsComponent implements OnInit, AfterViewInit {
 
   public section: 'editor' | 'game';
 
-  @ViewChild('searchInput', { static: false }) searchInput: any;
-  @ViewChild(AceDirective, { static: false }) directiveRef?: AceDirective;
+  @ViewChild('searchInput') searchInput: any;
+  @ViewChild(AceDirective) directiveRef?: AceDirective;
 
   public ace: AceConfig;
 

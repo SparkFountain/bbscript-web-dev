@@ -17,7 +17,7 @@ import { tap, withLatestFrom, map, switchMap, delay } from 'rxjs/operators';
   styleUrls: ['./gaming.component.scss']
 })
 export class GamingComponent implements OnInit, AfterViewInit {
-  @ViewChild(AceDirective, { static: false }) directiveRef?: AceDirective;
+  @ViewChild(AceDirective) directiveRef?: AceDirective;
 
   public ace: AceConfig;
   public code: string[];

@@ -17,7 +17,7 @@ import { AceConfig } from '../interfaces/ace-config.interface';
   styleUrls: ['./lexer.component.scss']
 })
 export class LexerComponent implements OnInit, AfterViewInit {
-  @ViewChild(AceDirective, { static: false }) directiveRef?: AceDirective;
+  @ViewChild(AceDirective) directiveRef?: AceDirective;
 
   public ace: AceConfig;
   public tokenArrays: LexerToken[][];

@@ -9,7 +9,7 @@ import { AceDirective } from 'ngx-ace-wrapper';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit, AfterViewInit {
-  @ViewChild(AceDirective, { static: false }) directiveRef?: AceDirective;
+  @ViewChild(AceDirective) directiveRef?: AceDirective;
 
   public ace: AceConfig;
   public features: Feature[];

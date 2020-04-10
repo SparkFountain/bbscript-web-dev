@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bbscript-web-dev"
+    }
+  },
+  "defaultProject": "bbscript-web-dev",
+  "cli": {
+    "analytics": "5e151044-1739-42f7-995e-95c301e318cc"
+  }
 }

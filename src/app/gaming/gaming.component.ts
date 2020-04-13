@@ -20,6 +20,7 @@ export class GamingComponent implements OnInit, AfterViewInit {
   @ViewChild(AceDirective) directiveRef?: AceDirective;
 
   public ace: AceConfig;
+  public iconPath: string;
   public code: string[];
   public section: 'game' | 'editor';
 
@@ -39,8 +40,8 @@ export class GamingComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.iconPath = '/assets/gfx/icon.png';
     this.code = ['Color 255, 128, 15', 'Rect 20, 35, 100, 75'];
-
   }
 
   ngAfterViewInit(): void {

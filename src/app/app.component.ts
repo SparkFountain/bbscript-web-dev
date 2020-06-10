@@ -3,6 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { NavigationElement } from './types/navigation-element';
+import { NavigationMenu } from './classes/navigation-menu';
+import { NavigationLink } from './classes/navigation-link';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +13,8 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public navigationElements: { left: NavigationElement[]; right: NavigationElement[] };
+
   public mobileMenu: {
     open: boolean;
     closing: boolean;
@@ -26,11 +31,31 @@ export class AppComponent {
     this.translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
     this.translate.addLangs(['en', 'de']);
 
+    // initialize navigation
+    this.navigationElements = {
+      left: [
+        new NavigationMenu('fa-home', 'NAV.HOME', ['Überblick', 'News-Blog', 'Features', 'Vergleich']),
+        new NavigationMenu('fa-question', 'NAV.LETS_CODE', ['Leeres Projekt', 'Game Templates', 'Eigene Projekte']),
+        new NavigationLink('', 'NAV.PROJECTS', ''),
+        new NavigationLink('fa-book', 'NAV.DOCUMENTATION', '')
+      ],
+      right: [new NavigationLink('fa-github', 'NAV.GITHUB', 'https://github.com/SparkFountain/BlitzBasicScript')]
+    };
+
+    // TODO: refactor -> initialize old mobile menu
     this.mobileMenu = {
       open: false,
       closing: false
       // context: MobileMenuContext.DEFAULT
     };
+  }
+
+  isNavLink(navigationElement: NavigationElement): navigationElement is NavigationLink {
+    return (navigationElement as NavigationLink).path !== undefined;
+  }
+
+  isNavMenu(navigationElement: NavigationElement): navigationElement is NavigationMenu {
+    return (navigationElement as NavigationMenu).submenus !== undefined;
   }
 
   changeLanguage(language: string) {

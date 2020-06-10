@@ -249,6 +249,10 @@
   "EXAMPLE": "Beispiel",
   "INFORMATION": "Informationen",
   "NAV": {
+    "HOME": "Home",
+    "LETS_CODE": "Coden",
+    "PROJECTS": "Projekte",
+    "DOCUMENTATION": "Dokumentation",
     "ABOUT": "Infos",
     "LEXER": "Lexer",
     "COMMANDS": "Befehle",

@@ -1,5 +1,89 @@
 <!-- NAVIGATION (DESKTOP AND TABLET) -->
-<nav class="nav-default">
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://blitzbasicscript.com">
+      <img
+        src="../assets/gfx/bbscript-logo.png"
+        alt="BlitzBasicScript: Your Game Scripting Engine"
+        width="32"
+        height="32"
+      />
+    </a>
+    <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+      <span class="icon" style="color: #333;">
+        <i class="fab fa-github"></i>
+      </span>
+    </a>
+    <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+      <span class="icon" style="color: #55acee;">
+        <i class="fab fa-twitter"></i>
+      </span>
+    </a>
+    <div class="navbar-burger burger" data-target="navigationMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div id="navigationMenu" class="navbar-menu">
+    <div class="navbar-start">
+      <ng-container *ngFor="let element of navigationElements.left">
+        <!-- TODO: add link; either external or routing path -->
+        <a class="navbar-item" *ngIf="isNavLink(element)">
+          {{ element.text | translate }}
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable" *ngIf="isNavMenu(element)">
+          <a class="navbar-link">
+            {{ element.text | translate }}
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" *ngFor="let submenu of element.submenus">
+              {{ submenu }}
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="navbar-item" href="https://github.com/SparkFountain/BlitzBasicScript">
+              <span class="icon">
+                <i class="fa fa-fw fa-github"></i>
+              </span>
+              <span>GitHub</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="navbar-link">
+        <span class="icon">
+          <i class="fa fa-fw fa-comment-o"></i>
+        </span>
+        <span>{{ 'LANGUAGE' | translate }}</span>
+      </div>
+      <div id="languageDropdown" class="navbar-dropdown">
+        <a class="navbar-item" href="#extensions/">
+          <div class="level is-mobile">
+            <div class="level-left">
+              <div class="level-item">
+                <p>
+                  <strong>Extensions</strong>
+                  <br />
+                  <small>Side projects to enhance Bulma</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- <nav class="nav-default">
   <a class="logo">
     <img alt="BlitzBasicScript Logo" src="../assets/gfx/bbscript-logo.png" width="16" height="16" />
     BlitzBasicScript
@@ -46,15 +130,15 @@
       </div>
     </div>
   </div>
-</nav>
+</nav> -->
 
 <!-- NAVIGATION (SMARTPHONE) -->
-<nav class="nav-smartphone menu-bar">
+<!-- <nav class="nav-smartphone menu-bar">
   <i class="fa fa-bars" *ngIf="!mobileMenu.open" (click)="toggleMobileMenu()"></i>
   <i class="fa fa-times" *ngIf="mobileMenu.open" (click)="toggleMobileMenu()"></i>
   <p class="brand-text">BlitzBasicScript</p>
   <i class="fa fa-fw fa-search"></i>
-</nav>
+</nav> -->
 
 <!-- <div class="nav-smartphone menu-content" [ngClass]="{'visible': mobileMenu.open, 'closing': mobileMenu.closing}">
   <ng-container *ngIf="mobileMenu.context === MobileMenuContext.DEFAULT">
@@ -233,12 +317,12 @@
 </div> -->
 
 <!-- PAGE CONTENT -->
-<app-gaming></app-gaming>
+<!-- <app-gaming></app-gaming> -->
 
 <!-- NORMAL BBSCRIPT PAGES -->
-<!-- <div id="bbscript-page-content">
+<div id="bbscript-page-content">
   <router-outlet></router-outlet>
-</div> -->
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -247,8 +331,8 @@
     <br /> -->
     <!-- <a routerLink="terms-of-use" class="is-link">{{'FOOTER.TERMS' | translate}}</a>
     <br /> -->
-    <a routerLink="disclaimer" class="is-link">{{'FOOTER.DISCLAIMER' | translate}}</a>
+    <a routerLink="disclaimer" class="is-link">{{ 'FOOTER.DISCLAIMER' | translate }}</a>
     <br />
-    <a routerLink="imprint" class="is-link">{{'FOOTER.IMPRINT' | translate}}</a>
+    <a routerLink="imprint" class="is-link">{{ 'FOOTER.IMPRINT' | translate }}</a>
   </div>
 </footer>

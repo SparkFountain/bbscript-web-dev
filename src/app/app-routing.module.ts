@@ -9,13 +9,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { GamingComponent } from './gaming/gaming.component';
-
+import { DocumentationComponent } from './documentation/documentation.component';
+import { IdeComponent } from './ide/ide.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
   { path: 'lexer', component: LexerComponent },
   { path: 'commands', component: CommandsComponent },
   { path: 'gaming', component: GamingComponent },
+  { path: 'documentation', component: DocumentationComponent },
+  { path: 'coding', component: IdeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'imprint', component: ImprintComponent },
   { path: 'terms-of-use', component: TermsOfUseComponent },
@@ -28,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

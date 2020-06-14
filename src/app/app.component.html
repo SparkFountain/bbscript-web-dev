@@ -38,9 +38,22 @@
             {{ element.text | translate }}
           </a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" *ngFor="let submenu of element.submenus">
-              {{ submenu }}
+            <a class="navbar-item" href="#">
+              <div class="level is-mobile">
+                <div class="level-left">
+                  <div class="level-item">
+                    <p>
+                      <strong>Extensions</strong>
+                      <br />
+                      <small>Side projects to enhance Bulma</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </a>
+            <!-- <a class="navbar-item" *ngFor="let submenu of element.submenus">
+              {{ submenu }}
+            </a> -->
           </div>
         </div>
       </ng-container>

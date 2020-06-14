@@ -37,7 +37,7 @@ export class AppComponent {
         new NavigationMenu('fa-home', 'NAV.HOME', ['Überblick', 'News-Blog', 'Features', 'Vergleich']),
         new NavigationMenu('fa-question', 'NAV.LETS_CODE', ['Leeres Projekt', 'Game Templates', 'Eigene Projekte']),
         new NavigationLink('', 'NAV.PROJECTS', ''),
-        new NavigationLink('fa-book', 'NAV.DOCUMENTATION', '')
+        new NavigationMenu('fa-book', 'NAV.DOCUMENTATION', ['Schlüsselwörter', 'Befehle'])
       ],
       right: [new NavigationLink('fa-github', 'NAV.GITHUB', 'https://github.com/SparkFountain/BlitzBasicScript')]
     };

@@ -90,6 +90,8 @@ import { Render2dService } from 'bbscript/src/services/render2d.service';
 import { GamingComponent } from './gaming/gaming.component';
 import { BlitzBasicScriptGameModule } from 'bbscript/src/lib/blitz-basic-script-game.module';
 import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script-game.service';
+import { DocumentationComponent } from './documentation/documentation.component';
+import { IdeComponent } from './ide/ide.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +105,9 @@ import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script
     TermsOfUseComponent,
     DisclaimerComponent,
     PostComponent,
-    GamingComponent
+    GamingComponent,
+    DocumentationComponent,
+    IdeComponent
   ],
   imports: [
     BrowserModule,

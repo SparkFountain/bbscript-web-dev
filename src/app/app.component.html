@@ -9,16 +9,6 @@
         height="32"
       />
     </a>
-    <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
-      <span class="icon" style="color: #333;">
-        <i class="fab fa-github"></i>
-      </span>
-    </a>
-    <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
-      <span class="icon" style="color: #55acee;">
-        <i class="fab fa-twitter"></i>
-      </span>
-    </a>
     <div class="navbar-burger burger" data-target="navigationMenu">
       <span></span>
       <span></span>
@@ -62,7 +52,7 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="navbar-item" href="https://github.com/SparkFountain/BlitzBasicScript">
+            <a class="navbar-item" href="https://github.com/SparkFountain/BlitzBasicScript" target="_blank">
               <span class="icon">
                 <i class="fa fa-fw fa-github"></i>
               </span>
@@ -71,26 +61,22 @@
           </p>
         </div>
       </div>
-      <div class="navbar-link">
-        <span class="icon">
-          <i class="fa fa-fw fa-comment-o"></i>
-        </span>
-        <span>{{ 'LANGUAGE' | translate }}</span>
-      </div>
-      <div id="languageDropdown" class="navbar-dropdown">
-        <a class="navbar-item" href="#extensions/">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="level-item">
-                <p>
-                  <strong>Extensions</strong>
-                  <br />
-                  <small>Side projects to enhance Bulma</small>
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <span class="icon">
+            <i class="fa fa-fw fa-comments-o"></i>
+          </span>
+          <span>{{ 'NAV.LANGUAGE.TITLE' | translate }}</span>
         </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" (click)="changeLanguage('de')">
+            {{ 'NAV.LANGUAGE.DE' | translate }}
+          </a>
+          <a class="navbar-item" (click)="changeLanguage('en')">
+            {{ 'NAV.LANGUAGE.EN' | translate }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

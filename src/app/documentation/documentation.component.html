@@ -1,16 +1,10 @@
 <nav class="breadcrumb">
   <ul>
     <li>
-      <a>Bulma</a>
-    </li>
-    <li>
-      <a>Documentation</a>
-    </li>
-    <li>
-      <a>Components</a>
+      <a>{{ 'DOC.KEYWORDS.TITLE' | translate }}</a>
     </li>
     <li class="is-active">
-      <a>Breadcrumb</a>
+      <a>EndIf</a>
     </li>
   </ul>
 </nav>
@@ -18,25 +12,22 @@
 <div class="column is-3">
   <aside class="menu">
     <p class="menu-label">
-      General
+      {{ 'DOC.KEYWORDS.TITLE' | translate }}
     </p>
     <ul class="menu-list">
-      <li>
-        <a>Dashboard</a>
-      </li>
-      <li>
-        <a>Customers</a>
+      <li *ngFor="let cat of keywordCategories">
+        <a>{{ 'DOC.KEYWORDS.' + cat.title + '.TITLE' | translate }}</a>
       </li>
     </ul>
     <p class="menu-label">
-      Administration
+      {{ 'DOC.COMMANDS.TITLE' | translate }}
     </p>
     <ul class="menu-list">
-      <li>
-        <a>Team Settings</a>
+      <li *ngFor="let cat of commandCategories">
+        <a>{{ 'DOC.COMMANDS.' + cat.title + '.TITLE' | translate }}</a>
       </li>
       <li>
-        <a class="is-active">Manage Your Team</a>
+        <a>Manage Your Team</a>
         <ul>
           <li>
             <a>Members</a>
@@ -49,28 +40,29 @@
           </li>
         </ul>
       </li>
-      <li>
-        <a>Invitations</a>
-      </li>
-      <li>
-        <a>Cloud Storage Environment Settings</a>
-      </li>
-      <li>
-        <a>Authentication</a>
-      </li>
     </ul>
     <p class="menu-label">
-      Transactions
+      {{ 'DOC.CONSTANTS_AND_SCANCODES' | translate }}
     </p>
     <ul class="menu-list">
       <li>
-        <a>Payments</a>
+        <a>Lorem Ipsum</a>
       </li>
+    </ul>
+    <p class="menu-label">
+      {{ 'DOC.DIFFERENCES_TO_BLITZBASIC' | translate }}
+    </p>
+    <ul class="menu-list">
       <li>
-        <a>Transfers</a>
+        <a>Lorem Ipsum</a>
       </li>
+    </ul>
+    <p class="menu-label">
+      {{ 'DOC.MIGRATION_GUIDE' | translate }}
+    </p>
+    <ul class="menu-list">
       <li>
-        <a>Balance</a>
+        <a>Lorem Ipsum</a>
       </li>
     </ul>
   </aside>

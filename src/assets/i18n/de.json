@@ -8,7 +8,6 @@
     "IMPRINT": "Impressum",
     "DISCLAIMER": "Haftungsausschluss"
   },
-  "LANGUAGE": "Sprache",
   "LEXER": {
     "TITLE": "Lexer",
     "SUBTITLE": "<p>Der Lexer analysiert deinen BBScript-Code und erzeugt daraus sogenannte <i>Tokens</i>, welche für die Weiterverarbeitung und anschließende Programmausführung benötigt werden.</p><p>Klick auf den Tab <b>Editor</b> und gib deinen Code ein. Wechsele anschließend in den Tab <b>Tokens</b>, um die einzelnen Bestandteile deines Codes zu sehen. Gehe mit der Maus über ein Token, um seine Funktion angezeigt zu bekommen. Unter <b>Tabelle</b> siehst du alle Tokens untereinander aufgeführt.</p>",
@@ -68,84 +67,87 @@
     "TITLE": "Dokumentation",
     "KEYWORDS": {
       "TITLE": "Schlüsselwörter",
-      "HEADLINE": "Schlüsselwörter dienen dazu, den Programmfluss zu kontrollieren sowie Variablen, Arrays, Funktionen und Typen zu deklarieren."
+      "HEADLINE": "Schlüsselwörter dienen dazu, den Programmfluss zu kontrollieren sowie Variablen, Arrays, Funktionen und Typen zu deklarieren.",
+      "VARIABLES": {
+        "TITLE": "Variablen",
+        "HEADLINE": "Lerne die verschiedenen Arten von Variablen in BBScript kennen und erfahre, wie sie funktionieren.",
+        "GLOBAL": "Globale Variablen",
+        "LOCAL": "Lokale Variablen",
+        "DATA_TYPES": "Datentypen"
+      },
+      "CONDITIONS": {
+        "TITLE": "Bedingungen",
+        "SELECTIONS": {
+          "TITLE": "Bedingungen und Auswahl",
+          "HEADLINE": "Mithilfe von Bedingungen und Auswahl-Blöcken steuerst du den Programmablauf je nach aktuellem Zustand."
+        }
+      },
+      "ARRAYS": {
+        "TITLE": "Arrays (Datenfelder)",
+        "DATA_BLOCKS": {
+          "TITLE": "Arrays und Datenblöcke",
+          "HEADLINE": "Arrays sind Speicherfelder, in denen eine große Anzahl von Daten einfach verwaltet werden kann. Datenblöcke können genutzt werden, um komplexe Informationen wie Levelinhalte schnell verfügbar zu machen."
+        },
+        "FIXED_LENGTH": {
+          "TITLE": "Arrays mit fester Länge",
+          "HEADLINE": "Feste Länge"
+        },
+        "DYNAMIC_LENGTH": {
+          "TITLE": "Arrays mit dynamischer Länge",
+          "HEADLINE": "Dynamische Länge"
+        }
+      },
+      "LOOPS": {
+        "TITLE": "Schleifen",
+        "HEADLINE": "Schleifen sind dafür gedacht, bestimmte Code-Abschnitte mehrmals hintereinander auszuführen.",
+        "SUBTITLE": "Um Befehle mehrmals hintereinander auszuführen, kannst du dich zwischen drei verschiedenen Schleifentypen in BBScript entscheiden.",
+        "FOR_TO_NEXT": {
+          "TITLE": "For-To-Next-Schleife",
+          "HEADLINE": "For-To-Next"
+        },
+        "FOR_EACH": {
+          "TITLE": "For-Each-Schleife",
+          "HEADLINE": "For-Each"
+        },
+        "WHILE": {
+          "TITLE": "While-Schleife",
+          "HEADLINE": "While"
+        },
+        "REPEAT": {
+          "TITLE": "Repeat-Schleife",
+          "HEADLINE": "Repeat"
+        }
+      },
+      "FUNCTIONS": {
+        "TITLE": "Funktionen",
+        "HEADLINE": "Funktionen helfen dir, deinen Code in logische Abschnitte zu unterteilen.",
+        "DECLARATION": {
+          "TITLE": "Deklaration von Funktionen",
+          "HEADLINE": "Deklaration"
+        },
+        "NESTED_CALLS": "Verschachtelte Funktionsaufrufe"
+      },
+      "TYPES": {
+        "TITLE": "Typen",
+        "HEADLINE": "Benutze Typen, um beliebig viele Spielobjekte während der Laufzeit zu erzeugen.",
+        "DECLARATION": "Deklaration von Typen",
+        "BJECT_ACCESS": "Objektzugriffe"
+      },
+      "LOGIC": {
+        "TITLE": "Logik und Mathematik",
+        "MATHS": {
+          "TITLE": "Logik und Mathematik",
+          "HEADLINE": "Logische Operatoren werden eingesetzt, um mehrere Bedingungen miteinander zu verknüpfen."
+        }
+      },
+      "DIVERSE": {
+        "TITLE": "Diverses",
+        "HEADLINE": "Hier findest du spezielle Schlüsselwörter, die in keine andere Kategorie passen."
+      }
     },
     "DEPRECATED_KEYWORDS": {
       "TITLE": "Obsolete Schlüsselwörter",
       "HEADLINE": "Einige veraltete Schlüsselwörter aus <i>BlitzBasic</i> werden in BBScript nicht unterstützt."
-    },
-    "VARIABLES": {
-      "TITLE": "Variablen",
-      "HEADLINE": "Lerne die verschiedenen Arten von Variablen in BBScript kennen und erfahre, wie sie funktionieren.",
-      "GLOBAL": "Globale Variablen",
-      "LOCAL": "Lokale Variablen",
-      "DATA_TYPES": "Datentypen"
-    },
-    "CONDITIONS": {
-      "SELECTIONS": {
-        "TITLE": "Bedingungen und Auswahl",
-        "HEADLINE": "Mithilfe von Bedingungen und Auswahl-Blöcken steuerst du den Programmablauf je nach aktuellem Zustand."
-      }
-    },
-    "ARRAYS": {
-      "DATA_BLOCKS": {
-        "TITLE": "Arrays und Datenblöcke",
-        "HEADLINE": "Arrays sind Speicherfelder, in denen eine große Anzahl von Daten einfach verwaltet werden kann. Datenblöcke können genutzt werden, um komplexe Informationen wie Levelinhalte schnell verfügbar zu machen."
-      },
-      "FIXED_LENGTH": {
-        "TITLE": "Arrays mit fester Länge",
-        "HEADLINE": "Feste Länge"
-      },
-      "DYNAMIC_LENGTH": {
-        "TITLE": "Arrays mit dynamischer Länge",
-        "HEADLINE": "Dynamische Länge"
-      }
-    },
-    "LOOPS": {
-      "TITLE": "Schleifen",
-      "HEADLINE": "Schleifen sind dafür gedacht, bestimmte Code-Abschnitte mehrmals hintereinander auszuführen.",
-      "SUBTITLE": "Um Befehle mehrmals hintereinander auszuführen, kannst du dich zwischen drei verschiedenen Schleifentypen in BBScript entscheiden.",
-      "FOR_TO_NEXT": {
-        "TITLE": "For-To-Next-Schleife",
-        "HEADLINE": "For-To-Next"
-      },
-      "FOR_EACH": {
-        "TITLE": "For-Each-Schleife",
-        "HEADLINE": "For-Each"
-      },
-      "WHILE": {
-        "TITLE": "While-Schleife",
-        "HEADLINE": "While"
-      },
-      "REPEAT": {
-        "TITLE": "Repeat-Schleife",
-        "HEADLINE": "Repeat"
-      }
-    },
-    "FUNCTIONS": {
-      "TITLE": "Funktionen",
-      "HEADLINE": "Funktionen helfen dir, deinen Code in logische Abschnitte zu unterteilen.",
-      "DECLARATION": {
-        "TITLE": "Deklaration von Funktionen",
-        "HEADLINE": "Deklaration"
-      },
-      "NESTED_CALLS": "Verschachtelte Funktionsaufrufe"
-    },
-    "TYPES": {
-      "TITLE": "Typen",
-      "HEADLINE": "Benutze Typen, um beliebig viele Spielobjekte während der Laufzeit zu erzeugen.",
-      "DECLARATION": "Deklaration von Typen",
-      "BJECT_ACCESS": "Objektzugriffe"
-    },
-    "LOGIC": {
-      "MATHS": {
-        "TITLE": "Logik und Mathematik",
-        "HEADLINE": "Logische Operatoren werden eingesetzt, um mehrere Bedingungen miteinander zu verknüpfen."
-      }
-    },
-    "DIVERSE": {
-      "TITLE": "Diverses",
-      "HEADLINE": "Hier findest du spezielle Schlüsselwörter, die in keine andere Kategorie passen."
     },
     "COMMANDS": {
       "TITLE": "Befehle",
@@ -239,7 +241,10 @@
     "DEPRECATED_COMMANDS": {
       "TITLE": "Obsolete Befehle",
       "HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript."
-    }
+    },
+    "CONSTANTS_AND_SCANCODES": "Konstanten und Scancodes",
+    "DIFFERENCES_TO_BLITZBASIC": "Unterschiede zu BlitzBasic",
+    "MIGRATION_GUIDE": "Migrations-Guide"
   },
   "COMMAND_NAME": "Befehlsname",
   "KEY_WORD": "Schlüsselwort",
@@ -258,10 +263,13 @@
     "COMMANDS": "Befehle",
     "GAMING": "Spielen",
     "CONTACT": "Kontakt",
-    "IMPRINT": "Impressum"
+    "IMPRINT": "Impressum",
+    "LANGUAGE": {
+      "TITLE": "Sprache",
+      "EN": "Englisch",
+      "DE": "Deutsch"
+    }
   },
-  "NAV_EN": "Englisch",
-  "NAV_DE": "Deutsch",
   "NAV_TERMS": "Nutzungsbedingungen",
   "CANCEL": "Abbrechen",
   "TARGET_CODE": "Ziel-Code",

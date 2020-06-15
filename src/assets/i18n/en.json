@@ -188,7 +188,10 @@
     "DEPRECATED_COMMANDS": {
       "TITLE": "Obsolete Befehle",
       "HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript."
-    }
+    },
+    "CONSTANTS_AND_SCANCODES": "Constants and Scancodes",
+    "DIFFERENCES_TO_BLITZBASIC": "Differences to BlitzBasic",
+    "MIGRATION_GUIDE": "Migration Guide"
   },
   "KEY_WORD": "Key Word",
   "KEY_WORDS": "Key Words",
@@ -202,11 +205,13 @@
     "COMMANDS": "Commands",
     "GAMING": "Gaming",
     "CONTACT": "Contakt",
-    "IMPRINT": "Imprint"
+    "IMPRINT": "Imprint",
+    "LANGUAGE": {
+      "TITLE": "Language",
+      "EN": "English",
+      "DE": "German"
+    }
   },
-  "LANGUAGE": "Language",
-  "NAV_EN": "English",
-  "NAV_DE": "German",
   "WORK_IN_PROGRESS": {
     "TITLE": "Projekt State: Alpha 0.0.1",
     "TEXT": "Currently, the BlitzBasicScript implementation is still in alpha state. For that reason this website only provides few information and features at the moment but will be extended and improved continuously."

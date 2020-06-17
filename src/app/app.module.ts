@@ -92,6 +92,7 @@ import { BlitzBasicScriptGameModule } from 'bbscript/src/lib/blitz-basic-script-
 import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script-game.service';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { IdeComponent } from './ide/ide.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { IdeComponent } from './ide/ide.component';
     PostComponent,
     GamingComponent,
     DocumentationComponent,
-    IdeComponent
+    IdeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

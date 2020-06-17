@@ -1,0 +1,39 @@
+<h1 class="title is-1">{{ 'HOME.TITLE' | translate }}</h1>
+<h2 class="title is-2">{{ 'HOME.SUBTITLE' | translate }}</h2>
+
+<article class="message is-info">
+  <div class="message-header">{{ 'HOME.INFO_1.HEADER' | translate }}</div>
+  <div class="message-body">{{ 'HOME.INFO_1.BODY' | translate }}</div>
+</article>
+
+<div class="box is-success">
+  <b>{{ 'HOME.INFO_2' | translate }}</b>
+</div>
+
+<article class="message is-info">
+  <div class="message-header">{{ 'HOME.INFO_3.HEADER' | translate }}</div>
+  <div class="message-body" [innerHTML]="'HOME.INFO_3.BODY' | translate"></div>
+</article>
+
+<h2 class="title is-2">{{ 'HOME.SIX_REASONS' | translate }}</h2>
+
+<div class="columns" *ngFor="let i of [0, 1]">
+  <div class="column" *ngFor="let j of [0, 1, 2]">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image" style="width: 256px;">
+            <img alt="todo" [src]="'/assets/gfx/' + reasonImages[i * 3 + j]" />
+          </figure>
+        </div>
+        <div class="media-content">
+          <h3 class="title is-3">
+            {{ 'HOME.REASON_' + (i * 3 + j + 1) + '.HEADER' | translate }}
+          </h3>
+          <br />
+          <p>{{ 'HOME.REASON_' + (i * 3 + j + 1) + '.BODY' | translate }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

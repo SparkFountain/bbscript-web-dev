@@ -11,9 +11,11 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { GamingComponent } from './gaming/gaming.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { IdeComponent } from './ide/ide.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent },
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'lexer', component: LexerComponent },
   { path: 'commands', component: CommandsComponent },
   { path: 'gaming', component: GamingComponent },
@@ -24,11 +26,11 @@ const routes: Routes = [
   { path: 'terms-of-use', component: TermsOfUseComponent },
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: '404', component: NotFoundComponent },
-  { path: '**', redirectTo: '/404' }
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

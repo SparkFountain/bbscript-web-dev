@@ -1,3 +1,21 @@
+<div class="modal" [ngClass]="{ 'is-active': settingsOpen }">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+      Here comes the content
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
+</div>
+
 <div class="columns">
   <div class="column is-3">
     <div class="is-primary">
@@ -29,41 +47,22 @@
       <p class="panel-heading">{{ projectName }}</p>
       <div class="panel-block">
         <p class="control has-icons-left">
-          <input class="input is-small" type="text" placeholder="{{ 'SEARCH.PLACEHOLDER' | translate }}" />
+          <input
+            class="input is-small"
+            type="text"
+            placeholder="{{ 'SEARCH.PLACEHOLDER' | translate }}"
+          />
           <span class="icon is-small is-left">
             <i class="fa fa-search"></i>
           </span>
         </p>
       </div>
-      <p class="panel-tabs">
-        <a class="is-active">All</a>
-        <a>Public</a>
-        <a>Private</a>
-        <a>Sources</a>
-        <a>Forks</a>
-      </p>
-      <a class="panel-block is-active">
-        <span class="panel-icon"> <i class="fa fa-book"></i> </span> bulma
+      <a class="panel-block" *ngFor="let fileOrFolder of filesAndFolders">
+        <span class="panel-icon">
+          <i [class]="'fa fa-' + icons[fileOrFolder.type]"></i>
+        </span>
+        {{ fileOrFolder.name }}
       </a>
-      <a class="panel-block">
-        <span class="panel-icon"> <i class="fa fa-book"></i> </span> marksheet
-      </a>
-      <a class="panel-block">
-        <span class="panel-icon"> <i class="fa fa-book"></i> </span> minireset.css
-      </a>
-      <a class="panel-block">
-        <span class="panel-icon"> <i class="fa fa-book"></i> </span> jgthms.github.io
-      </a>
-      <a class="panel-block">
-        <span class="panel-icon"> <i class="fa fa-code-branch"></i> </span> daniellowtw/infBoard
-      </a>
-      <a class="panel-block">
-        <span class="panel-icon"> <i class="fa fa-code-branch"></i> </span> mojs
-      </a>
-      <label class="panel-block"> <input type="checkbox" /> Remember me </label>
-      <div class="panel-block">
-        <button class="button is-primary is-outlined is-fullwidth">Reset all filters</button>
-      </div>
     </nav>
   </div>
 
@@ -100,7 +99,7 @@
             <i class="fa fa-magic"></i>
           </span>
         </a>
-        <a class="button">
+        <a class="button" (click)="toggleSettings()">
           <span class="icon is-small">
             <i class="fa fa-cog"></i>
           </span>

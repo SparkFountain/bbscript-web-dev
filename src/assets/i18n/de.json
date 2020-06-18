@@ -1,4 +1,7 @@
 {
+  "LOGIN": "Anmelden",
+  "REGISTER": "Registrieren",
+  "LOGOUT": "Abmelden",
   "GERMANY": "Deutschland",
   "PAGE_NOT_FOUND": "Diese Seite gibt es nicht",
   "HOME": {
@@ -9,10 +12,7 @@
       "BODY": "Dann bist du hier richtig. Vielleicht hast du irgendwo mal gelesen, dass es sehr anstrengend und aufwändig wäre, ein eigenes Computerspiel zu schreiben. Man müsste erst eine komplizierte Programmiersprache erlernen, sich mit viel Mathematik herumschlagen und könnte erst nach Monaten kleine Grafikdemos hervorbringen. Doch das stimmt nicht."
     },
     "INFO_2": "Spiele programmieren ist leicht!",
-    "INFO_3": {
-      "HEADER": "Zumindest, wenn man es richtig angeht",
-      "BODY": "<p>Mit BlitzBasicScript entdeckst du von der ersten Minute an spielerisch die Faszination der Game-Entwicklung. Bist du neugierig und willst all die coolen Möglichkeiten erforschen, mit denen man lebendige virtuelle Welten erschafft? Auf dich warten zwölf Tutorials, in denen du in null Komma nix lernst Grafiken auf den Bildschirm zu zaubern, Soundeffekte abzuspielen und 3D-Objekte zu bewegen.</p><p>Oder willst du sofort loslegen, ohne dich mit irgendwelcher Theorie zu langweilen? Dann öffne einfach ein Demo-Spiel deiner Wahl und probiere es aus! Nutze die integrierte Entwicklungsumgebung, um den Code Stück für Stück zu untersuchen und verändere die Dinge, wie es dir gefällt. Auf diese Weise erkennst du schnell & intuitiv, wie so ein Computerspiel unter der Haube funktioniert – Learning by Doing.</p><p>Und falls du doch mal an deine Grenzen stößt und nicht weiter weißt, kein Problem: Markiere einfach einen Codebereich und aktiviere den Coding Guide. Er hilft dir dabei, Befehle und Schlüsselwörter besser zu verstehen und die zugrunde liegenden Mechanismen zu begreifen.</p>"
-    },
+    "INFO_3": "<p>Zumindest, wenn man es richtig angeht. Mit BlitzBasicScript entdeckst du von der ersten Minute an spielerisch die Faszination der Game-Entwicklung. Bist du neugierig und willst all die coolen Möglichkeiten erforschen, mit denen man lebendige virtuelle Welten erschafft? Auf dich warten zwölf Tutorials, in denen du in null Komma nix lernst Grafiken auf den Bildschirm zu zaubern, Soundeffekte abzuspielen und 3D-Objekte zu bewegen.</p><p>Oder willst du sofort loslegen, ohne dich mit irgendwelcher Theorie zu langweilen? Dann öffne einfach ein Demo-Spiel deiner Wahl und probiere es aus! Nutze die integrierte Entwicklungsumgebung, um den Code Stück für Stück zu untersuchen und verändere die Dinge, wie es dir gefällt. Auf diese Weise erkennst du schnell & intuitiv, wie so ein Computerspiel unter der Haube funktioniert – Learning by Doing.</p><p>Und falls du doch mal an deine Grenzen stößt und nicht weiter weißt, kein Problem: Markiere einfach einen Codebereich und aktiviere den Coding Guide. Er hilft dir dabei, Befehle und Schlüsselwörter besser zu verstehen und die zugrunde liegenden Mechanismen zu begreifen.</p>",
     "SIX_REASONS": "Sechs Gründe für BlitzBasicScript",
     "REASON_1": {
       "HEADER": "Einfache Programmiersprache",

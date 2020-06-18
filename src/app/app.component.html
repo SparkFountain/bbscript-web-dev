@@ -78,6 +78,18 @@
           </a>
         </div>
       </div>
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="navbar-item" routerLink="/login">
+              <span class="icon">
+                <i class="fa fa-fw fa-user-circle-o"></i>
+              </span>
+              <span>{{ 'LOGIN' | translate }}</span>
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -324,12 +336,12 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div>
-    <!-- <a routerLink="contact" class="is-link">{{'FOOTER.CONTACT' | translate}}</a>
-    <br /> -->
-    <!-- <a routerLink="terms-of-use" class="is-link">{{'FOOTER.TERMS' | translate}}</a>
-    <br /> -->
+<footer class="footer">
+  <div class="content has-text-centered">
+    <a routerLink="contact" class="is-link">{{'FOOTER.CONTACT' | translate}}</a>
+    <br />
+    <a routerLink="terms-of-use" class="is-link">{{'FOOTER.TERMS' | translate}}</a>
+    <br />
     <a routerLink="disclaimer" class="is-link">{{ 'FOOTER.DISCLAIMER' | translate }}</a>
     <br />
     <a routerLink="imprint" class="is-link">{{ 'FOOTER.IMPRINT' | translate }}</a>

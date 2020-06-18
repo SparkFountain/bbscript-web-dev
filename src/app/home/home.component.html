@@ -3,16 +3,13 @@
 
 <article class="message is-info">
   <div class="message-header">{{ 'HOME.INFO_1.HEADER' | translate }}</div>
-  <div class="message-body">{{ 'HOME.INFO_1.BODY' | translate }}</div>
-</article>
-
-<div class="box is-success">
-  <b>{{ 'HOME.INFO_2' | translate }}</b>
-</div>
-
-<article class="message is-info">
-  <div class="message-header">{{ 'HOME.INFO_3.HEADER' | translate }}</div>
-  <div class="message-body" [innerHTML]="'HOME.INFO_3.BODY' | translate"></div>
+  <div class="message-body">
+    <p>{{ 'HOME.INFO_1.BODY' | translate }}</p>
+    <br />
+    <p><b>{{ 'HOME.INFO_2' | translate }}</b></p>
+    <br />
+    <span [innerHTML]="'HOME.INFO_3' | translate"></span>
+  </div>
 </article>
 
 <h2 class="title is-2">{{ 'HOME.SIX_REASONS' | translate }}</h2>

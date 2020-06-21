@@ -2,11 +2,15 @@
 <h2 class="title is-2">{{ 'HOME.SUBTITLE' | translate }}</h2>
 
 <article class="message is-info">
-  <div class="message-header">{{ 'HOME.INFO_1.HEADER' | translate }}</div>
+  <div class="message-header">
+    <span><i class="fa fa-fw fa-gamepad" aria-hidden="true"></i> {{ 'HOME.INFO_1.HEADER' | translate }}</span>
+  </div>
   <div class="message-body">
     <p>{{ 'HOME.INFO_1.BODY' | translate }}</p>
     <br />
-    <p><b>{{ 'HOME.INFO_2' | translate }}</b></p>
+    <p>
+      <b>{{ 'HOME.INFO_2' | translate }}</b>
+    </p>
     <br />
     <span [innerHTML]="'HOME.INFO_3' | translate"></span>
   </div>

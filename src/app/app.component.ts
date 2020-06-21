@@ -13,7 +13,7 @@ import { NavigationLink } from './classes/navigation-link';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public navigationElements: { left: NavigationElement[]; right: NavigationElement[] };
+  public navigationElements: { left: NavigationMenu[]; right: NavigationMenu[] };
 
   public mobileMenu: {
     open: boolean;
@@ -34,12 +34,20 @@ export class AppComponent {
     // initialize navigation
     this.navigationElements = {
       left: [
-        new NavigationMenu('fa-home', 'NAV.HOME', ['Überblick', 'News-Blog', 'Features', 'Vergleich']),
-        new NavigationMenu('fa-question', 'NAV.LETS_CODE', ['Leeres Projekt', 'Game Templates', 'Eigene Projekte']),
-        new NavigationLink('', 'NAV.PROJECTS', ''),
-        new NavigationMenu('fa-book', 'NAV.DOCUMENTATION', ['Schlüsselwörter', 'Befehle'])
+        new NavigationMenu('fa-home', 'HOME', ['OVERVIEW', 'NEWS_BLOG', 'FEATURES', 'COMPARISON']),
+        new NavigationMenu('fa-dashboard', 'LETS_CODE', ['EMPTY_PROJECT', 'DEMOS', 'MY_PROJECTS']),
+        new NavigationMenu('fa-cubes', 'PROJECTS', ['MY_PROJECTS', 'COMMUNITY', 'DEMOS']),
+        new NavigationMenu('fa-book', 'DOCUMENTATION', [
+          'KEYWORDS',
+          'COMMANDS',
+          'CONSTANTS_AND_SCANCODES',
+          'DIFFERENCES_TO_BLITZ_BASIC',
+          'MIGRATION_GUIDE'
+        ])
       ],
-      right: [new NavigationLink('fa-github', 'NAV.GITHUB', 'https://github.com/SparkFountain/BlitzBasicScript')]
+      right: [
+        /* new NavigationLink('fa-github', 'NAV.GITHUB', 'https://github.com/SparkFountain/BlitzBasicScript')*/
+      ]
     };
 
     // TODO: refactor -> initialize old mobile menu

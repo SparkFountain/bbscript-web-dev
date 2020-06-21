@@ -18,32 +18,18 @@
   <div id="navigationMenu" class="navbar-menu">
     <div class="navbar-start">
       <ng-container *ngFor="let element of navigationElements.left">
-        <!-- TODO: add link; either external or routing path -->
-        <a class="navbar-item" *ngIf="isNavLink(element)">
-          {{ element.text | translate }}
-        </a>
-
-        <div class="navbar-item has-dropdown is-hoverable" *ngIf="isNavMenu(element)">
-          <a class="navbar-link">
-            {{ element.text | translate }}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" [routerLink]="'NAV.' + element.name + '.PATH' | translate">
+            <span><i class="fa fa-fw {{ element.icon }}"></i> {{ 'NAV.' + element.name + '.TITLE' | translate }}</span>
           </a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">
-              <div class="level is-mobile">
-                <div class="level-left">
-                  <div class="level-item">
-                    <p>
-                      <strong>Extensions</strong>
-                      <br />
-                      <small>Side projects to enhance Bulma</small>
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <a
+              class="navbar-item"
+              *ngFor="let submenu of element.submenus"
+              [routerLink]="'NAV.' + element.name + '.SUBMENU.' + submenu + '.PATH' | translate"
+            >
+              {{ 'NAV.' + element.name + '.SUBMENU.' + submenu + '.TITLE' | translate }}
             </a>
-            <!-- <a class="navbar-item" *ngFor="let submenu of element.submenus">
-              {{ submenu }}
-            </a> -->
           </div>
         </div>
       </ng-container>
@@ -338,9 +324,9 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="content has-text-centered">
-    <a routerLink="contact" class="is-link">{{'FOOTER.CONTACT' | translate}}</a>
+    <a routerLink="contact" class="is-link">{{ 'FOOTER.CONTACT' | translate }}</a>
     <br />
-    <a routerLink="terms-of-use" class="is-link">{{'FOOTER.TERMS' | translate}}</a>
+    <a routerLink="terms-of-use" class="is-link">{{ 'FOOTER.TERMS' | translate }}</a>
     <br />
     <a routerLink="disclaimer" class="is-link">{{ 'FOOTER.DISCLAIMER' | translate }}</a>
     <br />

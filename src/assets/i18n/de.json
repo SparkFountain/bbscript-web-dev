@@ -291,13 +291,92 @@
   "EXAMPLE": "Beispiel",
   "INFORMATION": "Informationen",
   "NAV": {
-    "HOME": "Home",
-    "LETS_CODE": "Coden",
-    "PROJECTS": "Projekte",
-    "DOCUMENTATION": "Dokumentation",
+    "HOME": {
+      "TITLE": "Home",
+      "PATH": "home",
+      "SUBMENU": {
+        "OVERVIEW": {
+          "TITLE": "Überblick",
+          "PATH": "ueberblick"
+        },
+        "NEWS_BLOG": {
+          "TITLE": "News-Blog",
+          "PATH": "news-blog"
+        },
+        "FEATURES": {
+          "TITLE": "Features",
+          "PATH": "features"
+        },
+        "COMPARISON": {
+          "TITLE": "Vergleich",
+          "PATH": "vergleich"
+        }
+      }
+    },
+    "LETS_CODE": {
+      "TITLE": "Coden",
+      "PATH": "coden",
+      "SUBMENU": {
+        "EMPTY_PROJECT": {
+          "TITLE": "Leeres Projekt",
+          "PATH": "leeres-projekt"
+        },
+        "DEMOS": {
+          "TITLE": "Demos",
+          "PATH": "demos"
+        },
+        "MY_PROJECTS": {
+          "TITLE": "Meine Projekte",
+          "PATH": "meine-projekte"
+        }
+      }
+    },
+    "PROJECTS": {
+      "TITLE": "Projekte",
+      "PATH": "projekte",
+      "SUBMENU": {
+        "MY_PROJECTS": {
+          "TITLE": "Meine Projekte",
+          "PATH": "meine-projekte"
+        },
+        "COMMUNITY": {
+          "TITLE": "Community",
+          "PATH": "community"
+        },
+        "DEMOS": {
+          "TITLE": "Demos",
+          "PATH": "demos"
+        }
+      }
+    },
+    "DOCUMENTATION": {
+      "TITLE": "Dokumentation",
+      "PATH": "dokumentation",
+      "SUBMENU": {
+        "KEYWORDS": {
+          "TITLE": "Schlüsselwörter",
+          "PATH": "schluesselwoerter"
+        },
+        "COMMANDS": {
+          "TITLE": "Befehle",
+          "PATH": "befehle"
+        },
+        "CONSTANTS_AND_SCANCODES": {
+          "TITLE": "Konstanten und Scancodes",
+          "PATH": "konstanten-und-scancodes"
+        },
+        "DIFFERENCES_TO_BLITZ_BASIC": {
+          "TITLE": "Unterschiede zu BlitzBasic",
+          "PATH": "unterschiede-zu-blitz-basic"
+        },
+        "MIGRATION_GUIDE": {
+          "TITLE": "Migrations-Guide",
+          "PATH": "migrations-guide"
+        }
+      }
+    },
     "ABOUT": "Infos",
     "LEXER": "Lexer",
-    "COMMANDS": "Befehle",
     "GAMING": "Spielen",
     "CONTACT": "Kontakt",
     "IMPRINT": "Impressum",

@@ -8,7 +8,7 @@ export interface FileOrFolder {
 @Component({
   selector: 'app-ide',
   templateUrl: './ide.component.html',
-  styleUrls: ['./ide.component.scss'],
+  styleUrls: ['./ide.component.scss']
 })
 export class IdeComponent implements OnInit {
   public projectName: string;
@@ -18,7 +18,7 @@ export class IdeComponent implements OnInit {
     sound: 'file-audio-o',
     folder: 'folder-open-o',
     bbscript: 'file-text-o',
-    other: 'file-o',
+    other: 'file-o'
   };
 
   public filesAndFolders: FileOrFolder[];
@@ -31,12 +31,12 @@ export class IdeComponent implements OnInit {
     this.filesAndFolders = [
       {
         type: 'folder',
-        name: 'Music',
+        name: 'Music'
       },
       {
         type: 'bbscript',
-        name: 'Game.bb',
-      },
+        name: 'Game.bb'
+      }
     ];
 
     this.settingsOpen = false;

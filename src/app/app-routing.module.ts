@@ -14,23 +14,25 @@ import { IdeComponent } from './ide/ide.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'lexer', component: LexerComponent },
   { path: 'commands', component: CommandsComponent },
   { path: 'gaming', component: GamingComponent },
   { path: 'documentation', component: DocumentationComponent },
+  { path: 'dokumentation', component: DocumentationComponent },
   { path: 'coding', component: IdeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'imprint', component: ImprintComponent },
   { path: 'terms-of-use', component: TermsOfUseComponent },
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: '404', component: NotFoundComponent },
-  { path: '**', redirectTo: '/404' },
+  { path: '**', redirectTo: '/404', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

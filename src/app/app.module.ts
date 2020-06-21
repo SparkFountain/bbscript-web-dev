@@ -93,6 +93,9 @@ import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script
 import { DocumentationComponent } from './documentation/documentation.component';
 import { IdeComponent } from './ide/ide.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -109,7 +112,9 @@ import { HomeComponent } from './home/home.component';
     GamingComponent,
     DocumentationComponent,
     IdeComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -129,6 +134,8 @@ import { HomeComponent } from './home/home.component';
     NgxPopperModule.forRoot({})
   ],
   providers: [
+    AuthenticationService,
+
     BlitzBasicScriptGameService,
     LexerService,
     LanguageService,

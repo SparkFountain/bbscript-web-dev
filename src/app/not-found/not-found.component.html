@@ -1,10 +1,4 @@
-<h1>{{ "PAGE_NOT_FOUND" | translate }}</h1>
+<h1 class="title is-1">{{ 'PAGE_NOT_FOUND.TITLE' | translate }}</h1>
 
-<div *ngIf="true">
-  <p>Die von dir angeforderte Seite existiert nicht. Hast du dich eventuell vertippt?</p>
-  <p><a routerLink="/">Klicke hier</a>, um zur Startseite zu gelangen.</p>
-</div>
-
-<div *ngIf="false">
-
-</div>
+<div [innerHTML]="'PAGE_NOT_FOUND.CONTENT' | translate"></div>
+<a routerLink="/home">{{ 'PAGE_NOT_FOUND.HOME_PATH' | translate }}</a>

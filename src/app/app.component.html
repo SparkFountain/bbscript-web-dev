@@ -67,11 +67,23 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="navbar-item" routerLink="/login">
+            <a class="navbar-item" [routerLink]="'NAV.LOGIN.PATH' | translate">
               <span class="icon">
-                <i class="fa fa-fw fa-user-circle-o"></i>
+                <i class="fa fa-fw fa-sign-in"></i>
               </span>
-              <span>{{ 'LOGIN' | translate }}</span>
+              <span>{{ 'NAV.LOGIN.TITLE' | translate }}</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="navbar-item" [routerLink]="'NAV.REGISTER.PATH' | translate">
+              <span class="icon">
+                <i class="fa fa-fw fa-user-plus"></i>
+              </span>
+              <span>{{ 'NAV.REGISTER.TITLE' | translate }}</span>
             </a>
           </p>
         </div>

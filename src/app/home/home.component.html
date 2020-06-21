@@ -6,7 +6,7 @@
     <span><i class="fa fa-fw fa-gamepad" aria-hidden="true"></i> {{ 'HOME.INFO_1.HEADER' | translate }}</span>
   </div>
   <div class="message-body">
-    <p>{{ 'HOME.INFO_1.BODY' | translate }}</p>
+    <span [innerHTML]="'HOME.INFO_1.BODY' | translate"></span>
     <br />
     <p>
       <b>{{ 'HOME.INFO_2' | translate }}</b>
@@ -20,21 +20,19 @@
 
 <div class="columns" *ngFor="let i of [0, 1]">
   <div class="column" *ngFor="let j of [0, 1, 2]">
-    <div class="box">
-      <article class="media">
-        <div class="media-left">
-          <figure class="image" style="width: 256px;">
-            <img alt="todo" [src]="'/assets/gfx/' + reasonImages[i * 3 + j]" />
-          </figure>
-        </div>
-        <div class="media-content">
+    <div class="card">
+      <div class="card-image">
+        <img alt="todo" [src]="'/assets/gfx/' + reasonImages[i * 3 + j]" />
+      </div>
+      <div class="card-content">
+        <div class="content">
           <h3 class="title is-3">
             {{ 'HOME.REASON_' + (i * 3 + j + 1) + '.HEADER' | translate }}
           </h3>
           <br />
-          <p>{{ 'HOME.REASON_' + (i * 3 + j + 1) + '.BODY' | translate }}</p>
+          <p [innerHTML]="'HOME.REASON_' + (i * 3 + j + 1) + '.BODY' | translate"></p>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </div>

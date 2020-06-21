@@ -12,6 +12,8 @@ import { GamingComponent } from './gaming/gaming.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { IdeComponent } from './ide/ide.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'gaming', component: GamingComponent },
   { path: 'documentation', component: DocumentationComponent },
   { path: 'dokumentation', component: DocumentationComponent },
+  { path: 'anmelden', component: LoginComponent },
+  { path: 'registrieren', component: RegisterComponent },
   { path: 'coding', component: IdeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'imprint', component: ImprintComponent },

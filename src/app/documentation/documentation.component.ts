@@ -11,6 +11,9 @@ export interface DocCategory {
   styleUrls: ['./documentation.component.scss']
 })
 export class DocumentationComponent implements OnInit {
+  public activeCategory: string;
+  public activeSubCategory: string;
+
   public keywordCategories: DocCategory[] = [
     {
       title: 'VARIABLES',
@@ -34,7 +37,20 @@ export class DocumentationComponent implements OnInit {
     },
     {
       title: 'TYPES',
-      elements: ['type', 'field', 'before', 'after', 'delete', 'first', 'insert', 'last', 'new', 'null', 'object', 'handle']
+      elements: [
+        'type',
+        'field',
+        'before',
+        'after',
+        'delete',
+        'first',
+        'insert',
+        'last',
+        'new',
+        'null',
+        'object',
+        'handle'
+      ]
     },
     {
       title: 'LOGIC',
@@ -87,7 +103,18 @@ export class DocumentationComponent implements OnInit {
 
   public migrationGuideCategories: any = [];
 
-  constructor() {}
+  constructor() {
+    this.activeCategory = '';
+    this.activeSubCategory = '';
+  }
 
   ngOnInit(): void {}
+
+  toggleCategory(category: string): void {
+    if (this.activeCategory === category) {
+      this.activeCategory = '';
+    } else {
+      this.activeCategory = category;
+    }
+  }
 }

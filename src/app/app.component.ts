@@ -37,6 +37,15 @@ export class AppComponent {
         new NavigationMenu('fa-home', 'HOME', ['OVERVIEW', 'NEWS_BLOG', 'FEATURES', 'COMPARISON']),
         new NavigationMenu('fa-dashboard', 'LETS_CODE', ['EMPTY_PROJECT', 'DEMOS', 'MY_PROJECTS']),
         new NavigationMenu('fa-cubes', 'PROJECTS', ['MY_PROJECTS', 'COMMUNITY', 'DEMOS']),
+        new NavigationMenu('fa-graduation-cap', 'TUTORIALS', [
+          'BASICS',
+          'GRAPHICS',
+          'IO',
+          'SOUND',
+          'GUI',
+          'PARTICLES',
+          '3D'
+        ]),
         new NavigationMenu('fa-book', 'DOCUMENTATION', [
           'KEYWORDS',
           'COMMANDS',
@@ -45,9 +54,7 @@ export class AppComponent {
           'MIGRATION_GUIDE'
         ])
       ],
-      right: [
-        /* new NavigationLink('fa-github', 'NAV.GITHUB', 'https://github.com/SparkFountain/BlitzBasicScript')*/
-      ]
+      right: []
     };
 
     // TODO: refactor -> initialize old mobile menu

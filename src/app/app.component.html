@@ -19,16 +19,28 @@
     <div class="navbar-start">
       <ng-container *ngFor="let element of navigationElements.left">
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" [routerLink]="'NAV.' + element.name + '.PATH' | translate">
-            <span><i class="fa fa-fw {{ element.icon }}"></i> {{ 'NAV.' + element.name + '.TITLE' | translate }}</span>
+          <a
+            class="navbar-link"
+            [routerLink]="'NAV.' + element.name + '.PATH' | translate"
+          >
+            <span
+              ><i class="fa fa-fw {{ element.icon }}"></i>
+              {{ 'NAV.' + element.name + '.TITLE' | translate }}</span
+            >
           </a>
           <div class="navbar-dropdown">
             <a
               class="navbar-item"
               *ngFor="let submenu of element.submenus"
-              [routerLink]="'NAV.' + element.name + '.SUBMENU.' + submenu + '.PATH' | translate"
+              [routerLink]="
+                'NAV.' + element.name + '.SUBMENU.' + submenu + '.PATH'
+                  | translate
+              "
             >
-              {{ 'NAV.' + element.name + '.SUBMENU.' + submenu + '.TITLE' | translate }}
+              {{
+                'NAV.' + element.name + '.SUBMENU.' + submenu + '.TITLE'
+                  | translate
+              }}
             </a>
           </div>
         </div>
@@ -38,7 +50,11 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="navbar-item" href="https://github.com/SparkFountain/BlitzBasicScript" target="_blank">
+            <a
+              class="navbar-item"
+              href="https://github.com/SparkFountain/BlitzBasicScript"
+              target="_blank"
+            >
               <span class="icon">
                 <i class="fa fa-fw fa-github"></i>
               </span>
@@ -79,7 +95,10 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="navbar-item" [routerLink]="'NAV.REGISTER.PATH' | translate">
+            <a
+              class="navbar-item"
+              [routerLink]="'NAV.REGISTER.PATH' | translate"
+            >
               <span class="icon">
                 <i class="fa fa-fw fa-user-plus"></i>
               </span>
@@ -336,12 +355,20 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="content has-text-centered">
-    <a routerLink="contact" class="is-link">{{ 'FOOTER.CONTACT' | translate }}</a>
+    <a [routerLink]="'FOOTER.CONTACT.PATH' | translate" class="is-link">{{
+      'FOOTER.CONTACT.LABEL' | translate
+    }}</a>
     <br />
-    <a routerLink="terms-of-use" class="is-link">{{ 'FOOTER.TERMS' | translate }}</a>
+    <a [routerLink]="'FOOTER.TERMS.PATH' | translate" class="is-link">{{
+      'FOOTER.TERMS.LABEL' | translate
+    }}</a>
     <br />
-    <a routerLink="disclaimer" class="is-link">{{ 'FOOTER.DISCLAIMER' | translate }}</a>
+    <a [routerLink]="'FOOTER.DISCLAIMER.PATH' | translate" class="is-link">{{
+      'FOOTER.DISCLAIMER.LABEL' | translate
+    }}</a>
     <br />
-    <a routerLink="imprint" class="is-link">{{ 'FOOTER.IMPRINT' | translate }}</a>
+    <a [routerLink]="'FOOTER.IMPRINT.PATH' | translate" class="is-link">{{
+      'FOOTER.IMPRINT.LABEL' | translate
+    }}</a>
   </div>
 </footer>

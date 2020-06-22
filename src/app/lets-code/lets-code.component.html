@@ -17,7 +17,11 @@
 </div>
 
 <div class="columns">
-  <div class="column is-3">
+  <div class="column is-1" *ngIf="!showFiles">
+    to do
+  </div>
+
+  <div class="column is-3" *ngIf="showFiles">
     <div class="is-primary">
       <p class="field">
         <a class="button">
@@ -35,7 +39,7 @@
             <i class="fa fa-save"></i>
           </span>
         </a>
-        <a class="button">
+        <a class="button" (click)="toggleFiles()">
           <span class="icon is-small">
             <i class="fa fa-caret-square-o-left"></i>
           </span>
@@ -48,6 +52,8 @@
       <div class="panel-block">
         <p class="control has-icons-left">
           <input
+            [(ngModel)]="searchTerm"
+            (change)="search()"
             class="input is-small"
             type="text"
             placeholder="{{ 'SEARCH.PLACEHOLDER' | translate }}"
@@ -66,35 +72,35 @@
     </nav>
   </div>
 
-  <div class="column is-9">
+  <div class="column" [ngClass]="{ 'is-9': showFiles, 'is-11': !showFiles }">
     <div class="is-primary">
       <p class="field">
-        <a class="button">
+        <a class="button" (click)="play()">
           <span class="icon is-small">
             <i class="fa fa-play-circle"></i>
           </span>
         </a>
-        <a class="button">
+        <a class="button" (click)="debug()">
           <span class="icon is-small">
             <i class="fa fa-bug"></i>
           </span>
         </a>
-        <a class="button">
+        <a class="button" (click)="undo()">
           <span class="icon is-small">
             <i class="fa fa-undo"></i>
           </span>
         </a>
-        <a class="button">
+        <a class="button" (click)="redo()">
           <span class="icon is-small">
             <i class="fa fa-repeat"></i>
           </span>
         </a>
-        <a class="button">
+        <a class="button" (click)="guide()">
           <span class="icon is-small">
             <i class="fa fa-medkit"></i>
           </span>
         </a>
-        <a class="button">
+        <a class="button" (click)="codeCleanUp()">
           <span class="icon is-small">
             <i class="fa fa-magic"></i>
           </span>

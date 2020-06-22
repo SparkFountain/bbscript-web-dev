@@ -91,11 +91,13 @@ import { GamingComponent } from './gaming/gaming.component';
 import { BlitzBasicScriptGameModule } from 'bbscript/src/lib/blitz-basic-script-game.module';
 import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script-game.service';
 import { DocumentationComponent } from './documentation/documentation.component';
-import { IdeComponent } from './ide/ide.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthenticationService } from './services/authentication.service';
+import { TutorialsComponent } from './tutorials/tutorials.component';
+import { LetsCodeComponent } from './lets-code/lets-code.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -111,10 +113,12 @@ import { AuthenticationService } from './services/authentication.service';
     PostComponent,
     GamingComponent,
     DocumentationComponent,
-    IdeComponent,
+    LetsCodeComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TutorialsComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
@@ -124,14 +128,14 @@ import { AuthenticationService } from './services/authentication.service';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
     }),
     AceModule,
     BlitzBasicScriptGameModule,
     BlitzBasicScriptCanvasModule,
-    NgxPopperModule.forRoot({})
+    NgxPopperModule.forRoot({}),
   ],
   providers: [
     AuthenticationService,
@@ -204,11 +208,11 @@ import { AuthenticationService } from './services/authentication.service';
     CommandsSoundService,
     CommandsSound3DService,
     CommandsSoundChannelsService,
-    CommandsSoundMusicSamplesService
+    CommandsSoundMusicSamplesService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

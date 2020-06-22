@@ -105,10 +105,22 @@
     }
   },
   "FOOTER": {
-    "CONTACT": "Kontakt",
-    "TERMS": "Nutzungsbedingungen",
-    "IMPRINT": "Impressum",
-    "DISCLAIMER": "Haftungsausschluss"
+    "CONTACT": {
+      "LABEL": "Kontakt",
+      "PATH": "/kontakt"
+    },
+    "TERMS": {
+      "LABEL": "Nutzungsbedingungen",
+      "PATH": "/nutzungsbedingungen"
+    },
+    "IMPRINT": {
+      "LABEL": "Impressum",
+      "PATH": "/impressum"
+    },
+    "DISCLAIMER": {
+      "LABEL": "Haftungsausschluss",
+      "PATH": "/haftungsausschluss"
+    }
   },
   "LEXER": {
     "TITLE": "Lexer",
@@ -365,7 +377,7 @@
   "NAV": {
     "HOME": {
       "TITLE": "Home",
-      "PATH": "home",
+      "PATH": "/home",
       "SUBMENU": {
         "OVERVIEW": {
           "TITLE": "Überblick",
@@ -387,42 +399,39 @@
     },
     "LETS_CODE": {
       "TITLE": "Coden",
-      "PATH": "coden",
+      "PATH": "/coden",
       "SUBMENU": {
         "EMPTY_PROJECT": {
           "TITLE": "Leeres Projekt",
-          "PATH": "leeres-projekt"
+          "PATH": "/coden/leeres-projekt"
         },
-        "DEMOS": {
-          "TITLE": "Demos",
-          "PATH": "demos"
-        },
-        "MY_PROJECTS": {
-          "TITLE": "Meine Projekte",
-          "PATH": "meine-projekte"
+        "TEMPLATES": {
+          "TITLE": "Vorlagen",
+          "PATH": "/coden/vorlagen"
         }
       }
     },
     "PROJECTS": {
       "TITLE": "Projekte",
-      "PATH": "projekte",
+      "PATH": "/projekte",
       "SUBMENU": {
         "MY_PROJECTS": {
           "TITLE": "Meine Projekte",
-          "PATH": "meine-projekte"
+          "PATH": "/projekte/meine-projekte"
         },
         "COMMUNITY": {
           "TITLE": "Community",
-          "PATH": "community"
+          "PATH": "/projekte/community"
         },
         "DEMOS": {
           "TITLE": "Demos",
-          "PATH": "demos"
+          "PATH": "/projekte/demos"
         }
       }
     },
     "TUTORIALS": {
       "TITLE": "Tutorials",
+      "PATH": "/tutorials",
       "SUBMENU": {
         "BASICS": {
           "TITLE": "Grundlagen",
@@ -460,27 +469,27 @@
     },
     "DOCUMENTATION": {
       "TITLE": "Dokumentation",
-      "PATH": "dokumentation",
+      "PATH": "/dokumentation",
       "SUBMENU": {
         "KEYWORDS": {
           "TITLE": "Schlüsselwörter",
-          "PATH": "schluesselwoerter"
+          "PATH": "/dokumentation/schluesselwoerter"
         },
         "COMMANDS": {
           "TITLE": "Befehle",
-          "PATH": "befehle"
+          "PATH": "/dokumentation/befehle"
         },
         "CONSTANTS_AND_SCANCODES": {
           "TITLE": "Konstanten und Scancodes",
-          "PATH": "konstanten-und-scancodes"
+          "PATH": "/dokumentation/konstanten-und-scancodes"
         },
         "DIFFERENCES_TO_BLITZ_BASIC": {
           "TITLE": "Unterschiede zu BlitzBasic",
-          "PATH": "unterschiede-zu-blitz-basic"
+          "PATH": "/dokumentation/unterschiede-zu-blitz-basic"
         },
         "MIGRATION_GUIDE": {
           "TITLE": "Migrations-Guide",
-          "PATH": "migrations-guide"
+          "PATH": "/dokumentation/migrations-guide"
         }
       }
     },
@@ -491,11 +500,11 @@
     },
     "LOGIN": {
       "TITLE": "Anmelden",
-      "PATH": "anmelden"
+      "PATH": "/anmelden"
     },
     "REGISTER": {
       "TITLE": "Registrieren",
-      "PATH": "registrieren"
+      "PATH": "/registrieren"
     },
     "ABOUT": "Infos",
     "LEXER": "Lexer",

@@ -10,10 +10,13 @@ import { NavigationLink } from './classes/navigation-link';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public navigationElements: { left: NavigationMenu[]; right: NavigationMenu[] };
+  public navigationElements: {
+    left: NavigationMenu[];
+    right: NavigationMenu[];
+  };
 
   public mobileMenu: {
     open: boolean;
@@ -34,9 +37,21 @@ export class AppComponent {
     // initialize navigation
     this.navigationElements = {
       left: [
-        new NavigationMenu('fa-home', 'HOME', ['OVERVIEW', 'NEWS_BLOG', 'FEATURES', 'COMPARISON']),
-        new NavigationMenu('fa-dashboard', 'LETS_CODE', ['EMPTY_PROJECT', 'DEMOS', 'MY_PROJECTS']),
-        new NavigationMenu('fa-cubes', 'PROJECTS', ['MY_PROJECTS', 'COMMUNITY', 'DEMOS']),
+        new NavigationMenu('fa-home', 'HOME', [
+          'OVERVIEW',
+          'NEWS_BLOG',
+          'FEATURES',
+          'COMPARISON',
+        ]),
+        new NavigationMenu('fa-dashboard', 'LETS_CODE', [
+          'EMPTY_PROJECT',
+          'TEMPLATES',
+        ]),
+        new NavigationMenu('fa-cubes', 'PROJECTS', [
+          'DEMOS',
+          'MY_PROJECTS',
+          'COMMUNITY',
+        ]),
         new NavigationMenu('fa-graduation-cap', 'TUTORIALS', [
           'BASICS',
           'GRAPHICS',
@@ -44,32 +59,36 @@ export class AppComponent {
           'SOUND',
           'GUI',
           'PARTICLES',
-          '3D'
+          '3D',
         ]),
         new NavigationMenu('fa-book', 'DOCUMENTATION', [
           'KEYWORDS',
           'COMMANDS',
           'CONSTANTS_AND_SCANCODES',
           'DIFFERENCES_TO_BLITZ_BASIC',
-          'MIGRATION_GUIDE'
-        ])
+          'MIGRATION_GUIDE',
+        ]),
       ],
-      right: []
+      right: [],
     };
 
     // TODO: refactor -> initialize old mobile menu
     this.mobileMenu = {
       open: false,
-      closing: false
+      closing: false,
       // context: MobileMenuContext.DEFAULT
     };
   }
 
-  isNavLink(navigationElement: NavigationElement): navigationElement is NavigationLink {
+  isNavLink(
+    navigationElement: NavigationElement
+  ): navigationElement is NavigationLink {
     return (navigationElement as NavigationLink).path !== undefined;
   }
 
-  isNavMenu(navigationElement: NavigationElement): navigationElement is NavigationMenu {
+  isNavMenu(
+    navigationElement: NavigationElement
+  ): navigationElement is NavigationMenu {
     return (navigationElement as NavigationMenu).submenus !== undefined;
   }
 
@@ -95,5 +114,5 @@ export class AppComponent {
 
 export const Language = {
   GERMAN: 'de',
-  ENGLISH: 'en'
+  ENGLISH: 'en',
 };

@@ -60,6 +60,9 @@ define('STATUS_FAIL', 'fail');
 /* FILE SERVER */
 define('FILE_SERVER', 'http://files.blitzbasicscript.com');
 
+/* MAIL SERVER */
+define('MAIL_SERVER', 'http://mail.blitzbasicscript.com');
+
 
 if ($method == 'GET') {
   switch ($urlSection['1']) {
@@ -421,10 +424,10 @@ if ($method == 'GET') {
           'X-Mailer' => 'PHP/' . phpversion(),
         ];
 
-        $status = mail($to, $subject, '<p>Das ist ein Absatz.</p><ul><li>Apfel</li><li>Banane</li><li>Gurke</li></ul><br /><b>FETT!!!!</b>', $headers);
-        if ($status == false) {
-          die('<p>Your mail was NOT sent: ' . $status . '</p>');
+        $mailContent = file_get_contents(MAIL_SERVER . '/registration-de.html');
 
+        $status = mail($to, $subject, $mailContent, $headers);
+        if ($status == false) {
           $deleteUserSql = 'DELETE FROM `user` WHERE `email` = \'' . $_POST['email'] . '\'';
           $dbWeb->query($deleteUserSql);
 

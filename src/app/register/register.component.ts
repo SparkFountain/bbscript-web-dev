@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
     console.info('[NOTICES]', this.notices);
 
     if (Object.keys(this.notices).length === 0) {
-      this.authService.register$(this.username, this.email, this.password).subscribe((response: ApiResponse) => {
+      this.authService.register$(this.username, this.email, this.password, this.termsAccepted).subscribe((response: ApiResponse) => {
         if (response.status === 'success') {
           this.action = 'registration-successful';
         } else {

@@ -7,7 +7,7 @@ export const environment = {
   apiServer: 'http://api.blitzbasicscript.com',
 
   emailRegex: new RegExp(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
-  usernameRegex: new RegExp(/^[a-zA-Z0-9 ]*$/)
+  usernameRegex: new RegExp(/^[a-zA-Z0-9 ]*$/),
 };
 
 /*

@@ -48,11 +48,12 @@ export class LoginComponent implements OnInit {
     if (Object.keys(this.notices).length === 0) {
       this.authService.login$(this.userOrEmail, this.password).subscribe((response: ApiResponse) => {
         if (response.status === 'success') {
+          console.info('[REGISTRATION SUCCESSFUL]', response);
           this.authService.userOrEmail = this.userOrEmail;
           this.authService.updateToken(response.data.token);
           this.router.navigateByUrl('/');
         } else {
-          console.info('[API RESPONSE]', response);
+          console.info('[REGISTRATION FAILED]', response);
           this.notices[response.message] = true;
         }
       });

@@ -28,8 +28,8 @@
       }
     },
     "TERMS": {
-      "I_READ": "Ich habe die <b>Allgemeinen Geschäftsbedingungen</b> gelesen und akzeptiere diese vollumfänglich.",
-      "TITLE": "Allgemeine Geschäftsbedingungen",
+      "I_READ": "Ich habe die <b>Nutzungsbedingungen</b> gelesen und akzeptiere diese vollumfänglich.",
+      "TITLE": "Nutzungsbedingungen",
       "ACCEPT": "Akzeptieren",
       "DENY": "Ablehnen",
       "MUST_BE_ACCEPTED": "Um fortzufahren, musst du die Allgemeinen Geschäftsbedingungen akzeptieren."
@@ -177,6 +177,9 @@
   },
   "CATEGORY": "Kategorie",
   "OVERVIEW": "Home",
+  "TUTORIALS": {
+    "TITLE": "Tutorials"
+  },
   "DOC": {
     "TITLE": "Dokumentation",
     "NO_CATEGORY_SELECTED": "Keine Kategorie ausgewählt",

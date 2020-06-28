@@ -2,14 +2,8 @@
 
 <nav class="breadcrumb">
   <ul>
-    <li *ngIf="!activeCategory">
-      <p>{{ 'DOC.NO_CATEGORY_SELECTED' | translate }}</p>
-    </li>
-    <li *ngIf="activeCategory">
-      <a>{{ 'DOC.' + activeCategory.title + '.TITLE' | translate }}</a>
-    </li>
-    <li class="is-active" *ngIf="activeSubCategory">
-      <a>EndIf</a>
+    <li *ngFor="let breadcrumb of breadcrumbs">
+      <a>{{ breadcrumb }}</a>
     </li>
   </ul>
 </nav>

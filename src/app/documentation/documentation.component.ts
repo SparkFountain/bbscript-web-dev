@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { ApiResponse } from '../interfaces/api-response';
+import { ApiService } from 'bbscript/src/services/api.service';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface DocCategory {
   title: string;
@@ -18,15 +23,12 @@ export interface Category {
   styleUrls: ['./documentation.component.scss']
 })
 export class DocumentationComponent implements OnInit {
+  public breadcrumbs: string[];
+
   public activeCategory: Category;
   public activeSubCategory: Category;
 
-  public categories: Category[] = [
-    { title: 'KEYWORDS', icon: 'key', path: 'schluesselwoerter' },
-    { title: 'COMMANDS', icon: 'book', path: 'befehle' },
-    { title: 'CONSTANTS_AND_SCANCODES', icon: 'list-ol', path: 'konstanten-und-scancodes' },
-    { title: 'DIFFERENCES_TO_BLITZBASIC', icon: 'exchange', path: 'unterschiede-zu-blitz-basic' }
-  ];
+  public categories: Category[];
 
   public keywordCategories: DocCategory[] = [
     {
@@ -117,31 +119,63 @@ export class DocumentationComponent implements OnInit {
 
   public migrationGuideCategories: any = [];
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private http: HttpClient,
+    private translate: TranslateService
+  ) {
     const snapshot: ActivatedRouteSnapshot = this.route.snapshot;
-    if (snapshot.url.length === 1) {
-      this.activeCategory = null;
-      this.activeSubCategory = null;
-    } else {
-      switch (snapshot.url[1].path) {
-        case 'keywords':
-        case 'schluesselwoerter':
-          this.activeCategory = this.categories[0];
-          break;
-        case 'commands':
-        case 'befehle':
-          this.activeCategory = this.categories[1];
-          break;
-        case 'constants-and-scancodes':
-        case 'konstanten-und-scancodes':
-          this.activeCategory = this.categories[2];
-          break;
-        case 'differences-to-blitz-basic':
-        case 'unterschiede-zu-blitz-basics':
-          this.activeCategory = this.categories[3];
-          break;
+    const breadcrumbParams: { language: string; level1?: string; level2?: string; level3?: string; level4?: string } = {
+      language: this.translate.currentLang
+    };
+    for (let i = 1; i <= 4; i++) {
+      if (snapshot.url[i]) {
+        breadcrumbParams[`level${i}`] = snapshot.url[i].path;
       }
     }
+    console.info('Breadcrumb Parameters:', breadcrumbParams);
+
+    this.http
+      .get(`${environment.apiServer}/docs/breadcrumbs`, { params: breadcrumbParams })
+      .toPromise()
+      .then((response: ApiResponse<string[]>) => {
+        this.breadcrumbs = response.data;
+        console.info('[BREADCRUMBS]', this.breadcrumbs);
+      });
+
+    this.http
+      .get(`${environment.apiServer}/docs/categories`)
+      .toPromise()
+      .then((response: ApiResponse<Category[]>) => {
+        this.categories = response.data;
+
+        const snapshot: ActivatedRouteSnapshot = this.route.snapshot;
+        if (snapshot.url.length === 1) {
+          this.activeCategory = null;
+          this.activeSubCategory = null;
+        } else {
+          // TODO: refactor (deprecated)
+          switch (snapshot.url[1].path) {
+            case 'keywords':
+            case 'schluesselwoerter':
+              this.activeCategory = this.categories[0];
+              break;
+            case 'commands':
+            case 'befehle':
+              this.activeCategory = this.categories[1];
+              break;
+            case 'constants-and-scancodes':
+            case 'konstanten-und-scancodes':
+              this.activeCategory = this.categories[2];
+              break;
+            case 'differences-to-blitz-basic':
+            case 'unterschiede-zu-blitz-basics':
+              this.activeCategory = this.categories[3];
+              break;
+          }
+        }
+      });
   }
 
   ngOnInit(): void {}

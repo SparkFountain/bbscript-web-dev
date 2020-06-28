@@ -6,7 +6,7 @@
       <p>{{ 'DOC.NO_CATEGORY_SELECTED' | translate }}</p>
     </li>
     <li *ngIf="activeCategory">
-      <a>{{ 'DOC.' + activeCategory + '.TITLE' | translate }}</a>
+      <a>{{ 'DOC.' + activeCategory.title + '.TITLE' | translate }}</a>
     </li>
     <li class="is-active" *ngIf="activeSubCategory">
       <a>EndIf</a>
@@ -14,56 +14,43 @@
   </ul>
 </nav>
 
-<div class="column is-3">
-  <aside class="menu">
-    <!-- KEYWORDS -->
-    <p class="menu-label pointer" (click)="toggleCategory('KEYWORDS')">
-      {{ 'DOC.KEYWORDS.TITLE' | translate }}
-    </p>
-    <ul class="menu-list" *ngIf="activeCategory === 'KEYWORDS'">
-      <li *ngFor="let cat of keywordCategories">
-        <a>{{ 'DOC.KEYWORDS.' + cat.title + '.TITLE' | translate }}</a>
-      </li>
-    </ul>
+<div class="columns">
+  <div class="column is-3">
+    <aside class="menu">
+      <!-- KEYWORDS -->
+      <ng-container *ngFor="let cat of categories">
+        <p
+          class="menu-label pointer"
+          [ngClass]="{ active: activeCategory?.title === cat.title }"
+          (click)="navigateTo(cat.path)"
+        >
+          {{ 'DOC.' + cat.title + '.TITLE' | translate }}
+        </p>
+        <ul class="menu-list" *ngIf="activeCategory?.title === cat.title">
+          <!-- <li *ngFor="let cat of keywordCategories">
+            <a>{{ 'DOC.KEYWORDS.' + cat.title + '.TITLE' | translate }}</a>
+          </li> -->
+        </ul>
+      </ng-container>
+    </aside>
+  </div>
 
-    <!-- COMMANDS -->
-    <p class="menu-label pointer" (click)="toggleCategory('COMMANDS')">
-      {{ 'DOC.COMMANDS.TITLE' | translate }}
-    </p>
-    <ul class="menu-list" *ngIf="activeCategory === 'COMMANDS'">
-      <li *ngFor="let cat of commandCategories">
-        <a>{{ 'DOC.COMMANDS.' + cat.title + '.TITLE' | translate }}</a>
-      </li>
-    </ul>
+  <div class="column is-9">
+    <ng-container *ngIf="!activeCategory">
+      <p>{{ 'DOC.LANDING.TEXT_01' | translate }}</p>
 
-    <!-- SCANCODES AND CONSTANTS -->
-    <p class="menu-label pointer" (click)="toggleCategory('CONSTANTS_AND_SCANCODES')">
-      {{ 'DOC.CONSTANTS_AND_SCANCODES.TITLE' | translate }}
-    </p>
-    <ul class="menu-list" *ngIf="activeCategory === 'CONSTANTS_AND_SCANCODES'">
-      <li>
-        <a>Lorem Ipsum</a>
-      </li>
-    </ul>
-
-    <!-- DIFFERENCES TO BLITZ BASIC -->
-    <p class="menu-label pointer" (click)="toggleCategory('DIFFERENCES_TO_BLITZBASIC')">
-      {{ 'DOC.DIFFERENCES_TO_BLITZBASIC.TITLE' | translate }}
-    </p>
-    <ul class="menu-list" *ngIf="activeCategory === 'DIFFERENCES_TO_BLITZBASIC'">
-      <li>
-        <a>Lorem Ipsum</a>
-      </li>
-    </ul>
-
-    <!-- MIGRATION GUIDE -->
-    <p class="menu-label pointer" (click)="toggleCategory('MIGRATION_GUIDE')">
-      {{ 'DOC.MIGRATION_GUIDE.TITLE' | translate }}
-    </p>
-    <ul class="menu-list" *ngIf="activeCategory === 'MIGRATION_GUIDE'">
-      <li>
-        <a>Lorem Ipsum</a>
-      </li>
-    </ul>
-  </aside>
+      <div class="columns is-multiline">
+        <div class="column is-half" *ngFor="let item of categories">
+          <div class="message pointer" (click)="navigateTo(item.path)">
+            <div class="message-header">
+              <span><i [class]="'fa fa-fw fa-' + item.icon"></i> {{ 'DOC.' + item.title + '.TITLE' | translate }}</span>
+            </div>
+            <div class="message-body">
+              {{ 'DOC.' + item.title + '.HEADLINE' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </div>

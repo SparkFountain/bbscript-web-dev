@@ -182,6 +182,9 @@
   },
   "DOC": {
     "TITLE": "Dokumentation",
+    "LANDING": {
+      "TEXT_01": "BlitzBasicScript ist eine einfache und zugleich mächtige Programmiersprache, mit der du deine eigenen Spiele programmieren kannst."
+    },
     "NO_CATEGORY_SELECTED": "Keine Kategorie ausgewählt",
     "KEYWORDS": {
       "TITLE": "Schlüsselwörter",
@@ -361,13 +364,12 @@
       "HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript."
     },
     "CONSTANTS_AND_SCANCODES": {
-      "TITLE": "Konstanten und Scancodes"
+      "TITLE": "Konstanten und Scancodes",
+      "HEADLINE": "Nutze die speziellen Codes kennen für Tasteneingaben, Kameraeinstellungen, GUI-Events und vieles mehr."
     },
     "DIFFERENCES_TO_BLITZBASIC": {
-      "TITLE": "Unterschiede zu BlitzBasic"
-    },
-    "MIGRATION_GUIDE": {
-      "TITLE": "Migrations-Guide"
+      "TITLE": "Unterschiede zu BlitzBasic",
+      "HEADLINE": "Falls du schon Erfahrung mit BlitzBasic hast, lernst du hier die kleinen, aber feinen Unterschiede von BlitzBasicScript."
     }
   },
   "COMMAND_NAME": "Befehlsname",

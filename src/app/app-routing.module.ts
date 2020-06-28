@@ -31,6 +31,10 @@ const routes: Routes = [
   { path: 'tutorials', component: TutorialsComponent },
   { path: 'documentation', component: DocumentationComponent },
   { path: 'dokumentation', component: DocumentationComponent },
+  { path: 'dokumentation/schluesselwoerter', component: DocumentationComponent },
+  { path: 'dokumentation/befehle', component: DocumentationComponent },
+  { path: 'dokumentation/konstanten-und-scancodes', component: DocumentationComponent },
+  { path: 'dokumentation/unterschiede-zu-blitz-basic', component: DocumentationComponent },
   { path: 'anmelden', component: LoginComponent },
   { path: 'registrieren', component: RegisterComponent },
   { path: 'coding', component: LetsCodeComponent },
@@ -43,11 +47,11 @@ const routes: Routes = [
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: 'haftungsausschluss', component: DisclaimerComponent },
   { path: '404', component: NotFoundComponent },
-  { path: '**', redirectTo: '/404', pathMatch: 'full' },
+  { path: '**', redirectTo: '/404', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

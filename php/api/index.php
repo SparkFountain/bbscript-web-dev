@@ -163,40 +163,77 @@ if ($method == 'GET') {
         $breadcrumbs = array();
         if ($_GET['language']) {
           if ($_GET['language'] === 'en') {
-            array_push($breadcrumbs, 'Overview');
+            array_push($breadcrumbs, array(
+              'title' => 'Overview',
+              'path' => '/documentation',
+            ));
           } elseif ($_GET['language'] === 'de') {
-            array_push($breadcrumbs, 'Übersicht');
+            array_push($breadcrumbs, array(
+              'title' => 'Übersicht',
+              'path' => '/dokumentation',
+            ));
           }
 
           if (isset($_GET['level1'])) {
             switch ($_GET['level1']) {
             case 'keywords':
-              array_push($breadcrumbs, 'Keywords');
+              array_push($breadcrumbs, array(
+                'title' => 'Keywords',
+                'path' => '/documentation/keywords',
+              ));
               break;
             case 'schluesselwoerter':
-              array_push($breadcrumbs, 'Schlüsselwörter');
+              array_push($breadcrumbs, array(
+                'title' => 'Schlüsselwörter',
+                'path' => '/dokumentation/schluesselwoerter',
+              ));
               break;
             case 'commands':
-              array_push($breadcrumbs, 'Commands');
+              array_push($breadcrumbs, array(
+                'title' => 'Commands',
+                'path' => '/documentation/commands',
+              ));
               break;
             case 'befehle':
-              array_push($breadcrumbs, 'Befehle');
+              array_push($breadcrumbs, array(
+                'title' => 'Befehle',
+                'path' => '/dokumentation/befehle',
+              ));
               break;
             case 'constants-and-scancodes':
-              array_push($breadcrumbs, 'Constants and Scancodes');
+              array_push($breadcrumbs, array(
+                'title' => 'Constants and Scancodes',
+                'path' => '/documentation/constants-and-scancodes',
+              ));
               break;
             case 'konstanten-und-scancodes':
-              array_push($breadcrumbs, 'Konstanten und Scancodes');
+              array_push($breadcrumbs, array(
+                'title' => 'Konstanten und Scancodes',
+                'path' => '/dokumentation/konstanten-und-scancodes',
+              ));
               break;
             case 'differences-to-blitz-basic':
-              array_push($breadcrumbs, 'Differences to BlitzBasic');
+              array_push($breadcrumbs, array(
+                'title' => 'Differences to BlitzBasic',
+                'path' => '/documentation/differences-to-blitz-basic',
+              ));
               break;
             case 'unterschiede-zu-blitz-basics':
+              array_push($breadcrumbs, array(
+                'title' => 'Unterschiede zu BlitzBasic',
+                'path' => '/dokumentation/unterschiede-zu-blitz-basics',
+              ));
               array_push($breadcrumbs, 'Unterschiede zu BlitzBasic');
               break;
             }
 
             if (isset($_GET['level2'])) {
+              if ($languageKey === 'en') {
+                $fullPath = '/documentation/' . $_GET['level1'];
+              } elseif ($languageKey === 'de') {
+                $fullPath = '/dokumentation/' . $_GET['level1'];
+              }
+
               switch ($_GET['level1']) {
               case 'keywords':
               case 'schluesselwoerter':
@@ -204,11 +241,14 @@ if ($method == 'GET') {
                 break;
               case 'commands':
               case 'befehle':
-                $sql = "SELECT `title_$languageKey` as `title` FROM `command_category` WHERE `path_$languageKey` = '" . $_GET['level2'] . "'";
+                $sql = "SELECT `title_$languageKey` as `title`, `path_$languageKey` as `path` FROM `command_category` WHERE `path_$languageKey` = '" . $_GET['level2'] . "'";
                 $result = $dbLanguage->query($sql);
 
                 while ($row = $result->fetch_assoc()) {
-                  array_push($breadcrumbs, $row['title']);
+                  array_push($breadcrumbs, array(
+                    'title' => $row['title'],
+                    'path' => $fullPath . '/' . $row['path'],
+                  ));
                 }
                 break;
               case 'constants-and-scancodes':
@@ -223,6 +263,12 @@ if ($method == 'GET') {
             }
 
             if (isset($_GET['level3'])) {
+              if ($languageKey === 'en') {
+                $fullPath = '/documentation/' . $_GET['level1'] . '/' . $_GET['level2'];
+              } elseif ($languageKey === 'de') {
+                $fullPath = '/dokumentation/' . $_GET['level1'] . '/' . $_GET['level2'];
+              }
+
               switch ($_GET['level1']) {
               case 'keywords':
               case 'schluesselwoerter':
@@ -230,11 +276,14 @@ if ($method == 'GET') {
                 break;
               case 'commands':
               case 'befehle':
-                $sql = "SELECT `title_$languageKey` as `title` FROM `command_category` WHERE `path_$languageKey` = '" . $_GET['level3'] . "'";
+                $sql = "SELECT `title_$languageKey` as `title`, `path_$languageKey` as `path` FROM `command_category` WHERE `path_$languageKey` = '" . $_GET['level3'] . "'";
                 $result = $dbLanguage->query($sql);
 
                 while ($row = $result->fetch_assoc()) {
-                  array_push($breadcrumbs, $row['title']);
+                  array_push($breadcrumbs, array(
+                    'title' => $row['title'],
+                    'path' => $fullPath . '/' . $row['path'],
+                  ));
                 }
                 break;
               case 'constants-and-scancodes':
@@ -249,6 +298,12 @@ if ($method == 'GET') {
             }
 
             if (isset($_GET['level4'])) {
+              if ($languageKey === 'en') {
+                $fullPath = '/documentation/' . $_GET['level1'] . '/' . $_GET['level2'] . '/' . $_GET['level3'];
+              } elseif ($languageKey === 'de') {
+                $fullPath = '/dokumentation/' . $_GET['level1'] . '/' . $_GET['level2'] . '/' . $_GET['level3'];
+              }
+
               switch ($_GET['level1']) {
               case 'keywords':
               case 'schluesselwoerter':
@@ -260,7 +315,10 @@ if ($method == 'GET') {
                 $result = $dbLanguage->query($sql);
 
                 while ($row = $result->fetch_assoc()) {
-                  array_push($breadcrumbs, $row['name']);
+                  array_push($breadcrumbs, array(
+                    'title' => $row['name'],
+                    'path' => $fullPath . '/' . strtolower($row['name']),
+                  ));
                 }
                 break;
               case 'constants-and-scancodes':

@@ -17,13 +17,18 @@ export interface Category {
   path: string;
 }
 
+export interface Breadcrumb {
+  title: string;
+  path: string;
+}
+
 @Component({
   selector: 'app-documentation',
   templateUrl: './documentation.component.html',
   styleUrls: ['./documentation.component.scss']
 })
 export class DocumentationComponent implements OnInit {
-  public breadcrumbs: string[];
+  public breadcrumbs: Breadcrumb[];
 
   public activeCategory: Category;
   public activeSubCategory: Category;
@@ -139,7 +144,7 @@ export class DocumentationComponent implements OnInit {
     this.http
       .get(`${environment.apiServer}/docs/breadcrumbs`, { params: breadcrumbParams })
       .toPromise()
-      .then((response: ApiResponse<string[]>) => {
+      .then((response: ApiResponse<Breadcrumb[]>) => {
         this.breadcrumbs = response.data;
         console.info('[BREADCRUMBS]', this.breadcrumbs);
       });

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthenticationService {
   public token: BehaviorSubject<string>;
@@ -18,7 +18,7 @@ export class AuthenticationService {
   }
 
   register$(username: string, email: string, password: string, termsAccepted: boolean) {
-    return this.http.post<ApiResponse>(`${environment.apiServer}/register`, {
+    return this.http.post<ApiResponse<any>>(`${environment.apiServer}/register`, {
       username,
       email,
       password,
@@ -27,18 +27,18 @@ export class AuthenticationService {
     });
   }
 
-  login$(userOrEmail: string, password: string): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(`${environment.apiServer}/login`, {
+  login$(userOrEmail: string, password: string): Observable<ApiResponse<any>> {
+    return this.http.post<ApiResponse<any>>(`${environment.apiServer}/login`, {
       userOrEmail,
-      password,
+      password
     });
   }
 
   logout$() {
     return this.http
-      .post<ApiResponse>(`${environment.apiServer}/logout`, {
+      .post<ApiResponse<any>>(`${environment.apiServer}/logout`, {
         userOrEmail: this.userOrEmail,
-        token: this.token.value,
+        token: this.token.value
       })
       .pipe(
         map(() => {
@@ -49,21 +49,18 @@ export class AuthenticationService {
   }
 
   usernameExists$(username: string) {
-    return this.http.get<ApiResponse>(
-      `${environment.apiServer}/username-exists`,
-      {
-        params: {
-          username,
-        },
+    return this.http.get<ApiResponse<any>>(`${environment.apiServer}/username-exists`, {
+      params: {
+        username
       }
-    );
+    });
   }
 
   emailExists$(email: string) {
-    return this.http.get<ApiResponse>(`${environment.apiServer}/email-exists`, {
+    return this.http.get<ApiResponse<any>>(`${environment.apiServer}/email-exists`, {
       params: {
-        email,
-      },
+        email
+      }
     });
   }
 

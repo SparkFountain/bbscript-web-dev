@@ -11,30 +11,20 @@
 <div class="columns">
   <div class="column is-3">
     <aside class="menu">
-      <!-- KEYWORDS -->
-      <ng-container *ngFor="let cat of categories">
-        <p
-          class="menu-label pointer"
-          [ngClass]="{ active: activeCategory?.title === cat.title }"
-          (click)="navigateTo(cat.path)"
-        >
-          {{ 'DOC.' + cat.title + '.TITLE' | translate }}
+      <ng-container *ngFor="let e of navElements">
+        <p class="menu-label pointer" [ngClass]="{ active: false }" [routerLink]="e.path">
+          {{ e.title }} {{ e.path }}
         </p>
-        <ul class="menu-list" *ngIf="activeCategory?.title === cat.title">
-          <!-- <li *ngFor="let cat of keywordCategories">
-            <a>{{ 'DOC.KEYWORDS.' + cat.title + '.TITLE' | translate }}</a>
-          </li> -->
-        </ul>
       </ng-container>
     </aside>
   </div>
 
   <div class="column is-9">
-    <ng-container *ngIf="!activeCategory">
+    <ng-container *ngIf="false">
       <p>{{ 'DOC.LANDING.TEXT_01' | translate }}</p>
 
       <div class="columns is-multiline">
-        <div class="column is-half" *ngFor="let item of categories">
+        <div class="column is-half" *ngFor="let item of []">
           <div class="message pointer" (click)="navigateTo(item.path)">
             <div class="message-header">
               <span><i [class]="'fa fa-fw fa-' + item.icon"></i> {{ 'DOC.' + item.title + '.TITLE' | translate }}</span>

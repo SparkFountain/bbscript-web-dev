@@ -337,6 +337,156 @@ if ($method == 'GET') {
         } else {
           die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a language key ("en" and "de" are currently supported).')));
         }
+
+      case 'navigation':
+        $navElements = array();
+
+        if ($_GET['language']) {
+          if (!isset($_GET['level1'])) {
+            // level 0
+            if ($_GET['language'] === 'en') {
+              array_push($navElements, array(
+                'title' => 'Keywords',
+                'path' => '/documentation/keywords',
+              ));
+              array_push($navElements, array(
+                'title' => 'Commands',
+                'path' => '/documentation/commands',
+              ));
+              array_push($navElements, array(
+                'title' => 'Constants and Scancodes',
+                'path' => '/documentation/constants-and-scancodes',
+              ));
+              array_push($navElements, array(
+                'title' => 'Differences to BlitzBasic',
+                'path' => '/documentation/differences-to-blitz-basic',
+              ));
+            } elseif ($_GET['language'] === 'de') {
+              array_push($navElements, array(
+                'title' => 'Schlüsselwörter',
+                'path' => '/documentation/schluesselwoerter',
+              ));
+              array_push($navElements, array(
+                'title' => 'Befehle',
+                'path' => '/documentation/befehle',
+              ));
+              array_push($navElements, array(
+                'title' => 'Konstanten und Scancodes',
+                'path' => '/documentation/konstanten-und-scancodes',
+              ));
+              array_push($navElements, array(
+                'title' => 'Unterschiede zu BlitzBasic',
+                'path' => '/documentation/unterschiede-zu-blitz-basic',
+              ));
+            }
+          } elseif (!isset($_GET['level2'])) {
+            // level 1
+            if ($languageKey === 'en') {
+              $fullPath = '/documentation/' . $_GET['level1'];
+            } elseif ($languageKey === 'de') {
+              $fullPath = '/dokumentation/' . $_GET['level1'];
+            }
+
+            switch ($_GET['level1']) {
+            case 'keywords':
+            case 'schluesselwoerter':
+              $sql = "SELECT `title_$languageKey` as `title`, `path_$languageKey` as `path` FROM `keyword_category`";
+              $result = $dbLanguage->query($sql);
+
+              while ($row = $result->fetch_assoc()) {
+                array_push($navElements, array(
+                  'title' => $row['title'],
+                  'path' => $fullPath . '/' . $row['path'],
+                ));
+              }
+              break;
+            case 'commands':
+            case 'befehle':
+              $sql = "SELECT `title_$languageKey` as `title`, `path_$languageKey` as `path` FROM `command_category` WHERE `parent` IS NULL";
+              $result = $dbLanguage->query($sql);
+
+              while ($row = $result->fetch_assoc()) {
+                // filter network category (not supported yet)
+                if ($row['title'] !== 'Network' && $row['title'] !== 'Netzwerk') {
+                  array_push($navElements, array(
+                    'title' => $row['title'],
+                    'path' => $fullPath . '/' . $row['path'],
+                  ));
+                }
+              }
+              break;
+            case 'constants-and-scancodes':
+            case 'konstanten-und-scancodes':
+              // TODO: implement
+              break;
+            case 'differences-to-blitz-basic':
+            case 'unterschiede-zu-blitz-basics':
+              // TODO: implement
+              break;
+            }
+          } elseif (!isset($_GET['level3'])) {
+            // level 2
+            if ($languageKey === 'en') {
+              $fullPath = '/documentation/' . $_GET['level1'] . '/' . $_GET['level2'];
+            } elseif ($languageKey === 'de') {
+              $fullPath = '/dokumentation/' . $_GET['level1'] . '/' . $_GET['level2'];
+            }
+
+            switch ($_GET['level1']) {
+            case 'keywords':
+            case 'schluesselwoerter':
+              $sql = "SELECT k.`name` FROM `keyword_category` cat, `keyword` k ";
+              $sql .= "WHERE cat.`path_$languageKey` = '" . $_GET['level2'] . "' ";
+              $sql .= "AND cat.`id` = k.`category_id`";
+              $result = $dbLanguage->query($sql);
+
+              while ($row = $result->fetch_assoc()) {
+                array_push($navElements, array(
+                  'title' => $row['name'],
+                  'path' => $fullPath . '/' . strtolower($row['name']),
+                ));
+              }
+              break;
+            case 'commands':
+            case 'befehle':
+              $sql = "SELECT cc.`title_$languageKey` as `title`, cc.`path_$languageKey` as `path` FROM `command_category` cp, `command_category` cc ";
+              $sql .= "WHERE cp.`path_$languageKey` = '" . $_GET['level2'] . "' ";
+              $sql .= "AND cc.`parent` = cp.`id`";
+              $result = $dbLanguage->query($sql);
+
+              while ($row = $result->fetch_assoc()) {
+                array_push($navElements, array(
+                  'title' => $row['title'],
+                  'path' => $fullPath . '/' . $row['path'],
+                ));
+              }
+              break;
+            }
+          } else {
+            // level 3
+            if ($languageKey === 'en') {
+              $fullPath = '/documentation/' . $_GET['level1'] . '/' . $_GET['level2'] . '/' . $_GET['level3'];
+            } elseif ($languageKey === 'de') {
+              $fullPath = '/dokumentation/' . $_GET['level1'] . '/' . $_GET['level2'] . '/' . $_GET['level3'];
+            }
+
+            $sql = "SELECT cmd.`name` FROM `command_category` cat, `command` cmd ";
+            $sql .= "WHERE cat.`path_$languageKey` = '" . $_GET['level3'] . "' ";
+            $sql .= "AND cmd.`sub_category` = cat.`id`";
+            $result = $dbLanguage->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+              array_push($navElements, array(
+                'title' => $row['name'],
+                'path' => $fullPath . '/' . strtolower($row['name']),
+              ));
+            }
+          }
+
+          die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $navElements)));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a language key ("en" and "de" are currently supported).')));
+        }
       }
     } else {
       echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Please specify which part of the documentation you would like to retrieve.'));

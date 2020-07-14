@@ -4,16 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { LexerComponent } from './lexer/lexer.component';
-import { CommandsComponent } from './commands/commands.component';
-import { ContactComponent } from './contact/contact.component';
-import { ImprintComponent } from './imprint/imprint.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { PostComponent } from './post/post.component';
 import { CommandsBasicsService } from 'bbscript/src/services/commands/basics.service';
@@ -87,38 +81,17 @@ import { CommandsGUIService } from 'bbscript/src/services/commands/gui.service';
 import { CommandsIOService } from 'bbscript/src/services/commands/io.service';
 import { CommandsSoundService } from 'bbscript/src/services/commands/sound.service';
 import { Render2dService } from 'bbscript/src/services/render2d.service';
-import { GamingComponent } from './gaming/gaming.component';
 import { BlitzBasicScriptGameModule } from 'bbscript/src/lib/blitz-basic-script-game.module';
 import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script-game.service';
-import { DocumentationComponent } from './documentation/documentation.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { AuthenticationService } from './services/authentication.service';
-import { TutorialsComponent } from './tutorials/tutorials.component';
-import { LetsCodeComponent } from './lets-code/lets-code.component';
-import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    LexerComponent,
-    CommandsComponent,
-    ContactComponent,
-    ImprintComponent,
     NotFoundComponent,
-    TermsOfUseComponent,
-    DisclaimerComponent,
     PostComponent,
-    GamingComponent,
-    DocumentationComponent,
-    LetsCodeComponent,
     HomeComponent,
-    LoginComponent,
-    RegisterComponent,
-    TutorialsComponent,
-    ProjectsComponent,
   ],
   imports: [
     BrowserModule,

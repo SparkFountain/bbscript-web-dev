@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  ViewChild,
-  ElementRef,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { of, Subscription } from 'rxjs';
@@ -16,7 +10,7 @@ import { NavigationLink } from './classes/navigation-link';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
   private routerEventSubscription: Subscription;
@@ -45,21 +39,9 @@ export class AppComponent implements OnInit, OnDestroy {
     // initialize navigation
     this.navigationElements = {
       left: [
-        new NavigationMenu('fa-home', 'HOME', [
-          'OVERVIEW',
-          'NEWS_BLOG',
-          'FEATURES',
-          'COMPARISON',
-        ]),
-        new NavigationMenu('fa-dashboard', 'LETS_CODE', [
-          'EMPTY_PROJECT',
-          'TEMPLATES',
-        ]),
-        new NavigationMenu('fa-cubes', 'PROJECTS', [
-          'DEMOS',
-          'MY_PROJECTS',
-          'COMMUNITY',
-        ]),
+        new NavigationMenu('fa-home', 'HOME', ['OVERVIEW', 'NEWS_BLOG', 'FEATURES']),
+        new NavigationMenu('fa-dashboard', 'LETS_CODE', ['EMPTY_PROJECT', 'TEMPLATES']),
+        new NavigationMenu('fa-cubes', 'PROJECTS', ['DEMOS', 'MY_PROJECTS', 'COMMUNITY']),
         new NavigationMenu('fa-graduation-cap', 'TUTORIALS', [
           'BASICS',
           'GRAPHICS',
@@ -67,29 +49,29 @@ export class AppComponent implements OnInit, OnDestroy {
           'SOUND',
           'GUI',
           'PARTICLES',
-          '3D',
+          '3D'
         ]),
         new NavigationMenu('fa-book', 'DOCUMENTATION', [
           'KEYWORDS',
           'COMMANDS',
           'CONSTANTS_AND_SCANCODES',
           'DIFFERENCES_TO_BLITZ_BASIC',
-          'MIGRATION_GUIDE',
-        ]),
+          'MIGRATION_GUIDE'
+        ])
       ],
-      right: [],
+      right: []
     };
 
     // TODO: refactor -> initialize old mobile menu
     this.mobileMenu = {
       open: false,
-      closing: false,
+      closing: false
       // context: MobileMenuContext.DEFAULT
     };
   }
 
   ngOnInit(): void {
-    this.routerEventSubscription = this.router.events.subscribe((evt) => {
+    this.routerEventSubscription = this.router.events.subscribe(evt => {
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
@@ -101,15 +83,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this.routerEventSubscription.unsubscribe();
   }
 
-  isNavLink(
-    navigationElement: NavigationElement
-  ): navigationElement is NavigationLink {
+  isNavLink(navigationElement: NavigationElement): navigationElement is NavigationLink {
     return (navigationElement as NavigationLink).path !== undefined;
   }
 
-  isNavMenu(
-    navigationElement: NavigationElement
-  ): navigationElement is NavigationMenu {
+  isNavMenu(navigationElement: NavigationElement): navigationElement is NavigationMenu {
     return (navigationElement as NavigationMenu).submenus !== undefined;
   }
 
@@ -135,5 +113,5 @@ export class AppComponent implements OnInit, OnDestroy {
 
 export const Language = {
   GERMAN: 'de',
-  ENGLISH: 'en',
+  ENGLISH: 'en'
 };

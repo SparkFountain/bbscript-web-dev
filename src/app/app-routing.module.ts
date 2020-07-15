@@ -6,136 +6,105 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'ueberblick', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'news-blog',
+    component: HomeComponent
+  },
+  {
+    path: 'features',
+    component: HomeComponent
+  },
   {
     path: 'lets-code',
-    loadChildren: () =>
-      import('./lets-code/lets-code.module').then((m) => m.LetsCodeModule),
+    loadChildren: () => import('./lets-code/lets-code.module').then(m => m.LetsCodeModule)
   },
   {
     path: 'coden',
-    loadChildren: () =>
-      import('./lets-code/lets-code.module').then((m) => m.LetsCodeModule),
+    loadChildren: () => import('./lets-code/lets-code.module').then(m => m.LetsCodeModule)
   },
   {
     path: 'projects',
-    loadChildren: () =>
-      import('./projects/projects.module').then((m) => m.ProjectsModule),
+    loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule)
   },
   {
     path: 'projekte',
-    loadChildren: () =>
-      import('./projects/projects.module').then((m) => m.ProjectsModule),
+    loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule)
   },
   {
     path: 'about',
-    loadChildren: () =>
-      import('./about/about.module').then((m) => m.AboutModule),
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
   {
     path: 'lexer',
-    loadChildren: () =>
-      import('./lexer/lexer.module').then((m) => m.LexerModule),
+    loadChildren: () => import('./lexer/lexer.module').then(m => m.LexerModule)
   },
   {
     path: 'commands',
-    loadChildren: () =>
-      import('./commands/commands.module').then((m) => m.CommandsModule),
+    loadChildren: () => import('./commands/commands.module').then(m => m.CommandsModule)
   },
   {
     path: 'gaming',
-    loadChildren: () =>
-      import('./gaming/gaming.module').then((m) => m.GamingModule),
+    loadChildren: () => import('./gaming/gaming.module').then(m => m.GamingModule)
   },
   {
     path: 'tutorials',
-    loadChildren: () =>
-      import('./tutorials/tutorials.module').then((m) => m.TutorialsModule),
+    loadChildren: () => import('./tutorials/tutorials.module').then(m => m.TutorialsModule)
   },
   {
     path: 'documentation',
-    loadChildren: () =>
-      import('./documentation/documentation.module').then(
-        (m) => m.DocumentationModule
-      ),
+    loadChildren: () => import('./documentation/documentation.module').then(m => m.DocumentationModule)
   },
   {
     path: 'dokumentation',
-    loadChildren: () =>
-      import('./documentation/documentation.module').then(
-        (m) => m.DocumentationModule
-      ),
+    loadChildren: () => import('./documentation/documentation.module').then(m => m.DocumentationModule)
   },
-  // TODO: move documentation routes to submodule routing
-  // { path: 'dokumentation/:level1', component: DocumentationComponent },
-  // { path: 'dokumentation/:level1/:level2', component: DocumentationComponent },
-  // {
-  //   path: 'dokumentation/:level1/:level2/:level3',
-  //   component: DocumentationComponent,
-  // },
-  // {
-  //   path: 'dokumentation/:level1/:level2/:level3/:level4',
-  //   component: DocumentationComponent,
-  // },
   {
     path: 'anmelden',
-    loadChildren: () =>
-      import('./login/login.module').then((m) => m.LoginModule),
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'registrieren',
-    loadChildren: () =>
-      import('./register/register.module').then((m) => m.RegisterModule),
+    loadChildren: () => import('./register/register.module').then(m => m.RegisterModule)
   },
   {
     path: 'contact',
-    loadChildren: () =>
-      import('./contact/contact.module').then((m) => m.ContactModule),
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   },
   {
     path: 'kontakt',
-    loadChildren: () =>
-      import('./contact/contact.module').then((m) => m.ContactModule),
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   },
   {
     path: 'imprint',
-    loadChildren: () =>
-      import('./imprint/imprint.module').then((m) => m.ImprintModule),
+    loadChildren: () => import('./imprint/imprint.module').then(m => m.ImprintModule)
   },
   {
     path: 'impressum',
-    loadChildren: () =>
-      import('./imprint/imprint.module').then((m) => m.ImprintModule),
+    loadChildren: () => import('./imprint/imprint.module').then(m => m.ImprintModule)
   },
   {
     path: 'terms-of-use',
-    loadChildren: () =>
-      import('./terms-of-use/terms-of-use.module').then(
-        (m) => m.TermsOfUseModule
-      ),
+    loadChildren: () => import('./terms-of-use/terms-of-use.module').then(m => m.TermsOfUseModule)
   },
   {
     path: 'nutzungsbedingungen',
-    loadChildren: () =>
-      import('./terms-of-use/terms-of-use.module').then(
-        (m) => m.TermsOfUseModule
-      ),
+    loadChildren: () => import('./terms-of-use/terms-of-use.module').then(m => m.TermsOfUseModule)
   },
   {
     path: 'disclaimer',
-    loadChildren: () =>
-      import('./disclaimer/disclaimer.module').then((m) => m.DisclaimerModule),
+    loadChildren: () => import('./disclaimer/disclaimer.module').then(m => m.DisclaimerModule)
   },
   {
     path: 'haftungsausschluss',
-    loadChildren: () =>
-      import('./disclaimer/disclaimer.module').then((m) => m.DisclaimerModule),
+    loadChildren: () => import('./disclaimer/disclaimer.module').then(m => m.DisclaimerModule)
   },
   { path: '404', component: NotFoundComponent },
-  { path: '**', redirectTo: '/404', pathMatch: 'full' },
+  { path: '**', redirectTo: '/404', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

@@ -237,7 +237,15 @@ if ($method == 'GET') {
               switch ($_GET['level1']) {
               case 'keywords':
               case 'schluesselwoerter':
-                // TODO: implement
+                $sql = "SELECT `title_$languageKey` as `title`, `path_$languageKey` as `path` FROM `keyword_category` WHERE `path_$languageKey` = '" . $_GET['level2'] . "'";
+                $result = $dbLanguage->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
+                  array_push($breadcrumbs, array(
+                    'title' => $row['title'],
+                    'path' => $fullPath . '/' . $row['path'],
+                  ));
+                }
                 break;
               case 'commands':
               case 'befehle':
@@ -276,7 +284,7 @@ if ($method == 'GET') {
                 break;
               case 'commands':
               case 'befehle':
-                $sql = "SELECT `title_$languageKey` as `title`, `path_$languageKey` as `path` FROM `command_category` WHERE `path_$languageKey` = '" . $_GET['level3'] . "'";
+                $sql = "SELECT `title_$languageKey` as `title`, `path_$languageKey` as `path` FROM `command_category` WHERE `path_$languageKey` = '" . $_GET['level3'] . "' LIMIT 1";
                 $result = $dbLanguage->query($sql);
 
                 while ($row = $result->fetch_assoc()) {
@@ -364,19 +372,19 @@ if ($method == 'GET') {
             } elseif ($_GET['language'] === 'de') {
               array_push($navElements, array(
                 'title' => 'Schlüsselwörter',
-                'path' => '/documentation/schluesselwoerter',
+                'path' => '/dokumentation/schluesselwoerter',
               ));
               array_push($navElements, array(
                 'title' => 'Befehle',
-                'path' => '/documentation/befehle',
+                'path' => '/dokumentation/befehle',
               ));
               array_push($navElements, array(
                 'title' => 'Konstanten und Scancodes',
-                'path' => '/documentation/konstanten-und-scancodes',
+                'path' => '/dokumentation/konstanten-und-scancodes',
               ));
               array_push($navElements, array(
                 'title' => 'Unterschiede zu BlitzBasic',
-                'path' => '/documentation/unterschiede-zu-blitz-basic',
+                'path' => '/dokumentation/unterschiede-zu-blitz-basic',
               ));
             }
           } elseif (!isset($_GET['level2'])) {
@@ -486,6 +494,13 @@ if ($method == 'GET') {
           die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $navElements)));
         } else {
           die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a language key ("en" and "de" are currently supported).')));
+        }
+
+      case 'search':
+        if ($_GET['term']) {
+          die(json_encode(array('status' => STATUS_SUCCESS, 'data' => 'Work in Progress')));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a search term.')));
         }
       }
     } else {

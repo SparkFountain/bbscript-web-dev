@@ -173,6 +173,7 @@
   },
   "SEARCH": {
     "PLACEHOLDER": "Suchbegriff eingeben...",
+    "BUTTON": "Suchen",
     "RESULTS": "Suchergebnisse"
   },
   "CATEGORY": "Kategorie",

@@ -1,7 +1,9 @@
-.navbar-item.has-dropdown.is-hoverable:active > .navbar-dropdown {
-  display: none !important;
-}
+// TODO: this solution does not work, for links are not clickable anymore
 
-.navbar-dropdown:active {
-  display: none !important;
-}
+// .navbar-item.has-dropdown.is-hoverable:active > .navbar-dropdown {
+//   visibility: hidden !important;
+// }
+
+// .navbar-dropdown:active {
+//   visibility: hidden !important;
+// }

@@ -1,0 +1,7 @@
+.navbar-item.has-dropdown.is-hoverable:active > .navbar-dropdown {
+  display: none !important;
+}
+
+.navbar-dropdown:active {
+  display: none !important;
+}

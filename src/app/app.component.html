@@ -10,9 +10,7 @@
       />
     </a>
     <div class="navbar-burger burger" data-target="navigationMenu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span *ngFor="let i of [1, 2, 3]"></span>
     </div>
   </div>
   <div id="navigationMenu" class="navbar-menu">
@@ -21,8 +19,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a
             class="navbar-link"
-            [routerLink]="'NAV.' + element.name + '.PATH' | translate"
-          >
+          > <!-- [routerLink]="'NAV.' + element.name + '.PATH' | translate" -->
             <span
               ><i class="fa fa-fw {{ element.icon }}"></i>
               {{ 'NAV.' + element.name + '.TITLE' | translate }}</span

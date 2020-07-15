@@ -7,5 +7,6 @@ import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   imports: [CommonModule, TermsOfUseRoutingModule, TranslateModule],
   declarations: [TermsOfUseComponent],
+  exports: [TermsOfUseComponent],
 })
 export class TermsOfUseModule {}

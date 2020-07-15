@@ -1,7 +1,13 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
-import { of } from 'rxjs';
+import { Router, NavigationEnd } from '@angular/router';
+import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { NavigationElement } from './types/navigation-element';
 import { NavigationMenu } from './classes/navigation-menu';
@@ -12,7 +18,9 @@ import { NavigationLink } from './classes/navigation-link';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
+  private routerEventSubscription: Subscription;
+
   public navigationElements: {
     left: NavigationMenu[];
     right: NavigationMenu[];
@@ -80,6 +88,19 @@ export class AppComponent {
     };
   }
 
+  ngOnInit(): void {
+    this.routerEventSubscription = this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.routerEventSubscription.unsubscribe();
+  }
+
   isNavLink(
     navigationElement: NavigationElement
   ): navigationElement is NavigationLink {
@@ -92,11 +113,11 @@ export class AppComponent {
     return (navigationElement as NavigationMenu).submenus !== undefined;
   }
 
-  changeLanguage(language: string) {
+  changeLanguage(language: string): void {
     this.translate.use(language);
   }
 
-  toggleMobileMenu() {
+  toggleMobileMenu(): void {
     if (this.mobileMenu.open) {
       this.mobileMenu.closing = true;
       of(null)

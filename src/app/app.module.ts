@@ -8,8 +8,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { DisclaimerComponent } from './disclaimer/disclaimer.component';
-import { PostComponent } from './post/post.component';
 import { CommandsBasicsService } from 'bbscript/src/services/commands/basics.service';
 import { CommandsBasicsMathsService } from 'bbscript/src/services/commands/basics/maths.service';
 import { AceModule } from 'ngx-ace-wrapper';
@@ -87,12 +85,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NotFoundComponent,
-    PostComponent,
-    HomeComponent,
-  ],
+  declarations: [AppComponent, NotFoundComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -112,7 +105,6 @@ import { AuthenticationService } from './services/authentication.service';
   ],
   providers: [
     AuthenticationService,
-
     BlitzBasicScriptGameService,
     LexerService,
     LanguageService,

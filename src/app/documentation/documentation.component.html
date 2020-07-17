@@ -54,7 +54,12 @@
     </ng-container>
 
     <app-keywords *ngIf="isSection('keywords') || isSection('schluesselwoerter')"></app-keywords>
-    <app-commands *ngIf="isSection('commands') || isSection('befehle')"></app-commands>
+    <app-commands
+      *ngIf="isSection('commands') || isSection('befehle')"
+      [category]="level2"
+      [subCategory]="level3"
+      [command]="level4"
+    ></app-commands>
     <app-constants-and-scancodes
       *ngIf="isSection('constants-and-scancodes') || isSection('konstanten-und-scancodes')"
     ></app-constants-and-scancodes>

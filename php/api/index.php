@@ -496,6 +496,45 @@ if ($method == 'GET') {
           die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a language key ("en" and "de" are currently supported).')));
         }
 
+      case 'commands':
+        if (isset($_GET['language'])) {
+          $language = $_GET['language'];
+
+          if (!isset($_GET['category'])) {
+            // invalid: category must be provided
+            die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a category.')));
+          } elseif (!isset($_GET['subCategory'])) {
+            // first level: get category attributes
+            $sql = "SELECT `title_$language` as `headline`, `description_$language` as `description` FROM `command_category` WHERE `path_$language`='" . $_GET['category'] . "'";
+            $result = $dbLanguage->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+              die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $row)));
+            }
+          } elseif (!isset($_GET['command'])) {
+            // second level: get subcategory attributes
+            $sql = "SELECT cc.`title_$language` as `headline`, cc.`description_$language` as `description` FROM `command_category` cp, `command_category` cc ";
+            $sql .= "WHERE cc.`path_$language`='" . $_GET['subCategory'] . "' ";
+            $sql .= "AND cp.`path_$language`='" . $_GET['category'] . "' ";
+            $sql .= "AND cc.`parent` = cp.id";
+            $result = $dbLanguage->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+              die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $row)));
+            }
+          } else {
+            // third level: get command attributes
+            // TODO: fetch parameters as well
+            $sql = "SELECT `name`, `description_$language` as `description`, `return_name` as `returnName`, `return_description_$language` as `returnDescription`, `code` FROM `command` WHERE LOWER(`name`)='" . strtolower($_GET['command']) . "'";
+            $result = $dbLanguage->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+              die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $row)));
+            }
+          }
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a language key ("en" and "de" are currently supported).')));
+        }
       case 'search':
         if ($_GET['term']) {
           die(json_encode(array('status' => STATUS_SUCCESS, 'data' => 'Work in Progress')));

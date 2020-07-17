@@ -275,7 +275,7 @@
       "TITLE": "Befehle",
       "CATEGORIES": "Kategorien",
       "HEADLINE": "Befehle sind vordefinierte Prozeduren, die deinen Spielen Leben einhauchen.",
-      "SUBTITLE": "<p>BlitzBasicScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Kategorien, welche wiederum aus verschiedenen Anwendungsbereichen bestehen.</p>",
+      "SUBTITLE": "<p>BlitzBasicScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Kategorien, welche wiederum aus verschiedenen Anwendungsbereichen bestehen.</p><p>Wähle aus der linken Navigationsleiste eine Kategorie aus, um die dazugehörigen Anwendungsbereiche zu öffnen, oder nutze die Suchfunktion, um einen bestimmten Begriff zu finden.</p>",
       "PLAY": "Starten",
       "STOP": "Beenden",
       "BASICS": {

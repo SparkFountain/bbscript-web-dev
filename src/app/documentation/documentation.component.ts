@@ -36,6 +36,10 @@ export class DocumentationComponent implements OnInit {
   public breadcrumbs: Breadcrumb[];
   public navElements: NavElement[];
   public searchTerm: string;
+  public level1: string;
+  public level2: string;
+  public level3: string;
+  public level4: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -56,6 +60,21 @@ export class DocumentationComponent implements OnInit {
     for (let i = 0; i <= 3; i++) {
       if (snapshot.url[i]) {
         navParams[`level${i + 1}`] = snapshot.url[i].path;
+
+        switch (i) {
+          case 0:
+            this.level1 = snapshot.url[i].path;
+            break;
+          case 1:
+            this.level2 = snapshot.url[i].path;
+            break;
+          case 2:
+            this.level3 = snapshot.url[i].path;
+            break;
+          case 3:
+            this.level4 = snapshot.url[i].path;
+            break;
+        }
       }
     }
 

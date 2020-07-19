@@ -524,13 +524,37 @@ if ($method == 'GET') {
             }
           } else {
             // third level: get command attributes
-            // TODO: fetch parameters as well
-            $sql = "SELECT `name`, `description_$language` as `description`, `return_name` as `returnName`, `return_description_$language` as `returnDescription`, `code` FROM `command` WHERE LOWER(`name`)='" . strtolower($_GET['command']) . "'";
+            $response = array();
+
+            $sql = "SELECT `id`, `name`, `description_$language` as `description`, `return_name` as `returnName`, `return_description_$language` as `returnDescription`, `code` ";
+            $sql .= "FROM `command` ";
+            $sql .= "WHERE LOWER(`name`)='" . strtolower($_GET['command']) . "' ";
             $result = $dbLanguage->query($sql);
 
             while ($row = $result->fetch_assoc()) {
-              die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $row)));
+              $cmdId = $row['id'];
+              $response['name'] = $row['name'];
+              $response['params'] = array();
+              $response['description'] = $row['description'];
+              $response['infos'] = ''; // TODO: add infos to database
+              $response['return'] = array(
+                'name' => $row['returnName'],
+                'description' => $row['returnDescription'],
+              );
             }
+
+            $sql = "SELECT `name`, `description_$language` as `description`, `optional` FROM`command_parameter` WHERE `command_id` = '$cmdId' ORDER BY `offset` ASC";
+            $result = $dbLanguage->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+              array_push($response['params'], array(
+                'name' => $row['name'],
+                'description' => $row['description'],
+                'optional' => $row['optional'] ? true : false,
+              ));
+            }
+
+            die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $response)));
           }
         } else {
           die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a language key ("en" and "de" are currently supported).')));

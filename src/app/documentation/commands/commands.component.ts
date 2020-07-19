@@ -1,12 +1,28 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { ApiResponse } from 'src/app/interfaces/api-response';
+import { DocumentationService } from 'src/app/services/documentation.service';
 
 export interface CommandCategoryDoc {
   headline: string;
   description: string;
+}
+
+export interface CommandDoc {
+  name: string;
+  params: CommandParamDoc[];
+  description: string;
+  return: {
+    name: string;
+    description: string;
+  };
+  infos: string;
+  code: string;
+}
+
+export interface CommandParamDoc {
+  name: string;
+  description: string;
+  optional: boolean;
 }
 
 @Component({
@@ -21,40 +37,72 @@ export class CommandsComponent implements OnInit {
 
   headline: string;
   description: string;
+  activeTab: 'description' | 'infos' | 'codeExample';
 
-  constructor(private http: HttpClient, private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private docsService: DocumentationService) {}
 
   ngOnInit(): void {
+    this.activeTab = 'description';
+
     if (!this.category) {
       this.headline = this.translate.instant('DOC.COMMANDS.HEADLINE');
       this.description = this.translate.instant('DOC.COMMANDS.SUBTITLE');
     } else if (this.category && !this.subCategory) {
-      this.http
-        .get(`${environment.apiServer}/docs/commands`, {
-          params: {
-            category: this.category,
-            language: this.translate.currentLang
-          }
+      this.docsService
+        .get('commands', {
+          category: this.category,
+          language: this.translate.currentLang
         })
-        .toPromise()
-        .then((response: ApiResponse<CommandCategoryDoc>) => {
-          this.headline = response.data.headline;
-          this.description = response.data.description;
+        .then((data: CommandCategoryDoc) => {
+          this.headline = data.headline;
+          this.description = data.description;
         });
     } else if (this.category && this.subCategory && !this.command) {
-      this.http
-        .get(`${environment.apiServer}/docs/commands`, {
-          params: {
-            category: this.category,
-            subCategory: this.subCategory,
-            language: this.translate.currentLang
-          }
+      this.docsService
+        .get('commands', {
+          category: this.category,
+          subCategory: this.subCategory,
+          language: this.translate.currentLang
         })
-        .toPromise()
-        .then((response: ApiResponse<CommandCategoryDoc>) => {
-          this.headline = response.data.headline;
-          this.description = response.data.description;
+        .then((data: CommandCategoryDoc) => {
+          this.headline = data.headline;
+          this.description = data.description;
+        });
+    } else {
+      this.docsService
+        .get('commands', {
+          category: this.category,
+          subCategory: this.subCategory,
+          command: this.command,
+          language: this.translate.currentLang
+        })
+        .then((data: CommandDoc) => {
+          // console.info('[DATA]', data);
+
+          let renderedParams = '';
+          data.params.forEach((param: CommandParamDoc, index: number) => {
+            if (index === 0) {
+              if (param.optional) {
+                renderedParams += `[${param.name}]`;
+              } else {
+                renderedParams += `${param.name}`;
+              }
+            } else {
+              if (param.optional) {
+                renderedParams += ` [, ${param.name}]`;
+              } else {
+                renderedParams += `, ${param.name}`;
+              }
+            }
+          });
+
+          this.headline = `<span><b>${data.name}</b> ${renderedParams}</span>`;
+          this.description = data.description;
         });
     }
+  }
+
+  select(tab: 'description' | 'infos' | 'codeExample') {
+    this.activeTab = tab;
   }
 }

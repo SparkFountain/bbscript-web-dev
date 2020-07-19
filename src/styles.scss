@@ -111,6 +111,20 @@ img {
   }
 }
 
+.code-font {
+  font-family: 'Cousine', Courier, monospace;
+  font-weight: normal;
+
+  b {
+    font-family: 'Cousine Bold', Courier, monospace;
+  }
+}
+
+.doc-tab {
+  text-decoration: none !important;
+}
+
+
 /* RESPONSIVE DESIGNS */
 @media only screen and (max-width: 767px) {
   #bbscript-page-content {
@@ -120,8 +134,14 @@ img {
     min-height: calc(100vh - #{$mobile-menu-bar-height} - 20px);
     height: auto !important;
 
-    h1, h2, h3, h4, h5, h6, p {
-      margin: 10px; 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 10px;
     }
 
     h1 {

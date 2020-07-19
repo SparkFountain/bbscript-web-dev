@@ -80,6 +80,7 @@ export class DocumentationComponent implements OnInit {
 
     // console.info('[NAV PARAMS]', navParams);
 
+    // TODO: move to documentation service
     this.http
       .get(`${environment.apiServer}/docs/breadcrumbs`, { params: navParams })
       .toPromise()
@@ -101,6 +102,7 @@ export class DocumentationComponent implements OnInit {
   }
 
   search(): void {
+    // TODO: move to documentation service
     this.http
       .get(`${environment.apiServer}/docs/search`, { params: { term: this.searchTerm } })
       .toPromise()

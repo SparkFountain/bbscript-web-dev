@@ -33,7 +33,7 @@ export class DocumentationService {
         })
         .toPromise()
         .then((response: ApiResponse<any>) => {
-          // console.info('[API RESPONSE]', response);
+          console.info('[API RESPONSE]', response);
           this.cache.push({
             route,
             params,

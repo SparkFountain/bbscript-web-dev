@@ -37,12 +37,17 @@ export class CommandsComponent implements OnInit {
 
   headline: string;
   description: string;
+  infos: string;
+  codeExample: string;
   activeTab: 'description' | 'infos' | 'codeExample';
 
   constructor(private translate: TranslateService, private docsService: DocumentationService) {}
 
   ngOnInit(): void {
     this.activeTab = 'description';
+    this.description = '';
+    this.infos = '';
+    this.codeExample = '';
 
     if (!this.category) {
       this.headline = this.translate.instant('DOC.COMMANDS.HEADLINE');
@@ -98,6 +103,8 @@ export class CommandsComponent implements OnInit {
 
           this.headline = `<span><b>${data.name}</b> ${renderedParams}</span>`;
           this.description = data.description;
+          this.infos = data.infos;
+          this.codeExample = data.code;
         });
     }
   }

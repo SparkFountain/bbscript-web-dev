@@ -32,5 +32,9 @@
     </div>
 
     <div class="command-description" [innerHTML]="description" *ngIf="activeTab === 'description'"></div>
+
+    <div class="command-infos" [innerHTML]="infos" *ngIf="activeTab === 'infos'"></div>
+
+    <div class="command-code-example" [innerHTML]="codeExample" *ngIf="activeTab === 'codeExample'"></div>
   </div>
 </article>

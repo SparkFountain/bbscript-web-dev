@@ -541,6 +541,7 @@ if ($method == 'GET') {
                 'name' => $row['returnName'],
                 'description' => $row['returnDescription'],
               );
+              $response['code'] = $row['code'];
             }
 
             $sql = "SELECT `name`, `description_$language` as `description`, `optional` FROM`command_parameter` WHERE `command_id` = '$cmdId' ORDER BY `offset` ASC";

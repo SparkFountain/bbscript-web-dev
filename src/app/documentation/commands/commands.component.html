@@ -1,11 +1,11 @@
-<article class="message is-info" *ngIf="!command">
+<div class="message is-info" *ngIf="!command">
   <div class="message-header">
     {{ headline }}
   </div>
   <div class="message-body" [innerHTML]="description"></div>
-</article>
+</div>
 
-<article class="message is-info" *ngIf="command">
+<div class="message is-info" *ngIf="command">
   <div class="message-header code-font" [innerHTML]="headline"></div>
   <div class="message-body">
     <div class="tabs">
@@ -35,6 +35,6 @@
 
     <div class="command-infos" [innerHTML]="infos" *ngIf="activeTab === 'infos'"></div>
 
-    <div class="command-code-example" [innerHTML]="codeExample" *ngIf="activeTab === 'codeExample'"></div>
+    <app-ide [buttons]="['play']" *ngIf="activeTab === 'codeExample'"></app-ide>
   </div>
-</article>
+</div>

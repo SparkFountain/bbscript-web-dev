@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     console.info('[NOTICES]', this.notices);
 
     if (Object.keys(this.notices).length === 0) {
-      this.authService.login$(this.userOrEmail, this.password).subscribe((response: ApiResponse<any>) => {
+      this.authService.login(this.userOrEmail, this.password).then((response: ApiResponse<any>) => {
         if (response.status === 'success') {
           console.info('[REGISTRATION SUCCESSFUL]', response);
           this.authService.userOrEmail = this.userOrEmail;

@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CommandsBasicsService } from 'bbscript/src/services/commands/basics.service';
 import { CommandsBasicsMathsService } from 'bbscript/src/services/commands/basics/maths.service';
@@ -83,6 +83,7 @@ import { BlitzBasicScriptGameModule } from 'bbscript/src/lib/blitz-basic-script-
 import { BlitzBasicScriptGameService } from 'bbscript/src/lib/blitz-basic-script-game.service';
 import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './services/authentication.service';
+import { AuthInterceptor } from './http-interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent, HomeComponent],
@@ -95,15 +96,16 @@ import { AuthenticationService } from './services/authentication.service';
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [HttpClient],
-      },
+        deps: [HttpClient]
+      }
     }),
     AceModule,
     BlitzBasicScriptGameModule,
     BlitzBasicScriptCanvasModule,
-    NgxPopperModule.forRoot({}),
+    NgxPopperModule.forRoot({})
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     AuthenticationService,
     BlitzBasicScriptGameService,
     LexerService,
@@ -173,9 +175,9 @@ import { AuthenticationService } from './services/authentication.service';
     CommandsSoundService,
     CommandsSound3DService,
     CommandsSoundChannelsService,
-    CommandsSoundMusicSamplesService,
+    CommandsSoundMusicSamplesService
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 

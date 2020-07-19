@@ -64,6 +64,48 @@ define('MAIL_SERVER', 'http://mail.blitzbasicscript.com');
 
 if ($method == 'GET') {
   switch ($urlSection['1']) {
+  case 'auth':
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'login':
+        break;
+      case 'logout':
+        break;
+      case 'register':
+        break;
+      case 'check-credentials':
+        break;
+      case 'username-exists':
+        $checkIfUserExistsSql = 'SELECT u.id FROM user u WHERE u.name = \'' . $_GET['username'] . '\'';
+        $result = $dbWeb->query($checkIfUserExistsSql);
+        if ($result) {
+          if ($result->num_rows > 0) {
+            die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => true))));
+          } else {
+            die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => false))));
+          }
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'username-exists-query-error')));
+        }
+
+        break;
+      case 'email-exists':
+        $checkIfEmailExistsSql = 'SELECT u.id FROM user u WHERE u.`email` = \'' . $_GET['email'] . '\'';
+        $result = $dbWeb->query($checkIfEmailExistsSql);
+        if ($result) {
+          if ($result->num_rows > 0) {
+            die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => true))));
+          } else {
+            die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => false))));
+          }
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'email-exists-query-error')));
+        }
+
+        break;
+      }
+    }
+    break;
   case 'docs':
     $languageKey = $_GET['language'];
 
@@ -746,34 +788,6 @@ if ($method == 'GET') {
       }
     }
     break;
-  case 'username-exists':
-    $checkIfUserExistsSql = 'SELECT u.id FROM user u WHERE u.name = \'' . $_GET['username'] . '\'';
-    $result = $dbWeb->query($checkIfUserExistsSql);
-    if ($result) {
-      if ($result->num_rows > 0) {
-        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => true))));
-      } else {
-        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => false))));
-      }
-    } else {
-      die(json_encode(array('status' => STATUS_ERROR, 'message' => 'username-exists-query-error')));
-    }
-
-    break;
-  case 'email-exists':
-    $checkIfEmailExistsSql = 'SELECT u.id FROM user u WHERE u.`email` = \'' . $_GET['email'] . '\'';
-    $result = $dbWeb->query($checkIfEmailExistsSql);
-    if ($result) {
-      if ($result->num_rows > 0) {
-        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => true))));
-      } else {
-        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('exists' => false))));
-      }
-    } else {
-      die(json_encode(array('status' => STATUS_ERROR, 'message' => 'email-exists-query-error')));
-    }
-
-    break;
   case 'news':
     if (!$_GET['language']) {
       die(json_encode(array('status' => STATUS_FAIL, 'message' => 'You must send a language query parameter.')));
@@ -829,116 +843,135 @@ if ($method == 'GET') {
   $input = json_decode($inputJSON, true); //convert JSON into array
 
   switch ($urlSection['1']) {
-  case 'register':
-    $errors = array();
+  case 'auth':
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'register':
+        $errors = array();
 
-    if (strlen($_POST['username']) < 2) {
-      array_push($errors, 'username-too-short');
-    } elseif (strlen($_POST['username']) > 32) {
-      array_push($errors, 'username-too-long');
-    } elseif (preg_match('/^[a-zA-Z0-9 ]*$/', $_POST['username']) != 1) {
-      array_push($errors, 'invalid-username');
-    } elseif (strlen($_POST['password']) < 8) {
-      array_push($errors, 'password-too-short');
-    }
+        if (strlen($_POST['username']) < 2) {
+          array_push($errors, 'username-too-short');
+        } elseif (strlen($_POST['username']) > 32) {
+          array_push($errors, 'username-too-long');
+        } elseif (preg_match('/^[a-zA-Z0-9 ]*$/', $_POST['username']) != 1) {
+          array_push($errors, 'invalid-username');
+        } elseif (strlen($_POST['password']) < 8) {
+          array_push($errors, 'password-too-short');
+        }
 
-    if (strlen($_POST['email']) === 0) {
-      array_push($errors, 'email-empty');
-    } elseif (preg_match('/^[^@\s]+@[^@\s]+\.[^@\s]+$/', $_POST['email']) != 1) {
-      array_push($errors, 'email-invalid');
-    }
+        if (strlen($_POST['email']) === 0) {
+          array_push($errors, 'email-empty');
+        } elseif (preg_match('/^[^@\s]+@[^@\s]+\.[^@\s]+$/', $_POST['email']) != 1) {
+          array_push($errors, 'email-invalid');
+        }
 
-    if ($_POST['termsAccepted'] == false) {
-      array_push($errors, 'terms-must-be-accepted');
-    }
+        if ($_POST['termsAccepted'] == false) {
+          array_push($errors, 'terms-must-be-accepted');
+        }
 
-    if (count($errors) > 0) {
-      die(json_encode(array('status' => STATUS_FAIL, 'message' => 'Registry failed', 'data' => $errors)));
-    }
+        if (count($errors) > 0) {
+          die(json_encode(array('status' => STATUS_FAIL, 'message' => 'Registry failed', 'data' => $errors)));
+        }
 
-    // check if username is already reserved
-    $checkIfUserExistsSql = 'SELECT u.id FROM user u WHERE u.name = \'' . $_POST['username'] . '\'';
-    $result = $dbWeb->query($checkIfUserExistsSql);
-    if ($result->num_rows > 0) {
-      die(json_encode(array('status' => STATUS_FAIL, 'message' => 'username-exists')));
-    }
+        // check if username is already reserved
+        $checkIfUserExistsSql = 'SELECT u.id FROM user u WHERE u.name = \'' . $_POST['username'] . '\'';
+        $result = $dbWeb->query($checkIfUserExistsSql);
+        if ($result->num_rows > 0) {
+          die(json_encode(array('status' => STATUS_FAIL, 'message' => 'username-exists')));
+        }
 
-    // generate password hash and current date
-    $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $registration = date("Y-m-d H:i:s");
+        // generate password hash and current date
+        $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $registration = date("Y-m-d H:i:s");
 
-    // if everything is alright: create new user
-    $createUserSql = 'INSERT INTO `user`(`name`, `email`, `password`, `registration`, `active`)';
-    $createUserSql .= ' VALUES (\'' . $_POST['username'] . '\',\'' . $_POST['email'] . '\',\'' . $passwordHash . '\',\'' . $registration . '\',false)';
+        // if everything is alright: create new user
+        $createUserSql = 'INSERT INTO `user`(`name`, `email`, `password`, `registration`, `active`)';
+        $createUserSql .= ' VALUES (\'' . $_POST['username'] . '\',\'' . $_POST['email'] . '\',\'' . $passwordHash . '\',\'' . $registration . '\',false)';
 
-    $result = $dbWeb->query($createUserSql);
-    if ($result) {
-      // send confirmation email
-      $to = $_POST['email'];
-      $subject = 'Deine Registrierung bei BlitzBasicScript';
+        $result = $dbWeb->query($createUserSql);
+        if ($result) {
+          // send confirmation email
+          $to = $_POST['email'];
+          $subject = 'Deine Registrierung bei BlitzBasicScript';
 
-      $headers = [
-        'MIME-Version' => '1.0',
-        'Content-type' => 'text/html; charset=UTF-8',
-        'From' => "BlitzBasicScript <info@blitzbasicscript.com>",
-        'X-Mailer' => 'PHP/' . phpversion(),
-      ];
+          $headers = [
+            'MIME-Version' => '1.0',
+            'Content-type' => 'text/html; charset=UTF-8',
+            'From' => "BlitzBasicScript <info@blitzbasicscript.com>",
+            'X-Mailer' => 'PHP/' . phpversion(),
+          ];
 
-      $mailContent = file_get_contents(MAIL_SERVER . '/registration-de.html');
+          $mailContent = file_get_contents(MAIL_SERVER . '/registration-de.html');
 
-      $status = mail($to, $subject, $mailContent, $headers);
-      if ($status == false) {
-        $deleteUserSql = 'DELETE FROM `user` WHERE `email` = \'' . $_POST['email'] . '\'';
-        $dbWeb->query($deleteUserSql);
+          $status = mail($to, $subject, $mailContent, $headers);
+          if ($status == false) {
+            $deleteUserSql = 'DELETE FROM `user` WHERE `email` = \'' . $_POST['email'] . '\'';
+            $dbWeb->query($deleteUserSql);
 
-        die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Your confirmation email could not be sent.')));
-      }
+            die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Your confirmation email could not be sent.')));
+          }
 
-      echo json_encode(array('status' => STATUS_SUCCESS));
-    } else {
-      echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Registration Error'));
-    }
+          echo json_encode(array('status' => STATUS_SUCCESS));
+        } else {
+          echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Registration Error'));
+        }
 
-    break;
-  case 'login':
-    $sql = 'SELECT u.email, u.password, u.active FROM user u WHERE u.name = \'' . $input['userOrEmail'] . '\' OR u.email = \'' . $input['userOrEmail'] . '\'';
+        break;
+      case 'login':
+        $sql = 'SELECT u.email, u.password, u.active FROM user u WHERE u.name = \'' . $input['userOrEmail'] . '\' OR u.email = \'' . $input['userOrEmail'] . '\'';
 
-    $result = $dbWeb->query($sql);
-    if ($result) {
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-          if ($row['active']) {
-            if (password_verify($input['password'], $row['password'])) {
-              $token = bin2hex(random_bytes(64));
-              $storeTokenSql = 'UPDATE `user` u SET `token`=\'' . $token . '\' WHERE u.email = \'' . $row['email'] . '\'';
-              $storeResult = $dbWeb->query($storeTokenSql);
-              if ($storeResult) {
-                die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('token' => $token)), JSON_NUMERIC_CHECK));
+        $result = $dbWeb->query($sql);
+        if ($result) {
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              if ($row['active']) {
+                if (password_verify($input['password'], $row['password'])) {
+                  $token = bin2hex(random_bytes(64));
+                  $storeTokenSql = 'UPDATE `user` u SET `token`=\'' . $token . '\' WHERE u.email = \'' . $row['email'] . '\'';
+                  $storeResult = $dbWeb->query($storeTokenSql);
+                  if ($storeResult) {
+                    die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('token' => $token)), JSON_NUMERIC_CHECK));
+                  } else {
+                    die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'token-error')));
+                  }
+                } else {
+                  die(json_encode(array('status' => STATUS_FAIL, 'message' => 'username-password-combination-invalid')));
+                }
               } else {
-                die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'token-error')));
+                die(json_encode(array('status' => STATUS_FAIL, 'message' => 'user-not-active')));
               }
-            } else {
-              die(json_encode(array('status' => STATUS_FAIL, 'message' => 'username-password-combination-invalid')));
             }
           } else {
-            die(json_encode(array('status' => STATUS_FAIL, 'message' => 'user-not-active')));
+            die(json_encode(array('status' => STATUS_FAIL, 'message' => 'username-password-combination-invalid')));
           }
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'login-error')));
         }
-      } else {
-        die(json_encode(array('status' => STATUS_FAIL, 'message' => 'username-password-combination-invalid')));
+
+        break;
+      case 'logout':
+        $removeTokenSql = 'UPDATE `user` u SET `token`=\'\' WHERE u.name = \'' . $input['userOrEmail'] . '\' OR u.email = \'' . $input['userOrEmail'] . '\'';
+        $removeTokenSql = $dbWeb->query($removeTokenSql);
+        if ($removeTokenSql) {
+          die(json_encode(array('status' => STATUS_SUCCESS), JSON_NUMERIC_CHECK));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'logout-error')));
+        }
+
+        break;
+      case 'check-credentials':
+        $sql = "SELECT id FROM `user` WHERE `name`='" . $_POST['username'] . "' AND `email`='" . $_POST['email'] . "' AND `token`='" . $_POST['token'] . "' AND `active`=1";
+        $result = $dbWeb->query($sql);
+        if ($result->num_rows > 0) {
+          die(json_encode(array('status' => STATUS_SUCCESS), JSON_NUMERIC_CHECK));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'code' => 401, 'message' => 'credentials-invalid')));
+        }
+
+        break;
       }
     } else {
-      die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'login-error')));
-    }
-
-    break;
-  case 'logout':
-    $removeTokenSql = 'UPDATE `user` u SET `token`=\'\' WHERE u.name = \'' . $input['userOrEmail'] . '\' OR u.email = \'' . $input['userOrEmail'] . '\'';
-    $removeTokenSql = $dbWeb->query($removeTokenSql);
-    if ($removeTokenSql) {
-      die(json_encode(array('status' => STATUS_SUCCESS), JSON_NUMERIC_CHECK));
-    } else {
-      die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'logout-error')));
+      echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a valid authentication action link.'));
     }
 
     break;

@@ -6,9 +6,9 @@ export interface FileOrFolder {
 }
 
 @Component({
-  selector: 'app-ide',
+  selector: 'app-lets-code',
   templateUrl: './lets-code.component.html',
-  styleUrls: ['./lets-code.component.scss'],
+  styleUrls: ['./lets-code.component.scss']
 })
 export class LetsCodeComponent implements OnInit {
   public projectName: string;
@@ -19,12 +19,11 @@ export class LetsCodeComponent implements OnInit {
     sound: 'file-audio-o',
     folder: 'folder-open-o',
     bbscript: 'file-text-o',
-    other: 'file-o',
+    other: 'file-o'
   };
 
   public filesAndFolders: FileOrFolder[];
 
-  public settingsOpen: boolean;
   public showFiles: boolean;
 
   constructor() {
@@ -34,23 +33,18 @@ export class LetsCodeComponent implements OnInit {
     this.filesAndFolders = [
       {
         type: 'folder',
-        name: 'Music',
+        name: 'Music'
       },
       {
         type: 'bbscript',
-        name: 'Game.bb',
-      },
+        name: 'Game.bb'
+      }
     ];
 
-    this.settingsOpen = false;
     this.showFiles = true;
   }
 
   ngOnInit(): void {}
-
-  toggleSettings(): void {
-    this.settingsOpen = !this.settingsOpen;
-  }
 
   search(): void {
     console.warn('[SEARCH] Not implemented yet');
@@ -69,29 +63,5 @@ export class LetsCodeComponent implements OnInit {
 
   toggleFiles(): void {
     this.showFiles = !this.showFiles;
-  }
-
-  play(): void {
-    console.warn('[PLAY] Not implemented yet');
-  }
-
-  debug(): void {
-    console.warn('[DEBUG] Not implemented yet');
-  }
-
-  undo(): void {
-    console.warn('[UNDO] Not implemented yet');
-  }
-
-  redo(): void {
-    console.warn('[REDO] Not implemented yet');
-  }
-
-  guide(): void {
-    console.warn('[CODING GUIDE] Not implemented yet');
-  }
-
-  codeCleanUp(): void {
-    console.warn('[CODE CLEAN UP] Not implemented yet');
   }
 }

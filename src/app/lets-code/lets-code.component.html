@@ -73,48 +73,6 @@
   </div>
 
   <div class="column" [ngClass]="{ 'is-9': showFiles, 'is-11': !showFiles }">
-    <div class="is-primary">
-      <p class="field">
-        <a class="button" (click)="play()">
-          <span class="icon is-small">
-            <i class="fa fa-play-circle"></i>
-          </span>
-        </a>
-        <a class="button" (click)="debug()">
-          <span class="icon is-small">
-            <i class="fa fa-bug"></i>
-          </span>
-        </a>
-        <a class="button" (click)="undo()">
-          <span class="icon is-small">
-            <i class="fa fa-undo"></i>
-          </span>
-        </a>
-        <a class="button" (click)="redo()">
-          <span class="icon is-small">
-            <i class="fa fa-repeat"></i>
-          </span>
-        </a>
-        <a class="button" (click)="guide()">
-          <span class="icon is-small">
-            <i class="fa fa-medkit"></i>
-          </span>
-        </a>
-        <a class="button" (click)="codeCleanUp()">
-          <span class="icon is-small">
-            <i class="fa fa-magic"></i>
-          </span>
-        </a>
-        <a class="button" (click)="toggleSettings()">
-          <span class="icon is-small">
-            <i class="fa fa-cog"></i>
-          </span>
-        </a>
-      </p>
-    </div>
-
-    <div class="box editor">
-      Lorem Ipsum
-    </div>
+    <app-ide></app-ide>
   </div>
 </div>

@@ -74,23 +74,25 @@ export class RegisterComponent implements OnInit {
       this.notices['terms-must-be-accepted'] = true;
     }
 
-    console.info('[NOTICES]', this.notices);
+    // console.info('[NOTICES]', this.notices);
 
     if (Object.keys(this.notices).length === 0) {
       this.authService
-        .register$(this.username, this.email, this.password, this.termsAccepted)
-        .subscribe((response: ApiResponse<any>) => {
+        .register(this.username, this.email, this.password, this.termsAccepted)
+        .then((response: ApiResponse<any>) => {
+          console.info('[SENT REGISTRATION]', response);
           if (response.status === 'success') {
             this.action = 'registration-successful';
           } else {
-            // TODO error handling
+            // TODO: error handling
+            console.error('[REGISTRATION ERROR]', response);
           }
         });
     }
   }
 
   checkUsername() {
-    this.authService.usernameExists$(this.username).subscribe((response: ApiResponse<any>) => {
+    this.authService.usernameExists(this.username).then((response: ApiResponse<any>) => {
       if (response.status === 'success') {
         if (response.data.exists) {
           this.notices['username-exists'] = true;
@@ -102,7 +104,7 @@ export class RegisterComponent implements OnInit {
   }
 
   checkEmail() {
-    this.authService.emailExists$(this.email).subscribe((response: ApiResponse<any>) => {
+    this.authService.emailExists(this.email).then((response: ApiResponse<any>) => {
       if (response.status === 'success') {
         if (response.data.exists) {
           this.notices['email-exists'] = true;

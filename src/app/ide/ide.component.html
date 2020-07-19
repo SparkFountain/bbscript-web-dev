@@ -1,0 +1,43 @@
+<div class="is-primary">
+  <p class="field">
+    <a class="button" (click)="play()" *ngIf="buttons.indexOf('play') > -1">
+      <span class="icon is-small">
+        <i class="fa fa-play-circle"></i>
+      </span>
+    </a>
+    <a class="button" (click)="debug()" *ngIf="buttons.indexOf('debug') > 1">
+      <span class="icon is-small">
+        <i class="fa fa-bug"></i>
+      </span>
+    </a>
+    <a class="button" (click)="undo()" *ngIf="buttons.indexOf('undo') > 1">
+      <span class="icon is-small">
+        <i class="fa fa-undo"></i>
+      </span>
+    </a>
+    <a class="button" (click)="redo()" *ngIf="buttons.indexOf('redo') > 1">
+      <span class="icon is-small">
+        <i class="fa fa-repeat"></i>
+      </span>
+    </a>
+    <a class="button" (click)="guide()" *ngIf="buttons.indexOf('guide') > 1">
+      <span class="icon is-small">
+        <i class="fa fa-medkit"></i>
+      </span>
+    </a>
+    <a class="button" (click)="codeCleanUp()" *ngIf="buttons.indexOf('codeCleanUp') > 1">
+      <span class="icon is-small">
+        <i class="fa fa-magic"></i>
+      </span>
+    </a>
+    <a class="button" (click)="toggleSettings()" *ngIf="buttons.indexOf('toggleSettings') > 1">
+      <span class="icon is-small">
+        <i class="fa fa-cog"></i>
+      </span>
+    </a>
+  </p>
+</div>
+
+<div class="box editor">
+  Lorem Ipsum
+</div>

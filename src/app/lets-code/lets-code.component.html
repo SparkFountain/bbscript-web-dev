@@ -1,21 +1,3 @@
-<div class="modal" [ngClass]="{ 'is-active': settingsOpen }">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-      <!-- Content ... -->
-      Here comes the content
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
-      <button class="button">Cancel</button>
-    </footer>
-  </div>
-</div>
-
 <div class="columns">
   <div class="column is-1" *ngIf="!showFiles">
     to do
@@ -73,6 +55,16 @@
   </div>
 
   <div class="column" [ngClass]="{ 'is-9': showFiles, 'is-11': !showFiles }">
-    <app-ide></app-ide>
+    <app-ide
+      [buttons]="[
+        'play',
+        'debug',
+        'undo',
+        'redo',
+        'guide',
+        'codeCleanup',
+        'toggleSettings'
+      ]"
+    ></app-ide>
   </div>
 </div>

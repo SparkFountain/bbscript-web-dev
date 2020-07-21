@@ -67,14 +67,6 @@ if ($method == 'GET') {
   case 'auth':
     if (isset($urlSection['2'])) {
       switch ($urlSection['2']) {
-      case 'login':
-        break;
-      case 'logout':
-        break;
-      case 'register':
-        break;
-      case 'check-credentials':
-        break;
       case 'username-exists':
         $checkIfUserExistsSql = 'SELECT u.id FROM user u WHERE u.name = \'' . $_GET['username'] . '\'';
         $result = $dbWeb->query($checkIfUserExistsSql);
@@ -881,12 +873,15 @@ if ($method == 'GET') {
         }
 
         // generate password hash and current date
+        $username = $_POST['username'];
+        $email = $_POST['email'];
         $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $registration = date("Y-m-d H:i:s");
+        $token = bin2hex(random_bytes(16));
 
         // if everything is alright: create new user
-        $createUserSql = 'INSERT INTO `user`(`name`, `email`, `password`, `registration`, `active`)';
-        $createUserSql .= ' VALUES (\'' . $_POST['username'] . '\',\'' . $_POST['email'] . '\',\'' . $passwordHash . '\',\'' . $registration . '\',false)';
+        $createUserSql = "INSERT INTO `user`(`name`, `email`, `password`, `registration`, `token`, `active`) ";
+        $createUserSql .= "VALUES ('$username', '$email', '$passwordHash', '$registration', '$token', false)";
 
         $result = $dbWeb->query($createUserSql);
         if ($result) {
@@ -902,6 +897,8 @@ if ($method == 'GET') {
           ];
 
           $mailContent = file_get_contents(MAIL_SERVER . '/registration-de.html');
+          $mailContent = str_replace('{{email}}', urlencode($email), $mailContent);
+          $mailContent = str_replace('{{token}}', urlencode($token), $mailContent);
 
           $status = mail($to, $subject, $mailContent, $headers);
           if ($status == false) {

@@ -3,7 +3,7 @@
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close"></button>
+      <button class="delete" aria-label="close" (click)="toggleSettings()"></button>
     </header>
     <section class="modal-card-body">
       <!-- Content ... -->
@@ -11,7 +11,7 @@
     </section>
     <footer class="modal-card-foot">
       <button class="button is-success">Save changes</button>
-      <button class="button">Cancel</button>
+      <button class="button" (click)="toggleSettings()">Cancel</button>
     </footer>
   </div>
 </div>
@@ -56,6 +56,18 @@
   </p>
 </div>
 
-<div class="box editor">
-  Lorem Ipsum
+<div class="box">
+  <div class="code-line" *ngFor="let line of codeLines; let i = index">
+    <div class="line-meta">
+      <div class="line-number">{{ i + 1 }}</div>
+      <div class="line-highlight">
+        <i class="fa fa-video-camera" aria-hidden="true" *ngIf="true"></i>
+      </div>
+      <div class="line-toggle pointer">
+        <span *ngIf="true">⏵</span>
+        <span *ngIf="false">⏷</span>
+      </div>
+    </div>
+    <div class="line-content" [innerHTML]="line"></div>
+  </div>
 </div>

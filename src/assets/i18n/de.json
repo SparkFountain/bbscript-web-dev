@@ -33,6 +33,15 @@
       "ACCEPT": "Akzeptieren",
       "DENY": "Ablehnen",
       "MUST_BE_ACCEPTED": "Um fortzufahren, musst du die Allgemeinen Geschäftsbedingungen akzeptieren."
+    },
+    "SENDING_REQUEST": "Anfrage wird gesendet...",
+    "SUCCESSFUL": {
+      "TITLE": "Deine Registrierung war erfolgreich",
+      "MESSAGE": "Du bist nun bei BlitzBasicScript registriert. Wir haben dir eine Email geschickt mit einem Bestätigungslink, den du anklicken musst, bevor du dich zum ersten Mal anmelden kannst."
+    },
+    "ERROR": {
+      "TITLE": "Es ist ein Fehler aufgetreten",
+      "MESSAGE": "Leider konnte deine Registrierung nicht durchgeführt werden. Bitte versuche es später noch einmal."
     }
   },
   "USER_NAME_OR_EMAIL": {

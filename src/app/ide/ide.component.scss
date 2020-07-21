@@ -1,0 +1,25 @@
+.code-line {
+  display: flex;
+}
+
+.line-meta {
+  display: flex;
+  // width: 75px;
+
+  .line-number {
+    width: auto;
+    padding: 0 10px;
+  }
+
+  .line-highlight {
+    padding: 0 10px;
+  }
+
+  .line-toggle {
+    padding: 0 10px;
+  }
+}
+
+.line-content {
+  font-family: 'Cousine', 'Courier New', Courier, monospace;
+}

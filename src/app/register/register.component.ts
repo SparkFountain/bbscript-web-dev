@@ -10,7 +10,7 @@ import { ApiResponse } from '../interfaces/api-response';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  action: string;
+  section: 'form' | 'success' | 'error';
   showTerms: boolean;
 
   username: string;
@@ -20,7 +20,10 @@ export class RegisterComponent implements OnInit {
   termsAccepted: boolean;
   notices: object;
 
+  sendingRequest: boolean;
+
   constructor(private authService: AuthenticationService, private router: Router) {
+    this.section = 'form';
     this.showTerms = false;
 
     this.username = '';
@@ -30,6 +33,7 @@ export class RegisterComponent implements OnInit {
     this.termsAccepted = false;
 
     this.notices = {};
+    this.sendingRequest = false;
   }
 
   ngOnInit(): void {}
@@ -77,16 +81,18 @@ export class RegisterComponent implements OnInit {
     // console.info('[NOTICES]', this.notices);
 
     if (Object.keys(this.notices).length === 0) {
+      this.sendingRequest = true;
+
       this.authService
         .register(this.username, this.email, this.password, this.termsAccepted)
         .then((response: ApiResponse<any>) => {
-          console.info('[SENT REGISTRATION]', response);
           if (response.status === 'success') {
-            this.action = 'registration-successful';
+            this.section = 'success';
           } else {
-            // TODO: error handling
             console.error('[REGISTRATION ERROR]', response);
+            this.section = 'error';
           }
+          this.sendingRequest = false;
         });
     }
   }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from '../interfaces/api-response';
 import { BehaviorSubject } from 'rxjs';
@@ -17,15 +17,14 @@ export class AuthenticationService {
   }
 
   register(username: string, email: string, password: string, termsAccepted: boolean): Promise<any> {
-    return this.http
-      .post<ApiResponse<any>>(`${environment.apiServer}/auth/register`, {
-        username,
-        email,
-        password,
-        termsAccepted,
-        language: this.translate.currentLang
-      })
-      .toPromise();
+    const body = new HttpParams()
+      .set('username', username)
+      .set('email', email)
+      .set('password', password)
+      .set('termsAccepted', termsAccepted.toString())
+      .set('language', this.translate.currentLang);
+
+    return this.http.post<ApiResponse<any>>(`${environment.apiServer}/auth/register`, body).toPromise();
   }
 
   login(userOrEmail: string, password: string): Promise<ApiResponse<any>> {

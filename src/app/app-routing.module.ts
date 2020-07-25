@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'ueberblick', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'news-blog',
-    component: HomeComponent
+    loadChildren: () => import('./news-blog/news-blog.module').then(m => m.NewsBlogModule)
   },
   {
     path: 'features',

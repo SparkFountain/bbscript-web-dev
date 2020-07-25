@@ -64,6 +64,32 @@ define('MAIL_SERVER', 'http://mail.blitzbasicscript.com');
 
 if ($method == 'GET') {
   switch ($urlSection['1']) {
+  case 'news':
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'total-pages':
+        $sql = "SELECT COUNT(id) as `totalPages` FROM `news`";
+        $result = $dbWeb->query($sql);
+
+        while ($row = $result->fetch_assoc()) {
+          die(json_encode(array('status' => STATUS_SUCCESS, 'data' => ceil($row['totalPages'] / 10))));
+        }
+      }
+    } else {
+      $language = $_GET['language'];
+
+      $sql = "SELECT n.`title_$language` as `title`, n.`message_$language` as `message`, u.`name` as `author`, n.`created_at` as `createdAt`, n.`last_modified_at` as `lastModifiedAt`, n.`image_url` as `imageUrl` ";
+      $sql .= "FROM `news` n, `user` u ";
+      $sql .= "WHERE n.`author` = u.`id` ";
+      $sql .= "AND n.`id` >= " . (($_GET['page'] - 1) * 10) . " ORDER BY n.`id` LIMIT 10";
+      $result = $dbWeb->query($sql);
+
+      $response = array();
+      while ($row = $result->fetch_assoc()) {
+        array_push($response, $row);
+      }
+      die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $response)));
+    }
   case 'auth':
     if (isset($urlSection['2'])) {
       switch ($urlSection['2']) {

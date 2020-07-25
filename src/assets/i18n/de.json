@@ -113,6 +113,10 @@
       "BODY": "TODO"
     }
   },
+  "NEWS_BLOG": {
+    "TITLE": "News-Blog",
+    "PAGE": "Seite"
+  },
   "FOOTER": {
     "CONTACT": {
       "LABEL": "Kontakt",

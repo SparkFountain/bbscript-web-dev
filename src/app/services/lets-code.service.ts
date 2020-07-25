@@ -17,4 +17,11 @@ export class LetsCodeService {
       .toPromise()
       .then((response: ApiResponse<Template[]>) => response.data);
   }
+
+  getFiles(path: string): Promise<any> {
+    return this.http
+      .get(`${environment.apiServer}/files`, { params: { path } })
+      .toPromise()
+      .then((response: ApiResponse<string[]>) => response.data);
+  }
 }

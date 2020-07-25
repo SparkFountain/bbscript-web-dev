@@ -626,5 +626,10 @@
       }
     }
   },
-  "UPLOAD_IMAGE": "Bild hochladen"
+  "UPLOAD_IMAGE": "Bild hochladen",
+  "IDE": {
+    "SETTINGS": {
+      "TITLE": "Editor-Einstellungen"
+    }
+  }
 }

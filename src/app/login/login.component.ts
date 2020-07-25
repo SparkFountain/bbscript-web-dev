@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.userOrEmail, this.password).then((response: ApiResponse<any>) => {
         if (response.status === 'success') {
           console.info('[REGISTRATION SUCCESSFUL]', response);
-          this.authService.userOrEmail = this.userOrEmail;
+          // this.authService.userOrEmail = this.userOrEmail;   // TODO: refactor that line
           this.authService.updateToken(response.data.token);
           this.router.navigateByUrl('/');
         } else {

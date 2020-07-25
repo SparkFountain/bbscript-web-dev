@@ -2,12 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiResponse } from '../interfaces/api-response';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-
-export interface DocCache {
-  route: string;
-  params: object;
-  data: ApiResponse<any>;
-}
+import { DocCache } from '../interfaces/cache/documentation-cache';
 
 @Injectable({
   providedIn: 'root'

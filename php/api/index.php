@@ -786,21 +786,9 @@ if ($method == 'GET') {
     }
     break;
   case 'files':
-    if (isset($urlSection[2])) {
-      switch ($method) {
-      case 'GET':
-        //TODO implement user name and token
-        $user = 'spark_fountain';
-
-        $fileContent = file_get_contents(FILE_SERVER . '/' . $user . '/' . $urlSection[2]);
-        echo json_encode(array('status' => STATUS_SUCCESS, 'data' => $fileContent), JSON_NUMERIC_CHECK);
-        break;
-      case 'POST':
-        echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Posting data is not implemented yet.'));
-      }
-    } else {
-    }
-    break;
+    $baseDir = '/var/www/web23388256/html/bbscript/files/';
+    $files = scandir($baseDir . $_GET['path']);
+    die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array_slice($files, 2))));
   case 'projects':
     if (isset($urlSection[2])) {
     } else {
@@ -871,8 +859,7 @@ if ($method == 'GET') {
     }
     break;
   default:
-    echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Invalid API call.'));
-    break;
+    die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Invalid API call.')));
   }
 } elseif ($method == 'POST') {
   $inputJSON = file_get_contents('php://input');

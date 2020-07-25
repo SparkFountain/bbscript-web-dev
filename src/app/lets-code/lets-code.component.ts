@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface FileOrFolder {
-  type: 'image' | 'sound' | 'folder' | 'bbscript' | 'other';
-  name: string;
-}
+import { FileOrFolder } from '../interfaces/file-or-folder';
+import { LetsCodeService } from '../services/lets-code.service';
+import { FileType } from '../types/file-type';
+import { Project } from '../interfaces/project';
 
 @Component({
   selector: 'app-lets-code',
@@ -11,8 +10,11 @@ export interface FileOrFolder {
   styleUrls: ['./lets-code.component.scss']
 })
 export class LetsCodeComponent implements OnInit {
-  public projectName: string;
+  public project: Project;
   public searchTerm: string;
+
+  public path: string;
+  public breadcrumbs: string[];
 
   public icons = {
     image: 'file-image-o',
@@ -26,33 +28,24 @@ export class LetsCodeComponent implements OnInit {
 
   public showFiles: boolean;
 
-  constructor() {
-    this.projectName = 'Snake';
-    this.searchTerm = 'abc test 123';
+  constructor(private letsCodeService: LetsCodeService) {}
 
-    this.filesAndFolders = [
-      {
-        type: 'folder',
-        name: 'Music'
-      },
-      {
-        type: 'bbscript',
-        name: 'Game.bb'
-      }
-    ];
+  ngOnInit(): void {
+    this.project = {
+      title: 'Snake',
+      description: 'A simple game to eat apples and avoid stone collisions',
+      license: 'CC0',
+      imageUrl: ''
+    };
+
+    this.path = '';
+
+    this.breadcrumbs = [this.project.title];
+    this.filesAndFolders = [];
 
     this.showFiles = true;
-  }
 
-  ngOnInit(): void {}
-
-  search(): void {
-    console.warn('[SEARCH] Not implemented yet');
-
-    this.searchTerm = this.searchTerm.trim();
-    if (this.searchTerm.length < 2) {
-      return;
-    }
+    this.getFiles();
   }
 
   createFile(): void {
@@ -63,5 +56,56 @@ export class LetsCodeComponent implements OnInit {
 
   toggleFiles(): void {
     this.showFiles = !this.showFiles;
+  }
+
+  getFiles(): void {
+    this.letsCodeService.getFiles(this.path).then((filesAndFolders: string[]) => {
+      this.filesAndFolders = filesAndFolders.map((fileOrFolder: string) => {
+        let type: FileType;
+
+        if (fileOrFolder.indexOf('.') === -1) {
+          // directory
+          type = 'folder';
+        } else {
+          // file
+          const fileEnding = fileOrFolder.substr(fileOrFolder.indexOf('.') + 1);
+          switch (fileEnding.toLowerCase()) {
+            case 'bb':
+              type = 'bbscript';
+              break;
+            case 'mid':
+            case 'mp3':
+              type = 'sound';
+              break;
+            case 'bmp':
+            case 'png':
+            case 'jpg':
+            case 'jpeg':
+              type = 'image';
+              break;
+            default:
+              type = 'other';
+          }
+        }
+
+        return {
+          type,
+          name: fileOrFolder
+        } as FileOrFolder;
+      });
+    });
+  }
+
+  openFolder(folderIndex: number): void {
+    const folder: FileOrFolder = this.filesAndFolders[folderIndex];
+
+    this.path = `${this.path}/${folder.name}`;
+    this.breadcrumbs.push(folder.name);
+    this.getFiles();
+  }
+
+  openFile(fileIndex: number): void {
+    // TODO: implement
+    console.info('[OPENING FILE]', this.filesAndFolders[fileIndex].name);
   }
 }

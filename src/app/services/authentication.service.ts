@@ -4,13 +4,14 @@ import { environment } from 'src/environments/environment';
 import { ApiResponse } from '../interfaces/api-response';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   public token: BehaviorSubject<string>;
-  public userOrEmail: string;
+  public user: User;
 
   constructor(private http: HttpClient, public translate: TranslateService) {
     this.token = new BehaviorSubject<string>('');
@@ -39,18 +40,10 @@ export class AuthenticationService {
   logout(): Promise<ApiResponse<any>> {
     return this.http
       .post<ApiResponse<any>>(`${environment.apiServer}/auth/logout`, {
-        userOrEmail: this.userOrEmail,
+        userOrEmail: this.user.email,
         token: this.token.value
       })
       .toPromise();
-
-    // TODO: refactor or remove
-    // .pipe(
-    //   map(() => {
-    //     this.token.next('');
-    //     this.userOrEmail = '';
-    //   })
-    // );
   }
 
   usernameExists(username: string): Promise<ApiResponse<any>> {

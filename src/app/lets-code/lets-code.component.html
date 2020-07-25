@@ -1,70 +1,60 @@
+<h1 class="title is-1">{{ project.title }}</h1>
+
 <div class="columns">
   <div class="column is-1" *ngIf="!showFiles">
-    to do
+    TODO:
   </div>
 
   <div class="column is-3" *ngIf="showFiles">
-    <div class="is-primary">
-      <p class="field">
-        <a class="button">
-          <span class="icon is-small">
-            <i class="fa fa-plus-square-o"></i>
-          </span>
-        </a>
-        <a class="button">
-          <span class="icon is-small">
-            <i class="fa fa-folder-open-o"></i>
-          </span>
-        </a>
-        <a class="button">
-          <span class="icon is-small">
-            <i class="fa fa-save"></i>
-          </span>
-        </a>
-        <a class="button" (click)="toggleFiles()">
-          <span class="icon is-small">
-            <i class="fa fa-caret-square-o-left"></i>
-          </span>
-        </a>
-      </p>
-    </div>
-
     <nav class="panel">
-      <p class="panel-heading">{{ projectName }}</p>
-      <div class="panel-block">
-        <p class="control has-icons-left">
-          <input
-            [(ngModel)]="searchTerm"
-            (change)="search()"
-            class="input is-small"
-            type="text"
-            placeholder="{{ 'SEARCH.PLACEHOLDER' | translate }}"
-          />
-          <span class="icon is-small is-left">
-            <i class="fa fa-search"></i>
-          </span>
+      <div class="panel-heading">
+        <!-- FILE BUTTONS -->
+        <p class="field">
+          <a class="button">
+            <span class="icon is-small">
+              <i class="fa fa-plus-square-o"></i>
+            </span>
+          </a>
+          <a class="button">
+            <span class="icon is-small">
+              <i class="fa fa-folder-open-o"></i>
+            </span>
+          </a>
+          <a class="button">
+            <span class="icon is-small">
+              <i class="fa fa-save"></i>
+            </span>
+          </a>
+          <a class="button" (click)="toggleFiles()">
+            <span class="icon is-small">
+              <i class="fa fa-caret-square-o-left"></i>
+            </span>
+          </a>
         </p>
+
+        <!-- FILE BREADCRUMBS -->
+        <nav class="breadcrumb">
+          <ul>
+            <li *ngFor="let b of breadcrumbs; let i = index" [ngClass]="{ 'is-active': i === breadcrumbs.length - 1 }">
+              <a (click)="openFolder(i)">{{ b }}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <a class="panel-block" *ngFor="let fileOrFolder of filesAndFolders">
+      <a
+        class="panel-block"
+        *ngFor="let f of filesAndFolders; let i = index"
+        (click)="f.type === 'folder' ? openFolder(i) : openFile(i)"
+      >
         <span class="panel-icon">
-          <i [class]="'fa fa-' + icons[fileOrFolder.type]"></i>
+          <i [class]="'fa fa-' + icons[f.type]"></i>
         </span>
-        {{ fileOrFolder.name }}
+        {{ f.name }}
       </a>
     </nav>
   </div>
 
   <div class="column" [ngClass]="{ 'is-9': showFiles, 'is-11': !showFiles }">
-    <app-ide
-      [buttons]="[
-        'play',
-        'debug',
-        'undo',
-        'redo',
-        'guide',
-        'codeCleanup',
-        'toggleSettings'
-      ]"
-    ></app-ide>
+    <app-ide [buttons]="['play', 'debug', 'undo', 'redo', 'guide', 'codeCleanup', 'toggleSettings']"></app-ide>
   </div>
 </div>

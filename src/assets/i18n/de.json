@@ -53,8 +53,11 @@
     "PLACEHOLDER": "12345678"
   },
   "FORGOT_PASSWORD": {
+    "TITLE": "Passwort vergessen",
+    "MESSAGE": "Bitte gib deinen Benutzernamen oder deine Email-Adresse in das untere Feld ein und klicke anschließend auf <b>Passwort zurücksetzen</b>. Wir schicken dir daraufhin eine Email mit einem Link, unter dem du dein Passwort zurücksetzen kannst.",
     "LABEL": "Passwort vergessen?",
-    "PATH": "passwort-vergessen"
+    "PATH": "passwort-vergessen",
+    "RESET_PASSWORD": "Passwort zurücksetzen"
   },
   "USERNAME_EXISTS": "Dieser Benutzername existiert bereits",
   "USERNAME_EMPTY": "Der Benutzername darf nicht leer sein",
@@ -557,6 +560,17 @@
   },
   "FEATURES": {
     "TITLE": "Features",
+    "COMMANDS": {
+      "TITLE": "Mehr als 700 mächtige Befehle",
+      "MESSAGE": ""
+    },
+    "COLLISION_DETECTION": {
+      "TITLE": "Kollisionserkennung",
+      "MESSAGE": ""
+    }
+  },
+  "FEATURES_OLD": {
+    "TITLE": "Features",
     "1": {
       "TITLE": "Mehr als 700 mächtige Befehle",
       "MESSAGE": "Erschaffe lebendige 3D-Welten, verleihe deiner virtuellen Umgebung den passenden Sound und baue mit wenigen Befehlen eine intuitive <abbr title=\"Grafische Benutzeroberfläche\">GUI</abbr>. Insgesamt mehr als 700 Befehle - von 2D und 3D über Datenverarbeitung bis hin zur Spielsteuerung - bieten dir ein komfortables Programmiererlebnis."
@@ -593,5 +607,24 @@
       "TITLE": "Langfristiger Support",
       "MESSAGE": "2020 ist erst der Anfang: Nie zuvor war es möglich, Spiele in höchster Qualität flüssig im Web-Browser darzustellen. Mit BlitzBasicScript bietet sich modernen, zukunftsorientierten Hobby-Game-Developern eine ideale Alternative zu Unity oder C++. Dieses Projekt wird in den nächsten Jahren kontinuierlich weiter entwickelt und dank fortschreitender Standards sowie Hardware-Entwicklungen wird Spieleentwicklung im Browser zum neuen Standard."
     }
-  }
+  },
+  "LETS_CODE": {
+    "TITLE": "",
+    "EMPTY_PROJECT": {
+      "TITLE": "Leeres Projekt",
+      "PROJECT": {
+        "TITLE": "Projekttitel",
+        "TITLE_PLACEHOLDER": "Mein cooles Spiel",
+        "TITLE_TOO_SHORT": "Der Projekttitel ist zu kurz, bitte gib mindestens zwei Zeichen ein",
+        "TITLE_TOO_LONG": "Der Projekttitel ist zu lang, bitte beschränke dich auf max. 32 Zeichen",
+        "TITLE_MUST_BE_ALPHANUMERIC": "Der Projekttitel muss alphanumerisch sein (erlaubte Zeichen sind Buchstaben, Zahlen und Leerzeichen)",
+        "DESCRIPTION": "Beschreibung",
+        "DESCRIPTION_PLACEHOLDER": "Worum geht es in deinem Projekt? Mach ein bisschen Werbung und schreibe hier ein paar Sätze über das Spielziel, die Features und mehr.",
+        "LICENSE": "Lizenz",
+        "IMAGE": "Titelbild",
+        "CREATE": "Projekt erstellen"
+      }
+    }
+  },
+  "UPLOAD_IMAGE": "Bild hochladen"
 }

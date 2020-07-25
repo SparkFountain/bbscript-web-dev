@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'features',
-    component: HomeComponent
+    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
   },
   {
     path: 'lets-code',

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LetsCodeComponent } from './lets-code.component';
+import { EmptyProjectComponent } from './empty-project/empty-project.component';
+import { TemplatesComponent } from './templates/templates.component';
 
 const routes: Routes = [
   {
@@ -9,11 +11,11 @@ const routes: Routes = [
   },
   {
     path: 'leeres-projekt',
-    component: LetsCodeComponent
+    component: EmptyProjectComponent
   },
   {
     path: 'vorlagen',
-    component: LetsCodeComponent
+    component: TemplatesComponent
   }
 ];
 

@@ -124,6 +124,24 @@ if ($method == 'GET') {
       }
     }
     break;
+  case 'coding':
+    $language = $_GET['language'];
+
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'templates':
+        $sql = "SELECT `title_$language` as `title`, `description_$language` as `description`, `image_url` as `imageUrl` FROM `project_template`";
+        $result = $dbWeb->query($sql);
+
+        $response = array();
+        while ($row = $result->fetch_assoc()) {
+          array_push($response, $row);
+        }
+        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $response)));
+      }
+    }
+
+    break;
   case 'docs':
     $languageKey = $_GET['language'];
 

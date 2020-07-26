@@ -28,13 +28,36 @@ export class AuthenticationService {
     return this.http.post<ApiResponse<any>>(`${environment.apiServer}/auth/register`, body).toPromise();
   }
 
-  login(userOrEmail: string, password: string): Promise<ApiResponse<any>> {
+  /**
+   * Checks whether there are user credentials stored in local storage.
+   * If so, send a credential check to the backend.
+   */
+  public userIsLoggedIn(): Promise<boolean> {
+    const storedUser: User = {
+      name: localStorage.getItem('username'),
+      email: localStorage.getItem('email'),
+      token: localStorage.getItem('token')
+    };
+
+    if (storedUser.name && storedUser.email && storedUser.token) {
+      return this.validateCredentials(storedUser);
+    } else {
+      return Promise.resolve(false);
+    }
+  }
+
+  // TODO: error handling
+  login(userOrEmail: string, password: string): Promise<void> {
+    const body = new HttpParams().set('userOrEmail', userOrEmail).set('password', password);
+
     return this.http
-      .post<ApiResponse<any>>(`${environment.apiServer}/auth/login`, {
-        userOrEmail,
-        password
-      })
-      .toPromise();
+      .post<ApiResponse<User>>(`${environment.apiServer}/auth/login`, body)
+      .toPromise()
+      .then((response: ApiResponse<User>) => {
+        localStorage.setItem('username', response.data.name);
+        localStorage.setItem('email', response.data.email);
+        localStorage.setItem('token', response.data.token);
+      });
   }
 
   logout(): Promise<ApiResponse<any>> {
@@ -66,8 +89,15 @@ export class AuthenticationService {
       .toPromise();
   }
 
-  checkCredentials(): Promise<ApiResponse<any>> {
-    return this.http.post<ApiResponse<any>>(`${environment.apiServer}/auth/check-credentials`, {}).toPromise();
+  async validateCredentials(user: User): Promise<boolean> {
+    const response = await this.http
+      .post<ApiResponse<boolean>>(`${environment.apiServer}/auth/validate-credentials`, {
+        username: user.name,
+        email: user.email,
+        token: user.token
+      })
+      .toPromise();
+    return response.data;
   }
 
   updateToken(token: string): void {

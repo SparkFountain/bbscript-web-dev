@@ -961,19 +961,24 @@ if ($method == 'GET') {
 
         break;
       case 'login':
-        $sql = 'SELECT u.email, u.password, u.active FROM user u WHERE u.name = \'' . $input['userOrEmail'] . '\' OR u.email = \'' . $input['userOrEmail'] . '\'';
+        $sql = "SELECT `name`, `email`, `password`, `active` FROM `user` WHERE `name` = '" . $_POST['userOrEmail'] . "' OR `email` = '" . $_POST['userOrEmail'] . "'";
 
         $result = $dbWeb->query($sql);
         if ($result) {
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               if ($row['active']) {
-                if (password_verify($input['password'], $row['password'])) {
+                if (password_verify($_POST['password'], $row['password'])) {
                   $token = bin2hex(random_bytes(64));
-                  $storeTokenSql = 'UPDATE `user` u SET `token`=\'' . $token . '\' WHERE u.email = \'' . $row['email'] . '\'';
+                  $storeTokenSql = "UPDATE `user` SET `token`='$token' WHERE `email` = '" . $row['email'] . "'";
                   $storeResult = $dbWeb->query($storeTokenSql);
                   if ($storeResult) {
-                    die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array('token' => $token)), JSON_NUMERIC_CHECK));
+                    $response = array(
+                      'name' => $row['name'],
+                      'email' => $row['email'],
+                      'token' => $token,
+                    );
+                    die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $response), JSON_NUMERIC_CHECK));
                   } else {
                     die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'token-error')));
                   }
@@ -990,8 +995,6 @@ if ($method == 'GET') {
         } else {
           die(json_encode(array('status' => STATUS_ERROR, 'code' => '500', 'message' => 'login-error')));
         }
-
-        break;
       case 'logout':
         $removeTokenSql = 'UPDATE `user` u SET `token`=\'\' WHERE u.name = \'' . $input['userOrEmail'] . '\' OR u.email = \'' . $input['userOrEmail'] . '\'';
         $removeTokenSql = $dbWeb->query($removeTokenSql);
@@ -1002,13 +1005,13 @@ if ($method == 'GET') {
         }
 
         break;
-      case 'check-credentials':
-        $sql = "SELECT id FROM `user` WHERE `name`='" . $_POST['username'] . "' AND `email`='" . $_POST['email'] . "' AND `token`='" . $_POST['token'] . "' AND `active`=1";
+      case 'validate-credentials':
+        $sql = "SELECT `id` FROM `user` WHERE `name`='" . $_POST['username'] . "' AND `email`='" . $_POST['email'] . "' AND `token`='" . $_POST['token'] . "' AND `active`=1";
         $result = $dbWeb->query($sql);
         if ($result->num_rows > 0) {
-          die(json_encode(array('status' => STATUS_SUCCESS), JSON_NUMERIC_CHECK));
+          die(json_encode(array('status' => STATUS_SUCCESS, 'data' => true), JSON_NUMERIC_CHECK));
         } else {
-          die(json_encode(array('status' => STATUS_ERROR, 'code' => 401, 'message' => 'credentials-invalid')));
+          die(json_encode(array('status' => STATUS_SUCCESS, 'data' => false), JSON_NUMERIC_CHECK));
         }
 
         break;

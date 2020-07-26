@@ -6,6 +6,7 @@ import { delay } from 'rxjs/operators';
 import { NavigationElement } from './types/navigation-element';
 import { NavigationMenu } from './classes/navigation-menu';
 import { NavigationLink } from './classes/navigation-link';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
   // public MobileMenuContext: any = MobileMenuContext;
   public Language = Language;
 
-  constructor(public translate: TranslateService, public router: Router) {
+  constructor(public translate: TranslateService, public router: Router, public authService: AuthenticationService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     this.translate.setDefaultLang('en');
 

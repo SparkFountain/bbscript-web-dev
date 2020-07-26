@@ -1,15 +1,27 @@
-import { Component, OnInit, Input, HostListener, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  AfterViewChecked
+} from '@angular/core';
 import { Code } from '../interfaces/ide/code';
 import { LexerService } from 'bbscript/src/services/lexer.service';
 import { LexerToken } from 'bbscript/src/interfaces/lexer-token';
 import { ColorScheme } from '../types/color-scheme';
+import { CaretPosition } from '../types/caret-position';
 
 @Component({
   selector: 'app-ide',
   templateUrl: './ide.component.html',
-  styleUrls: ['./ide.component.scss']
+  styleUrls: ['./ide.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class IdeComponent implements OnInit {
+export class IdeComponent implements OnInit, AfterViewChecked {
   @Input() buttons: string[];
   @Input('code') initialCode: string[];
 
@@ -60,37 +72,64 @@ export class IdeComponent implements OnInit {
         this.caret.x++;
         break;
       case 'Home':
-        this.caret.x = 0;
+        this.moveCaret('beginOfLine');
         break;
       case 'End':
         this.caret.x = this.code.plain[this.caret.y].length;
         break;
       case 'ArrowLeft':
-        if (this.caret.x > 0) {
-          this.caret.x--;
+        event.preventDefault();
+        this.moveCaret('left');
+        break;
+      case 'ArrowRight':
+        event.preventDefault();
+        this.moveCaret('right');
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        this.moveCaret('up');
+        break;
+      case 'ArrowDown':
+        event.preventDefault();
+        this.moveCaret('down');
+        break;
+      case 'KeyC':
+        if (event.ctrlKey) {
+          // navigator.clipboard
+          //   .writeText('todo') // TODO: discover selected text
+          //   .catch(err => {
+          //     console.log('Clipboard paste error', err);
+          //   });
         } else {
-          if (this.caret.y > 0) {
-            this.caret.y--;
-            this.caret.x = this.code.plain[this.caret.y].length;
-          }
-          updateCurrentLine = false;
+          currentLine = this.addCharacter(currentLine, event.key);
+        }
+        break;
+      case 'KeyV':
+        if (event.ctrlKey) {
+          navigator.clipboard
+            .readText()
+            .then((code: string) => {
+              this.insertCode(code);
+            })
+            .catch(err => {
+              console.log('Clipboard paste error', err);
+            });
+        } else {
+          currentLine = this.addCharacter(currentLine, event.key);
         }
         break;
       default:
-        if (event.key.length === 1) {
-          currentLine += event.key;
-          this.caret.x++;
-        }
+        currentLine = this.addCharacter(currentLine, event.key);
     }
 
-    this.updateCaretPosition(); // TODO: just call in AfterViewInit
+    this.updateCaretPosition();
     if (updateCurrentLine) {
       this.code.plain[this.caret.y] = currentLine;
     }
     this.syntaxHighlighting();
   }
 
-  constructor(private lexer: LexerService) {}
+  constructor(private lexer: LexerService, private changeDetection: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.settingsOpen = false;
@@ -106,12 +145,14 @@ export class IdeComponent implements OnInit {
     this.colorScheme = 'solarized-light';
 
     this.playing = false;
+  }
 
-    this.updateCaretPosition(); // TODO: does not work visually yet
+  ngAfterViewChecked(): void {
+    this.updateCaretPosition();
+    this.changeDetection.markForCheck();
   }
 
   play(): void {
-    console.warn('[PLAY] Not implemented yet');
     this.playing = true;
   }
 
@@ -135,24 +176,77 @@ export class IdeComponent implements OnInit {
     console.warn('[CODING GUIDE] Not implemented yet');
   }
 
+  /**
+   * Cleanup Rules:
+   * - correct indentation
+   * - no unnecessary spaces
+   * - no unnecessary new lines
+   * - surround all commands with brackets (later and only optional)
+   */
   codeCleanUp(): void {
-    console.warn('[CODE CLEAN UP] Not implemented yet');
+    // correct indentation
   }
 
   toggleSettings(): void {
     this.settingsOpen = !this.settingsOpen;
   }
 
+  addCharacter(currentLine: string, character: string): string {
+    if (character.length === 1) {
+      this.caret.x++;
+      return `${currentLine}${character}`;
+    } else {
+      return currentLine;
+    }
+  }
+
+  insertCode(text: string): void {
+    // TODO: this is just a basic paste implementation, not final!
+    this.code.plain = text.split('\n');
+    this.changeDetection.markForCheck();
+    this.changeDetection.detectChanges();
+  }
+
+  moveCaret(direction: CaretPosition): void {
+    switch (direction) {
+      case 'up':
+        break;
+      case 'down':
+        break;
+      case 'left':
+        if (this.caret.x > 0) {
+          this.caret.x--;
+        } else {
+          if (this.caret.y > 0) {
+            this.caret.y--;
+            this.caret.x = this.code.plain[this.caret.y].length;
+          }
+          // TODO:
+          // updateCurrentLine = false;
+        }
+        break;
+      case 'right':
+        break;
+      case 'beginOfLine':
+        this.caret.x = 0;
+        break;
+      case 'endOfLine':
+        break;
+    }
+  }
+
   updateCaretPosition(): void {
-    this.caret.left = this.codingArea.nativeElement.offsetLeft + 88 + this.caret.x * 8.4;
-    this.caret.top = this.codingArea.nativeElement.offsetTop + 15 + this.caret.y * 21;
+    setTimeout(() => {
+      this.caret.left = this.codingArea.nativeElement.offsetLeft + 88 + this.caret.x * 8.4;
+      this.caret.top = this.codingArea.nativeElement.offsetTop + 15 + this.caret.y * 21;
+    }, 0);
   }
 
   syntaxHighlighting(): void {
     this.code.formatted = [];
 
     const tokens: Array<LexerToken[]> = this.lexer.lexCode(this.code.plain);
-    // console.info('[TOKENS]', tokens);
+    console.info('[TOKENS]', tokens);
     tokens.forEach((line: LexerToken[]) => {
       const formattedLine: string[] = [];
 

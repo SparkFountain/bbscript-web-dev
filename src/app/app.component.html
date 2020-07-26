@@ -20,7 +20,7 @@
           <a class="navbar-link" [routerLink]="'NAV.' + element.name + '.PATH' | translate">
             <span><i class="fa fa-fw {{ element.icon }}"></i> {{ 'NAV.' + element.name + '.TITLE' | translate }}</span>
           </a>
-          
+
           <div class="navbar-dropdown">
             <a
               class="navbar-item"
@@ -63,7 +63,7 @@
           </a>
         </div>
       </div>
-      <div class="navbar-item">
+      <div class="navbar-item" *ngIf="!authService.userIsLoggedIn()">
         <div class="field is-grouped">
           <p class="control">
             <a class="navbar-item" [routerLink]="'NAV.LOGIN.PATH' | translate">
@@ -71,6 +71,18 @@
                 <i class="fa fa-fw fa-sign-in"></i>
               </span>
               <span>{{ 'NAV.LOGIN.TITLE' | translate }}</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="navbar-item" *ngIf="authService.userIsLoggedIn()">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="navbar-item" (click)="authService.logout()">
+              <span class="icon">
+                <i class="fa fa-fw fa-sign-out"></i>
+              </span>
+              <span>{{ 'LOGOUT' | translate }}</span>
             </a>
           </p>
         </div>

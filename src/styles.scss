@@ -126,6 +126,11 @@ img {
 
 /** COLOR SCHEMES FOR SYNTAX HIGHLIGHTING **/
 .coding-area {
+  .caret,
+  .line-meta {
+    color: #002b36;
+  }
+
   &.solarized-light {
     .keyword {
       color: #859900 !important;

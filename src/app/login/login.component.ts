@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
-import { ApiResponse } from '../interfaces/api-response';
 import { environment } from 'src/environments/environment';
+import { User } from '../interfaces/user';
 
 @Component({
   selector: 'app-login',
@@ -43,20 +43,10 @@ export class LoginComponent implements OnInit {
       this.notices['password-too-short'] = true;
     }
 
-    console.info('[NOTICES]', this.notices);
+    // console.info('[NOTICES]', this.notices);
 
     if (Object.keys(this.notices).length === 0) {
-      this.authService.login(this.userOrEmail, this.password).then((response: ApiResponse<any>) => {
-        if (response.status === 'success') {
-          console.info('[REGISTRATION SUCCESSFUL]', response);
-          // this.authService.userOrEmail = this.userOrEmail;   // TODO: refactor that line
-          this.authService.updateToken(response.data.token);
-          this.router.navigateByUrl('/');
-        } else {
-          console.info('[REGISTRATION FAILED]', response);
-          this.notices[response.message] = true;
-        }
-      });
+      this.authService.login(this.userOrEmail, this.password).then(() => this.router.navigateByUrl('/'));
     }
   }
 }

@@ -195,7 +195,59 @@
   "CATEGORY": "Kategorie",
   "OVERVIEW": "Home",
   "TUTORIALS": {
-    "TITLE": "Tutorials"
+    "TITLE": "Tutorials",
+    "BASICS": {
+      "TITLE": "Grundlagen",
+      "CONTENT": {
+        "BASICS": "Die Grundlagen"
+      }
+    },
+    "GRAPHICS": {
+      "TITLE": "Grafik",
+      "CONTENT": {
+        "DRAW_AND_MOVE_IMAGES": "Bilder zeichnen und bewegen"
+      }
+    },
+    "IO": {
+      "TITLE": "Ein- & Ausgabe",
+      "CONTENT": {
+        "USE_MOUSE_KEYBOARD_AND_TOUCH": "Maus, Tastatur und Touch benutzen"
+      }
+    },
+    "SOUND": {
+      "TITLE": "Sound & Musik",
+      "CONTENT": {
+        "PLAY_SOUNDS_AND_MUSIC": "Sounds und Musik abspielen"
+      }
+    },
+    "GUI": {
+      "TITLE": "Benutzeroberfläche",
+      "CONTENT": {
+        "WINDOWS_BUTTONS_AND_GADGETS": "Fenster, Buttons und Gadgets"
+      }
+    },
+    "FILES": {
+      "TITLE": "Dateizugriff",
+      "CONTENT": {
+        "READ_AND_WRITE_FILES": "Dateien lesen und schreiben"
+      }
+    },
+    "PARTICLES": {
+      "TITLE": "Partikel",
+      "CONTENT": {
+        "CREATE_PARTICLES": "Partikel erstellen"
+      }
+    },
+    "3D": {
+      "TITLE": "3D-Objekte",
+      "CONTENT": {
+        "CREATE_VIRTUAL_3D_WORLD": "Eine virtuelle 3D-Welt erstellen",
+        "ANIMATE_3D_OBJECTS": "3D-Objekte animieren",
+        "COLLISIONS_ON_3D_OBJECTS": "Kollisionen von 3D-Objekten",
+        "ACTIVATE_SHADOW_RENDERING": "Schattendarstellung aktivieren",
+        "USE_PHYSICS_ENGINE": "Physik-Engine nutzen"
+      }
+    }
   },
   "DOC": {
     "TITLE": "Dokumentation",

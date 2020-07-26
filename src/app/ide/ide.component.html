@@ -63,11 +63,11 @@
 </div>
 
 <!-- CODE -->
-<div #codingArea class="box coding-area" *ngIf="!playing">
+<div #codingArea class="box coding-area" [ngClass]="colorScheme" *ngIf="!playing">
   <!-- CARET -->
-  <div class="caret" [ngStyle]="{ top: caret.top, left: caret.left }">|</div>
+  <div class="caret" [ngStyle]="{ top: caret.top + 'px', left: caret.left + 'px' }">|</div>
 
-  <div class="code-line" *ngFor="let line of code.plain; let i = index">
+  <div class="code-line" *ngFor="let tokens of code.formatted; let i = index">
     <div class="line-meta">
       <div class="line-number">{{ i + 1 }}</div>
       <div class="line-highlight">
@@ -78,7 +78,9 @@
         <span *ngIf="false">⏷</span>
       </div>
     </div>
-    <div class="line-content" [innerHTML]="line"></div>
+    <div class="line-content">
+      <div class="token" *ngFor="let token of tokens" [innerHTML]="token"></div>
+    </div>
   </div>
 </div>
 

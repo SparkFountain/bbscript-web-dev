@@ -11,6 +11,20 @@ import { TranslateService } from '@ngx-translate/core';
 export class LetsCodeService {
   constructor(private http: HttpClient, private translateService: TranslateService) {}
 
+  getKeywords(): Promise<string[]> {
+    return this.http
+      .get(`${environment.apiServer}/keywords`)
+      .toPromise()
+      .then((response: ApiResponse<string[]>) => response.data);
+  }
+
+  getCommands(): Promise<string[]> {
+    return this.http
+      .get(`${environment.apiServer}/commands`)
+      .toPromise()
+      .then((response: ApiResponse<string[]>) => response.data);
+  }
+
   getTemplates(): Promise<Template[]> {
     return this.http
       .get(`${environment.apiServer}/coding/templates`, { params: { language: this.translateService.currentLang } })

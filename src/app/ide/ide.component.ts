@@ -1,5 +1,8 @@
-import { Component, OnInit, Input, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { Code } from '../interfaces/ide/code';
+import { LexerService } from 'bbscript/src/services/lexer.service';
+import { LexerToken } from 'bbscript/src/interfaces/lexer-token';
+import { ColorScheme } from '../types/color-scheme';
 
 @Component({
   selector: 'app-ide',
@@ -10,12 +13,14 @@ export class IdeComponent implements OnInit {
   @Input() buttons: string[];
   @Input('code') initialCode: string[];
 
-  @ViewChild('codingArea', { static: false }) codingArea: HTMLDivElement;
+  @ViewChild('codingArea', { static: false }) codingArea: ElementRef;
 
   public settingsOpen: boolean;
   public caret: { x: number; y: number; top: number; left: number };
 
   public code: Code;
+
+  public colorScheme: ColorScheme;
 
   public playing: boolean;
 
@@ -30,15 +35,15 @@ export class IdeComponent implements OnInit {
 
     switch (event.code) {
       case 'Backspace':
-        if (currentLine.length > 0) {
+        if (this.caret.x > 0) {
           currentLine = currentLine.slice(0, -1);
+          this.caret.x--;
         } else {
           if (this.caret.y > 0) {
             this.code.plain.splice(this.caret.y, 1);
             this.caret.y--;
-            this.caret.x = this.code.plain[this.caret.y].length - 1;
+            this.caret.x = this.code.plain[this.caret.y].length;
           }
-
           updateCurrentLine = false;
         }
         break;
@@ -52,32 +57,57 @@ export class IdeComponent implements OnInit {
       case 'Space':
         event.preventDefault();
         currentLine += ' ';
+        this.caret.x++;
+        break;
+      case 'Home':
+        this.caret.x = 0;
+        break;
+      case 'End':
+        this.caret.x = this.code.plain[this.caret.y].length;
+        break;
+      case 'ArrowLeft':
+        if (this.caret.x > 0) {
+          this.caret.x--;
+        } else {
+          if (this.caret.y > 0) {
+            this.caret.y--;
+            this.caret.x = this.code.plain[this.caret.y].length;
+          }
+          updateCurrentLine = false;
+        }
         break;
       default:
         if (event.key.length === 1) {
           currentLine += event.key;
+          this.caret.x++;
         }
     }
 
+    this.updateCaretPosition(); // TODO: just call in AfterViewInit
     if (updateCurrentLine) {
       this.code.plain[this.caret.y] = currentLine;
     }
+    this.syntaxHighlighting();
   }
 
-  constructor() {
-    this.settingsOpen = false;
-    this.caret = { x: 0, y: 0, top: 0, left: 0 };
-  }
+  constructor(private lexer: LexerService) {}
 
   ngOnInit(): void {
+    this.settingsOpen = false;
+    this.caret = { x: 0, y: 0, top: 0, left: 0 };
+
     this.initialCode = [''];
 
     this.code = {
       plain: this.initialCode,
-      formatted: this.initialCode
+      formatted: [this.initialCode] // TODO: refactor
     };
 
+    this.colorScheme = 'solarized-light';
+
     this.playing = false;
+
+    this.updateCaretPosition(); // TODO: does not work visually yet
   }
 
   play(): void {
@@ -113,5 +143,45 @@ export class IdeComponent implements OnInit {
     this.settingsOpen = !this.settingsOpen;
   }
 
-  syntaxHighlighting(): any {}
+  updateCaretPosition(): void {
+    this.caret.left = this.codingArea.nativeElement.offsetLeft + 88 + this.caret.x * 8.4;
+    this.caret.top = this.codingArea.nativeElement.offsetTop + 15 + this.caret.y * 21;
+  }
+
+  syntaxHighlighting(): void {
+    this.code.formatted = [];
+
+    const tokens: Array<LexerToken[]> = this.lexer.lexCode(this.code.plain);
+    // console.info('[TOKENS]', tokens);
+    tokens.forEach((line: LexerToken[]) => {
+      const formattedLine: string[] = [];
+
+      for (let i = 0; i < line.length; i++) {
+        const currentToken: LexerToken = line[i];
+        const nextToken: LexerToken = i < line.length - 1 ? line[i + 1] : null;
+
+        formattedLine.push(
+          `<span class="${this.key2Class(currentToken.which)}">${currentToken.value.toString()}</span>`
+        );
+        if (nextToken) {
+          const spaceAmount = nextToken.offset.x - (currentToken.offset.x + currentToken.value.toString().length);
+          if (spaceAmount > 0) {
+            formattedLine.push(`<span>${'&nbsp;'.repeat(spaceAmount)}</span>`);
+          }
+        }
+      }
+
+      this.code.formatted.push(formattedLine);
+    });
+
+    console.info('[FORMATTED CODE]', this.code.formatted);
+  }
+
+  key2Class(key: string): string {
+    if (key === 'BRACKET_OPEN' || key === 'BRACKET_CLOSE') {
+      return 'bracket';
+    }
+
+    return key.toLowerCase().replace(/_/g, '-');
+  }
 }

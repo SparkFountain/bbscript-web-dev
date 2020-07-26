@@ -651,7 +651,7 @@ if ($method == 'GET') {
     break;
   case 'keywords':
     if (isset($urlSection['2']) && $urlSection['2'] != '') {
-      $sql = 'SELECT id, name, deprecated FROM keyword WHERE name = \'' . strtolower($urlSection['2']) . '\'';
+      $sql = "SELECT `name` FROM `keyword` WHERE name = '" . strtolower($urlSection['2']) . "'";
       $result = $dbLanguage->query($sql);
 
       if ($result->num_rows > 0) {
@@ -662,78 +662,93 @@ if ($method == 'GET') {
         echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Invalid key word'));
       }
     } else {
-      $sql = 'SELECT id, name, deprecated FROM keyword';
+      $sql = "SELECT `name` FROM `keyword` WHERE deprecated = ";
       if (isset($_GET['deprecated'])) {
-        $sql .= ' WHERE deprecated = ' . $_GET['deprecated'];
+        $sql .= $_GET['deprecated'];
+      } else {
+        $sql .= "0";
       }
 
       $result = $dbLanguage->query($sql);
       if ($result->num_rows > 0) {
         $keywords = array();
         while ($row = $result->fetch_assoc()) {
-          $keywords[strtolower($row['name'])] = array(
-            'name' => $row['name'],
-            'deprecated' => $row['deprecated'],
-          );
+          array_push($keywords, $row['name']);
         }
         echo json_encode(array('status' => STATUS_SUCCESS, 'data' => $keywords), JSON_NUMERIC_CHECK);
       } else {
-        echo json_encode(array('status' => STATUS_SUCCESS, 'message' => null));
+        echo json_encode(array('status' => STATUS_ERROR, 'message' => 'An error occurred.'));
       }
     }
     break;
   case 'commands':
-    $sql = 'SELECT cmd.id AS id, cmd.name AS name, cat.name AS category, subcat.name AS subCategory, cmd.`return_name`, cmd.`return_description_en`, cmd.`return_description_de`, cmd.`description_en`, cmd.`description_de`, cmd.`code` FROM command cmd';
-    $sql .= ' JOIN command_category cat ON cmd.category = cat.id';
-    $sql .= ' JOIN command_category subcat ON cmd.sub_category = subcat.id';
-    if (isset($_GET['deprecated'])) {
-      $sql .= ' WHERE deprecated = ' . $_GET['deprecated'];
-    }
-    if (isset($_GET['category'])) {
-      $sql .= ' AND category = \'' . $_GET['category'] . '\'';
-    }
-    if (isset($_GET['sub_category'])) {
-      $sql .= ' AND sub_category = \'' . $_GET['sub_category'] . '\'';
-    }
+    if (true) {
+      $sql = "SELECT `name` FROM `command` WHERE `deprecated` = ";
+      if (isset($_GET['deprecated'])) {
+        $sql .= $_GET['deprecated'];
+      } else {
+        $sql .= "0";
+      }
+      $result = $dbLanguage->query($sql);
 
-    $result = $dbLanguage->query($sql);
-
-    if ($result->num_rows > 0) {
       $commands = array();
       while ($row = $result->fetch_assoc()) {
-        // get command params
-        $row['params'] = array();
-        $paramSql = 'SELECT cp.name, cp.optional FROM command_parameter cp WHERE command_id = ' . $row['id'] . ' ORDER BY cp.offset';
-        $paramResult = $dbLanguage->query($paramSql);
-        if ($paramResult->num_rows > 0) {
-          while ($paramRow = $paramResult->fetch_assoc()) {
-            array_push($row['params'], $paramRow);
-          }
-        }
-
-        // add command to array
-        $commands[strtolower($row['name'])] = array(
-          'name' => $row['name'],
-          'description' => array(
-            'en' => $row['description_en'],
-            'de' => $row['description_de'],
-          ),
-          'category' => $row['category'],
-          'subCategory' => $row['subCategory'],
-          'params' => $row['params'],
-          'return' => array(
-            'name' => $row['return_name'],
-            'description' => array(
-              'en' => $row['return_description_en'],
-              'de' => $row['return_description_de'],
-            ),
-          ),
-          'code' => $row['code'],
-        );
+        array_push($commands, $row['name']);
       }
-      echo json_encode(array('status' => STATUS_SUCCESS, 'data' => $commands), JSON_NUMERIC_CHECK);
+      die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $commands)));
     } else {
-      echo json_encode(array('status' => STATUS_SUCCESS, 'data' => null));
+      $sql = 'SELECT cmd.id AS id, cmd.name AS name, cat.name AS category, subcat.name AS subCategory, cmd.`return_name`, cmd.`return_description_en`, cmd.`return_description_de`, cmd.`description_en`, cmd.`description_de`, cmd.`code` FROM command cmd';
+      $sql .= ' JOIN command_category cat ON cmd.category = cat.id';
+      $sql .= ' JOIN command_category subcat ON cmd.sub_category = subcat.id';
+      if (isset($_GET['deprecated'])) {
+        $sql .= ' WHERE deprecated = ' . $_GET['deprecated'];
+      }
+      if (isset($_GET['category'])) {
+        $sql .= ' AND category = \'' . $_GET['category'] . '\'';
+      }
+      if (isset($_GET['sub_category'])) {
+        $sql .= ' AND sub_category = \'' . $_GET['sub_category'] . '\'';
+      }
+
+      $result = $dbLanguage->query($sql);
+
+      if ($result->num_rows > 0) {
+        $commands = array();
+        while ($row = $result->fetch_assoc()) {
+          // get command params
+          $row['params'] = array();
+          $paramSql = 'SELECT cp.name, cp.optional FROM command_parameter cp WHERE command_id = ' . $row['id'] . ' ORDER BY cp.offset';
+          $paramResult = $dbLanguage->query($paramSql);
+          if ($paramResult->num_rows > 0) {
+            while ($paramRow = $paramResult->fetch_assoc()) {
+              array_push($row['params'], $paramRow);
+            }
+          }
+
+          // add command to array
+          $commands[strtolower($row['name'])] = array(
+            'name' => $row['name'],
+            'description' => array(
+              'en' => $row['description_en'],
+              'de' => $row['description_de'],
+            ),
+            'category' => $row['category'],
+            'subCategory' => $row['subCategory'],
+            'params' => $row['params'],
+            'return' => array(
+              'name' => $row['return_name'],
+              'description' => array(
+                'en' => $row['return_description_en'],
+                'de' => $row['return_description_de'],
+              ),
+            ),
+            'code' => $row['code'],
+          );
+        }
+        echo json_encode(array('status' => STATUS_SUCCESS, 'data' => $commands), JSON_NUMERIC_CHECK);
+      } else {
+        echo json_encode(array('status' => STATUS_SUCCESS, 'data' => null));
+      }
     }
     break;
   case 'command-categories':

@@ -33,6 +33,7 @@ export class LetsCodeComponent implements OnInit {
   ngOnInit(): void {
     this.project = {
       title: 'Snake',
+      author: 'Spark Fountain',
       description: 'A simple game to eat apples and avoid stone collisions',
       license: 'CC0',
       imageUrl: ''

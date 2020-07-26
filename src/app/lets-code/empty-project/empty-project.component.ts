@@ -15,6 +15,7 @@ export class EmptyProjectComponent implements OnInit {
   ngOnInit(): void {
     this.project = {
       title: '',
+      author: '',
       description: '',
       license: 'CC0',
       imageUrl: ''

@@ -45,6 +45,7 @@
         class="panel-block"
         *ngFor="let f of filesAndFolders; let i = index"
         (click)="f.type === 'folder' ? openFolder(i) : openFile(i)"
+        (contextmenu)="handleContextMenu($event)"
       >
         <span class="panel-icon">
           <i [class]="'fa fa-' + icons[f.type]"></i>

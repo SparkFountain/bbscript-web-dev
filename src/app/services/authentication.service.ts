@@ -47,17 +47,13 @@ export class AuthenticationService {
   }
 
   // TODO: error handling
-  login(userOrEmail: string, password: string): Promise<void> {
+  async login(userOrEmail: string, password: string): Promise<void> {
     const body = new HttpParams().set('userOrEmail', userOrEmail).set('password', password);
 
-    return this.http
-      .post<ApiResponse<User>>(`${environment.apiServer}/auth/login`, body)
-      .toPromise()
-      .then((response: ApiResponse<User>) => {
-        localStorage.setItem('username', response.data.name);
-        localStorage.setItem('email', response.data.email);
-        localStorage.setItem('token', response.data.token);
-      });
+    const response = await this.http.post<ApiResponse<User>>(`${environment.apiServer}/auth/login`, body).toPromise();
+    localStorage.setItem('username', response.data.name);
+    localStorage.setItem('email', response.data.email);
+    localStorage.setItem('token', response.data.token);
   }
 
   logout(): Promise<ApiResponse<any>> {
@@ -90,14 +86,16 @@ export class AuthenticationService {
   }
 
   async validateCredentials(user: User): Promise<boolean> {
-    const response = await this.http
-      .post<ApiResponse<boolean>>(`${environment.apiServer}/auth/validate-credentials`, {
-        username: user.name,
-        email: user.email,
-        token: user.token
-      })
-      .toPromise();
-    return response.data;
+    // TODO: something is horribly wrong here (infinite loop call)
+    return null;
+    // const response = await this.http
+    //   .post<ApiResponse<boolean>>(`${environment.apiServer}/auth/validate-credentials`, {
+    //     username: user.name,
+    //     email: user.email,
+    //     token: user.token
+    //   })
+    //   .toPromise();
+    // return response.data;
   }
 
   updateToken(token: string): void {

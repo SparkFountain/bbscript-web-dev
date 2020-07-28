@@ -109,4 +109,8 @@ export class LetsCodeComponent implements OnInit {
     // TODO: implement
     console.info('[OPENING FILE]', this.filesAndFolders[fileIndex].name);
   }
+
+  handleContextMenu($event: MouseEvent): void {
+    $event.preventDefault();
+  }
 }

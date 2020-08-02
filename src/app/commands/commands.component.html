@@ -49,7 +49,9 @@
 
     <p class="code" [innerHTML]="commandCall()"></p>
 
-    <p class="description" *ngIf="activeCommand !== ''">{{ categories[activeCat][activeSubCat][activeCommand].description.de }}</p>
+    <p class="description" *ngIf="activeCommand !== ''">
+      {{ categories[activeCat][activeSubCat][activeCommand].description.de }}
+    </p>
 
     <button *ngIf="section === 'editor'" (click)="play()">
       <i class="fa fa-fw fa-play-circle" aria-hidden="true"></i>
@@ -62,6 +64,6 @@
 
     <div [hidden]="section !== 'editor'" class="ace" [ace]="ace.config"></div>
 
-    <blitz-basic-script-canvas *ngIf="section === 'game'" [code]="commandCode"></blitz-basic-script-canvas>
+    <!-- <blitz-basic-script-canvas *ngIf="section === 'game'" [code]="commandCode"></blitz-basic-script-canvas> -->
   </div>
 </div>

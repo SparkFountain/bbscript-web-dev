@@ -18,8 +18,8 @@ import { CaretPosition } from '../types/caret-position';
 @Component({
   selector: 'app-ide',
   templateUrl: './ide.component.html',
-  styleUrls: ['./ide.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./ide.component.scss']
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IdeComponent implements OnInit, AfterViewChecked {
   @Input() buttons: string[];
@@ -35,8 +35,13 @@ export class IdeComponent implements OnInit, AfterViewChecked {
   public colorScheme: ColorScheme;
 
   public playing: boolean;
+  public action: 'idle' | 'play' | 'debug' | 'stop';
 
   @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+    if (this.playing) {
+      return;
+    }
+
     console.info('[KEY DOWN]', event);
 
     const previousLine = this.code.plain[this.caret.y - 1];
@@ -145,23 +150,29 @@ export class IdeComponent implements OnInit, AfterViewChecked {
     this.colorScheme = 'solarized-light';
 
     this.playing = false;
+    this.action = 'idle';
   }
 
   ngAfterViewChecked(): void {
-    this.updateCaretPosition();
-    this.changeDetection.markForCheck();
+    // this.updateCaretPosition();
+    // this.changeDetection.markForCheck();
   }
 
   play(): void {
     this.playing = true;
+    this.action = 'play';
+  }
+
+  debug(): void {
+    this.playing = true;
+    setTimeout(() => {
+      this.action = 'debug';
+      this.changeDetection.markForCheck();
+    }, 0);
   }
 
   stop(): void {
     this.playing = false;
-  }
-
-  debug(): void {
-    console.warn('[DEBUG] Not implemented yet');
   }
 
   undo(): void {

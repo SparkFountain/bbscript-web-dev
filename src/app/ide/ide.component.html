@@ -24,6 +24,11 @@
         <i class="fa fa-play-circle"></i>
       </span>
     </a>
+    <a class="button" (click)="debug()" *ngIf="buttons.indexOf('debug') > -1 && !playing">
+      <span class="icon is-small">
+        <i class="fa fa-bug"></i>
+      </span>
+    </a>
     <a class="button" (click)="stop()" *ngIf="buttons.indexOf('play') > -1 && playing">
       <span class="icon is-small">
         <i class="fa fa-stop-circle-o"></i>
@@ -90,5 +95,6 @@
   [code]="code.plain"
   [debugMode]="false"
   [title]="'title'"
+  [action]="action"
   *ngIf="playing"
 ></blitz-basic-script-game>

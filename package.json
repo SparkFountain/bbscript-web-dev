@@ -1,6 +1,6 @@
 {
   "name": "bbscript-web-dev",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,7 +28,7 @@
     "ngx-popper": "7.0.0",
     "popper.js": "1.16.1",
     "rxjs": "6.6.2",
-    "tslib": "2.0.0",
+    "tslib": "2.0.1",
     "zone.js": "0.10.3"
   },
   "devDependencies": {

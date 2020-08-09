@@ -62,6 +62,9 @@ define('FILE_SERVER', 'http://files.blitzbasicscript.com');
 /* MAIL SERVER */
 define('MAIL_SERVER', 'http://mail.blitzbasicscript.com');
 
+/* BASE DIRECTORY FOR FILE ACCESS */
+$baseDir = '/var/www/web23388256/html/bbscript/files/';
+
 if ($method == 'GET') {
   switch ($urlSection['1']) {
   case 'news':
@@ -801,9 +804,31 @@ if ($method == 'GET') {
     }
     break;
   case 'files':
-    $baseDir = '/var/www/web23388256/html/bbscript/files/';
-    $files = scandir($baseDir . $_GET['path']);
-    die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array_slice($files, 2))));
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'file-size':
+        $fileSize = filesize($baseDir . $_GET['path']);
+        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $fileSize), JSON_NUMERIC_CHECK));
+      case 'file-type':
+        $fileExists = file_exists($baseDir . $_GET['path']);
+        if ($fileExists) {
+          $isDir = is_dir($baseDir . $_GET['path']);
+          if ($isDir) {
+            die(json_encode(array('status' => STATUS_SUCCESS, 'data' => 2), JSON_NUMERIC_CHECK));
+          } else {
+            die(json_encode(array('status' => STATUS_SUCCESS, 'data' => 1), JSON_NUMERIC_CHECK));
+          }
+        } else {
+          die(json_encode(array('status' => STATUS_SUCCESS, 'data' => 0), JSON_NUMERIC_CHECK));
+        }
+      case 'get-content':
+        $fileAsString = file_get_contents($baseDir . $_GET['path']);
+        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $fileAsString)));
+      }
+    } else {
+      $files = scandir($baseDir . $_GET['path']);
+      die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array_slice($files, 2))));
+    }
   case 'projects':
     if (isset($urlSection[2])) {
     } else {
@@ -1017,10 +1042,61 @@ if ($method == 'GET') {
         break;
       }
     } else {
-      echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a valid authentication action link.'));
+      die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Please provide a valid authentication action link.')));
     }
 
     break;
+  case 'files':
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'copy-file':
+        $copySuccess = copy($baseDir . $_POST['sourcePath'], $baseDir . $_POST['targetPath']);
+        if ($copySuccess) {
+          die(json_encode(array('status' => STATUS_SUCCESS)));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'File could not be copied.')));
+        }
+      case 'create-directory':
+        $mkDirSuccess = mkdir($baseDir . $_POST['path']);
+        if ($mkDirSuccess) {
+          die(json_encode(array('status' => STATUS_SUCCESS)));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Directory could not be created.')));
+        }
+      case 'create-file':
+        $bytesWritten = file_put_contents($baseDir . $_POST['path'], '');
+        if ($bytesWritten !== false) {
+          die(json_encode(array('status' => STATUS_SUCCESS)));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'File could not be created.')));
+        }
+      }
+    }
+  }
+} elseif ($method == 'DELETE') {
+  $inputForm = file_get_contents('php://input');
+  parse_str($inputForm, $_DELETE);
+
+  switch ($urlSection['1']) {
+  case 'files':
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'delete-directory':
+        $rmDirSuccess = rmdir($baseDir . $_DELETE['path']);
+        if ($rmDirSuccess) {
+          die(json_encode(array('status' => STATUS_SUCCESS)));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Directory could not be deleted.')));
+        }
+      case 'delete-file':
+        $rmFileSuccess = unlink($baseDir . $_DELETE['path']);
+        if ($rmFileSuccess) {
+          die(json_encode(array('status' => STATUS_SUCCESS)));
+        } else {
+          die(json_encode(array('status' => STATUS_ERROR, 'message' => 'File could not be deleted.')));
+        }
+      }
+    }
   }
 }
 

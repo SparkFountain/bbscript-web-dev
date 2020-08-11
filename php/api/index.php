@@ -807,9 +807,11 @@ if ($method == 'GET') {
     if (isset($urlSection['2'])) {
       switch ($urlSection['2']) {
       case 'file-size':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $fileSize = filesize($baseDir . $_GET['path']);
         die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $fileSize), JSON_NUMERIC_CHECK));
       case 'file-type':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $fileExists = file_exists($baseDir . $_GET['path']);
         if ($fileExists) {
           $isDir = is_dir($baseDir . $_GET['path']);
@@ -822,6 +824,7 @@ if ($method == 'GET') {
           die(json_encode(array('status' => STATUS_SUCCESS, 'data' => 0), JSON_NUMERIC_CHECK));
         }
       case 'get-content':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $fileAsString = file_get_contents($baseDir . $_GET['path']);
         die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $fileAsString)));
       }
@@ -1050,6 +1053,7 @@ if ($method == 'GET') {
     if (isset($urlSection['2'])) {
       switch ($urlSection['2']) {
       case 'copy-file':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $copySuccess = copy($baseDir . $_POST['sourcePath'], $baseDir . $_POST['targetPath']);
         if ($copySuccess) {
           die(json_encode(array('status' => STATUS_SUCCESS)));
@@ -1057,6 +1061,7 @@ if ($method == 'GET') {
           die(json_encode(array('status' => STATUS_ERROR, 'message' => 'File could not be copied.')));
         }
       case 'create-directory':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $mkDirSuccess = mkdir($baseDir . $_POST['path']);
         if ($mkDirSuccess) {
           die(json_encode(array('status' => STATUS_SUCCESS)));
@@ -1064,6 +1069,7 @@ if ($method == 'GET') {
           die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Directory could not be created.')));
         }
       case 'create-file':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $bytesWritten = file_put_contents($baseDir . $_POST['path'], '');
         if ($bytesWritten !== false) {
           die(json_encode(array('status' => STATUS_SUCCESS)));
@@ -1082,6 +1088,7 @@ if ($method == 'GET') {
     if (isset($urlSection['2'])) {
       switch ($urlSection['2']) {
       case 'delete-directory':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $rmDirSuccess = rmdir($baseDir . $_DELETE['path']);
         if ($rmDirSuccess) {
           die(json_encode(array('status' => STATUS_SUCCESS)));
@@ -1089,6 +1096,7 @@ if ($method == 'GET') {
           die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Directory could not be deleted.')));
         }
       case 'delete-file':
+        die('This operation has been deactivated by Spark Fountain due to security issues.');
         $rmFileSuccess = unlink($baseDir . $_DELETE['path']);
         if ($rmFileSuccess) {
           die(json_encode(array('status' => STATUS_SUCCESS)));

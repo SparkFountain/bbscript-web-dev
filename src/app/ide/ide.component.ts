@@ -14,6 +14,7 @@ import { LexerService } from 'bbscript/src/services/lexer.service';
 import { LexerToken } from 'bbscript/src/interfaces/lexer-token';
 import { ColorScheme } from '../types/color-scheme';
 import { CaretPosition } from '../types/caret-position';
+import { UndoRedoAction } from '../classes/ide/undo-redo-action';
 
 @Component({
   selector: 'app-ide',
@@ -36,6 +37,8 @@ export class IdeComponent implements OnInit, AfterViewChecked {
 
   public playing: boolean;
   public action: 'idle' | 'play' | 'debug' | 'stop';
+
+  public undoRedoStack: UndoRedoAction[];
 
   @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     if (this.playing) {
@@ -176,11 +179,21 @@ export class IdeComponent implements OnInit, AfterViewChecked {
   }
 
   undo(): void {
-    console.warn('[UNDO] Not implemented yet');
+    console.warn('[UNDO] Unfinished implementation');
+
+    if (this.undoRedoStack.length > 0) {
+      const lastAction: UndoRedoAction = this.undoRedoStack.pop();
+      // this.code.plain[lastAction.caret.begin.y] = '';
+    }
   }
 
   redo(): void {
-    console.warn('[REDO] Not implemented yet');
+    console.warn('[UNDO] Unfinished implementation');
+
+    if (this.undoRedoStack.length > 0) {
+      const lastAction: UndoRedoAction = this.undoRedoStack.pop();
+      // this.code.plain[lastAction.caret.begin.y] = '';
+    }
   }
 
   guide(): void {

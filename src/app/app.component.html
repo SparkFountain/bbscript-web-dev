@@ -75,19 +75,25 @@
           </p>
         </div>
       </div>
-      <div class="navbar-item" *ngIf="authService.userIsLoggedIn()">
-        <div class="field is-grouped">
-          <p class="control">
-            <a class="navbar-item" (click)="authService.logout()">
-              <span class="icon">
-                <i class="fa fa-fw fa-sign-out"></i>
-              </span>
-              <span>{{ 'LOGOUT' | translate }}</span>
-            </a>
-          </p>
+      <div class="navbar-item has-dropdown is-hoverable" *ngIf="authService.userIsLoggedIn()">
+        <a class="navbar-link is-arrowless">
+          <figure class="image nav-avatar">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" />
+          </figure>
+        </a>
+        <div class="navbar-dropdown nav-avatar-dropdown">
+          <a class="navbar-item" [routerLink]="'NAV.ACCOUNT.PATH' | translate">
+            {{ 'NAV.ACCOUNT.PROFILE' | translate }}
+          </a>
+          <a class="navbar-item">
+            {{ 'NAV.ACCOUNT.AWARDS' | translate }}
+          </a>
+          <a class="navbar-item">
+            {{ 'LOGOUT' | translate }}
+          </a>
         </div>
       </div>
-      <div class="navbar-item">
+      <div class="navbar-item" *ngIf="!authService.userIsLoggedIn()">
         <div class="field is-grouped">
           <p class="control">
             <a class="navbar-item" [routerLink]="'NAV.REGISTER.PATH' | translate">

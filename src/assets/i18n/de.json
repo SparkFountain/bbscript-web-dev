@@ -151,7 +151,15 @@
       },
       "DATA_AGREEMENT": "Ich bin damit einverstanden, dass meine persönlichen Angaben unter Berücksichtigung der <abbr title=\"Datenschutz-Grundverordnung\">DSGVO</abbr> an BlitzBasicScript übermittelt werden.",
       "DATA_AGREEMENT_MUST_BE_ACCEPTED": "Du musst vor dem Abschicken die Datenschutzerklärung bestätigen.",
-      "SEND": "Abschicken"
+      "SEND": "Abschicken",
+      "SUCCESSFUL": {
+        "TITLE": "Deine Nachricht wurde verschickt",
+        "MESSAGE": "Vielen Dank für deine Nachricht. Du erhältst in Kürze eine Antwort per Email."
+      },
+      "ERROR": {
+        "TITLE": "Es ist ein Fehler aufgetreten",
+        "MESSAGE": "Leider konnte deine Nachricht nicht abgeschickt werden. Bitte versuche es später noch einmal."
+      }
     },
     "TERMS": {
       "LABEL": "Nutzungsbedingungen",

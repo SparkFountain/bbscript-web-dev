@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Neue Kontakt-Nachricht von BlitzBasicScript</title>
+
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Lato:400);
+
+      body {
+        background: #1f2d3b;
+        color: #323232;
+        font-weight: 300;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Lato, sans-serif;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 600px;
+        height: auto;
+        padding: 50px;
+        background-color: #eef6fc;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .brand span {
+        color: #df691a;
+        font-size: 48px;
+        font-variant: small-caps;
+      }
+
+      h1 {
+        text-align: center;
+        padding-bottom: 15px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 10px;
+      }
+
+      p {
+        color: #1d72aa;
+      }
+
+      a {
+        border: 1px solid #323232;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #dee5ed;
+        background: #1f2d3b;
+      }
+
+      img {
+        width: 64px;
+        height: 64px;
+      }
+
+      table {
+        table-layout: auto;
+        width: 100%;
+      }
+
+      thead {
+        color: #dee5ed;
+        background-color: #1d72aa;
+      }
+
+      .message {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="brand">
+        <img
+          alt="BlitzBasicScript Logo"
+          src="https://www.blitzbasicscript.com/assets/gfx/bbscript-logo.png"
+        />
+        <span>BlitzBasicScript</span>
+      </div>
+
+      <h1>Neue Kontakt-Nachricht</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Email-Adresse</td>
+            <td>Betreff</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{subject}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="message">
+        {{message}}
+      </div>
+    </div>
+  </body>
+</html>

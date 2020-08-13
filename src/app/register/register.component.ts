@@ -22,7 +22,10 @@ export class RegisterComponent implements OnInit {
 
   sendingRequest: boolean;
 
-  constructor(private authService: AuthenticationService, private router: Router) {
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {
     this.section = 'form';
     this.showTerms = false;
 
@@ -42,7 +45,7 @@ export class RegisterComponent implements OnInit {
     this.showTerms = !this.showTerms;
   }
 
-  register() {
+  register(): void {
     this.username = this.username.trim();
     this.email = this.email.trim();
     this.notices = {};
@@ -97,27 +100,31 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  checkUsername() {
-    this.authService.usernameExists(this.username).then((response: ApiResponse<any>) => {
-      if (response.status === 'success') {
-        if (response.data.exists) {
-          this.notices['username-exists'] = true;
-        } else {
-          this.notices['username-exists'] = false;
+  checkUsername(): void {
+    this.authService
+      .usernameExists(this.username)
+      .then((response: ApiResponse<any>) => {
+        if (response.status === 'success') {
+          if (response.data.exists) {
+            this.notices['username-exists'] = true;
+          } else {
+            this.notices['username-exists'] = false;
+          }
         }
-      }
-    });
+      });
   }
 
-  checkEmail() {
-    this.authService.emailExists(this.email).then((response: ApiResponse<any>) => {
-      if (response.status === 'success') {
-        if (response.data.exists) {
-          this.notices['email-exists'] = true;
-        } else {
-          this.notices['email-exists'] = false;
+  checkEmail(): void {
+    this.authService
+      .emailExists(this.email)
+      .then((response: ApiResponse<any>) => {
+        if (response.status === 'success') {
+          if (response.data.exists) {
+            this.notices['email-exists'] = true;
+          } else {
+            this.notices['email-exists'] = false;
+          }
         }
-      }
-    });
+      });
   }
 }

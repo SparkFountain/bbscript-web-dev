@@ -62,8 +62,11 @@
   "USERNAME_EXISTS": "Dieser Benutzername existiert bereits",
   "USERNAME_EMPTY": "Der Benutzername darf nicht leer sein",
   "USERNAME_TOO_SHORT": "Der Benutzername ist zu kurz, bitte gib mindestens zwei Zeichen ein",
+  "NAME_TOO_SHORT": "Der Name ist zu kurz, bitte gib mindestens zwei Zeichen ein",
   "USERNAME_TOO_LONG": "Der Benutzername ist zu lang, bitte beschränke dich auf max. 32 Zeichen",
+  "NAME_TOO_LONG": "Der Name ist zu lang, bitte beschränke dich auf max. 32 Zeichen",
   "USERNAME_MUST_BE_ALPHANUMERIC": "Der Benutzername muss alphanumerisch sein (erlaubte Zeichen sind Buchstaben, Zahlen und Leerzeichen)",
+  "NAME_MUST_BE_ALPHANUMERIC": "Der Name muss alphanumerisch sein (erlaubte Zeichen sind Buchstaben, Zahlen und Leerzeichen)",
   "USER_NOT_ACTIVE": "Dein Benutzerkonto ist nicht aktiv. Hast du deine Bestätigungs-Email nach der Anmeldung schon geöffnet?",
   "EMAIL_EXISTS": "Diese Email-Adresse wurde bereits zur Registrierung genutzt",
   "EMAIL_EMPTY": "Die Email-Adresse darf nicht leer sein",
@@ -112,8 +115,8 @@
       "BODY": "BlitzBasicScript ist komplett Open Source und der Quellcode dieses Projektes kann auf GitHub betrachtet bzw. weiter verwendet werden. Du musst dich lediglich kostenlos registrieren und die Nutzungsbedingungen akzeptieren, um deine Projekte in der Cloud speichern zu können. Unsere Philosophie ist maximale Freiheit für alle Spieleentwickler: Profitiere von dem Wissen anderer und stelle deine Projekte im Gegenzug der Community zur Verfügung. So kann jeder immer wieder Neues lernen und entdecken. Übrigens, das Copyright an deinen Spielen bleibt natürlich immer bei dir!"
     },
     "REASON_6": {
-      "HEADER": "TODO",
-      "BODY": "TODO"
+      "HEADER": "Sammle Trophäen und gewinne Contests",
+      "BODY": "Mach das Programmieren selbst zu deinem Spiel: Registriere dich kostenlos bei BlitzBasicScript und werde Teil einer lebendigen Community! Lerne neue Befehle & Datenstrukturen kennen und baue sie in deinen Code ein, um wertvolle Trophäen und Medaillen zu erhalten. Du kannst außerdem an coolen Wettbewerben teilnehmen und dich mit anderen messen. So verbesserst du spielend und kontinuierlich deine Fähigkeiten."
     }
   },
   "NEWS_BLOG": {
@@ -123,7 +126,32 @@
   "FOOTER": {
     "CONTACT": {
       "LABEL": "Kontakt",
-      "PATH": "/kontakt"
+      "PATH": "/kontakt",
+      "SUBTITLE": "<p>Möchtest du Lob oder Kritik an BlitzBasicScript loswerden? Hast du einen <abbr title=\"Software-Fehler\">Bug</abbr> auf dieser Website oder bei der Ausführung deiner Programme gefunden? Oder möchtest du uns einfach nur etwas mitteilen?</p><br /><p>Dann schreib uns gerne eine Nachricht mithilfe des Kontaktformulars. Alle persönlichen Angaben sind freiwillig und unterliegen der <abbr title=\"Datenschutz-Grundverordnung\">DSGVO</abbr>. Wir benötigen lediglich deine Email-Adresse, um dir zu antworten.</p>",
+      "NAME": {
+        "LABEL": "Name",
+        "PLACEHOLDER": "Dein Name (optional)"
+      },
+      "EMAIL": {
+        "LABEL": "Email-Adresse",
+        "PLACEHOLDER": "Deine Email-Adresse"
+      },
+      "SUBJECT": {
+        "LABEL": "Betreff",
+        "BBSCRIPT": "BlitzBasicScript",
+        "WEBSITE": "Website",
+        "BUG_REPORT": "Bug melden",
+        "FEATURE_REQUEST": "Feature vorschlagen",
+        "CRITICISM": "Kritik",
+        "INDIVIDUAL": "Sonstiges"
+      },
+      "MESSAGE": {
+        "LABEL": "Nachricht",
+        "PLACEHOLDER": "Bitte schreibe ein paar Sätze zu deinem Anliegen."
+      },
+      "DATA_AGREEMENT": "Ich bin damit einverstanden, dass meine persönlichen Angaben unter Berücksichtigung der <abbr title=\"Datenschutz-Grundverordnung\">DSGVO</abbr> an BlitzBasicScript übermittelt werden.",
+      "DATA_AGREEMENT_MUST_BE_ACCEPTED": "Du musst vor dem Abschicken die Datenschutzerklärung bestätigen.",
+      "SEND": "Abschicken"
     },
     "TERMS": {
       "LABEL": "Nutzungsbedingungen",
@@ -585,7 +613,8 @@
     },
     "ACCOUNT": {
       "PROFILE": "Profil",
-      "AWARDS": "Auszeichnungen",
+      "AWARDS": "Medaillen",
+      "TROPHYS": "Trophäen",
       "PATH": "/account"
     },
     "ABOUT": "Infos",

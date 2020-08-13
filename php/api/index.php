@@ -982,7 +982,7 @@ if ($method == 'GET') {
             die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Your confirmation email could not be sent.')));
           }
 
-          echo json_encode(array('status' => STATUS_SUCCESS));
+          die(json_encode(array('status' => STATUS_SUCCESS)));
         } else {
           echo json_encode(array('status' => STATUS_ERROR, 'message' => 'Registration Error'));
         }
@@ -1078,6 +1078,56 @@ if ($method == 'GET') {
         }
       }
     }
+
+  case 'contact':
+    if(isset($urlSection['2'])) {
+      switch($urlSection['2']) {
+        case 'send-message':
+          $errors = array();
+
+          if (strlen($_POST['name']) < 2) {
+            array_push($errors, 'name-too-short');
+          } elseif (strlen($_POST['name']) > 32) {
+            array_push($errors, 'name-too-long');
+          } elseif (preg_match('/^[a-zA-Z0-9 ]*$/', $_POST['name']) != 1) {
+            array_push($errors, 'invalid-name');
+          }
+
+          if (strlen($_POST['email']) === 0) {
+            array_push($errors, 'email-empty');
+          } elseif (preg_match('/^[^@\s]+@[^@\s]+\.[^@\s]+$/', $_POST['email']) != 1) {
+            array_push($errors, 'email-invalid');
+          }
+
+          if (count($errors) > 0) {
+            die(json_encode(array('status' => STATUS_FAIL, 'message' => 'Registry failed', 'data' => $errors)));
+          }
+
+          // send email to webmaster
+          $to = 'webmaster@blitzbasicscript.com';
+          $subject = 'Kontakt-Nachricht von BlitzBasicScript';
+
+          $headers = [
+            'MIME-Version' => '1.0',
+            'Content-type' => 'text/html; charset=UTF-8',
+            'From' => "BlitzBasicScript Contact Bot <contact@blitzbasicscript.com>",
+            'X-Mailer' => 'PHP/' . phpversion(),
+          ];
+
+          $mailContent = file_get_contents(MAIL_SERVER . '/contact-de.html');
+          $mailContent = str_replace('{{name}}', urlencode($_POST['name']), $mailContent);
+          $mailContent = str_replace('{{email}}', urlencode($_POST['email']), $mailContent);
+          $mailContent = str_replace('{{subject}}', urlencode($_POST['subject']), $mailContent);
+          $mailContent = str_replace('{{message}}', urlencode($_POST['message']), $mailContent);
+
+          $status = mail($to, $subject, $mailContent, $headers);
+          if ($status == false) {
+            die(json_encode(array('status' => STATUS_ERROR, 'message' => 'Your contact message could not be sent.')));
+          }
+
+          die(json_encode(array('status' => STATUS_SUCCESS)));
+      }
+    } 
   }
 } elseif ($method == 'DELETE') {
   $inputForm = file_get_contents('php://input');

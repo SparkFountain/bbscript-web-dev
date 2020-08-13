@@ -40,6 +40,10 @@ body {
   color: $white;
 }
 
+abbr {
+  cursor: help !important;
+}
+
 app-root.no-scrolling {
   overflow: hidden;
 }

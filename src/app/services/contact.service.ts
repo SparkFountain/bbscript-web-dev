@@ -1,0 +1,53 @@
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { ApiResponse } from './../interfaces/api-response';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ContactService {
+  constructor(private http: HttpClient) {}
+
+  sendMessage(
+    name: string,
+    email: string,
+    subject: string,
+    message: string
+  ): Promise<ApiResponse<boolean>> {
+    let subjectFormatted: string;
+    switch (subject) {
+      case 'bbscript':
+        subjectFormatted = 'BlitzBasicScript';
+        break;
+      case 'website':
+        subjectFormatted = 'Website';
+        break;
+      case 'bug-report':
+        subjectFormatted = 'Bug';
+        break;
+      case 'feature-request':
+        subjectFormatted = 'Feature-Vorschlag';
+        break;
+      case 'criticism':
+        subjectFormatted = 'Kritik';
+        break;
+      case 'individual':
+        subjectFormatted = 'Sonstiges';
+        break;
+    }
+
+    const body = new HttpParams()
+      .set('name', name)
+      .set('email', email)
+      .set('subject', subject)
+      .set('message', message);
+
+    return this.http
+      .post<ApiResponse<any>>(
+        `${environment.apiServer}/contact/send-message`,
+        body
+      )
+      .toPromise();
+  }
+}

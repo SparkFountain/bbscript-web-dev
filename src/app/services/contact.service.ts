@@ -9,12 +9,9 @@ import { Injectable } from '@angular/core';
 export class ContactService {
   constructor(private http: HttpClient) {}
 
-  sendMessage(
-    name: string,
-    email: string,
-    subject: string,
-    message: string
-  ): Promise<ApiResponse<boolean>> {
+  sendMessage(name: string, email: string, subject: string, message: string): Promise<ApiResponse<boolean>> {
+    console.info('[SEND MESSAGE] triggered');
+
     let subjectFormatted: string;
     switch (subject) {
       case 'bbscript':
@@ -40,14 +37,9 @@ export class ContactService {
     const body = new HttpParams()
       .set('name', name)
       .set('email', email)
-      .set('subject', subject)
+      .set('subject', subjectFormatted)
       .set('message', message);
 
-    return this.http
-      .post<ApiResponse<any>>(
-        `${environment.apiServer}/contact/send-message`,
-        body
-      )
-      .toPromise();
+    return this.http.post<ApiResponse<any>>(`${environment.apiServer}/contact/send-message`, body).toPromise();
   }
 }

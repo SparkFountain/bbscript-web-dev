@@ -1,10 +1,7 @@
 <h1 class="title is-1">{{ 'FOOTER.CONTACT.LABEL' | translate }}</h1>
 
 <div class="message is-info" *ngIf="section === 'form'">
-  <div
-    class="message-body"
-    [innerHTML]="'FOOTER.CONTACT.SUBTITLE' | translate"
-  ></div>
+  <div class="message-body" [innerHTML]="'FOOTER.CONTACT.SUBTITLE' | translate"></div>
 </div>
 
 <!-- CONTACT FORM -->
@@ -13,9 +10,7 @@
     <!-- EMAIL -->
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <label class="label">{{
-          'FOOTER.CONTACT.EMAIL.LABEL' | translate
-        }}</label>
+        <label class="label">{{ 'FOOTER.CONTACT.EMAIL.LABEL' | translate }}</label>
       </div>
       <div class="field-body">
         <div class="field">
@@ -32,12 +27,8 @@
             </span>
           </div>
           <p class="help is-danger">
-            <span *ngIf="this.notices['email-empty']">{{
-              'EMAIL_EMPTY' | translate
-            }}</span>
-            <span *ngIf="this.notices['email-invalid']">{{
-              'EMAIL_INVALID' | translate
-            }}</span>
+            <span *ngIf="this.notices['email-empty']">{{ 'EMAIL_EMPTY' | translate }}</span>
+            <span *ngIf="this.notices['email-invalid']">{{ 'EMAIL_INVALID' | translate }}</span>
           </p>
         </div>
       </div>
@@ -46,9 +37,7 @@
     <!-- NAME -->
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <label class="label">{{
-          'FOOTER.CONTACT.NAME.LABEL' | translate
-        }}</label>
+        <label class="label">{{ 'FOOTER.CONTACT.NAME.LABEL' | translate }}</label>
       </div>
       <div class="field-body">
         <div class="field">
@@ -65,15 +54,9 @@
             </span>
           </div>
           <p class="help is-danger">
-            <span *ngIf="this.notices['name-too-short']">{{
-              'NAME_TOO_SHORT' | translate
-            }}</span>
-            <span *ngIf="this.notices['name-too-long']">{{
-              'NAME_TOO_LONG' | translate
-            }}</span>
-            <span *ngIf="this.notices['input-invalid']">{{
-              'INVALID_INPUT' | translate
-            }}</span>
+            <span *ngIf="this.notices['name-too-short']">{{ 'NAME_TOO_SHORT' | translate }}</span>
+            <span *ngIf="this.notices['name-too-long']">{{ 'NAME_TOO_LONG' | translate }}</span>
+            <span *ngIf="this.notices['name-must-be-alphanumeric']">{{ 'NAME_MUST_BE_ALPHANUMERIC' | translate }}</span>
           </p>
         </div>
       </div>
@@ -82,33 +65,19 @@
     <!-- SUBJECT -->
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <label class="label">{{
-          'FOOTER.CONTACT.SUBJECT.LABEL' | translate
-        }}</label>
+        <label class="label">{{ 'FOOTER.CONTACT.SUBJECT.LABEL' | translate }}</label>
       </div>
       <div class="field-body">
         <div class="field">
           <p class="control">
             <span class="select">
               <select [(ngModel)]="subject">
-                <option value="bbscript">{{
-                  'FOOTER.CONTACT.SUBJECT.BBSCRIPT' | translate
-                }}</option>
-                <option value="website">{{
-                  'FOOTER.CONTACT.SUBJECT.WEBSITE' | translate
-                }}</option>
-                <option value="bug-report">{{
-                  'FOOTER.CONTACT.SUBJECT.BUG_REPORT' | translate
-                }}</option>
-                <option value="feature-request">{{
-                  'FOOTER.CONTACT.SUBJECT.FEATURE_REQUEST' | translate
-                }}</option>
-                <option value="criticism">{{
-                  'FOOTER.CONTACT.SUBJECT.CRITICISM' | translate
-                }}</option>
-                <option value="individual">{{
-                  'FOOTER.CONTACT.SUBJECT.INDIVIDUAL' | translate
-                }}</option>
+                <option value="bbscript">{{ 'FOOTER.CONTACT.SUBJECT.BBSCRIPT' | translate }}</option>
+                <option value="website">{{ 'FOOTER.CONTACT.SUBJECT.WEBSITE' | translate }}</option>
+                <option value="bug-report">{{ 'FOOTER.CONTACT.SUBJECT.BUG_REPORT' | translate }}</option>
+                <option value="feature-request">{{ 'FOOTER.CONTACT.SUBJECT.FEATURE_REQUEST' | translate }}</option>
+                <option value="criticism">{{ 'FOOTER.CONTACT.SUBJECT.CRITICISM' | translate }}</option>
+                <option value="individual">{{ 'FOOTER.CONTACT.SUBJECT.INDIVIDUAL' | translate }}</option>
               </select>
             </span>
           </p>
@@ -119,19 +88,19 @@
     <!-- MESSAGE -->
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <label class="label">{{
-          'FOOTER.CONTACT.MESSAGE.LABEL' | translate
-        }}</label>
+        <label class="label">{{ 'FOOTER.CONTACT.MESSAGE.LABEL' | translate }}</label>
       </div>
       <div class="field-body">
         <div class="field">
           <p class="control">
             <textarea
+              [(ngModel)]="message"
               class="textarea"
-              placeholder="{{
-                'FOOTER.CONTACT.MESSAGE.PLACEHOLDER' | translate
-              }}"
+              placeholder="{{ 'FOOTER.CONTACT.MESSAGE.PLACEHOLDER' | translate }}"
             ></textarea>
+          </p>
+          <p class="help is-danger">
+            <span *ngIf="this.notices['message-empty']">{{ 'MESSAGE_EMPTY' | translate }}</span>
           </p>
         </div>
       </div>
@@ -140,15 +109,9 @@
     <!-- DATA AGREEMENT -->
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <span
-          class="icon is-small is-left pointer"
-          (click)="dataAgreementAccepted = !dataAgreementAccepted"
-        >
+        <span class="icon is-small is-left pointer" (click)="dataAgreementAccepted = !dataAgreementAccepted">
           <i *ngIf="!dataAgreementAccepted" class="fa fa-fw fa-square-o"></i>
-          <i
-            *ngIf="dataAgreementAccepted"
-            class="fa fa-fw fa-check-square-o"
-          ></i>
+          <i *ngIf="dataAgreementAccepted" class="fa fa-fw fa-check-square-o"></i>
         </span>
       </div>
       <div class="field-body">
@@ -171,16 +134,11 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <button
-              class="button is-primary"
-              (click)="send()"
-              *ngIf="!sendingRequest"
-            >
+            <button class="button is-primary" (click)="send()" *ngIf="!sendingRequest">
               {{ 'FOOTER.CONTACT.SEND' | translate }}
             </button>
             <button class="button is-primary" disabled *ngIf="sendingRequest">
-              <i class="fa fa-spinner fa-spin" aria-hidden="true"></i
-              >&nbsp;&nbsp;
+              <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>&nbsp;&nbsp;
               {{ 'REGISTER.SENDING_REQUEST' | translate }}
             </button>
           </div>

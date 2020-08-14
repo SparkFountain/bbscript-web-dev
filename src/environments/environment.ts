@@ -8,6 +8,7 @@ export const environment = {
 
   emailRegex: new RegExp(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
   usernameRegex: new RegExp(/^[a-zA-Z0-9 ]*$/),
+  generalNameRegex: new RegExp(/^[a-zA-ZäöüÄÖÜß0-9 ]*$/),
 };
 
 /*

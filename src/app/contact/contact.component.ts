@@ -43,7 +43,7 @@ export class ContactComponent implements OnInit {
       this.notices['name-too-short'] = true;
     } else if (this.name.length > 32) {
       this.notices['name-too-long'] = true;
-    } else if (!environment.usernameRegex.test(this.name)) {
+    } else if (!environment.generalNameRegex.test(this.name)) {
       this.notices['name-must-be-alphanumeric'] = true;
     }
 
@@ -51,6 +51,10 @@ export class ContactComponent implements OnInit {
       this.notices['email-empty'] = true;
     } else if (!environment.emailRegex.test(this.email)) {
       this.notices['email-invalid'] = true;
+    }
+
+    if (this.message.length === 0) {
+      this.notices['message-empty'] = true;
     }
 
     if (!this.dataAgreementAccepted) {
@@ -63,7 +67,12 @@ export class ContactComponent implements OnInit {
       this.sendingRequest = true;
 
       this.contactService
-        .sendMessage(this.name, this.email, this.subject, this.message)
+        .sendMessage(
+          this.name,
+          this.email,
+          this.subject,
+          this.message.replace(/ /g, '&nbsp;').replace(/\r?\n/g, '<br />')
+        )
         .then((response: ApiResponse<any>) => {
           if (response.status === 'success') {
             this.section = 'success';

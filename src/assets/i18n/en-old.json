@@ -1,0 +1,384 @@
+{
+  "SUBTITLE": "Your Game Scripting Engine",
+  "IMPRINT": "Imprint",
+  "DISCLAIMER": "Disclaimer",
+  "BLITZFORUM": "BlitzForum (German)",
+  "NEW_FEATURES": "New Features",
+  "MIGRATION_GUIDE": "BlitzBasic Migration Guide",
+  "CHANGE_LOG": "Version Change Log",
+  "SEARCH_PLACEHOLDER": "Type Search Term...",
+  "SEARCH_RESULTS": "Search Results",
+  "DOCUMENTATION": "Documentation",
+  "CATEGORY": "Category",
+  "LEARN_MORE": "Learn More",
+  "TUTORIAL": "Tutorial",
+  "OVERVIEW": "Home",
+  "DOC": {
+    "TITLE": "Documentation",
+    "KEYWORDS": {
+      "TITLE": "Keywords",
+      "HEADLINE": "Schlüsselwörter dienen dazu, den Programmfluss zu kontrollieren sowie Variablen, Arrays, Funktionen und Typen zu deklarieren."
+    },
+    "DEPRECATED_KEYWORDS": {
+      "TITLE": "Deprecated Keywords",
+      "HEADLINE": "Einige veraltete Schlüsselwörter aus <i>BlitzBasic</i> werden in BBScript nicht unterstützt."
+    },
+    "VARIABLES": {
+      "TITLE": "Variables",
+      "HEADLINE": "Lerne die verschiedenen Arten von Variablen in BBScript kennen und erfahre, wie sie funktionieren.",
+      "GLOBAL": "Globale Variablen",
+      "LOCAL": "Lokale Variablen",
+      "DATA_TYPES": "Datentypen"
+    },
+    "CONDITIONS": {
+      "SELECTIONS": {
+        "TITLE": "Bedingungen und Auswahl",
+        "HEADLINE": "Mithilfe von Bedingungen und Auswahl-Blöcken steuerst du den Programmablauf je nach aktuellem Zustand."
+      }
+    },
+    "ARRAYS": {
+      "DATA_BLOCKS": {
+        "TITLE": "Arrays und Datenblöcke",
+        "HEADLINE": "Arrays sind Speicherfelder, in denen eine große Anzahl von Daten einfach verwaltet werden kann. Datenblöcke können genutzt werden, um komplexe Informationen wie Levelinhalte schnell verfügbar zu machen."
+      },
+      "FIXED_LENGTH": {
+        "TITLE": "Arrays mit fester Länge",
+        "HEADLINE": "Feste Länge"
+      },
+      "DYNAMIC_LENGTH": {
+        "TITLE": "Arrays mit dynamischer Länge",
+        "HEADLINE": "Dynamische Länge"
+      }
+    },
+    "LOOPS": {
+      "TITLE": "Schleifen",
+      "HEADLINE": "Schleifen sind dafür gedacht, bestimmte Code-Abschnitte mehrmals hintereinander auszuführen.",
+      "SUBTITLE": "Um Befehle mehrmals hintereinander auszuführen, kannst du dich zwischen drei verschiedenen Schleifentypen in BBScript entscheiden.",
+      "FOR_TO_NEXT": {
+        "TITLE": "For-To-Next-Schleife",
+        "HEADLINE": "For-To-Next"
+      },
+      "FOR_EACH": {
+        "TITLE": "For-Each-Schleife",
+        "HEADLINE": "For-Each"
+      },
+      "WHILE": {
+        "TITLE": "While-Schleife",
+        "HEADLINE": "While"
+      },
+      "REPEAT": {
+        "TITLE": "Repeat-Schleife",
+        "HEADLINE": "Repeat"
+      }
+    },
+    "FUNCTIONS": {
+      "TITLE": "Funktionen",
+      "HEADLINE": "Funktionen helfen dir, deinen Code in logische Abschnitte zu unterteilen.",
+      "DECLARATION": {
+        "TITLE": "Deklaration von Funktionen",
+        "HEADLINE": "Deklaration"
+      },
+      "NESTED_CALLS": "Verschachtelte Funktionsaufrufe"
+    },
+    "TYPES": {
+      "TITLE": "Typen",
+      "HEADLINE": "Benutze Typen, um beliebig viele Spielobjekte während der Laufzeit zu erzeugen.",
+      "DECLARATION": "Deklaration von Typen",
+      "BJECT_ACCESS": "Objektzugriffe"
+    },
+    "LOGIC": {
+      "MATHS": {
+        "TITLE": "Logik und Mathematik",
+        "HEADLINE": "Logische Operatoren werden eingesetzt, um mehrere Bedingungen miteinander zu verknüpfen."
+      }
+    },
+    "DIVERSE": {
+      "TITLE": "Diverses",
+      "HEADLINE": "Hier findest du spezielle Schlüsselwörter, die in keine andere Kategorie passen."
+    },
+    "COMMANDS": {
+      "TITLE": "Commands",
+      "CATEGORIES": "Categories",
+      "HEADLINE": "Commands are predefined templates that breathe life into your games.",
+      "SUBTITLE": "<p>BlitzBasicScript consists of more than 700 commands for game controls. They are sorted by category and subdivided into several scopes.</p>",
+      "PLAY": "Play",
+      "STOP": "Stop",
+      "BASICS": {
+        "TITLE": "Basics",
+        "MATHS": "Maths",
+        "DIVERSE": "Diverse",
+        "STRINGS": "Strings",
+        "TIME_RANDOM": "Time & Random"
+      },
+      "DATA": {
+        "TITLE": "Data Management",
+        "BANK": "Memory Banks",
+        "FILE_SYSTEM": "File System"
+      },
+      "GRAPHICS_2D": {
+        "TITLE": "2D Graphics",
+        "DISPLAY": "Display",
+        "IMAGES": "Images",
+        "GRAPHICS": "Graphics",
+        "PIXEL": "Pixel",
+        "TEXT": "Text",
+        "MOVIES": "Movies"
+      },
+      "GRAPHICS_3D": {
+        "TITLE": "3D Graphics",
+        "ANIMATIONS": "Animations",
+        "MOTIONS": "Motins",
+        "BRUSHES": "Brushes",
+        "DIVERSE": "Diverse",
+        "SCENERY": "Scenery",
+        "SCREEN": "Screen",
+        "CAMERA": "Camera",
+        "COLLISIONS": "Collisions",
+        "CONTROLS": "Controls",
+        "LIGHT_SHADOW": "Light and Shadow",
+        "PHYSICS": "Physics",
+        "MESHES": "Meshes",
+        "PICKING": "Picking",
+        "SPRITES": "Sprites",
+        "STATUS": "Status",
+        "SURFACES": "Surfaces",
+        "TERRAIN": "Terrain",
+        "TEXTURES": "Textures",
+        "COORDINATES": "Coordinates"
+      },
+      "NETWORK": {
+        "TITLE": "Network"
+      },
+      "IO": {
+        "TITLE": "IO (Input / Output)",
+        "MOUSE": "Mouse",
+        "KEYBOARD": "Keyboard",
+        "GAMEPAD": "Gamepad"
+      },
+      "SOUND": {
+        "TITLE": "Sound",
+        "3D": "3D Sound",
+        "CHANNELS": "Channels",
+        "MUSIC_SAMPLES": "Music & Samples"
+      },
+      "GUI": {
+        "TITLE": "GUI (Graphical User Interface)",
+        "BUTTON": "Buttons",
+        "CANVAS": "Canvas",
+        "DESKTOP": "Desktop",
+        "DIVERSE": "Diverse",
+        "EVENT": "Events",
+        "GADGET": "Gadgets",
+        "HTML": "HTML",
+        "ICON_STRIP": "Icon Strips",
+        "LIST_TABBER": "Lists & Tabs",
+        "MENU": "Menus",
+        "PANEL": "Panels",
+        "PROGRESS_BAR": "Progress Bars",
+        "REQUEST": "Requests",
+        "USER_INTERACTION_WINDOW": "User Interaction Windows",
+        "SLIDER": "Sliders",
+        "TEXT_AREA": "Text Areas",
+        "TEXT_FIELD": "Text Fields",
+        "TOOLBAR": "Toolbar",
+        "TREE_VIEW": "Tree View",
+        "WINDOW": "Windows"
+      }
+    },
+    "DEPRECATED_COMMANDS": {
+      "TITLE": "Obsolete Befehle",
+      "HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript."
+    },
+    "CONSTANTS_AND_SCANCODES": "Constants and Scancodes",
+    "DIFFERENCES_TO_BLITZBASIC": "Differences to BlitzBasic",
+    "MIGRATION_GUIDE": "Migration Guide"
+  },
+  "KEY_WORD": "Key Word",
+  "KEY_WORDS": "Key Words",
+  "COMMUNITY_FUNCTIONS": "Community Functions",
+  "DESCRIPTION": "Description",
+  "EXAMPLE": "Example",
+  "INFORMATION": "Information",
+  "NAV": {
+    "ABOUT": "Info",
+    "LEXER": "Lexer",
+    "COMMANDS": "Commands",
+    "GAMING": "Gaming",
+    "CONTACT": "Contakt",
+    "IMPRINT": "Imprint",
+    "LANGUAGE": {
+      "TITLE": "Language",
+      "EN": "English",
+      "DE": "German"
+    }
+  },
+  "WORK_IN_PROGRESS": {
+    "TITLE": "Projekt State: Alpha 0.0.1",
+    "TEXT": "Currently, the BlitzBasicScript implementation is still in alpha state. For that reason this website only provides few information and features at the moment but will be extended and improved continuously."
+  },
+  "NAV_TERMS": "Terms of Use",
+  "SIGN_IN": "Sign In",
+  "SUBMIT": "Submit",
+  "CANCEL": "Cancel",
+  "FORGOT_PW": "Forgot Password?",
+  "FORGOT_PW_SUBTITLE": "Please enter your username or email address in the text field below. We will send you an email with instructions how you can reset your password.",
+  "REGISTER_FOR_FREE": "If you have no account yet, you can register for free.",
+  "PROGRAM_EXECUTION": "Program Execution",
+  "2D_GRAPHICS": "2D Graphics",
+  "3D_GRAPHICS": "3D Graphics",
+  "GUI_ABBR": "Graphical User Interface",
+  "GRAPHICS_ENGINE": "Graphics Engine",
+  "PHYSICS_ENGINE": "Physics Engine",
+  "SHADOW_ENGINE": "Shadow Engine",
+  "PARTICLE_ENGINE": "Particle Engine",
+  "PLATFORM_INDEPENDENCE": "Platform Independence",
+  "FILE_SYSTEM_ACCESS": "File System Access",
+  "NETWORK_GAMING": "Network Gaming",
+  "COMPILED_TO_CPP": "C++",
+  "TRANSLATED_TO_JS": "JavaScript",
+  "JETZT_LERNE_ICH": "Jetzt lerne ich Spiele programmieren mit BlitzBasic (German)",
+  "MISSION_SUBTITLE": "<b>BlitzBasicScript</b> is a simple yet powerful scripting language based on the <a class=\"is-link\" href=\"https://en.wikipedia.org/wiki/Blitz_BASIC\" target=\"_blank\">BlitzBasic</a> syntax. The primary intention of BBScript is to create games which can be played in any modern web browser – from unspectacular skill games to advanced 3D shooters.",
+  "FEATURES": {
+    "TITLE": "Features",
+    "1": {
+      "TITLE": "More than 700 powerful commands",
+      "MESSAGE": "Create vivid 3D worlds, donate your virtual environment a suitable sound and build an intuitive <abbr title=\"Graphical User Interface\">GUI</abbr> with only few instructions. More than 700 commands - concerning 2D and 3D graphics, data processing, controls and many more - offer a comfortable programming experience to you."
+    },
+    "2": {
+      "TITLE": "Modern graphics engine",
+      "MESSAGE": "Thanks to the newest version of von <a class=\"dark\" href=\"https://www.babylonjs.com\" target=\"_blank\">BabylonJS</a> you will discover unprecedented graphic power in your browser, even on mobile devices."
+    },
+    "3": {
+      "TITLE": "Platform independence",
+      "MESSAGE": "Code once, gamble everywhere: Your games can be executed in any modern web browser. No more old-fashioned <abbr title=\"Operating System\">OS</abbr> limitations - just start a web browser on your device and visit <i>blitzbasicscript.com</i>. That's all."
+    },
+    "4": {
+      "TITLE": "Online-<abbr title=\"Integrated Development Environment\">IDE</abbr>",
+      "MESSAGE": "Develop your games quickly and easily wherever you are. You simply need an account at <i>blitzbasicscript.com</i> as well as an internet connection and away you go!"
+    },
+    "5": {
+      "TITLE": "Numerous assets completely free",
+      "MESSAGE": "Times are over when you painted all images and recorded sounds yourself: The BlitzBasicScript Cloud provides hundreds of tile sets, 3D models, sounds and background musics as well as fonts and much more. Of course you can still add unlimited private assets to your own projects."
+    },
+    "6": {
+      "TITLE": "Recast of the legendary BlitzBasic",
+      "MESSAGE": "A few years ago <b><a class=\"dark\" href=\"https://en.wikipedia.org/wiki/Blitz_BASIC\" target=\"_blank\">BlitzBasic</a></b> was an insider tip among indie game developers. With <b>BlitzBasicScript</b> you can resuscitate countless former BB games in a browser: The syntax is almost identical so you just need to copy a BlitzBasic source code into the online IDE and hit 'Play'!"
+    },
+    "7": {
+      "TITLE": "Realistic shadow rendering and physic effects",
+      "MESSAGE": "Several brand new commands extend the classical BlitzBasic language, allowing for 3D objects to get illuminated physically correct and to cast shadows at each other as well as on the ground. Moreover, you can apply physics to every 3D object to make your gaming experience as realistic as possible."
+    },
+    "8": {
+      "TITLE": "Open source project",
+      "MESSAGE": "The whole project BlitzBasicScript (including lexer, parser, renderer and all in-game services) has been published under MIT license and <a class=\"dark\" href=\"https://github.com/SparkFountain/BlitzBasicScript\" target=\"_blank\">can be downloaded from GitHub</a>."
+    },
+    "9": {
+      "TITLE": "Long-term support",
+      "MESSAGE": "2020 is just the beginning: Never before it was possible to run high quality games smoothly in a web browser. BlitzBasicScript offers modern, future-oriented indie game developers a perfect alternative compared to Unity or C++. This project will be continuously developed in the next years. Thanks to progressive web standards and hardware improvements, browser-based game development will become a new state of the art."
+    }
+  },
+  "LEXER": {
+    "TITLE": "Lexer",
+    "SUBTITLE": "<p>The Lexer analyses your BBScript code and generates so called <i>tokens</i> which are used for further processing and subsequent program execution.</p><p>Click on the tab <b>Editor</b> and type or paste your code. Then switch to <b>Tokens</b> and inspect the components of your code. Move the mouse over a token to show its purpose. In the <b>Table</b> tab you find all tokens listed below each other.</p>",
+    "LINE": "Line",
+    "EDITOR": "Editor",
+    "TOKENS": "Tokens",
+    "TABLE": "Table",
+    "TOKEN": {
+      "CATEGORY": "Category",
+      "VALUE": "Value",
+      "OFFSET": "Offset",
+      "WHICH": {
+        "INDIVIDUAL": "Individual",
+        "VARIABLE": "Variable",
+        "FUNCTION": "Function",
+        "KEYWORD": "Keyword",
+        "DEPRECATED_KEYWORD": "Deprecated Keyword",
+        "COMMAND": "Command",
+        "DEPRECATED_COMMAND": "Deprecated Command",
+        "COMMA": "Comma",
+        "DOUBLE_QUOTE": "Double Quote",
+        "COMMENT_MARKER": "Comment Marker",
+        "COMMENT": "Comment",
+        "COMPARISON": "Comparison",
+        "ASSIGNMENT": "Assignment",
+        "BRACKET_OPEN": "Opening Bracket",
+        "BRACKET_CLOSE": "Closing Bracket",
+        "LABEL_DOT": "Label Dot",
+        "LABEL": "Label",
+        "TYPE": "Type",
+        "TYPE_FIELD_DOT": "Typ Field Dot",
+        "BACKSLASH": "Backslash",
+        "EMPTY": "Empty (nothing)",
+        "ALGEBRAIC": "Algebraic",
+        "BITWISE_INVERT": "Bitwise Invert",
+        "COLON": "Colon",
+        "INTEGER": "Integer",
+        "FLOAT": "Float",
+        "STRING": "String",
+        "BOOLEAN": "Boolean",
+        "UNIDENTIFIED": "Unidentified",
+        "UNDEFINED": "! Lexer Error !",
+        "GLOBAL": "Global Variable",
+        "LOCAL": "Local Variable",
+        "DIM": "Array",
+        "CONST": "Constant"
+      }
+    }
+  },
+  "USER_NAME_OR_EMAIL": "User Name or Email Address",
+  "REGISTER": "Register",
+  "REGISTER_SUBTITLE": "<p class=\"title is-5 has-text-success\"><b>Create an account for BlitzBasicScript to achieve premium features:</b></p><ul class=\"has-text-success\"><li>Save your projects online in the BBScript Cloud</li><li>Get 100 MB webspace to upload resources</li><li>Access more than 100 additional assets (graphics, models, sounds)</li></ul>",
+  "USER_NAME": "User Name (alphanumeric; must have at least 2 and at most 32 characters)",
+  "USER_NAME_PLACEHOLDER": "Choose a user name",
+  "EMAIL_ADDRESS": "Email Address",
+  "EMAIL_ADDRESS_PLACEHOLDER": "user@provider.com",
+  "PASSWORD": "Password",
+  "PASSWORD_PLACEHOLDER": "Choose a strong password",
+  "PASSWORD_CONFIRMATION": "Password Confirmation",
+  "PASSWORD_CONFIRMATION_PLACEHOLDER": "Confirm your strong password",
+  "I_READ_TERMS": "I have read the <a class=\"is-link\">terms and conditions</a> and accept them entirely.",
+  "EDITOR_SETTINGS": "Editor Settings",
+  "SYNTAX_HIGHLIGHTING": "Syntax Highlighting",
+  "AUTO_COMPLETION": "Automatic Completion",
+  "STRICT_MODE": "Strict Mode",
+  "SPELLING_CORRECTION": "Spelling Correction",
+  "UNDO_REDO_STACK_SIZE": "Undo / Redo Stack Size",
+  "TAB_WIDTH": "Tab Width (in pixels)",
+  "GERMANY": "Germany",
+  "SCRIPTS": "Scripts",
+  "ASSETS": "Assets",
+  "DIVERSE": "Diverse",
+  "ADD": "Add",
+  "RENAME": "Rename",
+  "DELETE": "Delete",
+  "IMPROVE_CODE": "Improve Code",
+  "RUN": "Run",
+  "RUN_DEBUG": "Run Debug Mode",
+  "STOP": "Stop",
+  "UNDO": "Undo",
+  "REDO": "Redo",
+  "IDE_SETTINGS": "Settings",
+  "NAME": "Name",
+  "UNDO_STATE_INTERVAL": "Undo State Interval (in seconds)",
+  "USERNAME_EXISTS": "This username already exists",
+  "USERNAME_EMPTY": "The user name must not be empty",
+  "USERNAME_TOO_SHORT": "The username is too short, please type at least two characters",
+  "USERNAME_TOO_LONG": "The username is too long, please use at most 32 characters",
+  "USERNAME_MUST_BE_ALPHANUMERIC": "The username must be alphanumeric (allowed characters are numbers, letters and space characters)",
+  "EMAIL_EXISTS": "This email address has already been used for a registration",
+  "EMAIL_EMPTY": "The email address must not be empty",
+  "EMAIL_INVALID": "Please enter a valid email address",
+  "PASSWORD_TOO_SHORT": "The password must consist of at least 8 characters",
+  "PASSWORDS_DO_NOT_MATCH": "The password inputs do not match",
+  "AGB_MUST_BE_ACCEPTED": "You must accept the terms for registration to continue.",
+  "REGISTRATION_SUCCESSFUL": "Your registration was successful",
+  "WAIT_FOR_EMAIL_TOKEN": "A confirmation email has been sent to your email address. There your will find a token link which you have to click to complete your registration.",
+  "USERNAME_PASSWORD_COMBINATION_INVALID": "The combination of username and password is invalid.",
+  "FOOTER": {
+    "CONTACT": "Contact",
+    "TERMS": "Terms of Use",
+    "IMPRINT": "Imprint",
+    "DISCLAIMER": "Disclaimer"
+  }
+}

@@ -36,10 +36,6 @@ const routes: Routes = [
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
   {
-    path: 'lexer',
-    loadChildren: () => import('./lexer/lexer.module').then(m => m.LexerModule)
-  },
-  {
     path: 'commands',
     loadChildren: () => import('./commands/commands.module').then(m => m.CommandsModule)
   },

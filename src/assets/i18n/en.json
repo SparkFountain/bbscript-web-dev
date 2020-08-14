@@ -67,6 +67,7 @@
   "NAME_TOO_LONG": "The name is too long, please use at most 32 characters",
   "USERNAME_MUST_BE_ALPHANUMERIC": "The username must be alphanumeric (allowed characters are numbers, letters and space characters)",
   "NAME_MUST_BE_ALPHANUMERIC": "The name must be alphanumeric (allowed characters are numbers, letters and space characters)",
+  "MESSAGE_EMPTY": "Please type a message",
   "USER_NOT_ACTIVE": "Your user account is not active yet. Did you open your confirmation mail after registrating already?",
   "EMAIL_EXISTS": "This email address has already been used for a registration",
   "EMAIL_EMPTY": "The email address must not be empty",
@@ -174,211 +175,162 @@
       "PATH": "/disclaimer"
     }
   },
-  "LEXER": {
-    "TITLE": "Lexer",
-    "SUBTITLE": "<p>Der Lexer analysiert deinen BBScript-Code und erzeugt daraus sogenannte <i>Tokens</i>, welche für die Weiterverarbeitung und anschließende Programmausführung benötigt werden.</p><p>Klick auf den Tab <b>Editor</b> und gib deinen Code ein. Wechsele anschließend in den Tab <b>Tokens</b>, um die einzelnen Bestandteile deines Codes zu sehen. Gehe mit der Maus über ein Token, um seine Funktion angezeigt zu bekommen. Unter <b>Tabelle</b> siehst du alle Tokens untereinander aufgeführt.</p>",
-    "LINE": "Zeile",
-    "EDITOR": "Editor",
-    "TOKENS": "Tokens",
-    "TABLE": "Tabelle",
-    "TOKEN": {
-      "CATEGORY": "Kategorie",
-      "VALUE": "Wert",
-      "OFFSET": "Position",
-      "WHICH": {
-        "INDIVIDUAL": "Individuell",
-        "VARIABLE": "Variable",
-        "FUNCTION": "Funktion",
-        "KEYWORD": "Schlüsselwort",
-        "DEPRECATED_KEYWORD": "Veraltetes Schlüsselwort",
-        "COMMAND": "Befehl",
-        "DEPRECATED_COMMAND": "Veralteter Befehl",
-        "COMMA": "Komma",
-        "DOUBLE_QUOTE": "Doppeltes Anführungszeichen",
-        "COMMENT_MARKER": "Kommentar-Zeichen",
-        "COMMENT": "Kommentar",
-        "COMPARISON": "Vergleich",
-        "ASSIGNMENT": "Zuweisung",
-        "BRACKET_OPEN": "Öffnende Klammer",
-        "BRACKET_CLOSE": "Schließende Klammer",
-        "LABEL_DOT": "Label-Punkt",
-        "LABEL": "Label",
-        "TYPE": "Typ",
-        "TYPE_FIELD_DOT": "Typ-Feld-Punkt",
-        "BACKSLASH": "Backslash (Rückstrich)",
-        "EMPTY": "Leer (nichts)",
-        "ALGEBRAIC": "Algebraisch",
-        "BITWISE_INVERT": "Bitweise invertieren",
-        "COLON": "Doppelpunkt",
-        "INTEGER": "Integer (Ganzzahl)",
-        "FLOAT": "Float (Fließkomma)",
-        "STRING": "String (Zeichenkette)",
-        "BOOLEAN": "Boolean (Wahrheitswert)",
-        "UNIDENTIFIED": "Nicht identifiziert",
-        "UNDEFINED": "! Lexer-Fehler !",
-        "GLOBAL": "Globale Variable",
-        "LOCAL": "Lokale Variable",
-        "DIM": "Array (Feld)",
-        "CONST": "Konstante"
-      }
-    }
-  },
   "SEARCH": {
-    "PLACEHOLDER": "Suchbegriff eingeben...",
-    "BUTTON": "Suchen",
-    "RESULTS": "Suchergebnisse"
+    "PLACEHOLDER": "Enter a search term...",
+    "BUTTON": "Search",
+    "RESULTS": "Search results"
   },
-  "CATEGORY": "Kategorie",
+  "CATEGORY": "Category",
   "OVERVIEW": "Home",
   "TUTORIALS": {
     "TITLE": "Tutorials",
     "BASICS": {
-      "TITLE": "Grundlagen",
+      "TITLE": "Basics",
       "CONTENT": {
-        "BASICS": "Die Grundlagen"
+        "BASICS": "The Basics"
       }
     },
     "GRAPHICS": {
-      "TITLE": "Grafik",
+      "TITLE": "Graphics",
       "CONTENT": {
-        "DRAW_AND_MOVE_IMAGES": "Bilder zeichnen und bewegen"
+        "DRAW_AND_MOVE_IMAGES": "Draw and Move Pictures"
       }
     },
     "IO": {
-      "TITLE": "Ein- & Ausgabe",
+      "TITLE": "Input & Output",
       "CONTENT": {
-        "USE_MOUSE_KEYBOARD_AND_TOUCH": "Maus, Tastatur und Touch benutzen"
+        "USE_MOUSE_KEYBOARD_AND_TOUCH": "Use Mouse, Keyboard and Touch"
       }
     },
     "SOUND": {
-      "TITLE": "Sound & Musik",
+      "TITLE": "Sound & Music",
       "CONTENT": {
-        "PLAY_SOUNDS_AND_MUSIC": "Sounds und Musik abspielen"
+        "PLAY_SOUNDS_AND_MUSIC": "Play Sounds and Musik"
       }
     },
     "GUI": {
-      "TITLE": "Benutzeroberfläche",
+      "TITLE": "User Interface",
       "CONTENT": {
-        "WINDOWS_BUTTONS_AND_GADGETS": "Fenster, Buttons und Gadgets"
+        "WINDOWS_BUTTONS_AND_GADGETS": "Windows, Buttons and Gadgets"
       }
     },
     "FILES": {
-      "TITLE": "Dateizugriff",
+      "TITLE": "File Access",
       "CONTENT": {
-        "READ_AND_WRITE_FILES": "Dateien lesen und schreiben"
+        "READ_AND_WRITE_FILES": "Read and Write Files"
       }
     },
     "PARTICLES": {
-      "TITLE": "Partikel",
+      "TITLE": "Particles",
       "CONTENT": {
-        "CREATE_PARTICLES": "Partikel erstellen"
+        "CREATE_PARTICLES": "Create particles"
       }
     },
     "3D": {
-      "TITLE": "3D-Objekte",
+      "TITLE": "3D Objects",
       "CONTENT": {
-        "CREATE_VIRTUAL_3D_WORLD": "Eine virtuelle 3D-Welt erstellen",
-        "ANIMATE_3D_OBJECTS": "3D-Objekte animieren",
-        "COLLISIONS_ON_3D_OBJECTS": "Kollisionen von 3D-Objekten",
-        "ACTIVATE_SHADOW_RENDERING": "Schattendarstellung aktivieren",
-        "USE_PHYSICS_ENGINE": "Physik-Engine nutzen"
+        "CREATE_VIRTUAL_3D_WORLD": "Create a 3D Virtual World",
+        "ANIMATE_3D_OBJECTS": "Animate 3D Objects",
+        "COLLISIONS_ON_3D_OBJECTS": "3D Object Collisions",
+        "ACTIVATE_SHADOW_RENDERING": "Activate Shadow Rendering",
+        "USE_PHYSICS_ENGINE": "Use Physics Engine"
       }
     }
   },
   "DOC": {
-    "TITLE": "Dokumentation",
+    "TITLE": "Documentation",
     "LANDING": {
-      "TEXT_01": "BlitzBasicScript ist eine einfache und zugleich mächtige Programmiersprache, mit der du deine eigenen Spiele programmieren kannst."
+      "TEXT_01": "BlitzBasicScript is a simple yet powerful programming language with which you can program your own games."
     },
-    "NO_CATEGORY_SELECTED": "Keine Kategorie ausgewählt",
+    "NO_CATEGORY_SELECTED": "No category selected",
     "KEYWORDS": {
-      "TITLE": "Schlüsselwörter",
-      "HEADLINE": "Schlüsselwörter dienen dazu, den Programmfluss zu kontrollieren sowie Variablen, Arrays, Funktionen und Typen zu deklarieren.",
+      "TITLE": "Keywords",
+      "HEADLINE": "Keywords are used to control the program flow and to declare variables, arrays, functions and types.",
       "VARIABLES": {
-        "TITLE": "Variablen",
-        "HEADLINE": "Lerne die verschiedenen Arten von Variablen in BBScript kennen und erfahre, wie sie funktionieren.",
-        "GLOBAL": "Globale Variablen",
-        "LOCAL": "Lokale Variablen",
-        "DATA_TYPES": "Datentypen"
+        "TITLE": "Variables",
+        "HEADLINE": "Learn about the different types of variables in BBScript and how they work.",
+        "GLOBAL": "Global Variables",
+        "LOCAL": "Local Variables",
+        "DATA_TYPES": "Data Types"
       },
       "CONDITIONS": {
-        "TITLE": "Bedingungen",
+        "TITLE": "Conditions",
         "SELECTIONS": {
-          "TITLE": "Bedingungen und Auswahl",
-          "HEADLINE": "Mithilfe von Bedingungen und Auswahl-Blöcken steuerst du den Programmablauf je nach aktuellem Zustand."
+          "TITLE": "Conditions and Selection",
+          "HEADLINE": "With the help of conditions and selection blocks, you control the program flow depending on the current status."
         }
       },
       "ARRAYS": {
-        "TITLE": "Arrays (Datenfelder)",
+        "TITLE": "Arrays (Data Fields)",
         "DATA_BLOCKS": {
-          "TITLE": "Arrays und Datenblöcke",
-          "HEADLINE": "Arrays sind Speicherfelder, in denen eine große Anzahl von Daten einfach verwaltet werden kann. Datenblöcke können genutzt werden, um komplexe Informationen wie Levelinhalte schnell verfügbar zu machen."
+          "TITLE": "Arrays and Data Blocks",
+          "HEADLINE": "Arrays are storage fields in which a large amount of data can be easily managed. Data blocks can be used to make complex information such as level content quickly available."
         },
         "FIXED_LENGTH": {
-          "TITLE": "Arrays mit fester Länge",
-          "HEADLINE": "Feste Länge"
+          "TITLE": "Fixed Length Arrays",
+          "HEADLINE": "Fixed Length"
         },
         "DYNAMIC_LENGTH": {
-          "TITLE": "Arrays mit dynamischer Länge",
-          "HEADLINE": "Dynamische Länge"
+          "TITLE": "Dynamic Length Arrays",
+          "HEADLINE": "Dynamic Length"
         }
       },
       "LOOPS": {
-        "TITLE": "Schleifen",
-        "HEADLINE": "Schleifen sind dafür gedacht, bestimmte Code-Abschnitte mehrmals hintereinander auszuführen.",
-        "SUBTITLE": "Um Befehle mehrmals hintereinander auszuführen, kannst du dich zwischen drei verschiedenen Schleifentypen in BBScript entscheiden.",
+        "TITLE": "Loops",
+        "HEADLINE": "Loops are intended to execute certain sections of code several times.",
+        "SUBTITLE": "To execute commands multiple times in a row, you can choose between three different types of loops in BBScript.",
         "FOR_TO_NEXT": {
-          "TITLE": "For-To-Next-Schleife",
-          "HEADLINE": "For-To-Next"
+          "TITLE": "For To Next Loop",
+          "HEADLINE": "For To Next"
         },
         "FOR_EACH": {
-          "TITLE": "For-Each-Schleife",
-          "HEADLINE": "For-Each"
+          "TITLE": "For Each Loop",
+          "HEADLINE": "For Each"
         },
         "WHILE": {
-          "TITLE": "While-Schleife",
+          "TITLE": "While Loop",
           "HEADLINE": "While"
         },
         "REPEAT": {
-          "TITLE": "Repeat-Schleife",
+          "TITLE": "Repeat Loop",
           "HEADLINE": "Repeat"
         }
       },
       "FUNCTIONS": {
-        "TITLE": "Funktionen",
-        "HEADLINE": "Funktionen helfen dir, deinen Code in logische Abschnitte zu unterteilen.",
+        "TITLE": "Functions",
+        "HEADLINE": "Functions help you break your code down into logical sections.",
         "DECLARATION": {
-          "TITLE": "Deklaration von Funktionen",
-          "HEADLINE": "Deklaration"
+          "TITLE": "Function Declaration",
+          "HEADLINE": "Declaration"
         },
-        "NESTED_CALLS": "Verschachtelte Funktionsaufrufe"
+        "NESTED_CALLS": "Nested Function Calls"
       },
       "TYPES": {
-        "TITLE": "Typen",
-        "HEADLINE": "Benutze Typen, um beliebig viele Spielobjekte während der Laufzeit zu erzeugen.",
-        "DECLARATION": "Deklaration von Typen",
-        "BJECT_ACCESS": "Objektzugriffe"
+        "TITLE": "Types",
+        "HEADLINE": "Use types to create any number of game objects at runtime.",
+        "DECLARATION": "Declaration of Types",
+        "BJECT_ACCESS": "Object Access"
       },
       "LOGIC": {
-        "TITLE": "Logik und Mathematik",
+        "TITLE": "Logic and Math",
         "MATHS": {
-          "TITLE": "Logik und Mathematik",
-          "HEADLINE": "Logische Operatoren werden eingesetzt, um mehrere Bedingungen miteinander zu verknüpfen."
+          "TITLE": "Logic and Math",
+          "HEADLINE": "Logical operators are used to link several conditions with one another."
         }
       },
       "DIVERSE": {
-        "TITLE": "Diverses",
-        "HEADLINE": "Hier findest du spezielle Schlüsselwörter, die in keine andere Kategorie passen."
+        "TITLE": "Diverse",
+        "HEADLINE": "Here you will find special keywords that do not fit into any other category."
       }
     },
     "DEPRECATED_KEYWORDS": {
-      "TITLE": "Obsolete Schlüsselwörter",
-      "HEADLINE": "Einige veraltete Schlüsselwörter aus <i>BlitzBasic</i> werden in BBScript nicht unterstützt."
+      "TITLE": "Deprecated Keywords",
+      "HEADLINE": "Some deprecated keywords from <i>BlitzBasic</i> are not supported in BBScript."
     },
     "COMMANDS": {
-      "TITLE": "Befehle",
-      "CATEGORIES": "Kategorien",
-      "HEADLINE": "Befehle sind vordefinierte Prozeduren, die deinen Spielen Leben einhauchen.",
+      "TITLE": "Commands",
+      "CATEGORIES": "Categories",
+      "HEADLINE": "Commands are predefined procedures that bring your games to life.",
       "SUBTITLE": "<p>BlitzBasicScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Kategorien, welche wiederum aus verschiedenen Anwendungsbereichen bestehen.</p><p>Wähle aus der linken Navigationsleiste eine Kategorie aus, um die dazugehörigen Anwendungsbereiche zu öffnen, oder nutze die Suchfunktion, um einen bestimmten Begriff zu finden.</p>",
       "DESCRIPTION": "Beschreibung",
       "INFOS": "Infos",
@@ -472,7 +424,7 @@
       "HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript."
     },
     "CONSTANTS_AND_SCANCODES": {
-      "TITLE": "Konstanten und Scancodes",
+      "TITLE": "Constants and Scancodes",
       "HEADLINE": "Nutze die speziellen Codes kennen für Tasteneingaben, Kameraeinstellungen, GUI-Events und vieles mehr."
     },
     "DIFFERENCES_TO_BLITZBASIC": {
@@ -493,52 +445,48 @@
       "PATH": "/home",
       "SUBMENU": {
         "OVERVIEW": {
-          "TITLE": "Überblick",
-          "PATH": "ueberblick"
+          "TITLE": "Overview",
+          "PATH": "overview"
         },
         "NEWS_BLOG": {
-          "TITLE": "News-Blog",
+          "TITLE": "News Blog",
           "PATH": "news-blog"
         },
         "FEATURES": {
           "TITLE": "Features",
           "PATH": "features"
-        },
-        "COMPARISON": {
-          "TITLE": "Vergleich",
-          "PATH": "vergleich"
         }
       }
     },
     "LETS_CODE": {
-      "TITLE": "Coden",
-      "PATH": "/coden",
+      "TITLE": "Let's Code",
+      "PATH": "/lets-code",
       "SUBMENU": {
         "EMPTY_PROJECT": {
-          "TITLE": "Leeres Projekt",
-          "PATH": "/coden/leeres-projekt"
+          "TITLE": "Empty Project",
+          "PATH": "/lets-code/empty-project"
         },
         "TEMPLATES": {
-          "TITLE": "Vorlagen",
-          "PATH": "/coden/vorlagen"
+          "TITLE": "Templates",
+          "PATH": "/lets-code/templates"
         }
       }
     },
     "PROJECTS": {
-      "TITLE": "Projekte",
-      "PATH": "/projekte",
+      "TITLE": "Projects",
+      "PATH": "/projects",
       "SUBMENU": {
         "MY_PROJECTS": {
-          "TITLE": "Meine Projekte",
-          "PATH": "/projekte/meine-projekte"
+          "TITLE": "My Projects",
+          "PATH": "/projects/my-projects"
         },
         "COMMUNITY": {
           "TITLE": "Community",
-          "PATH": "/projekte/community"
+          "PATH": "/projects/community"
         },
         "DEMOS": {
           "TITLE": "Demos",
-          "PATH": "/projekte/demos"
+          "PATH": "/projects/demos"
         }
       }
     },
@@ -547,93 +495,91 @@
       "PATH": "/tutorials",
       "SUBMENU": {
         "BASICS": {
-          "TITLE": "Grundlagen",
-          "PATH": "/tutorials/grundlagen"
+          "TITLE": "Basics",
+          "PATH": "/tutorials/basics"
         },
         "GRAPHICS": {
-          "TITLE": "Grafik",
-          "PATH": "/tutorials/grafik"
+          "TITLE": "Graphics",
+          "PATH": "/tutorials/graphics"
         },
         "IO": {
-          "TITLE": "Ein- & Ausgabe",
-          "PATH": "/tutorials/eingabe-und-ausgabe"
+          "TITLE": "Input & Output",
+          "PATH": "/tutorials/input-and-output"
         },
         "SOUND": {
-          "TITLE": "Sound & Musik",
-          "PATH": "/tutorials/sound-und-musik"
+          "TITLE": "Sound & Music",
+          "PATH": "/tutorials/sound-and-music"
         },
         "GUI": {
-          "TITLE": "Benutzeroberfläche",
-          "PATH": "/tutorials/grafische-benutzeroberflaeche"
+          "TITLE": "Graphical User Interface",
+          "PATH": "/tutorials/graphical-user-interface"
         },
         "FILES": {
-          "TITLE": "Dateizugriff",
-          "PATH": "/tutorials/dateizugriff"
+          "TITLE": "File Access",
+          "PATH": "/tutorials/file-access"
         },
         "PARTICLES": {
-          "TITLE": "Partikel",
-          "PATH": "/tutorials/partikel"
+          "TITLE": "Particles",
+          "PATH": "/tutorials/particles"
         },
         "3D": {
-          "TITLE": "3D-Objekte",
-          "PATH": "/tutorials/3d-objekte"
+          "TITLE": "3D Objects",
+          "PATH": "/tutorials/3d-objects"
         }
       }
     },
     "DOCUMENTATION": {
-      "TITLE": "Dokumentation",
-      "PATH": "/dokumentation",
+      "TITLE": "Documentation",
+      "PATH": "/documentation",
       "SUBMENU": {
         "KEYWORDS": {
-          "TITLE": "Schlüsselwörter",
-          "PATH": "/dokumentation/schluesselwoerter"
+          "TITLE": "Keywords",
+          "PATH": "/documentation/keywords"
         },
         "COMMANDS": {
-          "TITLE": "Befehle",
-          "PATH": "/dokumentation/befehle"
+          "TITLE": "Commands",
+          "PATH": "/documentation/commands"
         },
         "CONSTANTS_AND_SCANCODES": {
-          "TITLE": "Konstanten und Scancodes",
-          "PATH": "/dokumentation/konstanten-und-scancodes"
+          "TITLE": "Constants and Scancodes",
+          "PATH": "/documentation/constants-and-scancodes"
         },
         "DIFFERENCES_TO_BLITZ_BASIC": {
-          "TITLE": "Unterschiede zu BlitzBasic",
-          "PATH": "/dokumentation/unterschiede-zu-blitz-basic"
+          "TITLE": "Differences to BlitzBasic",
+          "PATH": "/documentation/differences-to-blitz-basic"
         },
         "MIGRATION_GUIDE": {
-          "TITLE": "Migrations-Guide",
-          "PATH": "/dokumentation/migrations-guide"
+          "TITLE": "Migration Guide",
+          "PATH": "/documentation/migration-guide"
         }
       }
     },
     "LANGUAGE": {
-      "TITLE": "Sprache",
-      "EN": "Englisch",
-      "DE": "Deutsch"
+      "TITLE": "Language",
+      "EN": "English",
+      "DE": "German"
     },
     "LOGIN": {
-      "TITLE": "Anmelden",
-      "PATH": "/anmelden"
+      "TITLE": "Log In",
+      "PATH": "/login"
     },
     "REGISTER": {
-      "TITLE": "Registrieren",
-      "PATH": "/registrieren"
+      "TITLE": "Register",
+      "PATH": "/register"
     },
     "ACCOUNT": {
-      "PROFILE": "Profil",
-      "AWARDS": "Medaillen",
-      "TROPHYS": "Trophäen",
+      "PROFILE": "Profile",
+      "AWARDS": "Medals",
+      "TROPHYS": "Trophies",
       "PATH": "/account"
     },
     "ABOUT": "Infos",
-    "LEXER": "Lexer",
     "GAMING": "Spielen",
     "CONTACT": "Kontakt",
     "IMPRINT": "Impressum"
   },
-  "NAV_TERMS": "Nutzungsbedingungen",
-  "CANCEL": "Abbrechen",
-  "TARGET_CODE": "Ziel-Code",
+  "NAV_TERMS": "Terms Of Use",
+  "CANCEL": "Cancel",
   "2D_GRAPHICS": "2D-Grafik",
   "3D_GRAPHICS": "3D-Grafik",
   "GUI_ABBR": "Grafische Benutzeroberfläche",
@@ -666,40 +612,40 @@
   "FEATURES_OLD": {
     "TITLE": "Features",
     "1": {
-      "TITLE": "Mehr als 700 mächtige Befehle",
-      "MESSAGE": "Erschaffe lebendige 3D-Welten, verleihe deiner virtuellen Umgebung den passenden Sound und baue mit wenigen Befehlen eine intuitive <abbr title=\"Grafische Benutzeroberfläche\">GUI</abbr>. Insgesamt mehr als 700 Befehle - von 2D und 3D über Datenverarbeitung bis hin zur Spielsteuerung - bieten dir ein komfortables Programmiererlebnis."
+      "TITLE": "More Than 700 Powerful Commands",
+      "MESSAGE": "Create living 3D worlds, give your virtual environment the right sound and build an intuitive <abbr title=\"Graphical user interface\">GUI</abbr> with just a few commands. A total of more than 700 commands - from 2D and 3D to data processing and game control - offer you a comfortable programming experience."
     },
     "2": {
-      "TITLE": "Moderne Grafik-Engine",
-      "MESSAGE": "Dank der neuesten Version von <a class=\"dark\" href=\"https://www.babylonjs.com\" target=\"_blank\">BabylonJS</a> erlebst du nie zuvor dagewesene Grafikpower in deinem Browser, selbst auf mobilen Geräten."
+      "TITLE": "Modern Graphics Engine",
+      "MESSAGE": "Thanks to the latest version of <a class=\"dark\" href=\"https://www.babylonjs.com\" target=\"_blank\">BabylonJS</a> you will experience unprecedented graphic power in your browser, even on mobile devices."
     },
     "3": {
-      "TITLE": "Plattformunabhängigkeit",
+      "TITLE": "Platform Independence",
       "MESSAGE": "Einmal coden, überall zocken: Deine Spiele lassen sich in jedem modernen Webbrowser ausführen. Es gibt keinerlei altmodische <abbr title=\"Betriebssystem\">OS</abbr>-Beschränkungen und du musst nichts weiter tun, als auf deinem Endgerät einen Web-Browser zu starten und auf <i>blitzbasicscript.com</i> zu gehen."
     },
     "4": {
-      "TITLE": "Online-<abbr title=\"Integrierte Entwicklungsumgebung\">IDE</abbr>",
-      "MESSAGE": "Entwickle deine Games schnell & einfach, wo immer du gerade bist. Du benötigst lediglich einen Account bei <i>blitzbasicscript.com</i> sowie einen Internet-Anschluss und schon kann's losgehen!"
+      "TITLE": "Online <abbr title=\"Integrated development environment\">IDE</abbr>",
+      "MESSAGE": "Develop your games quickly and easily, wherever you are. All you need is an account at <i>blitzbasicscript.com</i> and an internet connection and you're ready to go!"
     },
     "5": {
-      "TITLE": "Zahlreiche Assets komplett gratis",
+      "TITLE": "Numerous Assets Completely Free",
       "MESSAGE": "Vorbei die Zeit, als du jedes Bild selbst malen und Geräusche aufnehmen musstest: In der BlitzBasicScript-Cloud findest du hunderte Tilesets, 3D-Modelle, Sounds und Hintergrundmusiken sowie Schriftarten und vieles mehr. Natürlich kannst du trotzdem beliebig viele eigene Assets in deinen Projekten verwenden."
     },
     "6": {
-      "TITLE": "Neuauflage des legendären BlitzBasic",
-      "MESSAGE": "Vor einigen Jahren war <b><a class=\"dark\" href=\"https://de.wikipedia.org/wiki/Blitz_Basic\" target=\"_blank\">BlitzBasic</a></b> ein Geheimtipp unter Hobby-Spiele-Entwicklern. Mit <b>BlitzBasicScript</b> kannst du nun den unzähligen früheren BB-Spielen im Browser neues Leben einhauchen: Die Syntax ist beinahe identisch, du musst also nur den Code eines BlitzBasic-Programmes in die Online-IDE kopieren und auf Play drücken!"
+      "TITLE": "New Edition Of The Legendary BlitzBasic",
+      "MESSAGE": "A few years ago <b><a class=\"dark\" href=\"https://de.wikipedia.org/wiki/Blitz_Basic\" target=\"_blank\">BlitzBasic</a></b> was an insider tip among hobby game developers. With <b>BlitzBasicScript</b> you can now breathe new life into the countless earlier BB games in the browser: The syntax is almost identical, so you only have to copy the code of a BlitzBasic program into the online IDE and press play!"
     },
     "7": {
-      "TITLE": "Realistische Schattendarstellung und Physik-Effekte",
-      "MESSAGE": "Einige brandneue Befehle erweitern klassische BlitzBasic-Spiele um die Möglichkeit, 3D-Objekte physikalisch korrekt zu beleuchten und Schatten aufeinander sowie auf den Boden zu werfen. Darüber hinaus kann jedem 3D-Objekt eine Physik zugeordnet werden, um das Spielerlebnis so realistisch wie möglich zu gestalten."
+      "TITLE": "Realistic Shadow Display And Physics Effects",
+      "MESSAGE": "Some brand new commands extend classic BlitzBasic games with the possibility of physically correct lighting of 3D objects and of casting shadows on each other and on the floor. In addition, physics can be assigned to each 3D object in order to make the gaming experience as realistic as possible."
     },
     "8": {
-      "TITLE": "Open-Source-Projekt",
-      "MESSAGE": "Das gesamte Projekt BlitzBasicScript inklusive Lexer, Parser, Renderer und allen Game-Services ist als Angular-Library unter der MIT-Lizenz veröffentlicht und <a class=\"dark\" href=\"https://github.com/SparkFountain/BlitzBasicScript\" target=\"_blank\">kann bei GitHub heruntergeladen werden</a>."
+      "TITLE": "Open Source Project",
+      "MESSAGE": "The entire BlitzBasicScript project including lexer, parser, renderer and all game services is published as an Angular library under the MIT license and <a class=\"dark\" href=\"https://github.com/SparkFountain/BlitzBasicScript\" target=\"_ blank\">can be downloaded from GitHub</a>."
     },
     "9": {
-      "TITLE": "Langfristiger Support",
-      "MESSAGE": "2020 ist erst der Anfang: Nie zuvor war es möglich, Spiele in höchster Qualität flüssig im Web-Browser darzustellen. Mit BlitzBasicScript bietet sich modernen, zukunftsorientierten Hobby-Game-Developern eine ideale Alternative zu Unity oder C++. Dieses Projekt wird in den nächsten Jahren kontinuierlich weiter entwickelt und dank fortschreitender Standards sowie Hardware-Entwicklungen wird Spieleentwicklung im Browser zum neuen Standard."
+      "TITLE": "Long-Term Support",
+      "MESSAGE": "2020 is just the beginning: never before has it been possible to smoothly display games of the highest quality in a web browser. BlitzBasicScript offers modern, future-oriented hobby game developers an ideal alternative to Unity or C++. This project will be continuously developed in the next few years and thanks to advancing standards and hardware developments, game development in the browser will become the new standard."
     }
   },
   "LETS_CODE": {

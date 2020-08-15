@@ -21,7 +21,7 @@
 <h2 class="title is-2">{{ 'HOME.SIX_REASONS' | translate }}</h2>
 
 <div class="columns" *ngFor="let i of [0, 1]">
-  <div class="column" *ngFor="let j of [0, 1, 2]">
+  <div class="column is-flex" *ngFor="let j of [0, 1, 2]">
     <div class="card">
       <div class="card-header">
         <i class="fa fa-{{ reasonIcons[i * 3 + j] }}" aria-hidden="true"></i>

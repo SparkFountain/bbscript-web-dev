@@ -331,114 +331,114 @@
       "TITLE": "Commands",
       "CATEGORIES": "Categories",
       "HEADLINE": "Commands are predefined procedures that bring your games to life.",
-      "SUBTITLE": "<p>BlitzBasicScript besitzt über 700 Befehle zur Spielsteuerung. Sie sind alle sortiert nach Kategorien, welche wiederum aus verschiedenen Anwendungsbereichen bestehen.</p><p>Wähle aus der linken Navigationsleiste eine Kategorie aus, um die dazugehörigen Anwendungsbereiche zu öffnen, oder nutze die Suchfunktion, um einen bestimmten Begriff zu finden.</p>",
-      "DESCRIPTION": "Beschreibung",
+      "SUBTITLE": "<p>BlitzBasicScript has over 700 commands for game control. They are all sorted by categories, which in turn consist of different application areas.</p><p>Select a category from the left navigation bar to open the associated application areas, or use the search function to find a specific term.</p>",
+      "DESCRIPTION": "Description",
       "INFOS": "Infos",
-      "CODE_EXAMPLE": "Codebeispiel",
-      "PLAY": "Starten",
-      "STOP": "Beenden",
+      "CODE_EXAMPLE": "Code Example",
+      "PLAY": "Play",
+      "STOP": "Stop",
       "BASICS": {
-        "TITLE": "Grundlagen",
-        "MATHS": "Mathematik",
-        "DIVERSE": "Sonstiges",
-        "STRINGS": "Zeichenketten",
-        "TIME_RANDOM": "Zeit & Zufall"
+        "TITLE": "Basics",
+        "MATHS": "Math",
+        "DIVERSE": "Diverse",
+        "STRINGS": "Strings",
+        "TIME_RANDOM": "Time & Random"
       },
       "DATA": {
-        "TITLE": "Datenverwaltung",
-        "BANK": "Speicherbanken",
-        "FILE_SYSTEM": "Dateisystem"
+        "TITLE": "Data Management",
+        "BANK": "Memory Banks",
+        "FILE_SYSTEM": "File System"
       },
       "GRAPHICS_2D": {
-        "TITLE": "2D-Grafik",
-        "DISPLAY": "Anzeige",
-        "IMAGES": "Bilder",
-        "GRAPHICS": "Grafik",
+        "TITLE": "2D Graphics",
+        "DISPLAY": "Display",
+        "IMAGES": "Images",
+        "GRAPHICS": "Graphics",
         "PIXEL": "Pixel",
         "TEXT": "Text",
-        "MOVIES": "Videos"
+        "MOVIES": "Movies"
       },
       "GRAPHICS_3D": {
-        "TITLE": "3D-Grafik",
-        "ANIMATIONS": "Animationen",
-        "MOTIONS": "Fortbewegungen",
-        "BRUSHES": "Pinsel",
-        "DIVERSE": "Diverses",
-        "SCENERY": "Szenerie",
-        "SCREEN": "Bildschirmeinstellungen",
-        "CAMERA": "Kamera",
-        "COLLISIONS": "Kollisionen",
-        "CONTROLS": "Kontrolle",
-        "LIGHT_SHADOW": "Licht und Schatten",
-        "PHYSICS": "Physik",
-        "MESHES": "Gitterobjekte",
-        "PICKING": "Picking (Objekte finden)",
+        "TITLE": "3D Graphics",
+        "ANIMATIONS": "Animations",
+        "MOTIONS": "Motions",
+        "BRUSHES": "Brushes",
+        "DIVERSE": "Diverse",
+        "SCENERY": "Scenery",
+        "SCREEN": "Screen Settings",
+        "CAMERA": "Camera",
+        "COLLISIONS": "Collisions",
+        "CONTROLS": "Controls",
+        "LIGHT_SHADOW": "Light and Shadow",
+        "PHYSICS": "Physics",
+        "MESHES": "Meshes",
+        "PICKING": "Picking (Finding Objects)",
         "SPRITES": "Sprites",
         "STATUS": "Status",
-        "SURFACES": "Oberflächen",
+        "SURFACES": "Surfaces",
         "TERRAIN": "Terrain",
-        "TEXTURES": "Texturen",
-        "COORDINATES": "Koordinaten"
+        "TEXTURES": "Textures",
+        "COORDINATES": "Coordinates"
       },
       "NETWORK": {
-        "TITLE": "Netzwerk"
+        "TITLE": "Network"
       },
       "IO": {
-        "TITLE": "IO (Eingabe / Ausgabe)",
-        "MOUSE": "Maus",
-        "KEYBOARD": "Tastatur",
+        "TITLE": "IO (Input / Output)",
+        "MOUSE": "Mouse",
+        "KEYBOARD": "Keyboard",
         "GAMEPAD": "Gamepad"
       },
       "SOUND": {
         "TITLE": "Sound",
         "3D": "3D Sound",
-        "CHANNELS": "Kanäle",
-        "MUSIC_SAMPLES": "Musik & Geräusche"
+        "CHANNELS": "Channels",
+        "MUSIC_SAMPLES": "Music & Sounds"
       },
       "GUI": {
-        "TITLE": "GUI (Grafische Benutzeroberfläche)",
+        "TITLE": "GUI (Graphical User Interface)",
         "BUTTON": "Buttons",
-        "CANVAS": "Canvas (Zeichenfenster)",
-        "DESKTOP": "Bildschirm",
-        "DIVERSE": "Diverses",
-        "EVENT": "Ereignisse",
-        "GADGET": "Gadgets (UI-Elemente)",
+        "CANVAS": "Canvas",
+        "DESKTOP": "Desktop",
+        "DIVERSE": "Diverse",
+        "EVENT": "Events",
+        "GADGET": "Gadgets (UI Elements)",
         "HTML": "HTML",
-        "ICON_STRIP": "Icon-Streifen",
-        "LIST_TABBER": "Listen & Registerkarten",
-        "MENU": "Menüs",
-        "PANEL": "Panels (Fenstergruppen)",
-        "PROGRESS_BAR": "Fortschrittsbalken",
-        "REQUEST": "Benachrichtigungen",
-        "USER_INTERACTION_WINDOW": "Benutzer-Interaktions-Fenster",
-        "SLIDER": "Slider (Schieberegler)",
-        "TEXT_AREA": "Textfelder",
-        "TEXT_FIELD": "Texteingaben",
-        "TOOLBAR": "Toolbar (Werkzeugleiste)",
-        "TREE_VIEW": "Baumansicht",
-        "WINDOW": "Fenster"
+        "ICON_STRIP": "Icon Strips",
+        "LIST_TABBER": "Lists & Tabbers",
+        "MENU": "Menus",
+        "PANEL": "Panels (Windows Groups)",
+        "PROGRESS_BAR": "Progress Bars",
+        "REQUEST": "Requests",
+        "USER_INTERACTION_WINDOW": "User Interaction Windows",
+        "SLIDER": "Sliders",
+        "TEXT_AREA": "Text Areas",
+        "TEXT_FIELD": "Text Fields",
+        "TOOLBAR": "Toolbar",
+        "TREE_VIEW": "Tree View",
+        "WINDOW": "Windows"
       }
     },
     "DEPRECATED_COMMANDS": {
-      "TITLE": "Obsolete Befehle",
-      "HEADLINE": "Hier findest du alle Befehle, welche zwar in <i>BlitzBasic</i> existieren, aber nicht in BBScript."
+      "TITLE": "Deprecated Commands",
+      "HEADLINE": "Here you will find all commands that exist in <i>BlitzBasic</i>, but not in BBScript."
     },
     "CONSTANTS_AND_SCANCODES": {
       "TITLE": "Constants and Scancodes",
-      "HEADLINE": "Nutze die speziellen Codes kennen für Tasteneingaben, Kameraeinstellungen, GUI-Events und vieles mehr."
+      "HEADLINE": "Use the special codes for key inputs, camera settings, GUI events and much more."
     },
     "DIFFERENCES_TO_BLITZBASIC": {
-      "TITLE": "Unterschiede zu BlitzBasic",
-      "HEADLINE": "Falls du schon Erfahrung mit BlitzBasic hast, lernst du hier die kleinen, aber feinen Unterschiede von BlitzBasicScript."
+      "TITLE": "Differences to BlitzBasic",
+      "HEADLINE": "If you already have experience with BlitzBasic, here you will learn the small but fine differences of BlitzBasicScript."
     }
   },
-  "COMMAND_NAME": "Befehlsname",
-  "KEY_WORD": "Schlüsselwort",
-  "KEY_WORDS": "Schlüsselwörter",
-  "COMMUNITY_FUNCTIONS": "Community-Funktionen",
-  "DESCRIPTION": "Beschreibung",
-  "EXAMPLE": "Beispiel",
-  "INFORMATION": "Informationen",
+  "COMMAND_NAME": "Command Name",
+  "KEY_WORD": "Keyword",
+  "KEY_WORDS": "Keywords",
+  "COMMUNITY_FUNCTIONS": "Community Functions",
+  "DESCRIPTION": "Description",
+  "EXAMPLE": "Example",
+  "INFORMATION": "Information",
   "NAV": {
     "HOME": {
       "TITLE": "Home",
@@ -574,42 +574,31 @@
       "PATH": "/account"
     },
     "ABOUT": "Infos",
-    "GAMING": "Spielen",
-    "CONTACT": "Kontakt",
-    "IMPRINT": "Impressum"
+    "GAMING": "Gaming",
+    "CONTACT": "Contact",
+    "IMPRINT": "Imprint"
   },
   "NAV_TERMS": "Terms Of Use",
   "CANCEL": "Cancel",
-  "2D_GRAPHICS": "2D-Grafik",
-  "3D_GRAPHICS": "3D-Grafik",
-  "GUI_ABBR": "Grafische Benutzeroberfläche",
-  "GRAPHICS_ENGINE": "Grafik-Engine",
-  "PHYSICS_ENGINE": "Physik-Engine",
-  "SHADOW_ENGINE": "Schatten-Engine",
-  "PARTICLE_ENGINE": "Partikel-Engine",
-  "PLATFORM_INDEPENDENCE": "Plattform-Unabhängigkeit",
-  "FILE_SYSTEM_ACCESS": "Dateisystem-Zugriffe",
-  "NETWORK_GAMING": "Netzwerkspiele",
+  "2D_GRAPHICS": "2D Graphics",
+  "3D_GRAPHICS": "3D-Graphics",
+  "GUI_ABBR": "Graphical User Interface",
+  "GRAPHICS_ENGINE": "Graphics Engine",
+  "PHYSICS_ENGINE": "Physics Engine",
+  "SHADOW_ENGINE": "Shadow Engine",
+  "PARTICLE_ENGINE": "Particle Engine",
+  "PLATFORM_INDEPENDENCE": "Platform Independence",
+  "FILE_SYSTEM_ACCESS": "File System Access",
+  "NETWORK_GAMING": "Network Gaming",
   "COMPILED_TO_CPP": "C++",
   "TRANSLATED_TO_JS": "JavaScript",
   "JETZT_LERNE_ICH": "Jetzt lerne ich Spiele programmieren mit BlitzBasic",
-  "MISSION_SUBTITLE": "<b>BlitzBasicScript</b> ist eine einfache und gleichzeitig mächtige Skriptsprache, die auf der <b><a class=\"is-link\" href=\"https://en.wikipedia.org/wiki/Blitz_BASIC\" target=\"_blank\">BlitzBasic</a>-Syntax</b> aufbaut. Dank BlitzBasicScript kannst du <b>mit minimalem Aufwand Spiele entwickeln</b>, welche auf jedem beliebigen Gerät ganz einfach im Webbrowser gespielt werden können. Von simplen Knobelspielen bis hin zu aufwändigen 3D-Shootern ist alles möglich!",
+  "MISSION_SUBTITLE": "<b>BlitzBasicScript</b> is a simple yet powerful scripting language based on the <b><a class=\"is-link\" href=\"https://en.wikipedia.org/wiki/Blitz_BASIC\" target=\"_ blank\">BlitzBasic</a> syntax</b>. Thanks to BlitzBasicScript you can <b>develop games with minimal effort</b>, which can be easily played on any device in the web browser. From simple puzzle games to complex 3D shooters, everything is possible!",
   "WORK_IN_PROGRESS": {
-    "TITLE": "Projektzustand: Alpha 0.0.1",
-    "TEXT": "Momentan befindet sich BlitzBasicScript noch in der Alpha-Phase. Das bedeutet, auf dieser Website gibt es erstmal nur wenige Features und auch unter der Haube werden noch zahlreiche Befehle implementiert."
+    "TITLE": "Work in Progress: Alpha 0.0.2",
+    "TEXT": "BlitzBasicScript is currently still in the alpha phase. This means there are only a few features on this website available and numerous commands are still being implemented under the hood."
   },
   "FEATURES": {
-    "TITLE": "Features",
-    "COMMANDS": {
-      "TITLE": "Mehr als 700 mächtige Befehle",
-      "MESSAGE": ""
-    },
-    "COLLISION_DETECTION": {
-      "TITLE": "Kollisionserkennung",
-      "MESSAGE": ""
-    }
-  },
-  "FEATURES_OLD": {
     "TITLE": "Features",
     "1": {
       "TITLE": "More Than 700 Powerful Commands",
@@ -651,25 +640,25 @@
   "LETS_CODE": {
     "TITLE": "",
     "EMPTY_PROJECT": {
-      "TITLE": "Leeres Projekt",
+      "TITLE": "Empty Project",
       "PROJECT": {
-        "TITLE": "Projekttitel",
-        "TITLE_PLACEHOLDER": "Mein cooles Spiel",
-        "TITLE_TOO_SHORT": "Der Projekttitel ist zu kurz, bitte gib mindestens zwei Zeichen ein",
-        "TITLE_TOO_LONG": "Der Projekttitel ist zu lang, bitte beschränke dich auf max. 32 Zeichen",
-        "TITLE_MUST_BE_ALPHANUMERIC": "Der Projekttitel muss alphanumerisch sein (erlaubte Zeichen sind Buchstaben, Zahlen und Leerzeichen)",
-        "DESCRIPTION": "Beschreibung",
-        "DESCRIPTION_PLACEHOLDER": "Worum geht es in deinem Projekt? Mach ein bisschen Werbung und schreibe hier ein paar Sätze über das Spielziel, die Features und mehr.",
-        "LICENSE": "Lizenz",
-        "IMAGE": "Titelbild",
-        "CREATE": "Projekt erstellen"
+        "TITLE": "Project Title",
+        "TITLE_PLACEHOLDER": "My cool game",
+        "TITLE_TOO_SHORT": "The project title is too short, please enter at least two characters",
+        "TITLE_TOO_LONG": "The project title is too long, please limit yourself to max. 32 characters",
+        "TITLE_MUST_BE_ALPHANUMERIC": "The project title must be alphanumeric (allowed characters are letters, numbers and spaces)",
+        "DESCRIPTION": "Description",
+        "DESCRIPTION_PLACEHOLDER": "What is your project about? Do some promotion and write a few sentences here about the goal of the game, the features and more.",
+        "LICENSE": "License",
+        "IMAGE": "Image",
+        "CREATE": "Create Project"
       }
     }
   },
-  "UPLOAD_IMAGE": "Bild hochladen",
+  "UPLOAD_IMAGE": "Upload Image",
   "IDE": {
     "SETTINGS": {
-      "TITLE": "Editor-Einstellungen"
+      "TITLE": "Editor Settings"
     }
   }
 }

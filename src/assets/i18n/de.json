@@ -455,10 +455,6 @@
         "FEATURES": {
           "TITLE": "Features",
           "PATH": "features"
-        },
-        "COMPARISON": {
-          "TITLE": "Vergleich",
-          "PATH": "vergleich"
         }
       }
     },
@@ -578,7 +574,6 @@
       "PATH": "/account"
     },
     "ABOUT": "Infos",
-    "LEXER": "Lexer",
     "GAMING": "Spielen",
     "CONTACT": "Kontakt",
     "IMPRINT": "Impressum"
@@ -604,17 +599,6 @@
     "TEXT": "Momentan befindet sich BlitzBasicScript noch in der Alpha-Phase. Das bedeutet, auf dieser Website gibt es erstmal nur wenige Features und auch unter der Haube werden noch zahlreiche Befehle implementiert."
   },
   "FEATURES": {
-    "TITLE": "Features",
-    "COMMANDS": {
-      "TITLE": "Mehr als 700 mächtige Befehle",
-      "MESSAGE": ""
-    },
-    "COLLISION_DETECTION": {
-      "TITLE": "Kollisionserkennung",
-      "MESSAGE": ""
-    }
-  },
-  "FEATURES_OLD": {
     "TITLE": "Features",
     "1": {
       "TITLE": "Mehr als 700 mächtige Befehle",

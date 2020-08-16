@@ -1,10 +1,6 @@
 <h1 class="title is-1">{{ project.title }}</h1>
 
 <div class="columns">
-  <div class="column is-1" *ngIf="!showFiles">
-    TODO:
-  </div>
-
   <div class="column is-3" *ngIf="showFiles">
     <nav class="panel">
       <div class="panel-heading">
@@ -56,6 +52,6 @@
   </div>
 
   <div class="column" [ngClass]="{ 'is-9': showFiles, 'is-11': !showFiles }">
-    <app-ide [buttons]="['play', 'debug', 'undo', 'redo', 'guide', 'codeCleanup', 'toggleSettings']"></app-ide>
+    <app-ide [buttons]="['play']" [code]="fileContent"></app-ide>
   </div>
 </div>

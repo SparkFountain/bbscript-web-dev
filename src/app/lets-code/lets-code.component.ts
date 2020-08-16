@@ -1,20 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FileOrFolder } from '../interfaces/file-or-folder';
 import { LetsCodeService } from '../services/lets-code.service';
 import { FileType } from '../types/file-type';
 import { Project } from '../interfaces/project';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-lets-code',
   templateUrl: './lets-code.component.html',
   styleUrls: ['./lets-code.component.scss']
 })
-export class LetsCodeComponent implements OnInit {
+export class LetsCodeComponent implements OnInit, OnDestroy {
+  language: string;
+  languageSubscription: Subscription;
+
   public project: Project;
   public searchTerm: string;
 
   public path: string;
   public breadcrumbs: string[];
+
+  public fileContent: string[];
 
   public icons = {
     image: 'file-image-o',
@@ -28,11 +35,17 @@ export class LetsCodeComponent implements OnInit {
 
   public showFiles: boolean;
 
-  constructor(private letsCodeService: LetsCodeService) {}
+  constructor(private letsCodeService: LetsCodeService, private translateService: TranslateService) {}
 
   ngOnInit(): void {
+    this.language = this.translateService.currentLang;
+    this.languageSubscription = this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.language = event.lang;
+      this.breadcrumbs = [this.translateService.instant('IDE.FILES')];
+    });
+
     this.project = {
-      title: 'Snake',
+      title: 'Coden',
       author: 'Spark Fountain',
       description: 'A simple game to eat apples and avoid stone collisions',
       license: 'CC0',
@@ -41,12 +54,20 @@ export class LetsCodeComponent implements OnInit {
 
     this.path = '';
 
-    this.breadcrumbs = [this.project.title];
+    this.breadcrumbs = [this.translateService.instant('IDE.FILES')];
     this.filesAndFolders = [];
+
+    this.fileContent = [];
 
     this.showFiles = true;
 
     this.getFiles();
+  }
+
+  ngOnDestroy(): void {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
   }
 
   createFile(): void {
@@ -60,7 +81,7 @@ export class LetsCodeComponent implements OnInit {
   }
 
   getFiles(): void {
-    this.letsCodeService.getFiles(this.path).then((filesAndFolders: string[]) => {
+    this.letsCodeService.getSharedFiles().then((filesAndFolders: string[]) => {
       this.filesAndFolders = filesAndFolders.map((fileOrFolder: string) => {
         let type: FileType;
 
@@ -106,8 +127,10 @@ export class LetsCodeComponent implements OnInit {
   }
 
   openFile(fileIndex: number): void {
-    // TODO: implement
-    console.info('[OPENING FILE]', this.filesAndFolders[fileIndex].name);
+    this.letsCodeService.getFileContent(this.filesAndFolders[fileIndex].name).then((fileContent: string) => {
+      this.fileContent = fileContent.replace(/\r/g, '').split('\n');
+      console.info('[FILE CONTENT]', this.fileContent);
+    });
   }
 
   handleContextMenu($event: MouseEvent): void {

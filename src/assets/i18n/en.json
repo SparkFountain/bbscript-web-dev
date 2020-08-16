@@ -657,6 +657,7 @@
   },
   "UPLOAD_IMAGE": "Upload Image",
   "IDE": {
+    "FILES": "Files",
     "SETTINGS": {
       "TITLE": "Editor Settings"
     }

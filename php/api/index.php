@@ -64,6 +64,7 @@ define('MAIL_SERVER', 'http://mail.blitzbasicscript.com');
 
 /* BASE DIRECTORY FOR FILE ACCESS */
 $baseDir = '/var/www/web23388256/html/bbscript/files/';
+$sharedDir = '/var/www/web23388256/files/BlitzBasicScript/shared/';
 
 if ($method == 'GET') {
   switch ($urlSection['1']) {
@@ -824,12 +825,22 @@ if ($method == 'GET') {
           die(json_encode(array('status' => STATUS_SUCCESS, 'data' => 0), JSON_NUMERIC_CHECK));
         }
       case 'get-content':
-        die('This operation has been deactivated by Spark Fountain due to security issues.');
-        $fileAsString = file_get_contents($baseDir . $_GET['path']);
+        $fileAsString = base64_encode(file_get_contents($sharedDir . $_GET['path']));
         die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $fileAsString)));
       }
     } else {
       $files = scandir($baseDir . $_GET['path']);
+      die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array_slice($files, 2))));
+    }
+  case 'shared-files':
+    if (isset($urlSection['2'])) {
+      switch ($urlSection['2']) {
+      case 'get-content':
+        $fileAsString = file_get_contents($sharedDir . $_GET['path']);
+        die(json_encode(array('status' => STATUS_SUCCESS, 'data' => $fileAsString)));
+      }
+    } else {
+      $files = scandir($sharedDir);
       die(json_encode(array('status' => STATUS_SUCCESS, 'data' => array_slice($files, 2))));
     }
   case 'projects':

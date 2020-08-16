@@ -24,7 +24,16 @@ import { UndoRedoAction } from '../classes/ide/undo-redo-action';
 })
 export class IdeComponent implements OnInit, AfterViewChecked {
   @Input() buttons: string[];
-  @Input('code') initialCode: string[];
+
+  private _initialCode: string[];
+
+  @Input('code') set initialCode(value: string[]) {
+    this.code = {
+      plain: value,
+      formatted: [value]
+    };
+    this.syntaxHighlighting();
+  }
 
   @ViewChild('codingArea', { static: false }) codingArea: ElementRef;
 
@@ -36,106 +45,9 @@ export class IdeComponent implements OnInit, AfterViewChecked {
   public colorScheme: ColorScheme;
 
   public playing: boolean;
-  public action: 'idle' | 'play' | 'debug' | 'stop';
+  public action: 'idle' | 'play' | 'debug' | 'stop' | 'fake';
 
   public undoRedoStack: UndoRedoAction[];
-
-  @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
-    if (this.playing) {
-      return;
-    }
-
-    console.info('[KEY DOWN]', event);
-
-    const previousLine = this.code.plain[this.caret.y - 1];
-    let currentLine = this.code.plain[this.caret.y];
-    const nextLine = this.code.plain[this.caret.y + 1];
-
-    let updateCurrentLine = true;
-
-    switch (event.code) {
-      case 'Backspace':
-        if (this.caret.x > 0) {
-          currentLine = currentLine.slice(0, -1);
-          this.caret.x--;
-        } else {
-          if (this.caret.y > 0) {
-            this.code.plain.splice(this.caret.y, 1);
-            this.caret.y--;
-            this.caret.x = this.code.plain[this.caret.y].length;
-          }
-          updateCurrentLine = false;
-        }
-        break;
-      case 'Enter':
-      case 'NumpadEnter':
-        this.caret.x = 0;
-        this.caret.y++;
-        this.code.plain.splice(this.caret.y, 0, '');
-        updateCurrentLine = false;
-        break;
-      case 'Space':
-        event.preventDefault();
-        currentLine += ' ';
-        this.caret.x++;
-        break;
-      case 'Home':
-        this.moveCaret('beginOfLine');
-        break;
-      case 'End':
-        this.caret.x = this.code.plain[this.caret.y].length;
-        break;
-      case 'ArrowLeft':
-        event.preventDefault();
-        this.moveCaret('left');
-        break;
-      case 'ArrowRight':
-        event.preventDefault();
-        this.moveCaret('right');
-        break;
-      case 'ArrowUp':
-        event.preventDefault();
-        this.moveCaret('up');
-        break;
-      case 'ArrowDown':
-        event.preventDefault();
-        this.moveCaret('down');
-        break;
-      case 'KeyC':
-        if (event.ctrlKey) {
-          // navigator.clipboard
-          //   .writeText('todo') // TODO: discover selected text
-          //   .catch(err => {
-          //     console.log('Clipboard paste error', err);
-          //   });
-        } else {
-          currentLine = this.addCharacter(currentLine, event.key);
-        }
-        break;
-      case 'KeyV':
-        if (event.ctrlKey) {
-          navigator.clipboard
-            .readText()
-            .then((code: string) => {
-              this.insertCode(code);
-            })
-            .catch(err => {
-              console.log('Clipboard paste error', err);
-            });
-        } else {
-          currentLine = this.addCharacter(currentLine, event.key);
-        }
-        break;
-      default:
-        currentLine = this.addCharacter(currentLine, event.key);
-    }
-
-    this.updateCaretPosition();
-    if (updateCurrentLine) {
-      this.code.plain[this.caret.y] = currentLine;
-    }
-    this.syntaxHighlighting();
-  }
 
   constructor(private lexer: LexerService, private changeDetection: ChangeDetectorRef) {}
 
@@ -143,11 +55,11 @@ export class IdeComponent implements OnInit, AfterViewChecked {
     this.settingsOpen = false;
     this.caret = { x: 0, y: 0, top: 0, left: 0 };
 
-    this.initialCode = [''];
+    this._initialCode = [''];
 
     this.code = {
-      plain: this.initialCode,
-      formatted: [this.initialCode] // TODO: refactor
+      plain: this._initialCode,
+      formatted: [this._initialCode] // TODO: refactor
     };
 
     this.colorScheme = 'solarized-light';
@@ -163,7 +75,10 @@ export class IdeComponent implements OnInit, AfterViewChecked {
 
   play(): void {
     this.playing = true;
-    this.action = 'play';
+    setTimeout(() => {
+      this.action = 'fake';
+      this.changeDetection.markForCheck();
+    }, 0);
   }
 
   debug(): void {

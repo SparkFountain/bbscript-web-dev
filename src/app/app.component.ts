@@ -39,27 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     // initialize navigation
     this.navigationElements = {
-      left: [
-        new NavigationMenu('fa-home', 'HOME', ['OVERVIEW', 'NEWS_BLOG', 'FEATURES']),
-        new NavigationMenu('fa-dashboard', 'LETS_CODE', ['EMPTY_PROJECT', 'TEMPLATES']),
-        new NavigationMenu('fa-cubes', 'PROJECTS', ['DEMOS', 'MY_PROJECTS', 'COMMUNITY']),
-        new NavigationMenu('fa-graduation-cap', 'TUTORIALS', [
-          'BASICS',
-          'GRAPHICS',
-          'IO',
-          'SOUND',
-          'GUI',
-          'PARTICLES',
-          '3D'
-        ]),
-        new NavigationMenu('fa-book', 'DOCUMENTATION', [
-          'KEYWORDS',
-          'COMMANDS',
-          'CONSTANTS_AND_SCANCODES',
-          'DIFFERENCES_TO_BLITZ_BASIC',
-          'MIGRATION_GUIDE'
-        ])
-      ],
+      left: [new NavigationMenu('fa-home', 'HOME', ['OVERVIEW', 'NEWS_BLOG', 'FEATURES'])],
       right: []
     };
 

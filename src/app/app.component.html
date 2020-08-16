@@ -32,6 +32,17 @@
           </div>
         </div>
       </ng-container>
+
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="navbar-item" [routerLink]="'NAV.LETS_CODE.PATH' | translate">
+              <span class="icon"> <i class="fa fa-fw fa-dashboard"></i>&nbsp; </span>
+              <span>{{ 'NAV.LETS_CODE.TITLE' | translate }}</span>
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
@@ -61,48 +72,6 @@
           <a class="navbar-item" (click)="changeLanguage('en')">
             {{ 'NAV.LANGUAGE.EN' | translate }}
           </a>
-        </div>
-      </div>
-      <div class="navbar-item" *ngIf="!authService.userIsLoggedIn()">
-        <div class="field is-grouped">
-          <p class="control">
-            <a class="navbar-item" [routerLink]="'NAV.LOGIN.PATH' | translate">
-              <span class="icon">
-                <i class="fa fa-fw fa-sign-in"></i>
-              </span>
-              <span>{{ 'NAV.LOGIN.TITLE' | translate }}</span>
-            </a>
-          </p>
-        </div>
-      </div>
-      <div class="navbar-item has-dropdown is-hoverable" *ngIf="authService.userIsLoggedIn()">
-        <a class="navbar-link is-arrowless">
-          <figure class="image nav-avatar">
-            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" />
-          </figure>
-        </a>
-        <div class="navbar-dropdown nav-avatar-dropdown">
-          <a class="navbar-item" [routerLink]="'NAV.ACCOUNT.PATH' | translate">
-            {{ 'NAV.ACCOUNT.PROFILE' | translate }}
-          </a>
-          <a class="navbar-item">
-            {{ 'NAV.ACCOUNT.AWARDS' | translate }}
-          </a>
-          <a class="navbar-item">
-            {{ 'LOGOUT' | translate }}
-          </a>
-        </div>
-      </div>
-      <div class="navbar-item" *ngIf="!authService.userIsLoggedIn()">
-        <div class="field is-grouped">
-          <p class="control">
-            <a class="navbar-item" [routerLink]="'NAV.REGISTER.PATH' | translate">
-              <span class="icon">
-                <i class="fa fa-fw fa-user-plus"></i>
-              </span>
-              <span>{{ 'NAV.REGISTER.TITLE' | translate }}</span>
-            </a>
-          </p>
         </div>
       </div>
     </div>

@@ -38,4 +38,18 @@ export class LetsCodeService {
       .toPromise()
       .then((response: ApiResponse<string[]>) => response.data);
   }
+
+  getSharedFiles(): Promise<any> {
+    return this.http
+      .get(`${environment.apiServer}/shared-files`)
+      .toPromise()
+      .then((response: ApiResponse<string[]>) => response.data);
+  }
+
+  getFileContent(path: string): Promise<any> {
+    return this.http
+      .get(`${environment.apiServer}/shared-files/get-content`, { params: { path } })
+      .toPromise()
+      .then((response: ApiResponse<string[]>) => response.data);
+  }
 }

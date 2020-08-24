@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'ueberblick', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'overview', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'news-blog',
     loadChildren: () => import('./news-blog/news-blog.module').then(m => m.NewsBlogModule)

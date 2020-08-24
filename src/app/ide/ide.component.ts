@@ -91,6 +91,10 @@ export class IdeComponent implements OnInit, AfterViewChecked {
 
   stop(): void {
     this.playing = false;
+    setTimeout(() => {
+      this.action = 'stop';
+      this.changeDetection.markForCheck();
+    }, 0);
   }
 
   undo(): void {

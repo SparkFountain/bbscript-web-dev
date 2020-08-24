@@ -82,10 +82,19 @@ if ($method == 'GET') {
     } else {
       $language = $_GET['language'];
 
+      // get total news
+      $sql = "SELECT COUNT(id) as `totalNews` FROM `news`";
+      $result = $dbWeb->query($sql);
+
+      $totalNews;
+      while ($row = $result->fetch_assoc()) {
+        $totalNews = $row['totalNews'];
+      }
+
       $sql = "SELECT n.`title_$language` as `title`, n.`message_$language` as `message`, u.`name` as `author`, n.`created_at` as `createdAt`, n.`last_modified_at` as `lastModifiedAt`, n.`image_url` as `imageUrl` ";
       $sql .= "FROM `news` n, `user` u ";
       $sql .= "WHERE n.`author` = u.`id` ";
-      $sql .= "AND n.`id` >= " . (($_GET['page'] - 1) * 10) . " ORDER BY n.`id` LIMIT 10";
+      $sql .= "AND n.`id` >= " . ($totalNews - $_GET['page'] * 10 + 1) . " AND n.`id` <= " . ($totalNews - ($_GET['page'] - 1) * 10) . " ORDER BY n.`id` DESC";
       $result = $dbWeb->query($sql);
 
       $response = array();

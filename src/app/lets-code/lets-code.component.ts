@@ -115,15 +115,16 @@ export class LetsCodeComponent implements OnInit, OnDestroy {
           name: fileOrFolder
         } as FileOrFolder;
       });
+
+      this.filesAndFolders.splice(2, 1);
     });
   }
 
   openFolder(folderIndex: number): void {
-    const folder: FileOrFolder = this.filesAndFolders[folderIndex];
-
-    this.path = `${this.path}/${folder.name}`;
-    this.breadcrumbs.push(folder.name);
-    this.getFiles();
+    // const folder: FileOrFolder = this.filesAndFolders[folderIndex];
+    // this.path = `${this.path}/${folder.name}`;
+    // this.breadcrumbs.push(folder.name);
+    // this.getFiles();
   }
 
   openFile(fileIndex: number): void {

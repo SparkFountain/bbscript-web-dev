@@ -30,13 +30,13 @@ $urlSection = explode('/', $urlWithoutGetParams);
 unset($urlSection['0']); //remove first section, which is always empty
 
 /* DATABASE CONNETION */
-$servername = 'localhost';
-$username = 'web23388256';
-$password = 'RZ0SdlIv2mutKjwejcRe';
-$dbname = 'usr_web23388256_2';
+$servername = 'localhost:3306';
+$username = 'bbscript';
+$password = 'VGcJTIivr3k9YSnr6kk3';
+$dbname = 'bbscript-language';
 
 /* DATABASE 1: Web */
-$dbWeb = new mysqli($servername, $username, $password, 'usr_web23388256_1');
+$dbWeb = new mysqli($servername, $username, $password, 'bbscript-web');
 // Check connection
 if ($dbWeb->connect_error) {
   die('Connection failed: ' . $dbWeb->connect_error);
@@ -44,7 +44,7 @@ if ($dbWeb->connect_error) {
 $dbWeb->set_charset('utf8');
 
 /* DATABASE 2: BBScript Language */
-$dbLanguage = new mysqli($servername, $username, $password, 'usr_web23388256_2');
+$dbLanguage = new mysqli($servername, $username, $password, 'bbscript-language');
 // Check connection
 if ($dbLanguage->connect_error) {
   die('Connection failed: ' . $dbLanguage->connect_error);
@@ -57,10 +57,10 @@ define('STATUS_ERROR', 'error');
 define('STATUS_FAIL', 'fail');
 
 /* FILE SERVER */
-define('FILE_SERVER', 'http://files.blitzbasicscript.com');
+define('FILE_SERVER', 'https://files.blitzbasicscript.com');
 
 /* MAIL SERVER */
-define('MAIL_SERVER', 'http://mail.blitzbasicscript.com');
+define('MAIL_SERVER', 'https://mail.blitzbasicscript.com');
 
 /* BASE DIRECTORY FOR FILE ACCESS */
 $baseDir = '/var/www/web23388256/html/bbscript/files/';
@@ -68,6 +68,83 @@ $sharedDir = '/var/www/web23388256/files/BlitzBasicScript/shared/';
 
 if ($method == 'GET') {
   switch ($urlSection['1']) {
+  case 'commands-as-json':
+    $response = array();
+    $subCategoryTable = array();
+
+    // get command categories
+    $sql = "SELECT * FROM command_category ORDER BY id";
+    $result = $dbLanguage->query($sql);
+    while ($row = $result->fetch_assoc()) {
+      if($row['parent'] === NULL) {
+        array_push($response, array(
+          'title' => array(
+            'de' => $row['title_de'],
+            'en' => $row['title_en']
+          ),
+          'description' => array(
+            'de' => $row['description_de'],
+            'en' => $row['description_en']
+          ),
+          'path' => array(
+            'de' => $row['path_de'],
+            'en' => $row['path_en']
+          ),
+          'subCategories' => array()
+        ));
+      } else {
+        array_push($subCategoryTable, array(
+          'id' => $row['id'],
+          ''
+        ));
+
+        array_push($response[$row['parent']-1]['subCategories'], array(
+          'title' => array(
+            'de' => $row['title_de'],
+            'en' => $row['title_en']
+          ),
+          'description' => array(
+            'de' => $row['description_de'],
+            'en' => $row['description_en']
+          ),
+          'path' => array(
+            'de' => $row['path_de'],
+            'en' => $row['path_en']
+          ),
+          'commands' => array()
+        ));
+      }
+    }
+
+    // get commands
+    $sql = "SELECT * FROM command";
+    $result = $dbLanguage->query($sql);
+    while ($row = $result->fetch_assoc()) {
+      $commands = $response[$row['category']-1]['subCategories'][$row['sub_category']-1]['commands'];
+      die(print_r($response[$row['category']-1]['subCategories'][$row['sub_category']-1]));
+
+      array_push($commands, array(
+        'name' => $row['name'],
+        'description' => array(
+          'de' => $row['description_de'],
+          'en' => $row['description_en'],
+        ),
+        'return' => array(
+          'name' => $row['return_name'],
+          'description' => array(
+            'de' => $row['return_description_de'],
+            'en' => $row['return_description_en']
+          )
+        ),
+        'code' => $row['code'],
+        'deprecated' => $row['deprecated']
+      ));
+    }
+
+    // get command parameters
+    // TODO:
+
+    die(json_encode($response));
   case 'news':
     if (isset($urlSection['2'])) {
       switch ($urlSection['2']) {

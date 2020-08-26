@@ -76,73 +76,113 @@ if ($method == 'GET') {
     $sql = "SELECT * FROM command_category ORDER BY id";
     $result = $dbLanguage->query($sql);
     while ($row = $result->fetch_assoc()) {
-      if($row['parent'] === NULL) {
+      if ($row['parent'] === NULL) {
         array_push($response, array(
           'title' => array(
             'de' => $row['title_de'],
-            'en' => $row['title_en']
+            'en' => $row['title_en'],
           ),
           'description' => array(
             'de' => $row['description_de'],
-            'en' => $row['description_en']
+            'en' => $row['description_en'],
           ),
           'path' => array(
             'de' => $row['path_de'],
-            'en' => $row['path_en']
+            'en' => $row['path_en'],
           ),
-          'subCategories' => array()
+          'subCategories' => array(),
         ));
       } else {
-        array_push($subCategoryTable, array(
-          'id' => $row['id'],
-          ''
-        ));
+        $subCategoryTable[$row['id']] = $row['parent'];
 
-        array_push($response[$row['parent']-1]['subCategories'], array(
+        array_push($response[$row['parent'] - 1]['subCategories'], array(
           'title' => array(
             'de' => $row['title_de'],
-            'en' => $row['title_en']
+            'en' => $row['title_en'],
           ),
           'description' => array(
             'de' => $row['description_de'],
-            'en' => $row['description_en']
+            'en' => $row['description_en'],
           ),
           'path' => array(
             'de' => $row['path_de'],
-            'en' => $row['path_en']
+            'en' => $row['path_en'],
           ),
-          'commands' => array()
+          'commands' => array(),
         ));
       }
     }
 
-    // get commands
-    $sql = "SELECT * FROM command";
+    // get commands and parameters
+    $sql = "SELECT * FROM command WHERE category <> 0 AND sub_category <> 0";
     $result = $dbLanguage->query($sql);
     while ($row = $result->fetch_assoc()) {
-      $commands = $response[$row['category']-1]['subCategories'][$row['sub_category']-1]['commands'];
-      die(print_r($response[$row['category']-1]['subCategories'][$row['sub_category']-1]));
+      $innerSql = "SELECT * FROM command_parameter WHERE command_id = " . $row['id'] . " ORDER BY offset";
+      $innerResult = $dbLanguage->query($innerSql);
+      $params = array();
+      while ($innerRow = $innerResult->fetch_assoc()) {
+        array_push($params, array(
+          'name' => $innerRow['name'],
+          'description' => array(
+            'de' => $innerRow['description_de'],
+            'en' => $innerRow['description_en'],
+          ),
+          'optional' => $innerRow['optional'] ? true : false,
+        ));
+      }
 
-      array_push($commands, array(
+      array_push($response[$row['category'] - 1]['subCategories'][$subCategoryTable[$row['sub_category']] - 1]['commands'], array(
         'name' => $row['name'],
         'description' => array(
           'de' => $row['description_de'],
           'en' => $row['description_en'],
         ),
+        'parameters' => $params,
         'return' => array(
           'name' => $row['return_name'],
           'description' => array(
             'de' => $row['return_description_de'],
-            'en' => $row['return_description_en']
-          )
+            'en' => $row['return_description_en'],
+          ),
         ),
         'code' => $row['code'],
-        'deprecated' => $row['deprecated']
+        'deprecated' => $row['deprecated'],
       ));
     }
 
-    // get command parameters
-    // TODO:
+    die(json_encode($response));
+  case 'keywords-as-json':
+    $response = array();
+
+    // get keyword categories and categories
+    $sql = "SELECT * FROM keyword_category ORDER BY id";
+    $result = $dbLanguage->query($sql);
+    while ($row = $result->fetch_assoc()) {
+      $keywords = array();
+      $innerSql = "SELECT * FROM keyword WHERE deprecated = 0 AND category_id = " . $row['id'] . " ORDER BY id";
+      $innerResult = $dbLanguage->query($innerSql);
+      while ($innerRow = $innerResult->fetch_assoc()) {
+        array_push($keywords, array(
+          'name' => $innerRow['name'],
+        ));
+      }
+
+      array_push($response, array(
+        'title' => array(
+          'de' => $row['title_de'],
+          'en' => $row['title_en'],
+        ),
+        'description' => array(
+          'de' => $row['description_de'],
+          'en' => $row['description_en'],
+        ),
+        'path' => array(
+          'de' => $row['path_de'],
+          'en' => $row['path_en'],
+        ),
+        'keywords' => $keywords,
+      ));
+    }
 
     die(json_encode($response));
   case 'news':
